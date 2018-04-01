@@ -1,0 +1,25 @@
+skip_tags: true
+
+image: Visual Studio 2017
+
+clone_depth: 1
+
+branches:
+  only:
+    - master
+
+environment:
+
+install:
+  - cinst docfx
+
+build_script:
+  - docfx
+
+deploy_script:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_ACCESS_TOKEN):x-oauth-basic@github.com`n"
+  - git config --global user.email %GITHUB_EMAIL%
+  - git config --global user.name "Blazor doc agent"
+  - bash releaseDocs.sh
+  

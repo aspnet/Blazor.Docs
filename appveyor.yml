@@ -8,8 +8,6 @@ branches:
   only:
     - master
 
-environment:
-
 install:
   - cinst docfx
 

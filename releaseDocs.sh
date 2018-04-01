@@ -19,7 +19,7 @@ cd $TEMP_REPO_DIR
 git rm -r *
 
 echo "Copy documentation into the repo"
-cp -r $SOURCE_DIR/docs/_site/* .
+cp -r $SOURCE_DIR/_site/* .
 
 echo "Push the new docs to the remote branch"
 git add . -A

@@ -52,7 +52,7 @@ Blazor apps are built with *components*. A component is a piece of UI, such as a
 
 In Blazor, a component is a .NET class. The class can either be written directly, as a C# class (*\*.cs*), or more commonly in the form of a Razor markup page (*\*.cshtml*).
 
-[Razor](xref:mvc/views/razor) is a syntax for combining HTML markup with C# code. Razor is designed for developer productivity, allowing the developer to switch between markup and C# in the same file with [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) support. The following markup is an example of a basic custom dialog component in a Razor file (*DialogComponent.cshtml*):
+[Razor](https://docs.microsoft.com/aspnet/core/mvc/views/razor) is a syntax for combining HTML markup with C# code. Razor is designed for developer productivity, allowing the developer to switch between markup and C# in the same file with [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) support. The following markup is an example of a basic custom dialog component in a Razor file (*DialogComponent.cshtml*):
 
 ```cshtml
 <div>
@@ -92,7 +92,7 @@ A few low-level elements are included in the framework. For example, routing and
 
 ## Code sharing and .NET Standard
 
-The [.NET Standard](/dotnet/standard/net-standard) is a formal specification of .NET APIs that are intended to be available on all .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that can't be supported due to browser limitations (for example, accessing the file system, opening a socket, threading, and others) throw [PlatformNotSupportedException](/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
+The [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) is a formal specification of .NET APIs that are intended to be available on all .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that can't be supported due to browser limitations (for example, accessing the file system, opening a socket, threading, and others) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
 
 ## JavaScript/TypeScript interop
 
@@ -106,4 +106,4 @@ For client-side apps, payload size is critical. Blazor optimizes payload size to
 
 Developers have the option of using Blazor for only client-side development or for full-stack .NET development. Full-stack development offers many advantages&mdash;client- and server-side development uses the same tooling, build infrastructure, and language. Code can be shared between client and server apps.
 
-For ASP.NET Core, [middleware](xref:fundamentals/middleware/index) offers an easy path to serve a Blazor UI seamlessly from an ASP.NET Core app. Equally important are developers who don't yet use ASP.NET Core. To make Blazor a viable consideration for developers using Node.js, Rails, PHP, or even for serverless web apps, ASP.NET Core isn't required on the server. When a Blazor app is built, a *dist* directory is produced containing nothing but static files. The contents of the *dist* folder can be hosted on the Azure CDN, GitHub Pages, Node.js servers, and many other servers and services.
+For ASP.NET Core, [middleware](https://docs.microsoft.com/aspnet/core/fundamentals/middleware) offers an easy path to serve a Blazor UI seamlessly from an ASP.NET Core app. Equally important are developers who don't yet use ASP.NET Core. To make Blazor a viable consideration for developers using Node.js, Rails, PHP, or even for serverless web apps, ASP.NET Core isn't required on the server. When a Blazor app is built, a *dist* directory is produced containing nothing but static files. The contents of the *dist* folder can be hosted on the Azure CDN, GitHub Pages, Node.js servers, and many other servers and services.

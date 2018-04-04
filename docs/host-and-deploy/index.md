@@ -53,7 +53,7 @@ Not all hosting scenarios permit the enforcement of rewrite rules. Additional in
 
 ## Host with ASP.NET Core
 
-ASP.NET Core apps that host Blazor apps use Blazor Middleware by calling the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`:
+ASP.NET Core apps that host Blazor apps configure the server-side app's middleware pipeline with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -67,7 +67,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-The Blazor middleware performs the following tasks:
+The `UseBlazor` extension method performs the following tasks:
 
 * Reads the Blazor configuration file (*.blazor.config*) from the `ClientAssemblyPath`, which is either an option provided to the `UseBlazor` extension method or defaulted to the app's assembly file location.
 * Configures [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* are served.

@@ -17,13 +17,18 @@ By [Luke Latham](https://github.com/guardrex)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/blazor/components/common/samples/) ([how to download](xref:tutorials/index#how-to-download-a-sample))
+[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/blazor/components/common/samples/)
 
-A Blazor *component* represents any feature or collection of features that can be represented by a [Razor file (\*.cshtml)](xref:mvc/views/razor) or a [C# file (\*.cs)](/dotnet/csharp/getting-started/) compiled into a C# class assembly. Components are typical features found in web app client UIs, such as a page, dialog, or form, along with its processing logic. A component can also consist entirely of programming logic without UI elements. Components are the fundamental building blocks of Blazor apps and can be nested, reused, and shared between projects.
+To download the sample:
+
+1. Download and unzip the [Blazor.Docs repository zip file](https://codeload.github.com/aspnet/Blazor.Docs/zip/master).
+1. Use the URL in the [sample link](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/blazor/components/common/samples/) to navigate to the sample folder.
+
+A Blazor *component* represents any feature or collection of features that can be represented by a [Razor file (\*.cshtml)](https://docs.microsoft.com/aspnet/core/mvc/views/razor) or a [C# file (\*.cs)](/dotnet/csharp/getting-started/) compiled into a C# class assembly. Components are typical features found in web app client UIs, such as a page, dialog, or form, along with its processing logic. A component can also consist entirely of programming logic without UI elements. Components are the fundamental building blocks of Blazor apps and can be nested, reused, and shared between projects.
 
 ## Use of Razor
 
-Razor is a syntax for embedding C# code into HTML markup files. Files containing Razor generally have a *\*.cshtml* file extension. We recommend that you become familiar with Razor while working with Blazor. For more information, see the [Razor syntax reference](xref:mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.
+Razor is a syntax for embedding C# code into HTML markup files. Files containing Razor generally have a *\*.cshtml* file extension. We recommend that you become familiar with Razor while working with Blazor. For more information, see the [Razor syntax reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.
 
 The following pair of Blazor components demonstrates how Blazor takes advantage of features in Razor, C#, and HTML. Many of these features are described in more detail later in this topic.
 
@@ -44,15 +49,15 @@ For more information on HTML encoding with WebUtility, see [WebUtility.HtmlEncod
 
 ## Razor directives
 
-A Razor file for Blazor specifies [Razor directives](xref:mvc/views/razor#directives) at the top of the file using the `@` symbol to distinguish Razor code from HTML markup. Razor directives supported by Blazor are shown in the table. `@model`, `@section`, and Tag Helper directives aren't supported at this time.
+A Razor file for Blazor specifies [Razor directives](https://docs.microsoft.com/aspnet/core/mvc/views/razor#directives) at the top of the file using the `@` symbol to distinguish Razor code from HTML markup. Razor directives supported by Blazor are shown in the table. `@model`, `@section`, and Tag Helper directives aren't supported at this time.
 
 | Directive | Description |
 | --------- | ----------- |
-| [@using](xref:mvc/views/razor#using) | Adds the C# `using` directive to the generated view. |
-| [@inherits](xref:mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
-| [@inject](xref:mvc/views/razor#inject) | Enables service injection from the [service container](xref:fundamentals/dependency-injection). For more information, see [Dependency injection into views](xref:mvc/views/dependency-injection). |
-| [@functions](xref:mvc/views/razor#functions) | Adds function-level content to a component. Functions include properties and methods accessible to the component. |
-| [@page](xref:mvc/razor-pages/index#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
+| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated view. |
+| [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
+| [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
+| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds function-level content to a component. Functions include properties and methods accessible to the component. |
+| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
 
 ## Component classes
 
@@ -284,7 +289,7 @@ Blazor components can receive and use route parameters from the route template p
 
 Not all route parameter constraints are supported at this time. Optional parameters aren't currently supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
-For more information on attribute routing, see [Routing](xref:fundamentals/routing).
+For more information on attribute routing, see [Routing](https://docs.microsoft.com/aspnet/core/fundamentals/routing).
 
 ## JavaScript/TypeScript interop
 

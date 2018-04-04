@@ -77,6 +77,7 @@ The `UseBlazor` extension method performs the following tasks:
 For general information on ASP.NET Core app hosting and deployment, see:
 
 * [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy)
+* [Host ASP.NET Core on Azure App Service](https://docs.microsoft.com/aspnet/core/host-and-deploy/azure-apps/)
 * [.NET Core application deployment](https://docs.microsoft.com/dotnet/core/deploying/)
 * [Deploying .NET Core apps with command-line interface (CLI) tools](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-cli)
 * [Deploying .NET Core apps with Visual Studio](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs)

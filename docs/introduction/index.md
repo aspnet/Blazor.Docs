@@ -42,9 +42,9 @@ When a Blazor app is built and run in a browser:
 1. The assemblies and the .NET runtime are downloaded to the browser.
 1. Blazor uses JavaScript to bootstrap the .NET runtime and configures the runtime to load required assembly references. Document object model (DOM) manipulation and browser API calls are handled by the Blazor runtime via JavaScript interoperability.
 
-## Browsers that don't support WebAssembly
+## Running on older browsers without WebAssembly
 
-The .NET runtime is supplied as a WebAssembly binary and an [asm.js](https://wikipedia.org/wiki/Asm.js)-based implementation. *asm.js* is a subset of JavaScript and can be executed by JavaScript runtimes in browsers going back several years. When Blazor loads in the browser, it checks for WebAssembly support. If WebAssembly isn't supported, the *asm.js* runtime is loaded. *asm.js* isn't always used because it's larger and slower than the WebAssembly runtime.
+Blazor apps also run in older browsers that don't support WebAssembly. When Blazor detects that WebAssembly isn't supported in the browser, it loads an [asm.js](https://wikipedia.org/wiki/Asm.js) version of the Mono runtime instead of the usual WebAssembly version. *asm.js* is a subset of JavaScript that can be executed by browser JavaScript runtimes going back many years. For browsers that support WebAssembly, the Blazor startup code prefers to load the WebAssembly version of Mono because it's faster and more compact.
 
 ## Blazor components
 
@@ -57,23 +57,23 @@ In Blazor, a component is a .NET class. The class can either be written directly
 ```cshtml
 <div>
     <h2>@Title</h2>
-    @RenderContent(Body)
+    @BodyContent
     <button onclick=@OnOK>OK</button>
 </div>
 
 @functions {
     public string Title { get; set; }
-    public Content Body { get; set; }
+    public RenderFragment BodyContent { get; set; }
     public Action OnOK { get; set; }
 }
 ```
 
-When this component is used elsewhere in the app, IntelliSense speeds development with syntax completion and parameter info.
+When this component is used elsewhere in the app, IntelliSense speeds development with syntax and parameter completion.
 
 Components can be:
 
 * Nested.
-* Generated procedurally in code.
+* Created with Razor (*\*.cshtml*) or C# (*\*.cs*) code.
 * Shared via class libraries.
 * Unit tested without requiring a browser DOM.
 
@@ -84,26 +84,24 @@ Blazor offers the core facilities that most apps require, including:
 * Layouts
 * Routing
 * Dependency injection
-* Unit testing
 
 All of these features are optional. When one of these features isn't used in an app, the implementation is stripped out of the app when published by the IL linker.
 
-A few low-level elements are included in the framework. For example, routing and layouts aren't built-in. Routing and layouts are implemented in *user space*, code that an app developer can write without using internal APIs. These features can be replaced with different systems to suit the app's requirements. The current layouts prototype is implemented in about 30 lines of C# code, so a developer can understand and replace it if desired.
-
 ## Code sharing and .NET Standard
 
-The [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) is a formal specification of .NET APIs that are intended to be available on all .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that can't be supported due to browser limitations (for example, accessing the file system, opening a socket, threading, and others) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
+[.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) is a formal specification of .NET APIs that are intended to be available on all .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that aren't applicable inside a web browser (for example, accessing the file system, opening a socket, threading, and others) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
 
 ## JavaScript/TypeScript interop
 
-For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. JavaScript code can call into C# (for example, to handle an event).
+For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code.
 
 ## Optimization
 
-For client-side apps, payload size is critical. Blazor optimizes payload size to reduce download times. For example, unused IL code is removed when a Blazor app is built, and response compression is utilized.
+For client-side apps, payload size is critical. Blazor optimizes payload size to reduce download times. For example, unused parts of .NET assemblies are removed during the build process, HTTP responses are compressed, and the .NET runtime and assemblies are cached in the browser.
 
 ## Deployment
 
-Developers have the option of using Blazor for only client-side development or for full-stack .NET development. Full-stack development offers many advantages&mdash;client- and server-side development uses the same tooling, build infrastructure, and language. Code can be shared between client and server apps.
+Use Blazor to build a pure standalone client-side app or a full-stack ASP.NET Core app that contains both server and client apps:
 
-For ASP.NET Core, [middleware](https://docs.microsoft.com/aspnet/core/fundamentals/middleware) offers an easy path to serve a Blazor UI seamlessly from an ASP.NET Core app. Equally important are developers who don't yet use ASP.NET Core. To make Blazor a viable consideration for developers using Node.js, Rails, PHP, or even for serverless web apps, ASP.NET Core isn't required on the server. When a Blazor app is built, a *dist* directory is produced containing nothing but static files. The contents of the *dist* folder can be hosted on the Azure CDN, GitHub Pages, Node.js servers, and many other servers and services.
+* In a **standalone client-side app**, the Blazor app is compiled into a *dist* folder that only contains static files. The files can be hosted on Azure App Service, GitHub Pages, IIS (configured as a static file server), Node.js servers, and many other servers and services. .NET isn't required on the server in production.
+* In a **full-stack ASP.NET Core app**, code can be shared between server and client apps. The resulting ASP.NET Core server app, which serves the Blazor client-side UI and other server-side API endpoints, can be built and deployed to any cloud or on-premise host supported by ASP.NET Core.

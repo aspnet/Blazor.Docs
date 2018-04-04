@@ -33,7 +33,7 @@ The deployment is created in the */bin/Release/netstandard2.0/publish* folder. T
 
 Routing requests for page components in a client-side app isn't as simple as routing requests to a server-side, hosted app. Consider a client-side app with two pages:
 
-* **_Index.cshtml_**: Loads at the root of the app and contains a link to the About page (`href="/About"`).
+* **_Main.cshtml_**: Loads at the root of the app and contains a link to the About page (`href="/About"`).
 * **_About.cshtml_**: About page.
 
 When the app's default document is requested using the browser's address bar (for example, `https://www.contoso.com/`):
@@ -41,13 +41,13 @@ When the app's default document is requested using the browser's address bar (fo
 1. The browser makes a request.
 1. The default page is returned, which is usually *index.html*.
 1. *index.html* bootstraps the app.
-1. Blazor's router loads and the Razor Index page (*Index.cshtml*) is displayed.
+1. Blazor's router loads and the Razor Main page (*Main.cshtml*) is displayed.
 
-On the Index page, selecting the link to the About page loads the About page. Selecting the link to the About page works on the client because the Blazor router stops the browser from making a request on the Internet to `www.contoso.com` for `/About` and serves the About page itself. All of the requests for internal pages *within the client-side app* work the same way: Requests don't trigger browser-based requests to server-hosted resources on the Internet. The router handles the requests internally.
+On the Main page, selecting the link to the About page loads the About page. Selecting the link to the About page works on the client because the Blazor router stops the browser from making a request on the Internet to `www.contoso.com` for `/About` and serves the About page itself. All of the requests for internal pages *within the client-side app* work the same way: Requests don't trigger browser-based requests to server-hosted resources on the Internet. The router handles the requests internally.
 
 If a request is made using the browser's address bar for `www.contoso.com/About`, the request fails. No such resource exists on the app's Internet host, so a *404 Not found* response is returned.
 
-Because browsers make requests to Internet-based hosts for client-side pages, hosts of hosted Blazor apps must rewrite all requests to the *index.html* page. When *index.html* is returned, the app's router takes over and responds with the correct resource.
+Because browsers make requests to Internet-based hosts for client-side pages, hosts of hosted Blazor apps must rewrite all requests to the *index.html* page. When *index.html* is returned, the app's client-side router takes over and responds with the correct resource.
 
 Not all hosting scenarios permit the enforcement of rewrite rules. Additional information is provided in the hosting configuration examples that follow.
 
@@ -98,7 +98,7 @@ In the following configuration examples, the app name, and thus the app folder n
 **Public hosting with Windows Server operating systems**
 
 > [!NOTE]
-> When working with an Azure VM, open either or both HTTP (80) and HTTPS (443) ports to allow HTTP/HTTPS traffic to the VM. In the Azure portal, use the VM's **SETTINGS** > **Networking** > **Add inbound port rule** to open ports. to For more information, see [How to open ports to a virtual machine with the Azure portal](https://docs.microsoft.com/azure/virtual-machines/windows/nsg-quickstart-portal).
+> When working with an Azure VM, open either or both HTTP (80) and HTTPS (443) ports to allow HTTP/HTTPS traffic to the VM. In the Azure portal, use the VM's **SETTINGS** > **Networking** > **Add inbound port rule** to open ports. For more information, see [How to open ports to a virtual machine with the Azure portal](https://docs.microsoft.com/azure/virtual-machines/windows/nsg-quickstart-portal).
 
 1. Use the **Add Roles and Features** wizard from the **Manage** menu or select the **Add Roles and Features** link in **Server Manager** to enable the **Web Server (IIS)** server role. In the **Server Roles** step, check the box for **Web Server (IIS)**.
 1. After the **Features** step, the **Role services** step loads for Web Server (IIS). Accept the default role services provided. The default role services include **Web Server** > **Common HTTP Features** > **Static Content** and **Web Server** > **Performance** > **Static Content Compression**.

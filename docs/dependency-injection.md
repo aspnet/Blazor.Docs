@@ -166,28 +166,6 @@ Note the following prerequisites for constructor injection:
 * The applicable constructor must be *public*.
 * There must only be one applicable constructor. In case of an ambiguity, DI throws an exception.
 
-## Service lifetime
-
-Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Components can implement `IDisposable`. Components and their transient services are disposed when the user navigates away from the component.
-
-The following code sample demonstrates how to implement `IDisposable` in a component:
-
-```csharp
-...
-@using System;
-@implements IDisposable
-...
-
-@functions {
-    ...
-    public void Dispose()
-    {
-        // Add code for disposing here
-        ...
-    }
-}
-```
-
 ## Additional resources
 
 * [Dependency injection in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)

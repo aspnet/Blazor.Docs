@@ -19,7 +19,7 @@ By [Steve Sanderson](http://blog.stevensanderson.com), [Daniel Roth](https://git
 
 Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly. Blazor provides all of the benefits of a client-side web UI framework using .NET on the client and optionally on the server.
 
-## Why use .NET for client-side apps?
+## Why use .NET in the browser?
 
 Web development has improved in many ways over the years, but building modern web apps still poses challenges. Using .NET in the browser offers many advantages that can help make web development easier and more productive: 
 
@@ -30,7 +30,7 @@ Web development has improved in many ways over the years, but building modern we
 * **Full-stack development that leverages existing skills**: C#/Razor developers use their existing C#/Razor skills to write client-side code and share server and client-side logic among apps.
 * **Wide browser support**: Blazor runs on .NET using open web standards in the browser with no plugins and no code transpilation. It works in all modern web browsers, including mobile browsers.
 
-## Running .NET in the browser
+## How Blazor runs .NET in the browser
 
 Running .NET code inside web browsers is made possible by a relatively new technology, [WebAssembly](http://webassembly.org) (abbreviated *wasm*). WebAssembly is an open web standard and is supported in web browsers without plugins. WebAssembly is a compact bytecode format optimized for fast download and maximum execution speed.
 
@@ -42,9 +42,7 @@ When a Blazor app is built and run in a browser:
 1. The assemblies and the .NET runtime are downloaded to the browser.
 1. Blazor uses JavaScript to bootstrap the .NET runtime and configures the runtime to load required assembly references. Document object model (DOM) manipulation and browser API calls are handled by the Blazor runtime via JavaScript interoperability.
 
-## Running on older browsers without WebAssembly
-
-Blazor apps also run in older browsers that don't support WebAssembly. When Blazor detects that WebAssembly isn't supported in the browser, it loads an [asm.js](https://wikipedia.org/wiki/Asm.js) version of the Mono runtime instead of the usual WebAssembly version. *asm.js* is a subset of JavaScript that can be executed by browser JavaScript runtimes going back many years. For browsers that support WebAssembly, the Blazor startup code prefers to load the WebAssembly version of Mono because it's faster and more compact.
+To support older browsers that don't support WebAssembly, Blazor falls back to using an [asm.js](https://wikipedia.org/wiki/Asm.js)-based .NET runtime.
 
 ## Blazor components
 
@@ -89,7 +87,7 @@ All of these features are optional. When one of these features isn't used in an 
 
 ## Code sharing and .NET Standard
 
-[.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) is a formal specification of .NET APIs that are intended to be available on all .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that aren't applicable inside a web browser (for example, accessing the file system, opening a socket, threading, and others) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
+Blazor apps can reference and use existing [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) libraries. .NET Standard is a formal specification of .NET APIs that are common across .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that aren't applicable inside a web browser (for example, accessing the file system, opening a socket, threading, and other features) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
 
 ## JavaScript/TypeScript interop
 

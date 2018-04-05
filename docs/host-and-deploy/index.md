@@ -17,19 +17,45 @@ By [Luke Latham](https://github.com/guardrex) and [Rainer Stropek](https://www.t
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-## Publishing
+## Reduction in payload size on build
 
-Blazor apps are published for deployment in Release configuration with the [dotnet publish](https://docs.microsoft.com/dotnet/core/tools/dotnet-publish) command:
+As part of the build process, unused methods and assemblies are removed to reduce app download size and speed up load times.
 
-```console
-dotnet publish -c Release
+## Hosted deployment with ASP.NET Core
+
+Under the hosted deployment model, a Blazor client-side app is hosted inside an ASP.NET Core server-side project. The published ASP.NET Core project is deployed to the web server or hosting service.
+
+Blazor integrates with ASP.NET Core to handle single-page application routing and to host the Blazor app as static files.
+
+ASP.NET Core apps:
+
+* Host Blazor apps by first referencing them as dependencies.
+* Configure each app in the server-side app's middleware pipeline with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`.
+
+```csharp
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+
+    app.UseBlazor<Client.Program>();
+}
 ```
 
-The .NET linker strips unused [Intermediate Language (IL)](https://docs.microsoft.com/dotnet/standard/managed-code) when the app is built in Release configuration.
+The `UseBlazor` extension method performs the following tasks:
 
-The deployment is created in the */bin/Release/netstandard2.0/publish* folder. The assets in the *publish* folder are moved to the web server.
+* Configures [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* are served.
+* Configure single-page application routing for files outside of the *_framework* folder, which serves the default page (*index.html*) for any request that hasn't been served by a prior Static File Middleware instance.
 
-## Rewrite URLs for correct routing
+For general information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
+
+## Standalone deployment
+
+Standalone deployment only deploys the Blazor client-side app. There isn't an ASP.NET Core server-side hosting app.
+
+**Rewrite URLs for correct routing**
 
 Routing requests for page components in a client-side app isn't as simple as routing requests to a server-side, hosted app. Consider a client-side app with two pages:
 
@@ -47,48 +73,13 @@ On the Main page, selecting the link to the About page loads the About page. Sel
 
 If a request is made using the browser's address bar for `www.contoso.com/About`, the request fails. No such resource exists on the app's Internet host, so a *404 Not found* response is returned.
 
-Because browsers make requests to Internet-based hosts for client-side pages, hosts of hosted Blazor apps must rewrite all requests to the *index.html* page. When *index.html* is returned, the app's client-side router takes over and responds with the correct resource.
+Because browsers make requests to Internet-based hosts for client-side pages, web servers and services must rewrite all requests to the *index.html* page. When *index.html* is returned, the app's client-side router takes over and responds with the correct resource.
 
 Not all hosting scenarios permit the enforcement of rewrite rules. Additional information is provided in the hosting configuration examples that follow.
 
-## Host with ASP.NET Core
+## Static deployment strategies for standalone Blazor apps
 
-ASP.NET Core apps that host Blazor apps configure the server-side app's middleware pipeline with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`:
-
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-
-    app.UseBlazor<Client.Program>();
-}
-```
-
-The `UseBlazor` extension method performs the following tasks:
-
-* Reads the Blazor configuration file (*.blazor.config*) from the `ClientAssemblyPath`, which is either an option provided to the `UseBlazor` extension method or defaulted to the app's assembly file location.
-* Configures [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* are served.
-* Configure live reloading when in the Development environment and Debug configuration.
-* Configure single-page application routing for files outside of the *_framework* folder, which serves the default page (*index.html*) for any request that hasn't been served by a prior Static File Middleware instance.
-
-For general information on ASP.NET Core app hosting and deployment, see:
-
-* [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy)
-* [Host ASP.NET Core on Azure App Service](https://docs.microsoft.com/aspnet/core/host-and-deploy/azure-apps/)
-* [.NET Core application deployment](https://docs.microsoft.com/dotnet/core/deploying/)
-* [Deploying .NET Core apps with command-line interface (CLI) tools](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-cli)
-* [Deploying .NET Core apps with Visual Studio](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs)
-
-## Docker/Linux hosting
-
-The first line of the Blazor config file (*.blazor.config*) configures the source MSBuild path to `.`. A consequence of this setting is that the webroot path is set to `.\wwwroot`, which results in published files being split between *wwwroot* and *dist* folders. For an unsupported workaround, see [On linux UseBlazor extension method fails with "The path must be absolute"](https://github.com/aspnet/Blazor/issues/376).
-
-## Static deployment strategies
-
-The following static deployment strategies make the Blazor deployment's static assets available directly for download. Conceptually, other static hosting system configurations are similar.
+When deploying a standalone Blazor app, any web server or hosting service that serves static files can host a Blazor app.
 
 ### IIS
 
@@ -171,5 +162,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 ### GitHub Pages
 
-Blazor apps can be hosted on [GitHub Pages](https://pages.github.com/). For an unsupported example approach, see [Rafael Pedicini's](http://www.rafaelpedicini.com/) [Single Page Apps for GitHub Pages](http://spa-github-pages.rafrex.com/) ([rafrex/spa-github-pages on GitHub](https://github.com/rafrex/spa-github-pages#readme)). Another example using the same approach can be seen at [blazor-demo/blazor-demo.github.io
- on GitHub](https://github.com/blazor-demo/blazor-demo.github.io) ([live site](https://blazor-demo.github.io/)).
+To handle URL rewrites, add a *404.html* file with a script that handles redirecting the request to the *index.html* page. For an example implementation provided by the community, see [Single Page Apps for GitHub Pages](http://spa-github-pages.rafrex.com/) ([rafrex/spa-github-pages on GitHub](https://github.com/rafrex/spa-github-pages#readme)). An example using the community approach can be seen at [blazor-demo/blazor-demo.github.io on GitHub](https://github.com/blazor-demo/blazor-demo.github.io) ([live site](https://blazor-demo.github.io/)).
+
+There's also a potential issue when using a project site instead of an organization site. Project sites have a path, so the base tag in *index.html* should be updated from `/` to `/<repo-name>`.

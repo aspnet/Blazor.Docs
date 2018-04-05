@@ -23,14 +23,14 @@ Blazor has [dependency injection (DI)](https://docs.microsoft.com/aspnet/core/fu
 
 DI is a technique for accessing services configured in a central location. This can be useful to:
 
-* Share a single instance of a service class across many components (known as a *singleton* service)
-* Decouple components from particular concrete service classes and only reference abstractions. For example, there might be an interface `IDataAccess` implemented by a concrete class `DataAccess`. If a component uses DI to receive an `IDataAccess` implementation, it isn't coupled to any concrete type. That means the implementation could easily be swapped, perhaps to a mock implementation in unit tests.
+* Share a single instance of a service class across many components (known as a *singleton* service).
+* Decouple components from particular concrete service classes and only reference abstractions. For example, an interface `IDataAccess` is implemented by a concrete class `DataAccess`. When a component uses DI to receive an `IDataAccess` implementation, the component isn't coupled to the concrete type. The implementation can be swapped, perhaps to a mock implementation in unit tests.
 
-Blazor's DI system is responsible for supplying instances of services to components. It also resolves dependencies recursively, so that services themselves can depend on further services, and so on. DI is configured during startup of the app. An example is shown later in this topic.
+Blazor's DI system is responsible for supplying instances of services to components. DI also resolves dependencies recursively so that services themselves can depend on further services. DI is configured during startup of the app. An example is shown later in this topic.
 
 ## Use of existing .NET mechanisms
 
-DI in Blazor is based on .NET's [System.IServiceProvider](https://docs.microsoft.com/dotnet/api/system.iserviceprovider) interface. It defines a generic mechanism for retrieving a service object in .NET apps.
+DI in Blazor is based on .NET's [System.IServiceProvider](https://docs.microsoft.com/dotnet/api/system.iserviceprovider) interface. The interface defines a generic mechanism for retrieving a service object in .NET apps.
 
 Blazor's implementation of `System.IServiceProvider` obtains its services from an underlying [Microsoft.Extensions.DependencyInjection.IServiceCollection](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection).
 
@@ -64,11 +64,11 @@ static void Main(string[] args)
 }
 ```
 
-`ServiceDescriptor` offers various overloads of three different functions that can be used to add services to Blazor's DI:
+`ServiceDescriptor` offers several overloads of three methods that are used to add services to Blazor's DI:
 
 | Method      | Description |
 | ----------- | ----------- |
-| `Singleton` | DI creates a *single instance* of your service. All components requiring this service receive a reference to this instance. |
+| `Singleton` | DI creates a *single instance* of the service. All components requiring this service receive a reference to this instance. |
 | `Transient` | Whenever a component requires this service, it receives a *new instance* of the service. |
 | `Scoped`    | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
 
@@ -81,11 +81,11 @@ Blazor provides default services that are automatically added to the service col
 | `IUriHelper` | Helpers for working with URIs and navigation state (singleton). |
 | `HttpClient` | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) uses the browser for handling the HTTP traffic in the background. Its [BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
 
-Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` which is added by the default template. A custom service provider would not automatically provide the default services mentioned above. They would have to be added to the new service provider explicitly.
+Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` that's added by the default template. A custom service provider doesn't automatically provide the default services listed in the table. Those services must be added to the new service provider explicitly.
 
 ## Request a service in a component
 
-Once services are added to the service collection, they can be injected into the components' Razor templates using the `@inject` Razor keyword. `@inject` has two parameters:
+Once services are added to the service collection, they can be injected into the components' Razor templates using the `@inject` Razor directive. `@inject` has two parameters:
 
 * Type name: The type of the service to inject.
 * Property name: The name of the property receiving the injected app service. Note that the property doesn't require manual creation. The compiler creates the property.

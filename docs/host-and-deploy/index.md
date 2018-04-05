@@ -23,14 +23,9 @@ As part of the build process, unused methods and assemblies are removed to reduc
 
 ## Hosted deployment with ASP.NET Core
 
-Under the hosted deployment model, a Blazor client-side app is hosted inside an ASP.NET Core server-side project. The published ASP.NET Core project is deployed to the web server or hosting service.
+In a hosted deployment, an ASP.NET Core app handles single-page application routing and hosts the Blazor app's static files. The published app is deployed to the web server or hosting service.
 
-Blazor integrates with ASP.NET Core to handle single-page application routing and to host the Blazor app as static files.
-
-ASP.NET Core apps:
-
-* Host Blazor apps by first referencing them as dependencies.
-* Configure each app in the server-side app's middleware pipeline with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`.
+In the ASP.NET Core app, each hosted Blazor app is configured with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -49,11 +44,19 @@ The `UseBlazor` extension method performs the following tasks:
 * Configures [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* are served.
 * Configure single-page application routing for files outside of the *_framework* folder, which serves the default page (*index.html*) for any request that hasn't been served by a prior Static File Middleware instance.
 
-For general information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
+For information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
+
+For information on deploying to Azure App Service, see the following topics:
+
+[Publish to Azure with Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vs)  
+Learn how to publish an ASP.NET Core-hosted Blazor app to Azure App Service using Visual Studio.
+
+[Publish to Azure with CLI tools](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-cli)  
+Learn how to publish an ASP.NET Core app to Azure App Service using the Git command-line client.
 
 ## Standalone deployment
 
-Standalone deployment only deploys the Blazor client-side app. There isn't an ASP.NET Core server-side hosting app.
+In a standalone deployment, only the Blazor client-side app is deployed to the server or hosting service. An ASP.NET Core server-side app isn't used to host the Blazor app. The Blazor app's static files are requested by the browser directly from the static file web server or service.
 
 **Rewrite URLs for correct routing**
 
@@ -75,60 +78,52 @@ If a request is made using the browser's address bar for `www.contoso.com/About`
 
 Because browsers make requests to Internet-based hosts for client-side pages, web servers and services must rewrite all requests to the *index.html* page. When *index.html* is returned, the app's client-side router takes over and responds with the correct resource.
 
-Not all hosting scenarios permit the enforcement of rewrite rules. Additional information is provided in the hosting configuration examples that follow.
-
-## Static deployment strategies for standalone Blazor apps
+## Static hosting strategies for standalone apps
 
 When deploying a standalone Blazor app, any web server or hosting service that serves static files can host a Blazor app.
 
 ### IIS
 
-IIS is a capable static file server for Blazor apps. To configure IIS to host Blazor, follow these steps provided.
+IIS is a capable static file server for Blazor apps. To configure IIS to host Blazor, see [Build a Static Website on IIS](https://docs.microsoft.com/iis/manage/creating-websites/scenario-build-a-static-website-on-iis).
 
-In the following configuration examples, the app name, and thus the app folder name, is *MyBlazorApp*. The *MyBlazorApp* folder and *web.config* file are in the *publish* folder.
+Published assets are created in the *bin\Release\netstandard2.0\publish* folder. Host the contents of the *publish* folder on the web server or hosting service.
 
-**Public hosting with Windows Server operating systems**
+**web.config**
 
-> [!NOTE]
-> When working with an Azure VM, open either or both HTTP (80) and HTTPS (443) ports to allow HTTP/HTTPS traffic to the VM. In the Azure portal, use the VM's **SETTINGS** > **Networking** > **Add inbound port rule** to open ports. For more information, see [How to open ports to a virtual machine with the Azure portal](https://docs.microsoft.com/azure/virtual-machines/windows/nsg-quickstart-portal).
+When a Blazor project is published, a *web.config* file is created with the following IIS configuration:
 
-1. Use the **Add Roles and Features** wizard from the **Manage** menu or select the **Add Roles and Features** link in **Server Manager** to enable the **Web Server (IIS)** server role. In the **Server Roles** step, check the box for **Web Server (IIS)**.
-1. After the **Features** step, the **Role services** step loads for Web Server (IIS). Accept the default role services provided. The default role services include **Web Server** > **Common HTTP Features** > **Static Content** and **Web Server** > **Performance** > **Static Content Compression**.
-1. Proceed through the **Confirmation** step to install the web server role and services. A server/IIS restart isn't required after installing the **Web Server (IIS)** role.
-1. Use the Web Platform Installer to install the [URL Rewrite Module](https://www.iis.net/downloads/microsoft/url-rewrite):
-   1. Locally, navigate to the [URL Rewrite Module downloads page](https://www.iis.net/downloads/microsoft/url-rewrite#additionalDownloads). For English, select **WebPI** to download the WebPI installer. For other languages, select the appropriate architecture for the server (x86/x64) to download the installer.
-   1. Copy the installer to the server. Run the installer. Select the **Install** button and accept the license terms. A server restart isn't required after the install completes.
-1. Open the **Internet Information Services (IIS) Manager** by selecting its link in the **Tools** menu of **Server Manager**.
-1. In the **Connections** sidebar (left side of the window), open the server's node. Right-click the **Sites** folder and select **Add Website** from the menu.
-1. Configure the website:
-   1. Set the **Physical path** to the *publish* folder of the deployed Blazor app. The *publish* folder contains:
-      * The *web.config* file that IIS uses to configure the website, including required redirect rules and file content types.
-      * The app's folder, *MyBlazorApp*.
-   1. Configure the **Binding**. Note that the **Default Web Site** is configured to use port 80 at the server's IP address. To use port 80 for the Blazor app, change the **Binding** of the **Default Web Site** to a port other than 80, such as 8000, before setting the binding for the Blazor app (or remove the **Default Web Site** from the server). When testing with the server's public IP address, the app is reachable at `http://<server-IP-address>`. Alternatively, the port of the Blazor app can be set to some other port than 80. Don't forget to set an inbound security rule for the same port if the site is hosted by an Azure VM.
-   1. Select **OK** to add the website.
-1. Navigate to the Blazor app on the Internet using the binding information configured for the website.
+* MIME types are set for the following file extensions:
+  - *\*.dll*: `application/octet-stream`
+  - *\*.json*: `application/json`
+  - *\*.wasm*: `application/wasm`
+  - *\*.woff*: `application/font-woff`
+  - *\*.woff2*: `application/font-woff`
+* HTTP compression is enabled for the following MIME types:
+  - `application/octet-stream`
+  - `application/wasm`
+* URL Rewrite Module rules are established:
+  - Serve the sub-directory where the app's static assets reside (`<assembly_name>\dist\<path_requested>`).
+  - Create SPA fallback routing so that requests for non-file assets are redirected to the app's default document in its static assets folder (`<assembly_name>\dist\index.html`).
 
-**Local hosting on Windows desktop operating systems**
+**Install the URL Rewrite Module**
 
-1. Navigate to **Control Panel** > **Programs** > **Programs and Features** > **Turn Windows features on or off** (left side of the window).
-1. Open the **Internet Information Services** node. Open the **Web Management Tools** node.
-1. Check the box for **IIS Management Console**.
-1. Check the box for **World Wide Web Services**.
-1. Accept the default features for **World Wide Web Services**. The default features include **Common HTTP Features** > **Static Content** and **Performance Features** > **Static Content Compression**. Select the **OK** button to install the IIS features.
-1. Use the Web Platform Installer to install the [URL Rewrite Module](https://www.iis.net/downloads/microsoft/url-rewrite):
-   1. Navigate to the [URL Rewrite Module downloads page](https://www.iis.net/downloads/microsoft/url-rewrite#additionalDownloads). For English, select **WebPI** to download the WebPI installer. For other languages, select the appropriate architecture for the server (x86/x64) to download the installer.
-   1. Run the installer. Select the **Install** button and accept the license terms. A restart isn't required after the install completes.
-1. Open the **Internet Information Services (IIS) Manager** by executing **inetmgr.exe** from a run command prompt or by searching for **IIS** and selecting the app's link in the search results.
-1. In the **Connections** sidebar (left side of the window), open the server's node. Right-click the **Sites** folder and select **Add Website** from the menu.
-1. Configure the website:
-   1. Provide a **Site name**.
-   1. Set the **Physical path** to the *publish* folder of the deployed Blazor app. The *publish* folder contains:
-      * The *web.config* file that IIS uses to configure the website, including required redirect rules and file content types.
-      * The app's folder, *MyBlazorApp*.
-   1. Configure the **Binding**. Provide a high numbered port (for example, 8000) and leave the **Host name** blank or set it to `localhost`.
-   1. Select **OK** to add the website.
-1. Select the website in the **Sites** folder.
-1. Navigate to the Blazor app: In the IIS Manager's **Action** sidebar (right side of the window), select the link under **Browse Website** to open the app in the default browser. If the port was set to 8000, the Blazor app is available at `http://localhost:8000`.
+The [URL Rewrite Module](https://www.iis.net/downloads/microsoft/url-rewrite) is required to rewrite URLs. The module isn't installed by default, and it isn't available for install as an Web Server (IIS) role service feature. The module must be downloaded from the IIS website. Use the Web Platform Installer to install the module:
+
+1. Locally, navigate to the [URL Rewrite Module downloads page](https://www.iis.net/downloads/microsoft/url-rewrite#additionalDownloads). For the English version, select **WebPI** to download the WebPI installer. For other languages, select the appropriate architecture for the server (x86/x64) to download the installer.
+1. Copy the installer to the server. Run the installer. Select the **Install** button and accept the license terms. A server restart isn't required after the install completes.
+
+**Configure the website**
+
+Set the website's **Physical path** to the Blazor app's folder. The folder contains:
+
+* The *web.config* file that IIS uses to configure the website, including the required redirect rules and file content types.
+* The app's static asset folder.
+
+**Troubleshooting**
+
+If a *500 Internal Server Error* is received and IIS Manager throws errors when attempting to access the website's configuration, confirm that the URL Rewrite Module is installed. When the module isn't installed, the *web.config* file can't be parsed by IIS. This prevents the IIS Manager from loading the website's configuration and the website from serving Blazor's static files.
+
+For more information on troubleshooting deployments to IIS, see [Troubleshoot ASP.NET Core on IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/troubleshoot).
 
 ### Nginx
 

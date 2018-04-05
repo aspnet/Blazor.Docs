@@ -28,12 +28,6 @@ DI is a technique for accessing services configured in a central location. This 
 
 Blazor's DI system is responsible for supplying instances of services to components. DI also resolves dependencies recursively so that services themselves can depend on further services. DI is configured during startup of the app. An example is shown later in this topic.
 
-## Use of existing .NET mechanisms
-
-DI in Blazor is based on .NET's [System.IServiceProvider](https://docs.microsoft.com/dotnet/api/system.iserviceprovider) interface. The interface defines a generic mechanism for retrieving a service object in .NET apps.
-
-Blazor's implementation of `System.IServiceProvider` obtains its services from an underlying [Microsoft.Extensions.DependencyInjection.IServiceCollection](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection).
-
 ## Add services to DI
 
 After creating a new app, examine the `Main` method in *Program.cs*:
@@ -53,18 +47,20 @@ static void Main(string[] args)
 `BrowserServiceProvider` receives an action with which you can add your app services to DI. `configure` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following is a code sample demonstrating the concept:
 
 ```csharp
+@using Microsoft.Extensions.DependencyInjection
+
 static void Main(string[] args)
 {
     var serviceProvider = new BrowserServiceProvider(configure =>
     {
-        configure.Add(ServiceDescriptor.Singleton<IDataAccess, DataAccess>());
+        configure.AddSingleton<IDataAccess, DataAccess>();
     });
 
     new BrowserRenderer(serviceProvider).AddComponent<App>("app");
 }
 ```
 
-`ServiceDescriptor` offers several overloads of three methods that are used to add services to Blazor's DI:
+Services can be configured with the following lifetimes:
 
 | Method      | Description |
 | ----------- | ----------- |
@@ -135,7 +131,7 @@ public class ComponentBase : BlazorComponent
 }
 ```
 
-In components derived from the base class, the `@inject` directive isn't required. The `InjectAttribute` of the base class is satisfactory:
+In components derived from the base class, the `@inject` directive isn't required. The `InjectAttribute` of the base class is sufficient:
 
 ```csharp
 @page "/demo"
@@ -172,7 +168,7 @@ Note the following prerequisites for constructor injection:
 
 ## Service lifetime
 
-Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Components can implement `IDisposable`. Services are disposed when the user navigates away from the component.
+Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Components can implement `IDisposable`. Components are disposed when the user navigates away from the component, then the component can dispose any transient services.
 
 The following code sample demonstrates how to implement `IDisposable` in a component:
 
@@ -191,3 +187,7 @@ The following code sample demonstrates how to implement `IDisposable` in a compo
     }
 }
 ```
+
+## Additional resources
+
+* [Dependency injection in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)

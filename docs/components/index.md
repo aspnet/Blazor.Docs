@@ -17,14 +17,14 @@ By [Luke Latham](https://github.com/guardrex)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/blazor/components/common/samples/)
+[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/components/common/samples/)
 
 To download the sample:
 
 1. Download and unzip the [Blazor.Docs repository zip file](https://codeload.github.com/aspnet/Blazor.Docs/zip/master).
-1. Use the URL in the [sample link](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/blazor/components/common/samples/) to navigate to the sample folder.
+1. Use the URL in the [sample link](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/components/common/samples/) to navigate to the sample folder.
 
-A Blazor *component* represents any feature or collection of features that can be represented by a [Razor file (\*.cshtml)](https://docs.microsoft.com/aspnet/core/mvc/views/razor) or a [C# file (\*.cs)](/dotnet/csharp/getting-started/) compiled into a C# class assembly. Components are typical features found in web app client UIs, such as a page, dialog, or form, along with its processing logic. A component can also consist entirely of programming logic without UI elements. Components are the fundamental building blocks of Blazor apps and can be nested, reused, and shared between projects.
+Blazor apps are built using *components*. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes both the HTML markup to render along with the processing logic needed to inject data or respond to UI events. Typically, components are written using Razor files (*\*.cshtml*). Components are flexible and lightweight, and they can be nested, reused, and shared between projects.
 
 ## Use of Razor
 
@@ -38,14 +38,12 @@ Index page component (*Index.cshtml*):
 
 When the index page loads, the `HeadingComponent` loads. The component:
 
-* Displays a heading on the page.
-* Presents a form that allows the user to change the heading text and control its font style.
+* Displays a heading on the page in title case.
+* Presents a form that allows the user to control the heading's font style.
 
 Heading component (*HeadingComponent.cshtml*):
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/HeadingComponent.cshtml)]
-
-For more information on HTML encoding with WebUtility, see [WebUtility.HtmlEncode](/dotnet/api/system.net.webutility.htmlencode?view=netframework-4.7.1#System_Net_WebUtility_HtmlEncode_System_String_).
 
 ## Razor directives
 
@@ -53,10 +51,10 @@ A Razor file for Blazor specifies [Razor directives](https://docs.microsoft.com/
 
 | Directive | Description |
 | --------- | ----------- |
-| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated view. |
+| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
 | [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
 | [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
-| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds function-level content to a component. Functions include properties and methods accessible to the component. |
+| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds a C# code block to a component. |
 | [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
 
 ## Component classes
@@ -73,38 +71,38 @@ The [Components Sample app](https://github.com/aspnet/Docs/tree/master/aspnetcor
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRocksBase.cs)]
 
-The base class must derive from `BlazorComponent` (or implement `IComponent` directly) in the `Microsoft.AspNetCore.Blazor.Components` namespace for this approach to work.
+The base class must derive from `BlazorComponent` in the `Microsoft.AspNetCore.Blazor.Components` namespace for this approach to work.
 
-## Data binding
+### Render C# expressions
 
-### One-way databinding
+C# expressions are rendered by prefixing the `@` symbol. For example, a C# field is rendered by prefixing `@` to the field name. The following example evaluates and renders:
 
-One-way databinding is accomplished by prefixing the `@` symbol to any available property. The following example binds:
-
-* The `HeadingFontStyle` property to the CSS property value for `font-style`.
-* `HeadingText` to the content of the `<h1>` element.
+* The `_HeadingFontStyle` field to the CSS property value for `font-style`.
+* `_HeadingText` to the content of the `<h1>` element.
 
 ```cshtml
-<h1 style="font-style:@HeadingFontStyle">@HeadingText</h1>
+<h1 style="font-style:@_HeadingFontStyle">@_HeadingText</h1>
 ```
 
-### Two-way databinding
+## Two-way databinding
 
-Two-way databinding to both components and DOM elements is accomplished with the `bind` attribute. The following example binds the `ItalicsCheck` property to the checkbox's `checked` attribute:
+Two-way databinding to both components and DOM elements is accomplished with the `bind` attribute. The following example binds the `ItalicsCheck` property to the check box's checked state:
 
 ```cshtml
 <input type="checkbox" class="form-check-input" 
     id="italicsCheck" bind="@ItalicsCheck">
 ```
 
-Selecting the checkbox in the UI updates the property's value. Updating the property value in C# code updates the checkbox in the UI.
+When the check box is selected and cleared, the property's value is updated to `true` and `false`, respectively.
+
+The check box is updated in the UI only when the component is rendered, not in response to changing the property's value. Since components render themselves after processing event handler code executes, property updates are usually reflected in the UI immediately.
 
 **Format strings**
 
-Two-way databinding works with DateTime format stings (but not other format expressions at this time, such as currency or number formats):
+Two-way databinding works with DateTime format strings (but not other format expressions at this time, such as currency or number formats):
 
 ```cshtml
-<input type="date" bind="@StartDate" format="yyyy-MM-dd">
+<input bind="@StartDate" format-value="yyyy-MM-dd" />
 
 @functions {
     public DateTime StartDate { get; set; } = 
@@ -139,33 +137,6 @@ Child component:
 }
 ```
 
-**User-defined binding**
-
-Other mappings for `bind` can be created:
-
-```cshtml
-[BindElement("ul", "foo", "myvalue", "myevent")]
-public class BindAttributes
-{
-}
-```
-
-*MyComponent.cshtml*:
-
-```cshtml
-<ul bind-foo="@SomeExpression" />
-```
-
-**Bind value and change handler attributes**
-
-`bind` can be specified with any value attribute name and change handler attribute name. The following example binds the current value of `SomeExpression` to `myvalue` and a change handler lambda to `myevent`:
-
-```cshtml
-<ul bind-myvalue-myevent="@SomeExpression">
-    ...
-</ul>
-```
-
 ## Event handling
 
 Blazor offers two event handling features, `@onclick` and `@onchange`. The following code calls the `UpdateHeading` method when the button is selected in the UI:
@@ -176,24 +147,28 @@ Blazor offers two event handling features, `@onclick` and `@onchange`. The follo
 </button>
 ```
 
-The following code calls the `CheckboxChanged` method when the checkbox is changed in the UI:
+The following code calls the `CheckboxChanged` method when the check box is changed in the UI:
 
 ```cshtml
 <input type="checkbox" class="form-check-input" 
     id="callsMethodCheck" @onchange(CheckboxChanged)>
 ```
 
-`OnInit` and `OnInitAsync` execute code after the component has been initialized:
+## Lifecycle methods
 
-```csharp
-protected override void OnInit()
-{
-    ...
-}
-```
+`OnInitAsync` and `OnInit` execute code after the component has been initialized. To perform an asynchronous operation, use `OnInitAsync` and use the `await` keyword:
 
 ```csharp
 protected override async Task OnInitAsync()
+{
+    await ...
+}
+```
+
+For a synchronous operation, use `OnInit`:
+
+```csharp
+protected override void OnInit()
 {
     ...
 }
@@ -226,6 +201,8 @@ public override void SetParameters(ParameterCollection parameters)
 }
 ```
 
+If `base.SetParameters` isn't invoked, the custom code can interpret the incoming parameters value in any way required. For example, the incoming parameters aren't required to be assigned to the properties on the class.
+
 `ShouldRender` can be overridden to suppress refreshing of the UI. If the implementation returns `true`, the UI is refreshed. Even if `ShouldRender` is overridden, the component is always initially rendered.
 
 ```csharp
@@ -239,7 +216,7 @@ protected override bool ShouldRender()
 
 ## Component disposal with IDisposable
 
-If a component implements [IDisposable](/dotnet/api/system.idisposable), the router disposes the component when the user navigates away from the component. A component can implement `IDisposable` in a C# base class that implements `BlazorComponent` (or `IComponent` directly). The following component uses `@implements IDisposable` and the `Dispose` method:
+If a component implements [IDisposable](/dotnet/api/system.idisposable), the [Dispose method](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose) is called to release unmanaged resources when the component is removed from the UI. A component can implement `IDisposable` in a C# base class that implements `BlazorComponent`. The following component uses `@implements IDisposable` and the `Dispose` method:
 
 ```csharp
 @using System
@@ -255,9 +232,9 @@ If a component implements [IDisposable](/dotnet/api/system.idisposable), the rou
 }
 ```
 
-## Render child content
+## Render child components
 
-Blazor components can render child content with an element that matches the child component's name. The following Index page renders the content of the `HeadingComponent` (*HeadingComponent.cshtml*):
+Components can include child components by declaring them using HTML element syntax. The following Index page renders a `HeadingComponent` (*HeadingComponent.cshtml*) instance:
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=1&end=11)]
 
@@ -271,11 +248,15 @@ A child component can receive property assignments from their calling parent. In
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml)]
 
-The body of the Bootstrap-styled panel is provided by `ChildContent`. `ChildContent` is bound to the `<ChildComponent>` element's content in the parent component by convention.
+The body of the Bootstrap-styled panel is provided by `ChildContent`. `ChildContent` is loaded where the `<ChildComponent>` element appears in the parent component.
 
 ## Routing
 
-Routing in Blazor is achieved by providing a route template to each accessible component in the app. Route templates are converted into [RouteAttribute](/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) implementations. Multiple route templates can be applied to a component. The following component responds to requests for `/BlazorRoute` and `/DifferentBlazorRoute`:
+Routing in Blazor is achieved by providing a route template to each accessible component in the app.
+
+When a *\*.cshtml* file with an `@page` directive is compiled, the produced class is given a [RouteAttribute](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) specifying the route template. At runtime, the router looks for component classes with a `RouteAttribute` attribute and renders whichever component has a route template that matches the requested URL.
+
+Multiple route templates can be applied to a component. The following component responds to requests for `/BlazorRoute` and `/DifferentBlazorRoute`:
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
@@ -289,15 +270,13 @@ Blazor components can receive and use route parameters from the route template p
 
 Not all route parameter constraints are supported at this time. Optional parameters aren't currently supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
-For more information on attribute routing, see [Routing](https://docs.microsoft.com/aspnet/core/fundamentals/routing).
-
 ## JavaScript/TypeScript interop
 
 To call JavaScript libraries or custom JavaScript/TypeScript code from .NET, the current approach is to register a named function with JavaScript/TypeScript. Place the `registerFunction` call in the *index.html* file or a JavaScript file (*\*.js*) loaded by the *index.html* file. Place the inline JavaScript or `<script>` tag below `<script type="blazor-boot"></script>`, and the JavaScript/TypeScript loads at the correct time and only executes once. 
 
 ```javascript
-Blazor.registerFunction('doPrompt', message => {
-  return prompt(message);
+Blazor.registerFunction('doPrompt', function(message) {
+    return prompt(message);
 });
 ```
 

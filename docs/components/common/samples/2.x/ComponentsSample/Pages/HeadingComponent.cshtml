@@ -1,35 +1,27 @@
-@using System.Net
+@using System.Globalization
 @*
-    The using directive makes System.Net available to the component. 
-    System.Net provides a method for HTML encoding in its 
-    WebUtility class used by the component to encode user input.
+    The 'using' directive makes System.Globalization available to 
+    the component. System.Globalization provides a method for 
+    converting a string into title case (capitalizes the first 
+    letter of every word in a string), which is used to convert a 
+    a string into title case for a heading.
 *@
 
 @*
-    Heading text is bound to the HeadingText property. The 
-    font-style of the heading is bound to the HeadingFontStyle 
-    property. The component sets these values based on user 
-    input with one-way databinding.
+    Heading text is rendered by evaluating the HeadingText property. 
+    The font-style of the heading is rendered by evaluating the 
+    HeadingFontStyle property.
 *@
-<h1 style="font-style:@HeadingFontStyle">@HeadingText</h1>
+<h1 style="font-style:@_HeadingFontStyle">@_HeadingText</h1>
 
 <form>
-    <div class="form-group">
-        <label for="headingText">New heading text</label>
-        @*
-            A field accepts new heading text from the user. 
-            The field is bound to the NewHeadingText property.
-        *@
-        <input type="text" class="form-control" id="headingText" 
-            placeholder="New heading text..." bind="@NewHeadingText" />
-    </div>
     <div class="form-check">
         @*
-            A checkbox toggles the font style and is bound to the 
+            A check box sets the font style and is bound to the 
             ItalicsCheck property.
         *@
         <input type="checkbox" class="form-check-input" 
-            id="italicsCheck" bind="@ItalicsCheck" />
+            id="italicsCheck" bind="@_ItalicsCheck" />
         <label class="form-check-label" 
             for="italicsCheck">Use italics</label>
     </div>
@@ -44,20 +36,17 @@
 </form>
 
 @functions {
-    public string HeadingText { get; set; } = "Welcome to Blazor!";
-    public string NewHeadingText { get; set; }
-    public string HeadingFontStyle { get; set; } = "normal";
-    public bool ItalicsCheck { get; set; } = false;
+    private static TextInfo _tinfo = CultureInfo.CurrentCulture.TextInfo;
+    private string _HeadingText = 
+        _tinfo.ToTitleCase("welcome to blazor!");
+    private string _HeadingFontStyle = "normal";
+    private bool _ItalicsCheck = false;
 
-    // When UpdateHeading is executed:
-    //    HeadingText is assigned the HTML encoded value of 
-    //        NewHeadingText.
-    //    ItalicsCheck determines the value of HeadingFontStyle to 
-    //        set the font style of the heading.
+    // When UpdateHeading is executed, _ItalicsCheck determines 
+    // the value of _HeadingFontStyle to set the font style of the 
+    // heading.
     public void UpdateHeading()
     {
-        HeadingText = WebUtility.HtmlEncode(NewHeadingText);
-
-        HeadingFontStyle = ItalicsCheck ? "italic" : "normal";
+        _HeadingFontStyle = _ItalicsCheck ? "italic" : "normal";
     }
 }

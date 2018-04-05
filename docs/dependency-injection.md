@@ -44,7 +44,7 @@ static void Main(string[] args)
 }
 ```
 
-`BrowserServiceProvider` receives an action with which you can add your app services to DI. `services` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following is a code sample demonstrating the concept:
+`BrowserServiceProvider` receives an action where app services are added to DI. `services` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following is a code sample demonstrating the concept:
 
 ```csharp
 @using Microsoft.Extensions.DependencyInjection

@@ -139,7 +139,7 @@ In components derived from the base class, the `@inject` directive isn't require
 
 ```csharp
 @page "/demo"
-@inherits ComponentBases
+@inherits ComponentBase
 
 <h1>...</h1>
 ...

@@ -44,7 +44,7 @@ static void Main(string[] args)
 }
 ```
 
-`BrowserServiceProvider` receives an action where app services are added to DI. `services` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following is a code sample demonstrating the concept:
+`BrowserServiceProvider` receives an action where app services are added to DI. `services` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following code sample demonstrates the concept:
 
 ```csharp
 @using Microsoft.Extensions.DependencyInjection
@@ -75,7 +75,7 @@ Blazor provides default services that are automatically added to the service col
 | Method       | Description |
 | ------------ | ----------- |
 | `IUriHelper` | Helpers for working with URIs and navigation state (singleton). |
-| `HttpClient` | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) uses the browser for handling the HTTP traffic in the background. Its [BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
+| `HttpClient` | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) uses the browser for handling the HTTP traffic in the background. [HttpClient.BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
 
 Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` that's added by the default template. A custom service provider doesn't automatically provide the default services listed in the table. Those services must be added to the new service provider explicitly.
 
@@ -110,9 +110,9 @@ The following example shows how to use `@inject`. The service implementing `Serv
 
     protected override async Task OnInitAsync()
     {
-        // The property DataRepository has received an implemenation
-        // of IDataAccess through dependency injection. We can use
-        // it to get data from our server.
+        // The property DataRepository received an implemenation
+        // of IDataAccess through dependency injection. Use 
+        // DataRepository to obtain data from the server.
         Customers = await DataRepository.GetAllCustomersAsync();
     }
 }
@@ -123,7 +123,7 @@ Internally, the generated property (`DataRepository`) is decorated with the `Mic
 ```csharp
 public class ComponentBase : BlazorComponent
 {
-    // Note that Blazor's dependency injection works even if using the
+    // Blazor's dependency injection works even if using the
     // InjectAttribute in a component's base class.
     [Inject]
     protected IDataAccess DataRepository { get; set; }
@@ -150,7 +150,7 @@ The following code sample demonstrates the concept:
 ```csharp
 public class DataAccess : IDataAccess
 {
-    // Note that the constructor receives an HttpClient via dependency
+    // The constructor receives an HttpClient via dependency
     // injection. HttpClient is a default service offered by Blazor.
     public Repository(HttpClient client)
     {

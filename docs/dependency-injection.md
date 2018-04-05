@@ -35,9 +35,9 @@ After creating a new app, examine the `Main` method in *Program.cs*:
 ```csharp
 static void Main(string[] args)
 {
-    var serviceProvider = new BrowserServiceProvider(configure =>
+    var serviceProvider = new BrowserServiceProvider(services =>
     {
-        // Add any custom services here
+        // Add custom services here
     });
 
     new BrowserRenderer(serviceProvider).AddComponent<App>("app");
@@ -51,9 +51,9 @@ static void Main(string[] args)
 
 static void Main(string[] args)
 {
-    var serviceProvider = new BrowserServiceProvider(configure =>
+    var serviceProvider = new BrowserServiceProvider(services =>
     {
-        configure.AddSingleton<IDataAccess, DataAccess>();
+        services.AddSingleton<IDataAccess, DataAccess>();
     });
 
     new BrowserRenderer(serviceProvider).AddComponent<App>("app");
@@ -168,7 +168,7 @@ Note the following prerequisites for constructor injection:
 
 ## Service lifetime
 
-Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Components can implement `IDisposable`. Components are disposed when the user navigates away from the component, then the component can dispose any transient services.
+Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Components can implement `IDisposable`. Components and their transient services are disposed when the user navigates away from the component.
 
 The following code sample demonstrates how to implement `IDisposable` in a component:
 

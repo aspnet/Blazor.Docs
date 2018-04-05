@@ -17,15 +17,16 @@ By [Rainer Stropek](https://www.timecockpit.com)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-Blazor has [dependency injection (DI)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) built-in. Blazor apps can use built-in services by having them injected into components. Blazor apps can also define custom services and make them available via DI.
+Blazor has [dependency injection (DI)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) built-in. Apps can use built-in services by having them injected into components. Apps can also define custom services and make them available via DI.
 
 ## What is dependency injection?
 
-DI is a technique for achieving loose coupling between objects. The goal is to have high-level components depend on abstractions (for example, [interfaces](https://docs.microsoft.com/dotnet/csharp/programming-guide/interfaces/)) and not on low level components.
+DI is a technique for accessing services configured in a central location. This can be useful to:
 
-Imagine you want to create an application service, `DataAccess`, for data access. Blazor components use this service to obtain data from backend servers using web APIs. The component should *not* create an instance of `DataAccess`. Instead, the app should create an abstraction, `IDataAccess`, that `DataAccess` implements. Blazor components that require data access features use the `IDataAccess` abstraction. Components never directly reference `DataAccess`. Therefore, components that depend on data access features are independent of the concrete implementation, and they can work with different implementations of `IDataAccess` (for example, a [mock object](https://wikipedia.org/wiki/Mock_object) in a unit test).
+* Share a single instance of a service class across many components (known as a *singleton* service)
+* Decouple components from particular concrete service classes and only reference abstractions. For example, there might be an interface `IDataAccess` implemented by a concrete class `DataAccess`. If a component uses DI to receive an `IDataAccess` implementation, it isn't coupled to any concrete type. That means the implementation could easily be swapped, perhaps to a mock implementation in unit tests.
 
-Blazor's DI system is responsible for connecting component abstractions with their concrete implementations. To connect the abstractions with the implementations, DI is configured during startup of the app. An example is shown later in this topic.
+Blazor's DI system is responsible for supplying instances of services to components. It also resolves dependencies recursively, so that services themselves can depend on further services, and so on. DI is configured during startup of the app. An example is shown later in this topic.
 
 ## Use of existing .NET mechanisms
 
@@ -35,7 +36,7 @@ Blazor's implementation of `System.IServiceProvider` obtains its services from a
 
 ## Add services to DI
 
-After creating a new Blazor app, examine the `Main` method in *Program.cs*:
+After creating a new app, examine the `Main` method in *Program.cs*:
 
 ```csharp
 static void Main(string[] args)
@@ -49,7 +50,7 @@ static void Main(string[] args)
 }
 ```
 
-`BrowserServiceProvider` receives an action with which you can add your app services to Blazor's DI. `configure` is referencing the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following is a code sample demonstrating the concept:
+`BrowserServiceProvider` receives an action with which you can add your app services to DI. `configure` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following is a code sample demonstrating the concept:
 
 ```csharp
 static void Main(string[] args)
@@ -67,25 +68,27 @@ static void Main(string[] args)
 
 | Method      | Description |
 | ----------- | ----------- |
-| `Singleton` | Blazor creates a *single instance* of your service. All components requiring this service receive a reference to this instance. |
+| `Singleton` | DI creates a *single instance* of your service. All components requiring this service receive a reference to this instance. |
 | `Transient` | Whenever a component requires this service, it receives a *new instance* of the service. |
 | `Scoped`    | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
 
-## System services
+## Default services
 
-Blazor provides default services that are automatically added to the service collection of a Blazor app. The following table shows a list of the default services currently provided by Blazor.
+Blazor provides default services that are automatically added to the service collection of an app. The following table shows a list of the default services currently provided by Blazor's `BrowserServiceProvider`.
 
 | Method       | Description |
 | ------------ | ----------- |
 | `IUriHelper` | Helpers for working with URIs and navigation state (singleton). |
-| `HttpClient` | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) is using the browser for handling the HTTP traffic in the background. Its [BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the Blazor app. |
+| `HttpClient` | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) uses the browser for handling the HTTP traffic in the background. Its [BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
+
+Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` which is added by the default template. A custom service provider would not automatically provide the default services mentioned above. They would have to be added to the new service provider explicitly.
 
 ## Request a service in a component
 
 Once services are added to the service collection, they can be injected into the components' Razor templates using the `@inject` Razor keyword. `@inject` has two parameters:
 
 * Type name: The type of the service to inject.
-* Property name: The name of the property receiving the injected app service. Note that the property doesn't require manual creation. The Blazor compiler creates the property.
+* Property name: The name of the property receiving the injected app service. Note that the property doesn't require manual creation. The compiler creates the property.
 
 Multiple `@inject` statements can be used to inject different services.
 
@@ -119,7 +122,7 @@ The following example shows how to use `@inject`. The service implementing `Serv
 }
 ```
 
-Internally, the Blazor-generated property (`DataRepository`) is decorated with the `Microsoft.AspNetCore.Blazor.Components.InjectAttribute` attribute. Typically, this attribute isn't used directly. If a base class is required for Blazor components and injected properties are also required for the base class, `InjectAttribute` can be manually added:
+Internally, the generated property (`DataRepository`) is decorated with the `Microsoft.AspNetCore.Blazor.Components.InjectAttribute` attribute. Typically, this attribute isn't used directly. If a base class is required for components and injected properties are also required for the base class, `InjectAttribute` can be manually added:
 
 ```csharp
 public class ComponentBase : BlazorComponent
@@ -144,7 +147,7 @@ In components derived from the base class, the `@inject` directive isn't require
 
 ## Dependency injection in services
 
-Complex services might require additional services. In the prior example, `DataAccess` might require Blazor's default service `HttpClient`. `@inject` or the `InjectAttribute` can't be used in services. *Constructor injection* must be used instead. Require services are added by adding parameters to the service's constructor. When dependency injection creates the service, it recognizes the services it requires in the constructor and provides them accordingly.
+Complex services might require additional services. In the prior example, `DataAccess` might require Blazor's default service `HttpClient`. `@inject` or the `InjectAttribute` can't be used in services. *Constructor injection* must be used instead. Required services are added by adding parameters to the service's constructor. When dependency injection creates the service, it recognizes the services it requires in the constructor and provides them accordingly.
 
 The following code sample demonstrates the concept:
 
@@ -169,9 +172,9 @@ Note the following prerequisites for constructor injection:
 
 ## Service lifetime
 
-Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Blazor components can implement `IDisposable`. Services are disposed when the user navigates away from the component.
+Note that Blazor doesn't automatically dispose injected services that implement `IDisposable`. Components can implement `IDisposable`. Services are disposed when the user navigates away from the component.
 
-The following code sample demonstrates how to implement `IDisposable` in a Blazor component:
+The following code sample demonstrates how to implement `IDisposable` in a component:
 
 ```csharp
 ...

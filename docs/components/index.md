@@ -47,15 +47,17 @@ Heading component (*HeadingComponent.cshtml*):
 
 ## Razor directives
 
-A Razor file for Blazor specifies [Razor directives](https://docs.microsoft.com/aspnet/core/mvc/views/razor#directives) at the top of the file using the `@` symbol to distinguish Razor code from HTML markup. Razor directives supported by Blazor are shown in the table. `@model`, `@section`, and Tag Helper directives aren't supported at this time.
+A Razor file specifies [Razor directives](https://docs.microsoft.com/aspnet/core/mvc/views/razor#directives) at the top of the file. Razor directives supported by Blazor are shown in the table. `@model`, `@section`, and Tag Helper directives aren't supported at this time.
 
 | Directive | Description |
 | --------- | ----------- |
-| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
+| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds a C# code block to a component. |
+| `@implements` | Implements an interface for the generated component class. Often used to create a component layout by implementing `ILayoutComponent`. |
 | [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
 | [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
-| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds a C# code block to a component. |
+| `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
 | [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
+| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
 
 ## Component classes
 

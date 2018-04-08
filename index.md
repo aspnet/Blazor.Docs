@@ -1,5 +1,5 @@
 ---
-title: Welcome to DocFX website!
+title: Welcome to Blazor Docs website!
 ---
 <style type="text/css">
 /* Colors */

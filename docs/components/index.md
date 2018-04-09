@@ -61,7 +61,7 @@ A Razor file specifies [Razor directives](https://docs.microsoft.com/aspnet/core
 
 ## Component classes
 
-Blazor's Razor files (*\*.cshtml*) mix HTML markup and C# in the same file, as shown in the sample `HeadingComponent` component above. Blazor doesn't currently support `partial` component classes. However, the `@inherits` directive can be used to provide a Blazor "code-behind" experience.
+Blazor's Razor files (*\*.cshtml*) mix HTML markup and C# processing code in the same file, as shown in the sample `HeadingComponent` above. Blazor doesn't currently support `partial` component classes. However, the `@inherits` directive can be used to provide Blazor with a "code-behind" experience that separates view markup from processing code.
 
 The [Components Sample app](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/blazor/components/common/samples/) shows how a component can inherit a base class, `BlazorRocksBase`, to provide its properties and methods:
 
@@ -73,7 +73,7 @@ The [Components Sample app](https://github.com/aspnet/Docs/tree/master/aspnetcor
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRocksBase.cs)]
 
-The base class must derive from `BlazorComponent` in the `Microsoft.AspNetCore.Blazor.Components` namespace for this approach to work.
+The base class must derive from `BlazorComponent` in the `Microsoft.AspNetCore.Blazor.Components` namespace.
 
 ### Render C# expressions
 
@@ -97,11 +97,11 @@ Two-way databinding to both components and DOM elements is accomplished with the
 
 When the check box is selected and cleared, the property's value is updated to `true` and `false`, respectively.
 
-The check box is updated in the UI only when the component is rendered, not in response to changing the property's value. Since components render themselves after processing event handler code executes, property updates are usually reflected in the UI immediately.
+The check box is updated in the UI only when the component is rendered, not in response to changing the property's value. Since components render themselves after event handler code executes, property updates are usually reflected in the UI immediately.
 
 **Format strings**
 
-Two-way databinding works with DateTime format strings (but not other format expressions at this time, such as currency or number formats):
+Two-way databinding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime) format strings (but not other format expressions at this time, such as currency or number formats):
 
 ```cshtml
 <input bind="@StartDate" format-value="yyyy-MM-dd" />
@@ -153,7 +153,7 @@ The following code calls the `CheckboxChanged` method when the check box is chan
 
 ```cshtml
 <input type="checkbox" class="form-check-input" 
-    id="callsMethodCheck" @onchange(CheckboxChanged)>
+    id="callsMethodCheck" @onchange(CheckboxChanged) />
 ```
 
 ## Lifecycle methods
@@ -176,17 +176,17 @@ protected override void OnInit()
 }
 ```
 
-`OnParametersSet` and `OnParametersSetAsync` are called when a component has received parameters from its parent and the values are assigned to properties. These methods are executed after `OnInit` during component initialization.
+`OnParametersSetAsync` and `OnParametersSet` are called when a component has received parameters from its parent and the values are assigned to properties. These methods are executed after `OnInit` during component initialization.
 
 ```csharp
-protected override void OnParametersSet()
+protected override async Task OnParametersSetAsync()
 {
-    ...
+    await ...
 }
 ```
 
 ```csharp
-protected override async Task OnParametersSetAsync()
+protected override void OnParametersSet()
 {
     ...
 }
@@ -240,7 +240,7 @@ Components can include child components by declaring them using HTML element syn
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=1&end=11)]
 
-A child component can receive property assignments from their calling parent. In the following example, the `ParentComponent` sets the value of the `Title` property in the `ChildComponent`:
+A child component can receive property assignments from its calling parent. In the following example, the `ParentComponent` sets the value of the `Title` property in the `ChildComponent`:
 
 *ParentComponent.cshtml*:
 
@@ -256,7 +256,7 @@ The body of the Bootstrap-styled panel is provided by `ChildContent`. `ChildCont
 
 Routing in Blazor is achieved by providing a route template to each accessible component in the app.
 
-When a *\*.cshtml* file with an `@page` directive is compiled, the produced class is given a [RouteAttribute](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) specifying the route template. At runtime, the router looks for component classes with a `RouteAttribute` attribute and renders whichever component has a route template that matches the requested URL.
+When a *\*.cshtml* file with an `@page` directive is compiled, the generated class is given a [RouteAttribute](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) specifying the route template. At runtime, the router looks for component classes with a `RouteAttribute` and renders whichever component has a route template that matches the requested URL.
 
 Multiple route templates can be applied to a component. The following component responds to requests for `/BlazorRoute` and `/DifferentBlazorRoute`:
 

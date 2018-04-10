@@ -5,7 +5,7 @@ description: Learn how Blazor apps can use built-in services by having them inje
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/09/2018
+ms.date: 04/11/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article

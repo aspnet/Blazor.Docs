@@ -5,7 +5,7 @@ description: Explore Blazor, a new experimental .NET web framework using C#/Razo
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/09/2018
+ms.date: 04/11/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -21,27 +21,27 @@ To learn more about Blazor's technological backbone, see the following documenta
 
 ## Get started
 
-[Get started with Blazor in 10 minutes](https://www.microsoft.com/net/web/blazor/get-started)
+[Get started with Blazor](xref:client-side/blazor/get-started)
 
 ## Explore preview Blazor documentation
 
-\[Build your first Blazor app](xref:client-side/blazor/tutorials/index)  
-DESCRIPTION
+[Build your first Blazor app](xref:client-side/blazor/tutorials/first-app)  
+Build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
 
-\[Introduction to Blazor](xref:client-side/blazor/introduction/index)  
-Explains how Blazor runs in the browser to execute C#/Razor code with WebAssembly and the .NET runtime.
+[Introduction to Blazor](xref:client-side/blazor/introduction/index)  
+Discover how Blazor runs in the browser to execute C#/Razor code with WebAssembly and the .NET runtime.
 
-\[Components](xref:client-side/blazor/components/index)  
+[Components](xref:client-side/blazor/components/index)  
 Create and use Blazor components, the fundamental building blocks of Blazor apps provided by compiled Razor or C# files.
 
-\[Layouts](xref:client-side/blazor/layouts)  
-DESCRIPTION
+[Layouts](xref:client-side/blazor/layouts)  
+Learn how to create reusable layout components for Blazor apps.
 
-\[Dependency injection](xref:client-side/blazor/dependency-injection)  
-DESCRIPTION
+[Dependency injection](xref:client-side/blazor/dependency-injection)  
+Learn how Blazor apps can use built-in services by having them injected into components.
 
-\[Host and deploy](xref:client-side/blazor/host-and-deploy/index)  
-Discover how to host and deploy Blazor apps using ASP.NET Core, Content Delivery Networks (CDN), static file web servers, and GitHub Pages.
+[Host and deploy](xref:client-side/blazor/host-and-deploy/index)  
+Discover how to host and deploy Blazor apps using hosted and standalone deployment models.
 
 ## Suggest a feature or file a bug report
 
@@ -53,7 +53,8 @@ Blazor preview documentation is provided to assist you in trying out Blazor. We 
 
 ## Blazor release notes
 
-[Release notes (0.1.0)](https://github.com/aspnet/blazor/tag/0.1.0)
+* [Release notes (0.2.0)](https://github.com/aspnet/blazor/tag/0.2.0)
+* [Release notes (0.1.0)](https://github.com/aspnet/blazor/tag/0.1.0)
 
 ## Additional resources
 

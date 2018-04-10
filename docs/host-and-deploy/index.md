@@ -5,7 +5,7 @@ description: Discover how to host and deploy Blazor apps using ASP.NET Core, Con
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/09/2018
+ms.date: 04/11/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article

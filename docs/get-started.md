@@ -13,6 +13,8 @@ uid: client-side/blazor/get-started
 ---
 # Get started with Blazor
 
+[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+
 To get set up with Blazor:
 
 1. Install the [.NET Core 2.1 Preview 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2).

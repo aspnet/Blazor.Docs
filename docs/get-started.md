@@ -30,7 +30,7 @@ To create your first project from Visual Studio:
 
    ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/03/new-blazor-app-dialog.png)
    
-1. Press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (F5) isn't supported at this time.
+1. Press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
 If you're not using Visual Studio, you can install the Blazor templates from the command-line:
 

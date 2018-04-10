@@ -9,6 +9,11 @@ title: Welcome to Blazor Docs website!
     padding: 0;
 }
 
+.article
+{
+  margin-top: 0;
+}
+
 .article > .col-md-10
 {
     width: 100%;
@@ -17,6 +22,11 @@ title: Welcome to Blazor Docs website!
 .article > .col-md-2
 {
     display: none;
+}
+
+div.subnav.navbar.navbar-default
+{
+  display: none;
 }
 
 button, a, .btn-primary {
@@ -32,12 +42,12 @@ button, a, .btn-primary {
     color: #C1D38B;
     background-color: #385361;
     background-image: -webkit-gradient(linear,left bottom,right top,color-stop(0%,#000),color-stop(100%,#385361));
-    background-image: -webkit-linear-gradient(45deg,#000 0,#385361 100%);
-    background-image: -moz-linear-gradient(45deg,#000 0,#385361 100%);
-    background-image: -ms-linear-gradient(45deg,#000 0,#385361 100%);
-    background-image: -o-linear-gradient(45deg,#000 0,#385361 100%);
-    background-image: linear-gradient(45deg,#000 0,#385361 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000', endColorstr='#385361', GradientType=1);
+    background-image: -webkit-linear-gradient(180deg,#000 0,#803612 100%);
+    background-image: -moz-linear-gradient(180deg,#000 0,#803612 100%);
+    background-image: -ms-linear-gradient(180deg,#000 0,#803612 100%);
+    background-image: -o-linear-gradient(180deg,#000 0,#803612 100%);
+    background-image: linear-gradient(180deg,#000 0,#803612 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000', endColorstr='#803612', GradientType=1);
 
     margin-top: -50px;
 }
@@ -103,7 +113,8 @@ svg:hover path {
 }
 
 .key-section .glyphicon, .counter-key-section .glyphicon {
-  font-size: 4em;
+  font-size: 8em;
+  padding: 50px;
   display: table-cell;
   vertical-align: middle;
 }
@@ -114,7 +125,7 @@ svg:hover path {
 
 .key-section section, .counter-key-section section {
   display: table-cell;
-  padding-left: 20px;
+  padding: 40px;
 }
 
 .key-section section p, .counter-key-section section p {
@@ -197,7 +208,7 @@ footer{
         <section>
           <h2>Build Web UI with C#</h2>
           <p class="lead">Blazor is a web UI framework, similar to existing JavaScript frameworks like Angular or React, but you write C# instead of JavaScript.</p>
-          <a href="https://github.com/aspnet/Blazor/wiki/FAQ" class="btn btn-default">What is Blazor</a>
+          <a href="https://github.com/aspnet/Blazor/wiki/FAQ" class="btn btn-primary">What is Blazor</a>
         </section>
       </div>
     </div>
@@ -207,12 +218,12 @@ footer{
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <i class="glyphicon glyphicon-tasks"></i>
         <section>
           <h2>Full Stack .NET</h2>
           <p class="lead">Do full stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server. </p>
-          <a href="https://www.microsoft.com/net" class="btn btn-default">Learn more about the .NET platform</a>
+          <a href="https://www.microsoft.com/net" class="btn btn-primary">Learn more about the .NET platform</a>
         </section>
+        <i class="glyphicon glyphicon-tasks"></i>
       </div>
     </div>
   </div>
@@ -225,7 +236,7 @@ footer{
         <section>
           <h2>.NET Standard, Works in all browsers</h2>
           <p class="lead">Blazor runs in all browsers, on the real .NET runtime with full support for .NET Standard (i) [info bubble that explains what .NET Standard is]. Blazor requires no plugins and no code transpilation, only open web standards. </p>
-          <a href="http://blog.stevensanderson.com/2018/02/06/blazor-intro/" class="btn btn-default">How Blazor works</a>
+          <a href="http://blog.stevensanderson.com/2018/02/06/blazor-intro/" class="btn btn-primary">How Blazor works</a>
         </section>
       </div>
     </div>
@@ -234,11 +245,11 @@ footer{
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <i class="glyphicon glyphicon-fire"></i>
         <section>
           <h2>Native performance with WebAssembly </h2>
           <p class="lead">Runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox. </p>
         </section>
+        <i class="glyphicon glyphicon-fire"></i>
       </div>
     </div>
   </div>
@@ -259,12 +270,12 @@ footer{
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <i class="glyphicon glyphicon-console"></i>
         <section>
           <h2>Simple and productive </h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
-          <a href="https://marketplace.visualstudio.com/items?itemName=aspnet.blazor" class="btn btn-default">Tools for Blazor</a>
+          <a href="https://marketplace.visualstudio.com/items?itemName=aspnet.blazor" class="btn btn-primary">Tools for Blazor</a>
         </section>
+        <i class="glyphicon glyphicon-console"></i>
       </div>
     </div>
   </div>
@@ -285,12 +296,12 @@ footer{
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <i class="glyphicon glyphicon-road"></i>
         <section>
           <h2>Open-source & free </h2>
           <p class="lead">Blazor and the .NET platform are open-source, with a strong community of 25,000+ contributors from over 1,700 companies. </p>
-          <a href="https://github.com/aspnet/blazor" class="btn btn-default">Blazor on GitHub</a>
+          <a href="https://github.com/aspnet/blazor" class="btn btn-primary">Blazor on GitHub</a>
         </section>
+        <i class="glyphicon glyphicon-road"></i>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
-title: Welcome to Blazor Docs website!
+title: Welcome to the Blazor preview docs website!
+description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 ---
 <div class="hero">
   <div class="wrap">
@@ -7,13 +8,13 @@ title: Welcome to Blazor Docs website!
       <strong>BLAZOR</strong>
     </div>
     <div class="buttons-unit-small">
-      <a class="version-link" href="#">Version Notes</a><span>|</span><a class="github-link" href="https://github.com/dotnet/docfx">View in Github</a>
+      <a class="version-link" href="#">Get Started</a><span>|</span><a class="github-link" href="/docs/get-started.html">View in Github</a>
     </div>
     <div class="minitext">
-        Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly
+        Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
     </div>
     <div class="buttons-unit">
-      <a href="#" class="button"><i class="glyphicon glyphicon-send"></i>Get Started</a>
+      <a href="/docs/get-started.html" class="button"><i class="glyphicon glyphicon-send"></i>Get Started</a>
     </div>
   </div>
 </div>
@@ -23,9 +24,9 @@ title: Welcome to Blazor Docs website!
       <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-wrench"></i>
         <section>
-          <h2>Build Web UI with C#</h2>
-          <p class="lead">Blazor is a web UI framework, similar to existing JavaScript frameworks like Angular or React, but you write C# instead of JavaScript.</p>
-          <a href="https://github.com/aspnet/Blazor/wiki/FAQ" class="btn btn-primary">What is Blazor</a>
+          <h2>Build a Web UI with C#</h2>
+          <p class="lead">Blazor is a web UI framework, similar to existing JavaScript frameworks such as Angular and React, but you write C# instead of JavaScript.</p>
+          <a href="https://github.com/aspnet/Blazor/wiki/FAQ" class="btn btn-primary">What is Blazor?</a>
         </section>
       </div>
     </div>
@@ -37,7 +38,7 @@ title: Welcome to Blazor Docs website!
       <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Full Stack .NET</h2>
-          <p class="lead">Do full stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server. </p>
+          <p class="lead">Do full-stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server.</p>
           <a href="https://www.microsoft.com/net" class="btn btn-primary">Learn more about the .NET platform</a>
         </section>
         <i class="glyphicon glyphicon-tasks"></i>
@@ -51,9 +52,9 @@ title: Welcome to Blazor Docs website!
       <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-globe"></i>
         <section>
-          <h2>.NET Standard, Works in all browsers</h2>
-          <p class="lead">Blazor runs in all browsers, on the real .NET runtime with full support for .NET Standard (i) [info bubble that explains what .NET Standard is]. Blazor requires no plugins and no code transpilation, only open web standards. </p>
-          <a href="http://blog.stevensanderson.com/2018/02/06/blazor-intro/" class="btn btn-primary">How Blazor works</a>
+          <h2>Runs in all browsers and implements</h2>
+          <p class="lead">Blazor runs in all browsers on the real .NET runtime with full support for [.NET Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard). Blazor requires no plugins and no code transpilation, only open web standards.</p>
+          <a href="/docs/introduction/index.html" class="btn btn-primary">How Blazor works</a>
         </section>
       </div>
     </div>
@@ -63,8 +64,8 @@ title: Welcome to Blazor Docs website!
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <section>
-          <h2>Native performance with WebAssembly </h2>
-          <p class="lead">Runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox. </p>
+          <h2>Native performance with WebAssembly</h2>
+          <p class="lead">Runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox.</p>
         </section>
         <i class="glyphicon glyphicon-fire"></i>
       </div>
@@ -77,8 +78,8 @@ title: Welcome to Blazor Docs website!
       <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-transfer"></i>
         <section>
-          <h2>Native browser apps </h2>
-          <p class="lead">Easily interact with your existing JavaScript code, your favorite libraries, and any browser API through JavaScript interop. </p>
+          <h2>Native browser apps</h2>
+          <p class="lead">Easily interact with your existing JavaScript code, your favorite libraries, and any browser API through JavaScript interop.</p>
         </section>
       </div>
     </div>
@@ -88,7 +89,7 @@ title: Welcome to Blazor Docs website!
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <section>
-          <h2>Simple and productive </h2>
+          <h2>Simple and productive</h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
           <a href="https://marketplace.visualstudio.com/items?itemName=aspnet.blazor" class="btn btn-primary">Tools for Blazor</a>
         </section>
@@ -103,8 +104,8 @@ title: Welcome to Blazor Docs website!
       <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-user"></i>
         <section>
-          <h2>Get involved </h2>
-          <p class="lead">Join the communit that's building Blazor, writing documentation, building samples, and more!</p>
+          <h2>Get involved</h2>
+          <p class="lead">Join the community that's building Blazor, writing documentation, building samples, and more!</p>
         </section>
       </div>
     </div>
@@ -115,7 +116,7 @@ title: Welcome to Blazor Docs website!
       <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Open-source & free </h2>
-          <p class="lead">Blazor and the .NET platform are open-source, with a strong community of 25,000+ contributors from over 1,700 companies. </p>
+          <p class="lead">Blazor and the .NET platform are open-source with a strong community of 25,000+ contributors from over 1,700 companies.</p>
           <a href="https://github.com/aspnet/blazor" class="btn btn-primary">Blazor on GitHub</a>
         </section>
         <i class="glyphicon glyphicon-road"></i>

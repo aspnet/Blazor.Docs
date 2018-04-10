@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core Blazor
+title: ASP.NET Core Blazor preview documentation
 author: guardrex
 description: Explore Blazor, a new experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 manager: wpickett
@@ -11,7 +11,7 @@ ms.technology: aspnet
 ms.topic: article
 uid: client-side/blazor/index
 ---
-# ASP.NET Core Blazor
+# ASP.NET Core Blazor preview documentation
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 

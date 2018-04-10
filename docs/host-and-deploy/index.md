@@ -17,7 +17,7 @@ By [Luke Latham](https://github.com/guardrex), [Rainer Stropek](https://www.time
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-## Publishing the app
+## Publish the app
 
 Blazor apps are published for deployment in Release configuration with the [dotnet publish](https://docs.microsoft.com/dotnet/core/tools/dotnet-publish) command. An IDE may handle executing the `dotnet publish` command automatically using its built-in publishing features, so it might not be necessary to manually execute the command from a command prompt depending on the development tools in use.
 
@@ -29,12 +29,40 @@ dotnet publish -c Release
 
 The assets in the *publish* folder are deployed to the web server. Deployment might be a manual or automated process depending on the development tools in use.
 
+## Rewrite URLs for correct routing
+
+Routing requests for page components in a client-side app isn't as simple as routing requests to a server-side, hosted app. Consider a client-side app with two pages:
+
+* **_Main.cshtml_** &ndash; Loads at the root of the app and contains a link to the About page (`href="/About"`).
+* **_About.cshtml_** &ndash; About page.
+
+When the app's default document is requested using the browser's address bar (for example, `https://www.contoso.com/`):
+
+1. The browser makes a request.
+1. The default page is returned, which is usually *index.html*.
+1. *index.html* bootstraps the app.
+1. Blazor's router loads and the Razor Main page (*Main.cshtml*) is displayed.
+
+On the Main page, selecting the link to the About page loads the About page. Selecting the link to the About page works on the client because the Blazor router stops the browser from making a request on the Internet to `www.contoso.com` for `/About` and serves the About page itself. All of the requests for internal pages *within the client-side app* work the same way: Requests don't trigger browser-based requests to server-hosted resources on the Internet. The router handles the requests internally.
+
+If a request is made using the browser's address bar for `www.contoso.com/About`, the request fails. No such resource exists on the app's Internet host, so a *404 Not found* response is returned.
+
+Because browsers make requests to Internet-based hosts for client-side pages, web servers and hosting services must rewrite all requests for resources not physically on the server to the *index.html* page. When *index.html* is returned, the app's client-side router takes over and responds with the correct resource.
+
+## App base path
+
+The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `/CoolBlazorApp` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `/CoolBlazorApp`. By setting the app base path to `/CoolBlazorApp`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
+
+In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is `/`, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, update the **\<base>** tag in *index.html*. Change the `href` attribute value from `/` to `/<virtual-path>`, where `<virtual-path>` is the full virtual app root path on the server for the app.
+
+## Deployment models
+
 There are two deployment models for Blazor apps:
 
 * [Hosted deployment with ASP.NET Core](#hosted-deployment-with-aspnet-core) &ndash; Hosted deployment uses an ASP.NET Core app on the server to host the Blazor app.
 * [Standalone deployment](#standalone-deployment) &ndash; Standalone deployment places the Blazor app on a static hosting web server or service, where .NET isn't used to serve the Blazor app.
 
-## Hosted deployment with ASP.NET Core
+### Hosted deployment with ASP.NET Core
 
 In a hosted deployment, an ASP.NET Core app handles single-page application routing and Blazor app hosting. The published ASP.NET Core app, along with one or more Blazor apps that it hosts, is deployed to the web server or hosting service.
 
@@ -70,41 +98,13 @@ Learn how to publish an ASP.NET Core-hosted Blazor app to Azure App Service usin
 [Publish to Azure with CLI tools](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-cli)  
 Learn how to publish an ASP.NET Core app to Azure App Service using the Git command-line client.
 
-## Standalone deployment
+### Standalone deployment
 
 In a standalone deployment, only the Blazor client-side app is deployed to the server or hosting service. An ASP.NET Core server-side app isn't used to host the Blazor app. The Blazor app's static files are requested by the browser directly from the static file web server or service.
 
-**Rewrite URLs for correct routing**
+When deploying a standalone Blazor app from the published *dist* folder, any web server or hosting service that serves static files can host a Blazor app.
 
-Routing requests for page components in a client-side app isn't as simple as routing requests to a server-side, hosted app. Consider a client-side app with two pages:
-
-* **_Main.cshtml_** &ndash; Loads at the root of the app and contains a link to the About page (`href="/About"`).
-* **_About.cshtml_** &ndash; About page.
-
-When the app's default document is requested using the browser's address bar (for example, `https://www.contoso.com/`):
-
-1. The browser makes a request.
-1. The default page is returned, which is usually *index.html*.
-1. *index.html* bootstraps the app.
-1. Blazor's router loads and the Razor Main page (*Main.cshtml*) is displayed.
-
-On the Main page, selecting the link to the About page loads the About page. Selecting the link to the About page works on the client because the Blazor router stops the browser from making a request on the Internet to `www.contoso.com` for `/About` and serves the About page itself. All of the requests for internal pages *within the client-side app* work the same way: Requests don't trigger browser-based requests to server-hosted resources on the Internet. The router handles the requests internally.
-
-If a request is made using the browser's address bar for `www.contoso.com/About`, the request fails. No such resource exists on the app's Internet host, so a *404 Not found* response is returned.
-
-Because browsers make requests to Internet-based hosts for client-side pages, web servers and hosting services must rewrite all requests for resources not physically on the server to the *index.html* page. When *index.html* is returned, the app's client-side router takes over and responds with the correct resource.
-
-**App base path**
-
-The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `/CoolBlazorApp` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `/CoolBlazorApp`. By setting the app base path to `/CoolBlazorApp`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
-
-In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is `/`, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, update the **\<base>** tag in *index.html*. Change the `href` attribute value from `/` to `/<virtual-path>`, where `<virtual-path>` is the full virtual app root path on the server for the app.
-
-## Static hosting strategies for standalone apps
-
-When deploying a standalone Blazor app, any web server or hosting service that serves static files can host a Blazor app.
-
-### IIS
+#### IIS
 
 IIS is a capable static file server for Blazor apps. To configure IIS to host Blazor, see [Build a Static Website on IIS](https://docs.microsoft.com/iis/manage/creating-websites/scenario-build-a-static-website-on-iis).
 
@@ -147,7 +147,7 @@ If a *500 Internal Server Error* is received and IIS Manager throws errors when 
 
 For more information on troubleshooting deployments to IIS, see [Troubleshoot ASP.NET Core on IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/troubleshoot).
 
-### Nginx
+#### Nginx
 
 The following *nginx.conf* file is simplified to show how to configure Nginx to send the *Index.html* file whenever it can't find a corresponding file on disk.
 
@@ -167,7 +167,7 @@ http {
 
 For more information on production Nginx web server configuration, see [Creating NGINX Plus and NGINX Configuration Files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/).
 
-### Nginx in Docker
+#### Nginx in Docker
 
 To host Blazor in Docker using Nginx, setup the Dockerfile to use the Alpine-based Nginx image. Update the Dockerfile to copy the *nginx.config* file into the container.
 
@@ -179,7 +179,7 @@ COPY ./bin/Release/netstandard2.0/publish /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
 ```
 
-### GitHub Pages
+#### GitHub Pages
 
 To handle URL rewrites, add a *404.html* file with a script that handles redirecting the request to the *index.html* page. For an example implementation provided by the community, see [Single Page Apps for GitHub Pages](http://spa-github-pages.rafrex.com/) ([rafrex/spa-github-pages on GitHub](https://github.com/rafrex/spa-github-pages#readme)). An example using the community approach can be seen at [blazor-demo/blazor-demo.github.io on GitHub](https://github.com/blazor-demo/blazor-demo.github.io) ([live site](https://blazor-demo.github.io/)).
 

@@ -26,7 +26,7 @@ To create your first project from Visual Studio:
 
 1. Select **File** > **New Project** > **Web** > **ASP.NET Core Web Application**.
 1. Make sure **.NET Core** and **ASP.NET Core 2.0** are selected at the top.
-1. Choose the Blazor template.
+1. Choose the Blazor template and select **OK**.
 
    ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/03/new-blazor-app-dialog.png)
    

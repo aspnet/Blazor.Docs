@@ -197,7 +197,7 @@ footer{
         <section>
           <h2>Build Web UI with C#</h2>
           <p class="lead">Blazor is a web UI framework, similar to existing JavaScript frameworks like Angular or React, but you write C# instead of JavaScript.</p>
-          <a href="#" class="btn btn-default">What is Blazor</a>
+          <a href="https://github.com/aspnet/Blazor/wiki/FAQ" class="btn btn-default">What is Blazor</a>
         </section>
       </div>
     </div>
@@ -211,7 +211,7 @@ footer{
         <section>
           <h2>Full Stack .NET</h2>
           <p class="lead">Do full stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server. </p>
-          <a href="#" class="btn btn-default">Learn more about the .NET platform</a>
+          <a href="https://www.microsoft.com/net" class="btn btn-default">Learn more about the .NET platform</a>
         </section>
       </div>
     </div>
@@ -225,7 +225,7 @@ footer{
         <section>
           <h2>.NET Standard, Works in all browsers</h2>
           <p class="lead">Blazor runs in all browsers, on the real .NET runtime with full support for .NET Standard (i) [info bubble that explains what .NET Standard is]. Blazor requires no plugins and no code transpilation, only open web standards. </p>
-          <a href="#" class="btn btn-default">How Blazor works</a>
+          <a href="http://blog.stevensanderson.com/2018/02/06/blazor-intro/" class="btn btn-default">How Blazor works</a>
         </section>
       </div>
     </div>
@@ -263,7 +263,7 @@ footer{
         <section>
           <h2>Simple and productive </h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
-          <a href="#" class="btn btn-default">Tools for Blazor</a>
+          <a href="https://marketplace.visualstudio.com/items?itemName=aspnet.blazor" class="btn btn-default">Tools for Blazor</a>
         </section>
       </div>
     </div>
@@ -289,7 +289,7 @@ footer{
         <section>
           <h2>Open-source & free </h2>
           <p class="lead">Blazor and the .NET platform are open-source, with a strong community of 25,000+ contributors from over 1,700 companies. </p>
-          <a href="#" class="btn btn-default">Blazor on GitHub</a>
+          <a href="https://github.com/aspnet/blazor" class="btn btn-default">Blazor on GitHub</a>
         </section>
       </div>
     </div>

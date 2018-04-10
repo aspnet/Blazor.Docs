@@ -38,7 +38,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <section>
-          <h2>Full Stack .NET</h2>
+          <h2>Full-Stack .NET</h2>
           <p class="lead">Do full-stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server.</p>
           <a href="https://www.microsoft.com/net" class="btn btn-primary">Learn more about the .NET platform</a>
         </section>
@@ -53,8 +53,8 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-globe"></i>
         <section>
-          <h2>Runs in all browsers and implements</h2>
-          <p class="lead">Blazor runs in all browsers on the real .NET runtime with full support for [.NET Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard). Blazor requires no plugins and no code transpilation, only open web standards.</p>
+          <h2>Runs in all browsers and implements .NET Standard</h2>
+          <p class="lead">Blazor runs in all browsers on the real .NET runtime with full support for [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard). Blazor requires no plugins and no code transpilation, only open web standards.</p>
           <a href="/docs/introduction/index.html" class="btn btn-primary">How Blazor works</a>
         </section>
       </div>

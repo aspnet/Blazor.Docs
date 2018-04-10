@@ -20,7 +20,7 @@ title: Welcome to Blazor Docs website!
 <div class="key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-wrench"></i>
         <section>
           <h2>Build Web UI with C#</h2>
@@ -34,7 +34,7 @@ title: Welcome to Blazor Docs website!
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Full Stack .NET</h2>
           <p class="lead">Do full stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server. </p>
@@ -48,7 +48,7 @@ title: Welcome to Blazor Docs website!
 <div class="key-section">
   <div class="container content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-globe"></i>
         <section>
           <h2>.NET Standard, Works in all browsers</h2>
@@ -61,7 +61,7 @@ title: Welcome to Blazor Docs website!
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Native performance with WebAssembly </h2>
           <p class="lead">Runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox. </p>
@@ -74,7 +74,7 @@ title: Welcome to Blazor Docs website!
 <div class="key-section">
   <div class="container content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-transfer"></i>
         <section>
           <h2>Native browser apps </h2>
@@ -86,7 +86,7 @@ title: Welcome to Blazor Docs website!
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Simple and productive </h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
@@ -100,7 +100,7 @@ title: Welcome to Blazor Docs website!
 <div class="key-section">
   <div class="container content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <i class="glyphicon glyphicon-user"></i>
         <section>
           <h2>Get involved </h2>
@@ -112,7 +112,7 @@ title: Welcome to Blazor Docs website!
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
+      <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Open-source & free </h2>
           <p class="lead">Blazor and the .NET platform are open-source, with a strong community of 25,000+ contributors from over 1,700 companies. </p>

@@ -2,6 +2,7 @@
 title: Welcome to the Blazor preview docs website!
 description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 ---
+<div class="cr cr-top cr-right cr-sticky cr-green">Experimental</div>
 <div class="hero">
   <div class="wrap">
     <div class="text">

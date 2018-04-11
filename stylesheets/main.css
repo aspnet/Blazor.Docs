@@ -23,15 +23,14 @@ div.subnav.navbar.navbar-default
   display: none;
 }
 
-button, a, .btn-primary {
-  color: #47A7A0;
+.anchorjs-link {
+  display: none;
 }
-.btn-primary:hover, .btn-primary:focus, button:hover, button:focus, a:hover, a:focus, .toc .nav > li.active > a:hover, .toc .nav > li.active > a:focus, .toc .nav > li > a:hover, .toc .nav > li > a:focus {
-  color: #6E8B60;
+
+a:hover, a:focus {
+  color: #C1D38B;
 }
-.btn-primary.disable, .btn-primary.disable:hover, a.disable, a.disable:hover{
-  color: #90ABB9;
-}
+
 .hero {
     color: #C1D38B;
     background-color: #385361;
@@ -42,7 +41,6 @@ button, a, .btn-primary {
     background-image: -o-linear-gradient(180deg,#000 0,#803612 100%);
     background-image: linear-gradient(180deg,#000 0,#803612 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000', endColorstr='#803612', GradientType=1);
-
     margin-top: -50px;
 }
 .hero strong {
@@ -52,23 +50,39 @@ button, a, .btn-primary {
     color: #fff;
     background: #6E8B60;
 }
-.buttons-unit .button:active {
-    background: #A27865;
+.buttons-unit .button:active, .buttons-unit a:hover {
+    background: #617a54;
 }
+/*
 .toc .nav > li.active > a, .affix ul > li.active > a, .affix ul > li.active > a:before {
-  color: #6E8B60
+  color: #6E8B60;
 }
+*/
 .btn-primary {
-    background: #385361;
-    color: #8BFEB4;
+    background: #6E8B60;
+    color: #fff;
+    border-color: #8f9eab;
+    -webkit-box-shadow: 3px 4px 1px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    3px 4px 1px rgba(50, 50, 50, 0.75);
+    box-shadow:         3px 4px 1px rgba(50, 50, 50, 0.75);
+}
+/* .toc .nav > li.active > a:hover, .toc .nav > li.active > a:focus, .toc .nav > li > a:hover, .toc .nav > li > a:focus */
+.btn-primary:hover, .btn-primary:focus, button:hover, button:focus {
+  background: #617a54;
+  border-color: #8f9eab;
 }
 
+
+/*
 .affix ul > li > a:before {
   color: #cccccc;
 }
+*/
+/*
 .toc .nav > li > a, .affix ul > li > a, .affix ul > li > a:hover {
   color: #666666;
 }
+*/
 
 svg:hover path {
     fill: #ffffff;
@@ -216,7 +230,7 @@ footer{
 .cr-black     { background-color: #333; }
 .cr-grey      { background-color: #999; }
 .cr-blue      { background-color: #39d; }
-.cr-green     { background-color: #2c7; }
+.cr-green     { background-color: #6E8B60; }
 .cr-turquoise { background-color: #1b9; }
 .cr-purple    { background-color: #95b; }
 .cr-red       { background-color: #e43; }

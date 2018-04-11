@@ -1,1 +1,11 @@
+body {
+    font-size: 16px
+}
 
+.toc .level1 > li {
+    font-weight: normal
+}
+
+h1 {
+    font-family: segoe-ui_light,Segoe UI Light,Segoe WP,Helvetica Neue,Helvetica,sans-serif
+}

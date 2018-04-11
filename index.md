@@ -2,6 +2,8 @@
 title: Welcome to the Blazor preview docs website!
 description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 ---
+<link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+<div class="main">
 <div class="cr cr-top cr-right cr-sticky cr-green">Experimental</div>
 <div class="hero">
   <div class="wrap">
@@ -9,7 +11,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <strong>BLAZOR</strong>
     </div>
     <div class="buttons-unit-small">
-      <a class="version-link" href="#">Get Started</a><span>|</span><a class="github-link" href="/docs/get-started.html">View in Github</a>
+      <a class="version-link" href="/docs/get-started.html">Get Started</a><span>|</span><a class="github-link" href="https://github.com/aspnet/blazor">View in Github</a>
     </div>
     <div class="minitext">
         Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
@@ -124,4 +126,12 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       </div>
     </div>
   </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="buttons-unit">
+      <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
+    </div>
+  </div>
+</div>
 </div>

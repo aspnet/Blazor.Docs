@@ -23,6 +23,7 @@ To download the sample:
 
 1. Download and unzip the [Blazor.Docs repository zip file](https://codeload.github.com/aspnet/Blazor.Docs/zip/master).
 1. Use the URL in the [sample link](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/components/common/samples/) to navigate to the sample folder.
+1. See the [Get started](xref:client-side/blazor/get-started) page for prerequisites.
 
 Blazor apps are built using *components*. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes both the HTML markup to render along with the processing logic needed to inject data or respond to UI events. Typically, components are written using Razor files (*\*.cshtml*). Components are flexible and lightweight, and they can be nested, reused, and shared between projects.
 

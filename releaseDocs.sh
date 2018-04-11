@@ -20,6 +20,7 @@ git rm -r *
 
 echo "Copy documentation into the repo"
 cp -r $SOURCE_DIR/_site/* .
+cp $SOURCE_DIR/CNAME .
 
 echo "Push the new docs to the remote branch"
 git add . -A

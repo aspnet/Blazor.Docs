@@ -3,7 +3,6 @@ title: Welcome to the Blazor preview docs website!
 description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 ---
 <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-<div class="main">
 <div class="cr cr-top cr-right cr-sticky cr-green">Experimental</div>
 <div class="hero">
   <div class="wrap">
@@ -136,7 +135,6 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
     </div>
   </div>
-</div>
 </div>
 </div>
 <div class="text-center bottom-row">

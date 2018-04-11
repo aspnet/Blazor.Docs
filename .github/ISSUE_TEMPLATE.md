@@ -9,9 +9,6 @@ If the issue is a simple typo or similar correction, just submit a PR. Otherwise
 Requests for new topics
 
 1. Write a short paragraph describing what the topic will cover.
-
 2. Write an outline of the proposed topic contents.
-
 3. Where would you put the topic in the Table of Contents?
-
 4. If you know who should review the issue, notify them by including @githubID in the issue description.

@@ -6,6 +6,7 @@
 .article
 {
   margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .article > .col-md-10
@@ -21,6 +22,11 @@
 div.subnav.navbar.navbar-default
 {
   display: none;
+}
+
+div.bottom-row
+{
+  margin-top: 50px;
 }
 
 button, a, .btn-primary {

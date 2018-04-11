@@ -9,10 +9,10 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <strong>BLAZOR</strong>
     </div>
     <div class="buttons-unit-small">
-      <a class="version-link" href="#">Get Started</a><span>|</span><a class="github-link" href="/docs/get-started.html">View in Github</a>
+      <a class="github-link" href="https://github.com/aspnet/blazor">View in Github</a>
     </div>
     <div class="minitext">
-        Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
+        Full-stack web development with C# and WebAssembly
     </div>
     <div class="buttons-unit">
       <a href="/docs/get-started.html" class="button"><i class="glyphicon glyphicon-send"></i>Get Started</a>
@@ -59,6 +59,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         </section>
       </div>
     </div>
+  </div>
 </div>
 <div class="counter-key-section">
   <div class="container">
@@ -84,6 +85,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         </section>
       </div>
     </div>
+  </div>
 </div>
 <div class="counter-key-section">
   <div class="container">
@@ -92,7 +94,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         <section>
           <h2>Simple and productive</h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
-          <a href="https://marketplace.visualstudio.com/items?itemName=aspnet.blazor" class="btn btn-primary">Tools for Blazor</a>
+          <a href="/docs/get-started.html" class="btn btn-primary">Tools for Blazor</a>
         </section>
         <i class="glyphicon glyphicon-console"></i>
       </div>
@@ -110,6 +112,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         </section>
       </div>
     </div>
+  </div>
 </div>
 <div class="counter-key-section">
   <div class="container">
@@ -124,4 +127,8 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       </div>
     </div>
   </div>
+</div>
+</div>
+<div class="text-center bottom-row">
+  <a href="/docs/get-started.html" class="btn btn-lg btn-primary"></i>Get Started</a>
 </div>

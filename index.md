@@ -11,11 +11,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <strong>BLAZOR</strong>
     </div>
     <div class="buttons-unit-small">
-<<<<<<< HEAD
       <a class="version-link" href="/docs/get-started.html">Get Started</a><span>|</span><a class="github-link" href="https://github.com/aspnet/blazor">View in Github</a>
-=======
-      <a class="github-link" href="https://github.com/aspnet/blazor">View in Github</a>
->>>>>>> origin/jongalloway/design
     </div>
     <div class="minitext">
         Full-stack web development with C# and WebAssembly
@@ -134,7 +130,6 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
     </div>
   </div>
 </div>
-<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <div class="buttons-unit">
@@ -143,9 +138,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
   </div>
 </div>
 </div>
-=======
 </div>
 <div class="text-center bottom-row">
   <a href="/docs/get-started.html" class="btn btn-lg btn-primary"></i>Get Started</a>
 </div>
->>>>>>> origin/jongalloway/design

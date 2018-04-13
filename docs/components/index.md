@@ -198,14 +198,21 @@ The following code calls the `CheckboxChanged` method when the check box is chan
     onchange="@CheckboxChanged" />
 
 @functions {
-    void CheckboxChanged(UIMouseEventArgs e)
+    void CheckboxChanged()
     {
         ...
     }
 }
 ```
 
-For some events, event-specific event argument types are permitted (for example, `UIEventArgs`, `UIMouseEventArgs`). If access to one of these event types isn't necessary, it isn't required in the method signature.
+For some events, event-specific event argument types are permitted. If access to one of these event types isn't necessary, it isn't required in the method call.
+
+The list of supported event arguments is:
+
+* UIEventArgs
+* UIChangeEventArgs
+* UIKeyboardEventArgs
+* UIMouseEventArgs
 
 Lambda expressions can also be used:
 

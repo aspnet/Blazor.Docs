@@ -100,6 +100,14 @@ When the check box is selected and cleared, the property's value is updated to `
 
 The check box is updated in the UI only when the component is rendered, not in response to changing the property's value. Since components render themselves after event handler code executes, property updates are usually reflected in the UI immediately.
 
+Using `bind` with a `CurrentValue` (`<input bind="@CurrentValue" />`) is essentially equilivant to the following:
+
+```cshtml
+<input value="@CurrentValue" onchange="@((UIValueEventArgs __e) => CurrentValue = __e.Value) />
+```
+
+When the component is rendered, the `value` of the input element comes from the `CurrentValue` property. When the user types in the text box, the `onchange` is fired and the `CurrentValue` property is set to the changed value. In reality, the code generation is a little more complex because `bind` deals with a few cases where type conversions are performed. In principle, `bind` associates the current value of an expression with a `value` attribute and handles changes using the registered handler.
+
 **Format strings**
 
 Two-way databinding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime) format strings (but not other format expressions at this time, such as currency or number formats):
@@ -111,6 +119,32 @@ Two-way databinding works with [DateTime](https://docs.microsoft.com/dotnet/api/
     public DateTime StartDate { get; set; } = 
         new DateTime(2020, 1, 1);
 }
+```
+
+**Conditional attributes**
+
+Blazor conditionally renders attributes based on the bound .NET value. If the value bound is `false` or `null`, Blazor won't render the attribute. If the value is `true`, the attribute is rendered minimized.
+
+In the following example, `IsCompleted` determines if `checked` is rendered in the control's markup.
+
+```cshtml
+<input type="checkbox" checked="@IsCompleted" />
+
+@functions {
+    public bool IsCompleted { get; set; }
+}
+```
+
+If `IsCompleted` is `true`, the check box is rendered as:
+
+```html
+<input type="checkbox" checked />
+```
+
+If `IsCompleted` is `false`, the check box is rendered as:
+
+```html
+<input type="checkbox" />
 ```
 
 **Component attributes**
@@ -148,13 +182,35 @@ Blazor offers two event handling features, `onclick` and `onchange`. The followi
 <button class="btn btn-primary" onclick="@UpdateHeading">
     Update heading
 </button>
+
+@functions {
+    void UpdateHeading(UIMouseEventArgs e)
+    {
+        ...
+    }
+}
 ```
 
 The following code calls the `CheckboxChanged` method when the check box is changed in the UI:
 
 ```cshtml
 <input type="checkbox" class="form-check-input" 
-    id="callsMethodCheck" onchange="@CheckboxChanged" />
+    onchange="@CheckboxChanged" />
+
+@functions {
+    void CheckboxChanged(UIMouseEventArgs e)
+    {
+        ...
+    }
+}
+```
+
+For some events, event-specific event argument types are permitted (for example, `UIEventArgs`, `UIMouseEventArgs`). If access to one of these event types isn't necessary, it isn't required in the method signature.
+
+Lambda expressions can also be used:
+
+```cshtml
+<button onclick="@(e => Console.WriteLine("Hello, world!"))">Say hello</button>
 ```
 
 ## Lifecycle methods
@@ -199,7 +255,7 @@ protected override void OnParametersSet()
 public override void SetParameters(ParameterCollection parameters)
 {
     ...
-    
+
     base.SetParameters(parameters);
 }
 ```

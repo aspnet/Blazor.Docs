@@ -1,3 +1,8 @@
+---
+title: Blazor API
+description: Find the answers to frequently asked questions about Blazor.
+uid: api
+---
 # Blazor API
 
 Welcome to the Blazor API area!

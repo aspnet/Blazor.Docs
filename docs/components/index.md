@@ -142,10 +142,10 @@ Child component:
 
 ## Event handling
 
-Blazor offers two event handling features, `@onclick` and `@onchange`. The following code calls the `UpdateHeading` method when the button is selected in the UI:
+Blazor offers two event handling features, `onclick` and `onchange`. The following code calls the `UpdateHeading` method when the button is selected in the UI:
 
 ```cshtml
-<button class="btn btn-primary" @onclick(UpdateHeading)>
+<button class="btn btn-primary" onclick="@UpdateHeading">
     Update heading
 </button>
 ```
@@ -154,7 +154,7 @@ The following code calls the `CheckboxChanged` method when the check box is chan
 
 ```cshtml
 <input type="checkbox" class="form-check-input" 
-    id="callsMethodCheck" @onchange(CheckboxChanged) />
+    id="callsMethodCheck" onchange="@CheckboxChanged" />
 ```
 
 ## Lifecycle methods

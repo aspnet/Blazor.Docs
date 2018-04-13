@@ -215,3 +215,7 @@ __pycache__/
 
 # Windows thumbnail cache files
 Thumbs.db
+
+# DocFx
+api/.manifest
+_exported_templates/

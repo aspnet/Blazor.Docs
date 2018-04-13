@@ -25,11 +25,11 @@ To download the sample:
 
 To create the project from Visual Studio:
 
-1. Select **File** > **New** > **Project** > **Web** > **ASP.NET Core Web Application**. Name the project "ToDoSample" in the **Name** field. Select **OK**.
+1. Select **File** > **New** > **Project** > **Web** > **ASP.NET Core Web Application**. Name the project "BlazorApp1" in the **Name** field. Select **OK**.
 
     ![New ASP.NET Core project](https://msdnshared.blob.core.windows.net/media/2018/04/new-aspnet-core-project.png)
 
-1. The **New ASP.NET Core Web Application** dialog appears. Make sure **.NET Core** and **ASP.NET Core 2.0** are selected at the top. Choose the **Blazor** template and select **OK**.
+1. The **New ASP.NET Core Web Application** dialog appears. Make sure **.NET Core** is selected at the top. Select either **ASP.NET Core 2.0** or **ASP.NET Core 2.1**. Choose the **Blazor** template and select **OK**.
 
     ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/03/new-blazor-app-dialog.png)
 
@@ -39,7 +39,6 @@ To create the project from Visual Studio:
 > If not using Visual Studio, install and use the Blazor templates at a command prompt on Windows, macOS, or Linux:
 >
 > ```console
-> dotnet new -i Microsoft.AspNetCore.Blazor.Templates
 > dotnet new blazor -o BlazorApp1
 > cd BlazorApp1
 > dotnet run
@@ -52,8 +51,6 @@ The Blazor app runs in the browser:
 ![Blazor app Home page](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-home.png)
 
 ## Build components
-
-To get started, build web UI components with Blazor.
 
 1. Browse to each of the app's three pages: Home, Counter, and Fetch data.
 
@@ -76,7 +73,7 @@ To get started, build web UI components with Blazor.
 
     <p>Current count: @currentCount</p>
 
-    <button @onclick(IncrementCount)>Click me</button>
+    <button onclick="@IncrementCount">Click me</button>
 
     @functions {
         int currentCount = 0;
@@ -114,7 +111,7 @@ To get started, build web UI components with Blazor.
     }
     ```
 
-1. Build and rerun the app from within Visual Studio by pressing **Ctrl-F5** to see the changes.
+1. Refresh the counter page in the browser to see the changes.
 
     ![Exciting counter](https://user-images.githubusercontent.com/1874516/38230870-efe5b4cc-36c4-11e8-9bbf-e1f51b451833.png)
 
@@ -136,7 +133,7 @@ After a component is defined, the component can be used to implement other compo
     <Counter />
     ```
 
-1. Build and run the app (**Ctrl-F5**). Note the separate instance of the `Counter` component on the Home page.
+1. Refresh the home page in the browser. Note the separate instance of the `Counter` component on the Home page.
 
     ![Blazor Home page with counter](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-home-with-counter.png)
 
@@ -165,7 +162,7 @@ Components can also have parameters, which are defined using public properties o
     <Counter IncrementAmount="10" />
     ```
 
-1. Build and run the app (**Ctrl-F5**).
+1. Reload the page.
 
     The counter on the Home page now increments by 10, while the counter on the Counter page still increments by 1.
 
@@ -237,11 +234,11 @@ A `@foreach` loop is used to render each forecast instance as a row in the weath
 
 Add a new page to the app that implements a simple todo list.
 
-1. Add a Todo page to the app by right-clicking on the *Pages* folder and selecting **Add** > **New item** > **Razor View**. Name the file *Todo.cshtml* and select **OK**.
+1. Add an empty text file to the *Pages* folder named *Todo.cshtml*.
 
     ![Add Razor View](https://user-images.githubusercontent.com/1874516/38331329-cff9e54a-3807-11e8-9cfe-2885678bb58a.png)
 
-1. Replace the content of the *Todo.cshtml* file with some initial markup.
+1. Provide the initial markup for the page.
 
     ```cshtml
     @page "/todo"
@@ -259,17 +256,17 @@ Add a new page to the app that implements a simple todo list.
     </li>
     ```
 
-1. Build and run the app. See the new Todo page.
+1. Refresh the app in the browser. See the new Todo page.
 
     ![Blazor todo start](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-todo-start.png)
 
-1. Add a class to represent the todo items by right-clicking on the project and selecting **Add** > **Class**. Name the file *TodoItem.cs* and select **OK**.
+1. Add a *TodoItem.cs* file to the root of the project to hold a class to represent the todo items.
 
     ![Add new class](https://user-images.githubusercontent.com/1874516/38331495-3b1126a4-3808-11e8-8f1b-c905810db409.png)
 
     ![Add TodoItem.cs](https://user-images.githubusercontent.com/1874516/38331576-6d7050de-3808-11e8-8925-ffd1ad2bc009.png)
 
-1. Replace the class definition in `TodoItem.cs` with the following class.
+1. Use the following class.
 
     ```csharp
     public class TodoItem
@@ -324,17 +321,17 @@ Add a new page to the app that implements a simple todo list.
     }
     ```
 
-1. Build and run the app (**Ctrl-F5**)
+1. Refresh the browser.
 
     ![Add todo button](https://user-images.githubusercontent.com/1874516/38230030-ca1ddbb0-36c0-11e8-96b8-5e8985421567.png)
 
     Nothing happens when the **Add todo** button is selected because no event handler is wired up to the button.
 
-1. Add an `AddTodo` method to the `Todo` component and register it for button clicks using the `@onclick` attribute.
+1. Add an `AddTodo` method to the `Todo` component and register it for button clicks using the `onclick` attribute.
 
     ```cshtml
     <input placeholder="Something todo" />
-    <button @onclick(AddTodo)>Add todo</button>
+    <button onclick="@AddTodo">Add todo</button>
 
     @functions {
         IList<TodoItem> todos = new List<TodoItem>();
@@ -374,7 +371,7 @@ Add a new page to the app that implements a simple todo list.
     </ul>
 
     <input placeholder="Something todo" bind="@newTodo" />
-    <button @onclick(AddTodo)>Add todo</button>
+    <button onclick="@AddTodo">Add todo</button>
 
     @functions {
         IList<TodoItem> todos = new List<TodoItem>();
@@ -391,7 +388,7 @@ Add a new page to the app that implements a simple todo list.
     }
     ```
 
-1. Build and run the app (**Ctrl-F5**). Add some todos to the todo list.
+1. Refresh the browser. Add some todos to the todo list.
 
     ![Add todos](https://user-images.githubusercontent.com/1874516/38230128-385cb56a-36c1-11e8-9cf0-9f7035bbf1f5.png)
 
@@ -433,7 +430,7 @@ Add a new page to the app that implements a simple todo list.
     </ul>
 
     <input placeholder="Something todo" bind="@newTodo" />
-    <button @onclick(AddTodo)>Add todo</button>
+    <button onclick="@AddTodo">Add todo</button>
 
     @functions {
         IList<TodoItem> todos = new List<TodoItem>();
@@ -450,7 +447,7 @@ Add a new page to the app that implements a simple todo list.
     }
     ```
 
-Build and run the app (**Ctrl-F5**). Try adding some todo items.
+Refresh the app in the browser. Try adding some todo items.
 
 ![Finished Blazor todo list](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-todo-done.png)
 

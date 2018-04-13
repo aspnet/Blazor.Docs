@@ -15,6 +15,8 @@ uid: client-side/blazor/tutorials/first-app
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
+In this tutorial, you build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
+
 [View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/tutorials/build-your-first-blazor-app/samples/)
 
 To download the sample:

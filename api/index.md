@@ -1,6 +1,6 @@
 ---
 title: Blazor API
-description: Find the answers to frequently asked questions about Blazor.
+description: Find information on the Blazor API.
 uid: api
 ---
 # Blazor API

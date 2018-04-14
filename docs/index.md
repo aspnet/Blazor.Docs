@@ -28,6 +28,9 @@ To learn more about Blazor's technological backbone, see the following documenta
 [Build your first Blazor app](xref:client-side/blazor/tutorials/first-app)  
 Build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
 
+[Frequently asked questions (FAQ)](xref:client-side/blazor/introduction/faq)  
+Find the answers to frequently asked questions about Blazor.
+
 [Introduction to Blazor](xref:client-side/blazor/introduction/index)  
 Discover how Blazor runs in the browser to execute C#/Razor code with WebAssembly and the .NET runtime.
 
@@ -55,7 +58,3 @@ Blazor preview documentation is provided to assist you in trying out Blazor. We 
 
 * [Release notes (0.2.0)](https://github.com/aspnet/blazor/tag/0.2.0)
 * [Release notes (0.1.0)](https://github.com/aspnet/blazor/tag/0.1.0)
-
-## Additional resources
-
-* [Blazor FAQ](https://github.com/aspnet/Blazor/wiki/FAQ)

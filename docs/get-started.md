@@ -36,8 +36,8 @@ If you're not using Visual Studio, you can install the Blazor templates from the
 
 ```console
 dotnet new -i Microsoft.AspNetCore.Blazor.Templates
-dotnet new blazor -o MyBlazorApp
-cd MyBlazorApp
+dotnet new blazor -o BlazorApp1
+cd BlazorApp1
 dotnet run
 ```
 

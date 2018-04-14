@@ -6,6 +6,6 @@ body {
   font-weight: normal;
 }
 
-h1 {
+h1, h2 {
   font-family: segoe-ui_light,Segoe UI Light,Segoe WP,Helvetica Neue,Helvetica,sans-serif;
 }

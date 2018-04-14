@@ -5,7 +5,7 @@ description: Learn how to create and use Blazor components, the fundamental buil
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/09/2018
+ms.date: 04/14/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article

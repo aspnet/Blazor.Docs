@@ -52,7 +52,7 @@ To make suggestions and file bug reports, please [open an issue](https://github.
 
 ## Contribute to the Blazor documentation
 
-Blazor preview documentation is provided to assist you in trying out Blazor. We need your help to improve the documentation. For instructions, see [Contributing to the ASP.NET documentation](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md).
+Blazor preview documentation is provided to assist you in trying out Blazor. We need your help to improve the documentation. For instructions, see [Contributing to the ASP.NET documentation](https://github.com/aspnet/Blazor.Docs/blob/master/CONTRIBUTING.md).
 
 ## Blazor release notes
 

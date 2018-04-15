@@ -29,7 +29,7 @@ To create the project in Visual Studio:
 
 1. Select **File** > **New** > **Project** > **Web** > **ASP.NET Core Web Application**. Name the project "BlazorApp1" in the **Name** field. Select **OK**.
 
-    ![New ASP.NET Core project](https://msdnshared.blob.core.windows.net/media/2018/04/new-aspnet-core-project.png)
+    ![New ASP.NET Core project](build-your-first-blazor-app/_static/new-aspnet-core-project.png)
 
 1. The **New ASP.NET Core Web Application** dialog appears. Make sure **.NET Core** is selected at the top. Select either **ASP.NET Core 2.0** or **ASP.NET Core 2.1**. Choose the **Blazor** template and select **OK**.
 
@@ -449,9 +449,7 @@ Refresh the app in the browser. Try adding some todo items.
 
 When using Visual Studio, perform the following steps to publish the Todo Blazor app to Azure:
 
-1. Right-click on the project and select **Publish**.
-
-    ![Publish](https://msdnshared.blob.core.windows.net/media/2018/04/right-click-publish.png)
+1. Right-click on the project in **Solution Explorer** and select **Publish**.
 
 1. In the **Pick a publish target** dialog, select **App Service** and **Create New**. Select **Publish**.
 
@@ -459,7 +457,7 @@ When using Visual Studio, perform the following steps to publish the Todo Blazor
 
 1. In the **Create App Service** dialog, choose a name for the app and select the subscription, resource group, and hosting plan. Select **Create** to create the app service and publish the app.
 
-    ![Create app service](https://msdnshared.blob.core.windows.net/media/2018/04/blazor-publish-create-appservice2.png)
+    ![Create app service](build-your-first-blazor-app/_static/blazor-publish-create-appservice2.png)
 
 Wait a minute or so for the app to be deployed.
 

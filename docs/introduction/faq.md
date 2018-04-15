@@ -13,6 +13,8 @@ uid: client-side/blazor/introduction/faq
 ---
 # Frequently asked questions (FAQ) about Blazor
 
+[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+
 ## What is Blazor?
 
 Blazor is a single-page web app framework built on .NET that runs in the browser with WebAssembly.

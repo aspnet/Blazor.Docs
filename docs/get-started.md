@@ -15,7 +15,7 @@ uid: client-side/blazor/get-started
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-To get set up with Blazor:
+## Setup
 
 1. Install the [.NET Core 2.1 Preview 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2).
 1. Install the latest *preview* of [Visual Studio 2017 (15.7)](https://www.visualstudio.com/vs/preview) with the *ASP.NET and web development* workload.
@@ -44,3 +44,17 @@ dotnet run
 Congrats! You just ran your first Blazor app!
 
 ![Blazor app home page](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-home.png)
+
+## Help & feedback
+
+Your feedback is especially important to us during this experimental phase for Blazor. If you run into issues or have questions while trying out Blazor please let us know!
+- [File issues on GitHub](https://github.com/aspnet/blazor/issues) for any problems you run into or to make suggestions for improvements.
+- Chat with us and the Blazor community on [Gitter](https://gitter.im/aspnet/blazor) if you get stuck or to share how blazor is working for you.
+
+Also, after you've tried out Blazor for a while please let us know what you think by taking our in-product survey. Just click the survey link shown on the app home page when running one of the Blazor project templates:
+
+![Blazor survey](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-survey.png)
+
+## What's next?
+
+<xref:client-side/blazor/tutorials/first-app>

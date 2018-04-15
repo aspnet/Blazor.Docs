@@ -125,6 +125,7 @@ svg:hover path {
 
 .buttons-unit-small{
   font-size: 16px;
+  font-weight: normal;
 }
 
 .version-link, .github-link{

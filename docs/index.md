@@ -46,10 +46,10 @@ Discover how to host and deploy Blazor apps using hosted and standalone deployme
 
 ## Additional resources
 
-- [WebAssembly](http://webassembly.org/)
-- [C# Guide](https://docs.microsoft.com/dotnet/csharp/)
-- [Razor](https://docs.microsoft.com/aspnet/core/mvc/views/razor)
-- [HTML](https://www.w3.org/html/)
+* [WebAssembly](http://webassembly.org/)
+* [C# Guide](https://docs.microsoft.com/dotnet/csharp/)
+* [Razor](https://docs.microsoft.com/aspnet/core/mvc/views/razor)
+* [HTML](https://www.w3.org/html/)
 
 ## Suggest a feature or file a bug report
 

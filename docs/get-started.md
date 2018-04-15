@@ -47,11 +47,12 @@ Congrats! You just ran your first Blazor app!
 
 ## Help & feedback
 
-Your feedback is especially important to us during this experimental phase for Blazor. If you run into issues or have questions while trying out Blazor please let us know!
-- [File issues on GitHub](https://github.com/aspnet/blazor/issues) for any problems you run into or to make suggestions for improvements.
-- Chat with us and the Blazor community on [Gitter](https://gitter.im/aspnet/blazor) if you get stuck or to share how blazor is working for you.
+Your feedback is especially important to us during this experimental phase for Blazor. If you run into issues or have questions while trying out Blazor, please let us know!
 
-Also, after you've tried out Blazor for a while please let us know what you think by taking our in-product survey. Just click the survey link shown on the app home page when running one of the Blazor project templates:
+* [File issues on GitHub](https://github.com/aspnet/blazor/issues) for any problems you run into or to make suggestions for improvements.
+* Chat with us and the Blazor community on [Gitter](https://gitter.im/aspnet/blazor) if you get stuck or to share how Blazor is working for you.
+
+After you've tried out Blazor, please let us know what you think by taking our in-product survey. Just click the survey link shown on the app home page when running one of the Blazor project templates:
 
 ![Blazor survey](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-survey.png)
 

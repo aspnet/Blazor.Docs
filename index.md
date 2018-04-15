@@ -118,7 +118,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Open-source & free </h2>
-          <p class="lead">Blazor is part of the open source .NET platform that has a strong community of over 25,000 contributors from over 1,700 companies.</p>
+          <p class="lead">Blazor is part of the open-source .NET platform that has a strong community of over 25,000 contributors from over 1,700 companies.</p>
           <a href="https://github.com/aspnet/blazor" class="btn btn-primary">Blazor at GitHub</a>
         </section>
         <i class="glyphicon glyphicon-road"></i>

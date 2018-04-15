@@ -32,7 +32,8 @@
     "resource": [
       {
         "files": [
-          "images/**",
+          "**/*.png",
+          "**/*.jpg",
           "stylesheets/**"
         ]
       }

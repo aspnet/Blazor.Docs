@@ -25,7 +25,7 @@ To download the sample:
 1. Use the URL in the [sample link](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/tutorials/build-your-first-blazor-app/samples/) to navigate to the sample folder.
 1. See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
 
-To create the project from Visual Studio:
+To create the project in Visual Studio:
 
 1. Select **File** > **New** > **Project** > **Web** > **ASP.NET Core Web Application**. Name the project "BlazorApp1" in the **Name** field. Select **OK**.
 
@@ -38,7 +38,7 @@ To create the project from Visual Studio:
 1. Once the project is created, press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
 > [!NOTE]
-> If not using Visual Studio, install and use the Blazor templates at a command prompt on Windows, macOS, or Linux:
+> If not using Visual Studio, create the Blazor app at a command prompt on Windows, macOS, or Linux:
 >
 > ```console
 > dotnet new blazor -o BlazorApp1
@@ -46,7 +46,7 @@ To create the project from Visual Studio:
 > dotnet run
 > ```
 >
-> Navigate to the app using the localhost address and port provided. Use **Ctrl-C** to shutdown the app.
+> Navigate to the app using the localhost address and port provided in the console window output after `dotnet run` is executed. Use **Ctrl-C** in the console window to shutdown the app.
 
 The Blazor app runs in the browser:
 
@@ -56,9 +56,7 @@ The Blazor app runs in the browser:
 
 1. Browse to each of the app's three pages: Home, Counter, and Fetch data.
 
-    These three pages are implemented by the three Razor files in the *Pages* folder: *Index.cshtml*, *Counter.cshtml*, and *FetchData.cshtml*. Expand the *Pages* folder in the Solution Explorer to see these files. Each of these files implements a Blazor component that's compiled and executed client-side in the browser.
-    
-    ![Pages folder](https://user-images.githubusercontent.com/1874516/38259574-392a4e5e-371a-11e8-8b6b-66af4a6d07b6.png)
+    These three pages are implemented by the three Razor files in the *Pages* folder: *Index.cshtml*, *Counter.cshtml*, and *FetchData.cshtml*. Each of these files implements a Blazor component that's compiled and executed client-side in the browser.
 
 1. Select the button on the Counter page.
 
@@ -238,8 +236,6 @@ Add a new page to the app that implements a simple todo list.
 
 1. Add an empty text file to the *Pages* folder named *Todo.cshtml*.
 
-    ![Add Razor View](https://user-images.githubusercontent.com/1874516/38331329-cff9e54a-3807-11e8-9cfe-2885678bb58a.png)
-
 1. Provide the initial markup for the page.
 
     ```cshtml
@@ -264,11 +260,7 @@ Add a new page to the app that implements a simple todo list.
 
 1. Add a *TodoItem.cs* file to the root of the project to hold a class to represent the todo items.
 
-    ![Add new class](https://user-images.githubusercontent.com/1874516/38331495-3b1126a4-3808-11e8-8f1b-c905810db409.png)
-
-    ![Add TodoItem.cs](https://user-images.githubusercontent.com/1874516/38331576-6d7050de-3808-11e8-8925-ffd1ad2bc009.png)
-
-1. Use the following class.
+1. Use the following C# code for the `ToDoItem` class.
 
     ```csharp
     public class TodoItem
@@ -455,7 +447,7 @@ Refresh the app in the browser. Try adding some todo items.
 
 ## Publish and deploy
 
-Publish the Todo Blazor app to Azure.
+When using Visual Studio, perform the following steps to publish the Todo Blazor app to Azure:
 
 1. Right-click on the project and select **Publish**.
 
@@ -474,6 +466,17 @@ Wait a minute or so for the app to be deployed.
 The app should now be running in Azure.
 
 ![Blazor on Azure](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-azure.png)
+
+> [!NOTE]
+> If not using Visual Studio, publish the Blazor app at a command prompt on Windows, macOS, or Linux:
+>
+> ```console
+> dotnet publish -c Release
+> ```
+>
+> The deployment is created in the */bin/Release/\<target-framework>/publish* folder. Move the contents of the *publish* folder to the server or hosting service.
+>
+> For more information, see the [Host and deploy](xref:client-side/blazor/host-and-deploy/index#publish-the-app) topic.
 
 Mark that todo item to build your first Blazor app as *done*. Nice job!
 

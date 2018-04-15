@@ -93,7 +93,6 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         <section>
           <h2>Simple and productive</h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
-          <a href="/docs/get-started.html" class="btn btn-primary">Tools for Blazor</a>
         </section>
         <i class="glyphicon glyphicon-console"></i>
       </div>

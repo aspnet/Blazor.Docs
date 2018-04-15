@@ -175,8 +175,9 @@ svg:hover path {
   }
 }
 
-footer{
+footer {
   position: relative;
+  padding: 15px;
 }
 
 /* Corner Ribbon Styles */

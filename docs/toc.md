@@ -1,4 +1,4 @@
-# [ASP.NET Core Blazor](xref:client-side/blazor/index)
+# [Blazor](xref:client-side/blazor/index)
 # [Get started](xref:client-side/blazor/get-started)
 # [Build your first app](xref:client-side/blazor/tutorials/first-app)
 # [FAQ](xref:client-side/blazor/introduction/faq)

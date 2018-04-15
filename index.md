@@ -38,7 +38,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Full-stack .NET</h2>
-          <p class="lead">Do full-stack .NET development using stable and consistent tools, languages and APIs both in the browser and on the server.</p>
+          <p class="lead">Do full-stack .NET development using stable and consistent tools, languages, and APIs both in the browser and on the server.</p>
           <a href="https://www.microsoft.com/net" class="btn btn-primary">Learn more about the .NET platform</a>
         </section>
         <i class="glyphicon glyphicon-tasks"></i>
@@ -66,7 +66,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Native performance with WebAssembly</h2>
-          <p class="lead">Runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox.</p>
+          <p class="lead">Blazor runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox.</p>
         </section>
         <i class="glyphicon glyphicon-fire"></i>
       </div>
@@ -118,7 +118,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
       <div class="col-md-8 col-md-offset-2">
         <section>
           <h2>Open-source & free </h2>
-          <p class="lead">Blazor and the .NET platform are open-source with a strong community of 25,000+ contributors from over 1,700 companies.</p>
+          <p class="lead">Blazor is part of the open source .NET platform that has a strong community of over 25,000 contributors from over 1,700 companies.</p>
           <a href="https://github.com/aspnet/blazor" class="btn btn-primary">Blazor at GitHub</a>
         </section>
         <i class="glyphicon glyphicon-road"></i>

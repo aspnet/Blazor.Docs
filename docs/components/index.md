@@ -43,27 +43,41 @@ Component members can then be used as part of the component's rendering logic us
 
 After the component is initially rendered, the component regenerates its render tree in response to events. Blazor then compares the new render tree against the previous one and applies any modifications to the browser's Document Object Model (DOM).
 
-## Child components and component parameters
+## Using components
 
-Components can include child components by declaring them using HTML element syntax. The markup for using a component looks like an HTML tag where the name of the tag is the component type.
+Components can include other components by declaring them using HTML element syntax. The markup for using a component looks like an HTML tag where the name of the tag is the component type.
 
-The following Index page renders a `HeadingComponent` (*HeadingComponent.cshtml*) instance:
+The following markup renders a `HeadingComponent` (*HeadingComponent.cshtml*) instance:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=1&end=11)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=11&end=11)]
 
-Components can also have *component parameters*, which are defined using public properties on the component class. Use attributes to specify arguments for a component in markup.
+## Component parameters
 
-In the following example, the `ParentComponent` sets the value of the `Title` property in the `ChildComponent`:
+Components can have *component parameters*, which are defined using public properties on the component class. Use attributes to specify arguments for a component in markup.
+
+In the following example, the `ParentComponent` sets the value of the `Title` property of the `ChildComponent`:
 
 *ParentComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=5)]
 
 *ChildComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=7)]
 
-The body of the Bootstrap-styled panel is provided by `ChildContent`. `ChildContent` is rendered where the `<ChildComponent>` element appears in the parent component.
+## Child content
+
+Components can set the content of another component by assigning to a property that represents a `RenderFragment` type.
+
+In the following example, the `ParentComponent` sets the value of the `ChildContent` property of the `ChildComponent`. `ChildContent` is a `RenderFragment` type and supplies the content from the `ParentComponent` to the Bootstrap panel.
+
+*ParentComponent.cshtml*:
+
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
+
+*ChildComponent.cshtml*:
+
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=8)]
 
 ## Data binding
 
@@ -332,6 +346,6 @@ Razor directives active with Blazor apps are shown in the following table.
 | `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
 | [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
 | [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
-| [@addTagHelper](xref:mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
+| [@addTagHelper](https://docs.microsoft.com/aspnet/core/mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
 
 For more information on Razor, see the [Razor syntax reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.

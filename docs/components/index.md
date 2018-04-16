@@ -43,10 +43,6 @@ Component members can then be used as part of the component's rendering logic us
 
 After the component is initially rendered, the component regenerates its render tree in response to events. Blazor then compares the new render tree against the previous one and applies any modifications to the browser's Document Object Model (DOM).
 
-## Directives
-
-When authoring components, Blazor supports *Razor directives* that change the way a component is parsed or enables different functionality for a component. For a list of directives active with Blazor, see the [Razor support](#razor-support) section later in this topic.
-
 ## Child components and component parameters
 
 Components can include child components by declaring them using HTML element syntax. The markup for using a component looks like an HTML tag where the name of the tag is the component type.

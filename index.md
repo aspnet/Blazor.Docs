@@ -6,7 +6,9 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="cr cr-top cr-right cr-sticky cr-green">Experimental</div>
 <div class="hero">
   <div class="wrap">
-    <div style="text-align:center;font-size:64px"><span style="letter-spacing:7px"><strong>BLA</strong></span><span style="letter-spacing:2px"><strong>Z</strong></span><span style="font-size:64px;letter-spacing:2px"><strong>O</strong></span><span style="letter-spacing:7px"><strong>R</strong></span></div>
+    <div style="text-align:center;font-size:64px">
+      <span style="letter-spacing:7px"><strong>Blazor</strong></span>
+    </div>
     <div class="buttons-unit-small">
       <a class="version-link" href="/docs/get-started.html">Get Started</a><span>|</span><a class="github-link" href="https://github.com/aspnet/blazor">Blazor at Github</a>
     </div>

@@ -9,9 +9,6 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
     <div style="text-align:center;font-size:64px">
       <span><strong>Blazor</strong></span>
     </div>
-    <div class="buttons-unit-small">
-      <a class="version-link" href="/docs/get-started.html">Get Started</a><span>|</span><a class="github-link" href="https://github.com/aspnet/blazor">Blazor at Github</a>
-    </div>
     <div class="minitext">
         Full-stack web development with C# and WebAssembly
     </div>

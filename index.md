@@ -25,7 +25,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         <i class="glyphicon glyphicon-wrench"></i>
         <section>
           <h2>Build a Web UI with C#</h2>
-          <p class="lead">Blazor is a web UI framework, similar to existing JavaScript frameworks such as Angular and React, but you write C# instead of JavaScript.</p>
+          <p class="lead">Blazor is a web UI framework, similar to JavaScript frameworks such as Angular and React, but letting you write C# instead of JavaScript.</p>
           <a href="/docs/introduction/faq.html" class="btn btn-primary">What is Blazor?</a>
         </section>
       </div>

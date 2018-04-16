@@ -17,13 +17,7 @@ uid: client-side/blazor/tutorials/first-app
 
 In this tutorial, you build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
 
-[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/tutorials/build-your-first-blazor-app/samples/)
-
-To download the sample:
-
-1. Download and unzip the [Blazor.Docs repository zip file](https://codeload.github.com/aspnet/Blazor.Docs/zip/master).
-1. Use the URL in the [sample link](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/tutorials/build-your-first-blazor-app/samples/) to navigate to the sample folder.
-1. See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
+[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/tutorials/build-your-first-blazor-app/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
 
 To create the project in Visual Studio:
 

@@ -13,21 +13,17 @@ uid: client-side/blazor/components/index
 ---
 # Blazor components
 
-By [Luke Latham](https://github.com/guardrex)
+By [Luke Latham](https://github.com/guardrex) and [Daniel Roth](https://github.com/danroth27)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
 [View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/components/common/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
 
-Blazor apps are built using *components*. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes both the HTML markup to render along with the processing logic needed to inject data or respond to UI events. Typically, components are written using Razor files (*\*.cshtml*). Components are flexible and lightweight, and they can be nested, reused, and shared between projects.
+Blazor apps are built using *components*. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes both the HTML markup to render along with the processing logic needed to inject data or respond to UI events. Components are flexible and lightweight, and they can be nested, reused, and shared between projects.
 
 ## Component classes
 
-Components are implemented using C# classes. Classes are usually saved in *\*.cshtml* files using a combination of HTML and C#.
-
-Dynamic rendering logic (for example, loops, conditionals, expressions) are added using an embedded C# syntax called [Razor](https://docs.microsoft.com/aspnet/core/mvc/views/razor).
-
-When a Blazor app is compiled, the HTML markup and C# rendering logic are converted into a component class. The name of the generated .NET class matches the name of the file.
+Blazor components are typically implemented in *\*.cshtml* files using a combination of C# and HTML markup. The UI for a component is defined using HTML. Dynamic rendering logic (for example, loops, conditionals, expressions) is added using an embedded C# syntax called [Razor](https://docs.microsoft.com/aspnet/core/mvc/views/razor). When a Blazor app is compiled, the HTML markup and C# rendering logic are converted into a component class. The name of the generated class matches the name of the file.
 
 Members of the component class are defined in a `@functions` block (more than one `@functions` block is permissible). In the `@functions` block, component state (properties, fields) is specified along with methods for event handling or for defining other component logic.
 
@@ -45,24 +41,37 @@ Component members can then be used as part of the component's rendering logic us
 }
 ```
 
+After the component is initially rendered, the component regenerates its render tree in response to events. Blazor then compares the new render tree against the previous one and applies any modifications to the browser's Document Object Model (DOM).
+
 ## Directives
 
-A component may specify one or more [directives](https://docs.microsoft.com/aspnet/core/mvc/views/razor#directives) at the top of the file.
+When authoring components, Blazor supports *Razor directives* that change the way a component is parsed or enables different functionality for a component. For a list of directives active with Blazor, see the [Razor support](#razor-support) section later in this topic.
 
-| Directive | Description |
-| --------- | ----------- |
-| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds a C# code block to a component. |
-| `@implements` | Implements an interface for the generated component class. Often used to create a component layout by implementing `ILayoutComponent`. |
-| [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
-| [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
-| `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
-| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
-| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
-| [@addTagHelper](xref:mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
+## Child components and component parameters
 
-## Databinding
+Components can include child components by declaring them using HTML element syntax. The markup for using a component looks like an HTML tag where the name of the tag is the component type.
 
-Databinding to both components and DOM elements is accomplished with the `bind` attribute. The following example binds the `ItalicsCheck` property to the check box's checked state:
+The following Index page renders a `HeadingComponent` (*HeadingComponent.cshtml*) instance:
+
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=1&end=11)]
+
+Components can also have *component parameters*, which are defined using public properties on the component class. Use attributes to specify arguments for a component in markup.
+
+In the following example, the `ParentComponent` sets the value of the `Title` property in the `ChildComponent`:
+
+*ParentComponent.cshtml*:
+
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7)]
+
+*ChildComponent.cshtml*:
+
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml)]
+
+The body of the Bootstrap-styled panel is provided by `ChildContent`. `ChildContent` is rendered where the `<ChildComponent>` element appears in the parent component.
+
+## Data binding
+
+Data binding to both components and DOM elements is accomplished with the `bind` attribute. The following example binds the `ItalicsCheck` property to the check box's checked state:
 
 ```cshtml
 <input type="checkbox" class="form-check-input" id="italicsCheck" bind="@_italicsCheck" />
@@ -83,7 +92,7 @@ When the component is rendered, the `value` of the input element comes from the 
 
 **Format strings**
 
-Databinding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime) format strings (but not other format expressions at this time, such as currency or number formats):
+Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime) format strings (but not other format expressions at this time, such as currency or number formats):
 
 ```cshtml
 <input bind="@StartDate" format-value="yyyy-MM-dd" />
@@ -271,24 +280,6 @@ If a component implements [IDisposable](/dotnet/api/system.idisposable), the [Di
 }
 ```
 
-## Child components and component parameters
-
-Components can include child components by declaring them using HTML element syntax. The following Index page renders a `HeadingComponent` (*HeadingComponent.cshtml*) instance:
-
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=1&end=11)]
-
-A child component can receive property assignments from its calling parent using *component parameters*. In the following example, the `ParentComponent` sets the value of the `Title` property in the `ChildComponent`:
-
-*ParentComponent.cshtml*:
-
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7)]
-
-*ChildComponent.cshtml*:
-
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml)]
-
-The body of the Bootstrap-styled panel is provided by `ChildContent`. `ChildContent` is rendered where the `<ChildComponent>` element appears in the parent component.
-
 ## Routing
 
 Routing in Blazor is achieved by providing a route template to each accessible component in the app.
@@ -332,6 +323,19 @@ This approach has the benefit of working with JavaScript build tools, such as [w
 
 The Mono team is working on a library that exposes standard browser APIs to .NET.
 
-## Additional resources
+## Razor support
 
-* [Razor syntax reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.
+Razor directives active with Blazor apps are shown in the following table.
+
+| Directive | Description |
+| --------- | ----------- |
+| [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds a C# code block to a component. |
+| `@implements` | Implements an interface for the generated component class. Often used to create a component layout by implementing `ILayoutComponent`. |
+| [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
+| [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
+| `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
+| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
+| [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
+| [@addTagHelper](xref:mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
+
+For more information on Razor, see the [Razor syntax reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.

@@ -6,3 +6,5 @@
   homepage: api/index.md
 - name: Community
   href: community.md
+- name: Blog
+  href: https://blogs.msdn.microsoft.com/webdev/category/blazor/

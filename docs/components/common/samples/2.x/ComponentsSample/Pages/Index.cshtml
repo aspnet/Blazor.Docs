@@ -27,20 +27,20 @@
 *@@
 
 @@*
-    Heading text is rendered by evaluating the HeadingText property. 
+    Heading text is rendered by evaluating the _headingText field. 
     The font-style of the heading is rendered by evaluating the 
-    HeadingFontStyle property.
+    _headingFontStyle field.
 *@@
-&lt;h1 style="font-style:@@_HeadingFontStyle"&gt;@@_HeadingText&lt;/h1&gt;
+&lt;h1 style="font-style:@@_headingFontStyle"&gt;@@_headingText&lt;/h1&gt;
 
 &lt;form&gt;
     &lt;div class="form-check"&gt;
         @@*
             A check box sets the font style and is bound to the 
-            ItalicsCheck property.
+            _italicsCheck field.
         *@@
         &lt;input type="checkbox" class="form-check-input" 
-            id="italicsCheck" bind="@@ItalicsCheck" /&gt;
+            id="italicsCheck" bind="@@_italicsCheck" /&gt;
         &lt;label class="form-check-label" 
             for="italicsCheck"&gt;Use italics&lt;/label&gt;
     &lt;/div&gt;
@@ -56,16 +56,16 @@
 
 @@functions {
     private static TextInfo _tinfo = CultureInfo.CurrentCulture.TextInfo;
-    private string _HeadingText = 
+    private string _headingText = 
         _tinfo.ToTitleCase("welcome to blazor!");
-    private string _HeadingFontStyle = "normal";
-    private bool _ItalicsCheck = false;
+    private string _headingFontStyle = "normal";
+    private bool _italicsCheck = false;
 
-    // When UpdateHeading is executed, _ItalicsCheck determines 
-    // the value of _HeadingFontStyle to set the font style of the 
+    // When UpdateHeading is executed, _italicsCheck determines 
+    // the value of _headingFontStyle to set the font style of the 
     // heading.
     public void UpdateHeading()
     {
-        _HeadingFontStyle = _ItalicsCheck ? "italic" : "normal";
+        _headingFontStyle = _italicsCheck ? "italic" : "normal";
     }
 }</code></pre>

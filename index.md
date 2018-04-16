@@ -6,7 +6,9 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="cr cr-top cr-right cr-sticky cr-green">Experimental</div>
 <div class="hero">
   <div class="wrap">
-    <div style="text-align:center;font-size:64px"><span style="letter-spacing:7px"><strong>BLA</strong></span><span style="letter-spacing:2px"><strong>Z</strong></span><span style="font-size:64px;letter-spacing:2px"><strong>O</strong></span><span style="letter-spacing:7px"><strong>R</strong></span></div>
+    <div style="text-align:center;font-size:64px">
+      <span style="letter-spacing:7px"><strong>Blazor</strong></span>
+    </div>
     <div class="buttons-unit-small">
       <a class="version-link" href="/docs/get-started.html">Get Started</a><span>|</span><a class="github-link" href="https://github.com/aspnet/blazor">Blazor at Github</a>
     </div>
@@ -25,7 +27,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
         <i class="glyphicon glyphicon-wrench"></i>
         <section>
           <h2>Build a Web UI with C#</h2>
-          <p class="lead">Blazor is a web UI framework, similar to existing JavaScript frameworks such as Angular and React, but you write C# instead of JavaScript.</p>
+          <p class="lead">Blazor is a web UI framework, similar to JavaScript frameworks such as Angular and React, but using C# instead of JavaScript.</p>
           <a href="/docs/introduction/faq.html" class="btn btn-primary">What is Blazor?</a>
         </section>
       </div>

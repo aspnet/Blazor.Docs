@@ -101,6 +101,10 @@ svg:hover path {
   padding: 30px 0;
 }
 
+.get-started-section section {
+  padding-bottom: 50px;
+}
+
 .buttons-unit-small{
   font-size: 16px;
   font-weight: normal;

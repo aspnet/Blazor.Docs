@@ -3,6 +3,7 @@ title: Welcome to the Blazor preview docs website!
 description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 documentType: index
 ---
+
 <div class="hero">
   <div class="wrap">
     <div class="text">
@@ -125,10 +126,14 @@ documentType: index
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="buttons-unit">
-      <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
+<div class="get-started-section">
+  <div class="container">
+    <div class="row">
+      <section>
+        <div class="buttons-unit">
+          <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
+        </div>
+      </section>
     </div>
   </div>
 </div>

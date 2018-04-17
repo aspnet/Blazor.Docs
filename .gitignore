@@ -217,4 +217,5 @@ __pycache__/
 Thumbs.db
 
 # DocFx
-.manifest
+api/.manifest
+_exported_templates/

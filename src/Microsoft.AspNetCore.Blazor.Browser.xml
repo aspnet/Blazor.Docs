@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNetCore.Blazor.Browser</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Http.BrowserHttpMessageHandler">
+            <summary>
+            A browser-compatible implementation of <see cref="T:System.Net.Http.HttpMessageHandler"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Http.BrowserHttpMessageHandler.DefaultCredentials">
+            <summary>
+            Gets or sets the default value of the 'credentials' option on outbound HTTP requests.
+            Defaults to <see cref="F:Microsoft.AspNetCore.Blazor.Browser.Http.FetchCredentialsOption.SameOrigin"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Browser.Http.BrowserHttpMessageHandler.FetchArgs">
+            <summary>
+            The name of a well-known property that can be added to <see cref="P:System.Net.Http.HttpRequestMessage.Properties"/>
+            to control the arguments passed to the underlying JavaScript <code>fetch</code> API.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Http.BrowserHttpMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Http.FetchCredentialsOption">
+            <summary>
+            Specifies a value for the 'credentials' option on outbound HTTP requests.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Browser.Http.FetchCredentialsOption.Omit">
+            <summary>
+            Advises the browser never to send credentials (such as cookies or HTTP auth headers).
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Browser.Http.FetchCredentialsOption.SameOrigin">
+            <summary>
+            Advises the browser to send credentials (such as cookies or HTTP auth headers)
+            only if the target URL is on the same origin as the calling application.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Browser.Http.FetchCredentialsOption.Include">
+            <summary>
+            Advises the browser to send credentials (such as cookies or HTTP auth headers)
+            even for cross-origin requests.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Interop.JavaScriptException">
+            <summary>
+            Represents errors that occur during an interop call from .NET to JavaScript.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction">
+            <summary>
+            Provides methods for invoking preregistered JavaScript functions from .NET code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.Invoke``1(System.String,System.Object[])">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            Arguments and return values are marshalled via JSON serialization.
+            </summary>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type. This type must be JSON deserializable.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <param name="args">The arguments to pass, each of which must be JSON serializable.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``1(System.String,System.Object[])">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            
+            When using this overload, all arguments will be supplied as <see cref="T:System.Object" />
+            references, meaning that any reference types will be boxed. If you are passing
+            3 or fewer arguments, it is preferable to instead call the overload that
+            specifies generic type arguments for each argument.
+            </summary>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <param name="args">The arguments to pass, each of which will be supplied as a <see cref="T:System.Object" /> instance.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``1(System.String)">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            </summary>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``2(System.String,``0)">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            </summary>
+            <typeparam name="T0">The type of the first argument.</typeparam>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <param name="arg0">The first argument.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``3(System.String,``0,``1)">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            </summary>
+            <typeparam name="T0">The type of the first argument.</typeparam>
+            <typeparam name="T1">The type of the second argument.</typeparam>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <param name="arg0">The first argument.</param>
+            <param name="arg1">The second argument.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``4(System.String,``0,``1,``2)">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            </summary>
+            <typeparam name="T0">The type of the first argument.</typeparam>
+            <typeparam name="T1">The type of the second argument.</typeparam>
+            <typeparam name="T2">The type of the third argument.</typeparam>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <param name="arg0">The first argument.</param>
+            <param name="arg1">The second argument.</param>
+            <param name="arg2">The third argument.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer">
+            <summary>
+            Provides mechanisms for rendering <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> instances in a
+            web browser, dispatching events to them, and refreshing the UI as required.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.#ctor">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.#ctor(System.IServiceProvider)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to use when initializing components.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.AddComponent``1(System.String)">
+            <summary>
+            Attaches a new root component to the renderer,
+            causing it to be displayed in the specified DOM element.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <param name="domElementSelector">A CSS selector that uniquely identifies a DOM element.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.AddComponent(System.Type,System.String)">
+            <summary>
+            Associates the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> with the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/>,
+            causing it to be displayed in the specified DOM element.
+            </summary>
+            <param name="componentType">The type of the component.</param>
+            <param name="domElementSelector">A CSS selector that uniquely identifies a DOM element.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.Dispose">
+            <summary>
+            Disposes the instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher">
+            <summary>
+            Provides mechanisms for dispatching events to components in a <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/>.
+            This is marked 'internal' because it only gets invoked from JS code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry">
+            <summary>
+            Provides mechanisms for locating <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> instances
+            by ID. This is used when receiving incoming events from the browser. It
+            implicitly ensures that the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> instances and
+            their associated component instances aren't GCed when events may still
+            be received for them.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry.Add(Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer)">
+            <summary>
+            Adds the <paramref name="browserRenderer"/> and gets a unique identifier for it.
+            </summary>
+            <param name="browserRenderer"></param>
+            <returns>A unique identifier for the <paramref name="browserRenderer"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry.Find(System.Int32)">
+            <summary>
+            Gets the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> with the specified
+            <paramref name="browserRendererId"/>.
+            </summary>
+            <param name="browserRendererId">The identifier of the instance to be returned.</param>
+            <returns>The corresponding <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry.TryRemove(System.Int32)">
+            <summary>
+            Removes the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> with the specified identifier, if present.
+            </summary>
+            <param name="browserRendererId">The identifier of the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> to remove.</param>
+            <returns><see langword="true"/> if the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> was present; otherwise <see langword="false" />.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider">
+            <summary>
+            An implementation of <see cref="T:System.IServiceProvider"/> configured with
+            default services suitable for use in a browser environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.#ctor">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.#ctor(System.Action{Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider"/>.
+            </summary>
+            <param name="configure">A callback that can be used to configure the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.GetService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper">
+            <summary>
+            Default browser implementation of <see cref="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper"/>.
+            </summary>
+        </member>
+        <member name="E:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.OnLocationChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetBaseUriPrefix">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetAbsoluteUri">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToAbsoluteUri(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToBaseRelativePath(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.NavigateTo(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToBaseUriPrefix(System.String)">
+            <summary>
+            Given the document's document.baseURI value, returns the URI prefix
+            that can be prepended to URI paths to produce an absolute URI.
+            This is computed by removing the final slash and any following characters.
+            Internal for tests.
+            </summary>
+            <param name="baseUri">The page's document.baseURI value.</param>
+            <returns>The URI prefix</returns>
+        </member>
+    </members>
+</doc>

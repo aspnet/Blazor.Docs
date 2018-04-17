@@ -67,9 +67,9 @@ In the following example, the `ParentComponent` sets the value of the `Title` pr
 
 ## Child content
 
-Components can set the content of another component by assigning to a property that represents a `RenderFragment` type.
+Components can set the content of an element in another component by assigning to a property that represents a `RenderFragment` type.
 
-In the following example, the `ParentComponent` sets the value of the `ChildContent` property of the `ChildComponent`. `ChildContent` is a `RenderFragment` type and supplies the content from the `ParentComponent` to the Bootstrap panel.
+In the following example, the `ChildContent` element of the `ParentComponent` sets the value of the `ChildComponent`'s `PanelContent` property. `PanelContent` is a `RenderFragment` type and supplies the content to the Bootstrap panel.
 
 *ParentComponent.cshtml*:
 
@@ -77,7 +77,7 @@ In the following example, the `ParentComponent` sets the value of the `ChildCont
 
 *ChildComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=8)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=3,8)]
 
 ## Data binding
 

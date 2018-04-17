@@ -18,9 +18,10 @@ uid: client-side/blazor/get-started
 ## Setup
 
 1. Install the [.NET Core 2.1 Preview 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2).
-1. Install the latest *preview* of [Visual Studio 2017 (15.7)](https://www.visualstudio.com/vs/preview) with the *ASP.NET and web development* workload.
-   *Note:* You can install Visual Studio previews side-by-side with an existing Visual Studio installation without impacting your existing development environment.
-1. Install the [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
+    - If you've installed the .NET Core 2.1 Preview 2 SDK previously, make sure the version is 2.1.300-preview2-**008533** by running `dotnet --version`. If not, then you need to install it again to get the updated build.
+1. Install the latest *preview* of [Visual Studio 2017 (15.7)](https://www.visualstudio.com/vs/preview) with the *ASP.NET and web development* workload. 
+    - You can install Visual Studio previews side-by-side with an existing Visual Studio installation without impacting your existing development environment.
+1. Install the [ASP.NET Core Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
 
 To create your first project from Visual Studio:
 

@@ -10,6 +10,10 @@ h1, h2 {
   font-family: segoe-ui_light,Segoe UI Light,Segoe WP,Helvetica Neue,Helvetica,sans-serif;
 }
 
+.anchorjs-link {
+  display: none;
+}
+
 .hero {
   color: #c2e0f9;
   background-color: #385361;

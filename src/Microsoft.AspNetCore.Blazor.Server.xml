@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNetCore.Blazor.Server</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions">
+            <summary>
+            Provides extension methods that add Blazor-related middleware to the ASP.NET pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions.UseBlazor``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configures the middleware pipeline to work with Blazor.
+            </summary>
+            <typeparam name="TProgram">Any type from the client app project. This is used to identify the client app assembly.</typeparam>
+            <param name="applicationBuilder"></param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions.UseBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)">
+            <summary>
+            Configures the middleware pipeline to work with Blazor.
+            </summary>
+            <param name="applicationBuilder"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.BlazorOptions">
+            <summary>
+            Provides configuration options to the <see cref="M:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions.UseBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)"/>
+            middleware.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Builder.BlazorOptions.ClientAssemblyPath">
+            <summary>
+            Full path to the client assembly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.AutoRebuild.IRebuildService">
+            <summary>
+            Represents a mechanism for rebuilding a .NET project. For example, it
+            could be a way of signalling to a VS process to perform a build.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.AutoRebuild.VSForWindowsRebuildService">
+            <summary>
+            Finds the VS process that launched this app process (if any), and uses
+            named pipes to communicate with its AutoRebuild listener (if any).
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.WasmMediaTypeNames">
+            <summary>
+            Contains values for WASM-related media types.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.WasmMediaTypeNames.Application">
+            <summary>
+            Contains values for WASM-related media types within the "application." namespace
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Server.WasmMediaTypeNames.Application.Wasm">
+            <summary>
+            The standard media type name for WebAssembly binary files.
+            </summary>
+        </member>
+    </members>
+</doc>

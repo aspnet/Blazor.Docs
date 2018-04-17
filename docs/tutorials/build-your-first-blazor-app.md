@@ -5,7 +5,7 @@ description: Build a Blazor app step-by-step and quickly learn the basic feature
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/11/2018
+ms.date: 04/16/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article

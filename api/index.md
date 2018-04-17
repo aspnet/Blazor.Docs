@@ -5,6 +5,8 @@ uid: api
 ---
 # Blazor API
 
+[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+
 Welcome to the Blazor API area!
 
 ## Namespaces

@@ -32,7 +32,9 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "**/*.png",
+          "**/*.jpg",
+          "stylesheets/**"
         ]
       }
     ],
@@ -51,7 +53,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default",
+      "template"
     ],
     "postProcessors": [],
     "noLangKeyword": false,

@@ -1,13 +1,12 @@
 ---
 title: Welcome to the Blazor preview docs website!
 description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
+documentType: index
 ---
-<link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-<div class="cr cr-top cr-right cr-sticky cr-green">Experimental</div>
 <div class="hero">
   <div class="wrap">
-    <div style="text-align:center;font-size:64px">
-      <span><strong>Blazor</strong></span>
+    <div class="text">
+      <strong>Blazor</strong>
     </div>
     <div class="minitext">
         Full-stack web development with C# and WebAssembly
@@ -20,7 +19,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <i class="glyphicon glyphicon-wrench"></i>
         <section>
           <h2>Build a Web UI with C#</h2>
@@ -34,7 +33,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <section>
           <h2>Full-stack .NET</h2>
           <p class="lead">Do full-stack .NET development using stable and consistent tools, languages, and APIs both in the browser and on the server.</p>
@@ -48,7 +47,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="key-section">
   <div class="container content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <i class="glyphicon glyphicon-globe"></i>
         <section>
           <h2>Runs in all browsers and implements .NET Standard</h2>
@@ -62,7 +61,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <section>
           <h2>Native performance with WebAssembly</h2>
           <p class="lead">Blazor runs on WebAssembly, giving you native performance in the browser and a trusted security sandbox.</p>
@@ -75,7 +74,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="key-section">
   <div class="container content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <i class="glyphicon glyphicon-transfer"></i>
         <section>
           <h2>Native browser apps</h2>
@@ -88,7 +87,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <section>
           <h2>Simple and productive</h2>
           <p class="lead">Get started fast and remain productive with project templates, great tooling, and reusable components.</p>
@@ -101,7 +100,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="key-section">
   <div class="container content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <i class="glyphicon glyphicon-user"></i>
         <section>
           <h2>Get involved</h2>
@@ -115,7 +114,7 @@ description: Learn about Blazor, an experimental .NET web framework using C#/Raz
 <div class="counter-key-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <section>
           <h2>Open-source & free </h2>
           <p class="lead">Blazor is part of the open-source .NET platform that has a strong community of over 25,000 contributors from over 1,700 companies.</p>

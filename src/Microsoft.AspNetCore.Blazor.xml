@@ -1,0 +1,1690 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNetCore.Blazor</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.BindAttributes">
+            <summary>
+            Infrastructure for the discovery of <c>bind</c> attributes for markup elements.
+            </summary>
+            <remarks>
+            To extend the set of <c>bind</c> attributes, define a public class named 
+            <c>BindAttributes</c> and annotate it with the appropriate attributes.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute">
+            <summary>
+            Configures options for binding specific element types.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute"/>.
+            </summary>
+            <param name="element">The tag name of the element.</param>
+            <param name="suffix">The suffix value. For example, set this to <code>value</code> for <code>bind-value</code>, or set this to <code>null</code> for <code>bind</code>.</param>
+            <param name="valueAttribute">The name of the value attribute to be bound.</param>
+            <param name="changeAttribute">The name of an attribute that will register an associated change event.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute.Element">
+            <summary>
+            Gets the tag name of the element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute.Suffix">
+            <summary>
+            Gets the suffix value.
+            For example, this will be <code>value</code> to mean <code>bind-value</code>, or <code>null</code> to mean <code>bind</code>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute.ValueAttribute">
+            <summary>
+            Gets the name of the value attribute to be bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindElementAttribute.ChangeAttribute">
+            <summary>
+            Gets the name of an attribute that will register an associated change event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute">
+            <summary>
+            Configures options for binding subtypes of an HTML <code>input</code> element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute"/>.
+            </summary>
+            <param name="type">The value of the element's <code>type</code> attribute.</param>
+            <param name="suffix">The suffix value.</param>
+            <param name="valueAttribute">The name of the value attribute to be bound.</param>
+            <param name="changeAttribute">The name of an attribute that will register an associated change event.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute.Type">
+            <summary>
+            Gets the value of the element's <code>type</code> attribute.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute.Suffix">
+            <summary>
+            Gets the suffix value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute.ValueAttribute">
+            <summary>
+            Gets the name of the value attribute to be bound.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.BindInputElementAttribute.ChangeAttribute">
+            <summary>
+            Gets the name of an attribute that will register an associated change event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.BindMethods">
+            <summary>
+            Methods used internally by @bind syntax. Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetValue``1(``0)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetValue(System.DateTime,System.String)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetEventHandlerValue``1(System.String)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetEventHandlerValue``1(System.Action)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetEventHandlerValue``1(System.Action{``0})">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.String},System.String)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.Boolean},System.Boolean)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.Int32},System.Int32)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.DateTime},System.DateTime)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.DateTime},System.DateTime,System.String)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler``1(System.Action{``0},``0)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.String},System.String)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.Boolean},System.Boolean)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.Int32},System.Int32)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue``1(System.Action{``0},``0)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.DateTime},System.DateTime)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.DateTime},System.DateTime,System.String)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.BlazorComponent">
+            <summary>
+            Optional base class for Blazor components. Alternatively, Blazor components may
+            implement <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> directly.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.BuildRenderTreeMethodName">
+            <summary>
+            Specifies the name of the <see cref="N:Microsoft.AspNetCore.Blazor.RenderTree"/>-building method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.#ctor">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Components.BlazorComponent"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.BuildRenderTree(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder)">
+            <summary>
+            Renders the component to the supplied <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.
+            </summary>
+            <param name="builder">A <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/> that will receive the render output.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnInit">
+            <summary>
+            Method invoked when the component is ready to start, having received its
+            initial parameters from its parent in the render tree.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnInitAsync">
+            <summary>
+            Method invoked when the component is ready to start, having received its
+            initial parameters from its parent in the render tree.
+            
+            Override this method if you will perform an asynchronous operation and
+            want the component to refresh when that operation is completed.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation, or <see langword="null"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnParametersSet">
+            <summary>
+            Method invoked when the component has received parameters from its parent in
+            the render tree, and the incoming values have been assigned to properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnParametersSetAsync">
+            <summary>
+            Method invoked when the component has received parameters from its parent in
+            the render tree, and the incoming values have been assigned to properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.StateHasChanged">
+            <summary>
+            Notifies the component that its state has changed. When applicable, this will
+            cause the component to be re-rendered.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.ShouldRender">
+            <summary>
+            Returns a flag to indicate whether the component should render.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <summary>
+            Method invoked to apply initial or updated parameters to the component.
+            </summary>
+            <param name="parameters">The parameters to apply.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.ComponentResolver">
+            <summary>
+            Resolves components for an application.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ComponentResolver.ResolveComponents(System.Reflection.Assembly)">
+            <summary>
+            Lists all the types 
+            </summary>
+            <param name="appAssembly"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.EventHandlerAttribute">
+            <summary>
+            Associates an event argument type with an event attribute name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.EventHandlerAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Components.EventHandlerAttribute"/>.
+            </summary>
+            <param name="attributeName"></param>
+            <param name="eventArgsType"></param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.EventHandlerAttribute.AttributeName">
+            <summary>
+            Gets the attribute name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.EventHandlerAttribute.EventArgsType">
+            <summary>
+            Gets the event argument type.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.EventHandlers">
+            <summary>
+            Holds <see cref="T:System.EventHandler"/> attributes to configure the mappings between event names and
+            event argument types.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.IComponent">
+            <summary>
+            Represents a UI component.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.IComponent.Init(Microsoft.AspNetCore.Blazor.Components.RenderHandle)">
+            <summary>
+            Initializes the component.
+            </summary>
+            <param name="renderHandle">A <see cref="T:Microsoft.AspNetCore.Blazor.Components.RenderHandle"/> that allows the component to be rendered.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.IComponent.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <summary>
+            Sets parameters supplied by the component's parent in the render tree.
+            </summary>
+            <param name="parameters">The parameters.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.IHandleEvent">
+            <summary>
+            Interface implemented by components that receive notification of their events.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.IHandleEvent.HandleEvent(Microsoft.AspNetCore.Blazor.UIEventHandler,Microsoft.AspNetCore.Blazor.UIEventArgs)">
+            <summary>
+            Notifies the component that one of its event handlers has been triggered.
+            </summary>
+            <param name="handler">The event handler.</param>
+            <param name="args">Arguments for the event handler.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.InjectAttribute">
+            <summary>
+            Indicates that the associated property should have a value injected from the
+            service provider during initialization.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.Parameter">
+            <summary>
+            Represents a single parameter supplied to an <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/>
+            by its parent in the render tree.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Name">
+            <summary>
+            Gets the name of the parameter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Value">
+            <summary>
+            Gets the value of the parameter.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection">
+            <summary>
+            Represents a collection of parameters supplied to an <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/>
+            by its parent in the render tree.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.ParameterCollection.Empty">
+            <summary>
+            Gets an empty <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>.
+            </summary>
+            <returns>The enumerator.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollection.TryGetValue``1(System.String,``0@)">
+            <summary>
+            Gets the value of the parameter with the specified name.
+            </summary>
+            <typeparam name="T">The type of the value.</typeparam>
+            <param name="parameterName">The name of the parameter.</param>
+            <param name="result">Receives the result, if any.</param>
+            <returns>True if a matching parameter was found; false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollection.GetValueOrDefault``1(System.String)">
+            <summary>
+            Gets the value of the parameter with the specified name, or a default value
+            if no such parameter exists in the collection.
+            </summary>
+            <typeparam name="T">The type of the value.</typeparam>
+            <param name="parameterName">The name of the parameter.</param>
+            <returns>The parameter value if found; otherwise the default value for the specified type.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollection.GetValueOrDefault``1(System.String,``0)">
+            <summary>
+            Gets the value of the parameter with the specified name, or a specified default value
+            if no such parameter exists in the collection.
+            </summary>
+            <typeparam name="T">The type of the value.</typeparam>
+            <param name="parameterName">The name of the parameter.</param>
+            <param name="defaultValue">The default value to return if no such parameter exists in the collection.</param>
+            <returns>The parameter value if found; otherwise <paramref name="defaultValue"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollection.ToDictionary">
+            <summary>
+            Returns a dictionary populated with the contents of the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>.
+            </summary>
+            <returns>A dictionary populated with the contents of the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollectionExtensions">
+            <summary>
+            Extension methods for the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/> type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollectionExtensions.AssignToProperties(Microsoft.AspNetCore.Blazor.Components.ParameterCollection,System.Object)">
+            <summary>
+            Iterates through the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>, assigning each parameter
+            to a property of the same name on <paramref name="target"/>.
+            </summary>
+            <param name="parameterCollection">The <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>.</param>
+            <param name="target">An object that has a public writable property matching each parameter's name and type.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.ParameterEnumerator">
+            <summary>
+            An enumerator that iterates through a <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.ParameterEnumerator.Current">
+            <summary>
+            Gets the current value of the enumerator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterEnumerator.MoveNext">
+            <summary>
+            Instructs the enumerator to move to the next value in the sequence.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.RenderHandle">
+            <summary>
+            Allows a component to notify the renderer that it should be rendered.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.RenderHandle.IsInitialized">
+            <summary>
+            Gets a value that indicates whether the <see cref="T:Microsoft.AspNetCore.Blazor.Components.RenderHandle"/> has been
+            initialised and is ready to use.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.RenderHandle.Render(Microsoft.AspNetCore.Blazor.RenderFragment)">
+            <summary>
+            Notifies the renderer that the component should be rendered.
+            </summary>
+            <param name="renderFragment">The content that should be rendered.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.RouteAttribute">
+            <summary>
+            Indicates that the associated component should match the specified route template pattern.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.RouteAttribute.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Components.RouteAttribute"/>.
+            </summary>
+            <param name="template">The route template.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.RouteAttribute.Template">
+            <summary>
+            Gets the route template.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions">
+            <summary>
+            Extension methods for working with JSON APIs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.GetJsonAsync``1(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            Sends a GET request to the specified URI, and parses the JSON response body
+            to create an object of the generic type.
+            </summary>
+            <typeparam name="T">A type into which the response body can be JSON-deserialized.</typeparam>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <returns>The response parsed as an object of the generic type.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.PostJsonAsync(System.Net.Http.HttpClient,System.String,System.Object)">
+            <summary>
+            Sends a POST request to the specified URI, including the specified <paramref name="content"/>
+            in JSON-encoded format, and parses the JSON response body to create an object of the generic type.
+            </summary>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
+            <returns>The response parsed as an object of the generic type.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.PostJsonAsync``1(System.Net.Http.HttpClient,System.String,System.Object)">
+            <summary>
+            Sends a POST request to the specified URI, including the specified <paramref name="content"/>
+            in JSON-encoded format, and parses the JSON response body to create an object of the generic type.
+            </summary>
+            <typeparam name="T">A type into which the response body can be JSON-deserialized.</typeparam>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
+            <returns>The response parsed as an object of the generic type.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.PutJsonAsync(System.Net.Http.HttpClient,System.String,System.Object)">
+            <summary>
+            Sends a PUT request to the specified URI, including the specified <paramref name="content"/>
+            in JSON-encoded format.
+            </summary>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.PutJsonAsync``1(System.Net.Http.HttpClient,System.String,System.Object)">
+            <summary>
+            Sends a PUT request to the specified URI, including the specified <paramref name="content"/>
+            in JSON-encoded format, and parses the JSON response body to create an object of the generic type.
+            </summary>
+            <typeparam name="T">A type into which the response body can be JSON-deserialized.</typeparam>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
+            <returns>The response parsed as an object of the generic type.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.SendJsonAsync(System.Net.Http.HttpClient,System.Net.Http.HttpMethod,System.String,System.Object)">
+            <summary>
+            Sends an HTTP request to the specified URI, including the specified <paramref name="content"/>
+            in JSON-encoded format.
+            </summary>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="method">The HTTP method.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions.SendJsonAsync``1(System.Net.Http.HttpClient,System.Net.Http.HttpMethod,System.String,System.Object)">
+            <summary>
+            Sends an HTTP request to the specified URI, including the specified <paramref name="content"/>
+            in JSON-encoded format, and parses the JSON response body to create an object of the generic type.
+            </summary>
+            <typeparam name="T">A type into which the response body can be JSON-deserialized.</typeparam>
+            <param name="httpClient">The <see cref="T:System.Net.Http.HttpClient"/>.</param>
+            <param name="method">The HTTP method.</param>
+            <param name="requestUri">The URI that the request will be sent to.</param>
+            <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
+            <returns>The response parsed as an object of the generic type.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.JsonUtil">
+            <summary>
+            Provides mechanisms for converting between .NET objects and JSON strings.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.JsonUtil.Serialize(System.Object)">
+            <summary>
+            Serializes the value as a JSON string.
+            </summary>
+            <param name="value">The value to serialize.</param>
+            <returns>The JSON string.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.JsonUtil.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the JSON string, creating an object of the specified generic type.
+            </summary>
+            <typeparam name="T">The type of object to create.</typeparam>
+            <param name="json">The JSON string.</param>
+            <returns>An object of the specified type.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent">
+            <summary>
+            Indicates that the type represents a layout.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent.Body">
+            <summary>
+            Gets or sets the content to be rendered inside the layout.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute">
+            <summary>
+            Indicates that the associated component type uses a specified layout.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute.LayoutType">
+            <summary>
+            The type of the layout. The type always implements <see cref="T:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute.#ctor(System.Type)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute"/>.
+            </summary>
+            <param name="layoutType">The type of the layout. This must implement <see cref="T:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent"/>.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay">
+            <summary>
+            Displays the specified page component, rendering it inside its layout
+            and any further nested layouts.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay.Page">
+            <summary>
+            Gets or sets the type of the page component to display.
+            The type must implement <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay.PageParameters">
+            <summary>
+            Gets or sets the parameters to pass to the page.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay.Init(Microsoft.AspNetCore.Blazor.Components.RenderHandle)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderFragment">
+            <summary>
+            Represents a segment of UI content, implemented as a delegate that
+            writes the content to a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/> to which the content should be written.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Rendering.ComponentState">
+            <summary>
+            Tracks the rendering state associated with an <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> instance
+            within the context of a <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>. This is an internal implementation
+            detail of <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.ComponentState.#ctor(Microsoft.AspNetCore.Blazor.Rendering.Renderer,System.Int32,Microsoft.AspNetCore.Blazor.Components.IComponent)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.ComponentState"/>.
+            </summary>
+            <param name="renderer">The <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/> with which the new instance should be associated.</param>
+            <param name="componentId">The externally visible identifier for the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/>. The identifier must be unique in the context of the <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.</param>
+            <param name="component">The <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> whose state is being tracked.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch">
+            <summary>
+            Describes a set of UI changes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch.UpdatedComponents">
+            <summary>
+            Gets the changes to components that were added or updated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch.ReferenceFrames">
+            <summary>
+            Gets render frames that may be referenced by entries in <see cref="P:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch.UpdatedComponents"/>.
+            For example, edit entries of type <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.PrependFrame"/>
+            will point to an entry in this array to specify the subtree to be prepended.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch.DisposedComponentIDs">
+            <summary>
+            Gets the IDs of the components that were disposed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch.DisposedEventHandlerIDs">
+            <summary>
+            Gets the IDs of the event handlers that were disposed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Rendering.RenderBatchBuilder">
+            <summary>
+            Collects the data produced by the rendering system during the course
+            of rendering a single batch. This tracks both the final output data
+            and the intermediate states (such as the queue of components still to
+            be rendered).
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer">
+            <summary>
+            Provides mechanisms for rendering hierarchies of <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> instances,
+            dispatching events to them, and notifying when the user interface is being updated.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.#ctor(System.IServiceProvider)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> to be used when initialising components.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.InstantiateComponent(System.Type)">
+            <summary>
+            Constructs a new component of the specified type.
+            </summary>
+            <param name="componentType">The type of the component to instantiate.</param>
+            <returns>The component instance.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.AssignComponentId(Microsoft.AspNetCore.Blazor.Components.IComponent)">
+            <summary>
+            Associates the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> with the <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>, assigning
+            an identifier that is unique within the scope of the <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.
+            </summary>
+            <param name="component">The component.</param>
+            <returns>The component's assigned identifier.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch)">
+            <summary>
+            Updates the visible UI.
+            </summary>
+            <param name="renderBatch">The changes to the UI since the previous call.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.DispatchEvent(System.Int32,System.Int32,Microsoft.AspNetCore.Blazor.UIEventArgs)">
+            <summary>
+            Notifies the specified component that an event has occurred.
+            </summary>
+            <param name="componentId">The unique identifier for the component within the scope of this <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.</param>
+            <param name="eventHandlerId">The <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeEventHandlerId"/> value from the original event attribute.</param>
+            <param name="eventArgs">Arguments to be passed to the event handler.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1">
+            <summary>
+            Implements a list that uses an array of objects to store the elements.
+            
+            This differs from a <see cref="T:System.Collections.Generic.List`1"/> in that
+            it not only grows as required but also shrinks if cleared with significant
+            excess capacity. This makes it useful for component rendering, because
+            components can be long-lived and re-render frequently, with the rendered size
+            varying dramatically depending on the user's navigation in the app.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.#ctor">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.#ctor(System.Int32)">
+            <summary>
+            Constructs a new instance of <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.Count">
+            <summary>
+            Gets the number of items.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.Buffer">
+            <summary>
+            Gets the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.Append(`0@)">
+            <summary>
+            Appends a new item, automatically resizing the underlying array if necessary.
+            </summary>
+            <param name="item">The item to append.</param>
+            <returns>The index of the appended item.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.Overwrite(System.Int32,`0@)">
+            <summary>
+            Sets the supplied value at the specified index. The index must be within
+            range for the array.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.RemoveLast">
+            <summary>
+            Removes the last item.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.Clear">
+            <summary>
+            Marks the array as empty, also shrinking the underlying storage if it was
+            not being used to near its full capacity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.ToRange">
+            <summary>
+            Produces an <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1"/> structure describing the current contents.
+            </summary>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1.ToSegment(System.Int32,System.Int32)">
+            <summary>
+            Produces an <see cref="T:System.ArraySegment`1"/> structure describing the selected contents.
+            </summary>
+            <param name="fromIndexInclusive">The index of the first item in the segment.</param>
+            <param name="toIndexExclusive">One plus the index of the last item in the segment.</param>
+            <returns>The <see cref="T:System.ArraySegment`1"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1">
+            <summary>
+            Represents a range of elements in an array that are in use.
+            </summary>
+            <typeparam name="T">The array item type.</typeparam>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.Array">
+            <summary>
+            Gets the underlying array instance.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.Count">
+            <summary>
+            Gets the number of items in the array that are considered to be in use.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.#ctor(`0[],System.Int32)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1"/>.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="count">The number of items in the array that are in use.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder">
+            <summary>
+            Provides methods for building a collection of <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/> entries.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.ChildContent">
+            <summary>
+            The reserved parameter name used for supplying child content.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.#ctor(Microsoft.AspNetCore.Blazor.Rendering.Renderer)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.
+            </summary>
+            <param name="renderer">The associated <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenElement(System.Int32,System.String)">
+            <summary>
+            Appends a frame representing an element, i.e., a container for other frames.
+            In order for the <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/> state to be valid, you must
+            also call <see cref="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.CloseElement"/> immediately after appending the
+            new element's child frames.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="elementName">A value representing the type of the element.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.CloseElement">
+            <summary>
+            Marks a previously appended element frame as closed. Calls to this method
+            must be balanced with calls to <see cref="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenElement(System.Int32,System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,System.String)">
+            <summary>
+            Appends a frame representing text content.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="textContent">Content for the new text frame.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,Microsoft.AspNetCore.Blazor.RenderFragment)">
+            <summary>
+            Appends frames representing an arbitrary fragment of content.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="fragment">Content to append.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,System.Object)">
+            <summary>
+            Appends a frame representing text content.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="textContent">Content for the new text frame.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.Boolean)">
+            <summary>
+            <para>
+            Appends a frame representing a bool-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>false</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.String)">
+            <summary>
+            <para>
+            Appends a frame representing a string-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.Action)">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIEventHandler)">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIEventHandler"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.MulticastDelegate)">
+            <summary>
+            <para>
+            Appends a frame representing a delegate-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+            <remarks>
+            This method is provided for infrastructure purposes, and is used to be
+            <see cref="T:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions"/> to provide support for delegates of specific
+            types. For a good programming experience when using a custom delegate type, define an
+            extension method similar to 
+            <see cref="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIChangeEventHandler)"/>
+            that calls this method.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.Object)">
+            <summary>
+            Appends a frame representing a string-valued attribute.
+            The attribute is associated with the most recently added element. If the value is <c>null</c>, or
+            the <see cref="T:System.Boolean" /> value <c>false</c> and the current element is not a component, the 
+            frame will be omitted.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame)">
+            <summary>
+            <para>
+            Appends a frame representing an attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="frame">A <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/> holding the name and value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenComponent``1(System.Int32)">
+            <summary>
+            Appends a frame representing a child component.
+            </summary>
+            <typeparam name="TComponent">The type of the child component.</typeparam>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenComponent(System.Int32,System.Type)">
+            <summary>
+            Appends a frame representing a child component.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="componentType">The type of the child component.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.CloseComponent">
+            <summary>
+            Marks a previously appended component frame as closed. Calls to this method
+            must be balanced with calls to <see cref="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenComponent``1(System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.Clear">
+            <summary>
+            Clears the builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.GetFrames">
+            <summary>
+            Returns the <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/> values that have been appended.
+            </summary>
+            <returns>An array range of <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/> values.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeDiff">
+            <summary>
+            Describes changes to a component's render tree between successive renders.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeDiff.ComponentId">
+            <summary>
+            Gets the ID of the component.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeDiff.Edits">
+            <summary>
+            Gets the changes to the render tree since a previous state.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeDiffBuilder.DiffContext">
+            <summary>
+            Exists only so that the various methods in this class can call each other without
+            constantly building up long lists of parameters. Is private to this class, so the
+            fact that it's a mutable struct is manageable.
+            
+            Always pass by ref to avoid copying, and because the 'SiblingIndex' is mutable.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit">
+            <summary>
+            Represents a single edit operation on a component's render tree.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit.Type">
+            <summary>
+            Gets the type of the edit operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit.SiblingIndex">
+            <summary>
+            Gets the index of the sibling frame that the edit relates to.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit.ReferenceFrameIndex">
+            <summary>
+            Gets the index of related data in an associated render frames array. For example, if the
+            <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit.Type"/> value is <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.PrependFrame"/>, gets the
+            index of the new frame data in an associated render tree.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit.RemovedAttributeName">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEdit.Type"/> value is <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.RemoveAttribute"/>,
+            gets the name of the attribute that is being removed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType">
+            <summary>
+            Describes the type of a render tree edit operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.PrependFrame">
+            <summary>
+            Indicates that a new frame should be inserted before the specified tree frame.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.RemoveFrame">
+            <summary>
+            Indicates that the specified tree frame should be removed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.SetAttribute">
+            <summary>
+            Indicates that an attribute value should be applied to the specified frame.
+            This may be a change to an existing attribute, or the addition of a new attribute.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.RemoveAttribute">
+            <summary>
+            Indicates that a named attribute should be removed from the specified frame.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.UpdateText">
+            <summary>
+            Indicates that the text content of the specified frame (which must be a text frame)
+            should be updated.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.StepIn">
+            <summary>
+            Indicates that the edit position should move inside the specified frame.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.StepOut">
+            <summary>
+            Indicates that there are no further edit operations on the current frame, and the
+            edit position should move back to the parent frame.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame">
+            <summary>
+            Represents an entry in a tree of user interface (UI) items.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.Sequence">
+            <summary>
+            Gets the sequence number of the frame. Sequence numbers indicate the relative source
+            positions of the instructions that inserted the frames. Sequence numbers are only
+            comparable within the same sequence (typically, the same source method).
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType">
+            <summary>
+            Describes the type of this frame.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ElementSubtreeLength">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Element"/>
+            gets the number of frames in the subtree for which this frame is the root.
+            The value is zero if the frame has not yet been closed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ElementName">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Element"/>,
+            gets a name representing the type of the element. Otherwise, the value is <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.TextContent">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Text"/>,
+            gets the content of the text frame. Otherwise, the value is <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeEventHandlerId">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Attribute"/>
+            gets the ID of the corresponding event handler, if any.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeName">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Attribute"/>,
+            gets the attribute name. Otherwise, the value is <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeValue">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Attribute"/>,
+            gets the attribute value. Otherwise, the value is <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentSubtreeLength">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>
+            gets the number of frames in the subtree for which this frame is the root.
+            The value is zero if the frame has not yet been closed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentId">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>,
+            gets the child component instance identifier.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentType">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>,
+            gets the type of the child component.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.Component">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>,
+            gets the child component instance. Otherwise, the value is <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.RegionSubtreeLength">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Region"/>
+            gets the number of frames in the subtree for which this frame is the root.
+            The value is zero if the frame has not yet been closed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType">
+            <summary>
+            Describes the type of a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Element">
+            <summary>
+            Represents a container for other frames.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Text">
+            <summary>
+            Represents text content.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Attribute">
+            <summary>
+            Represents a key-value pair associated with another <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component">
+            <summary>
+            Represents a child component.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Region">
+            <summary>
+            Defines the boundary around range of sibling frames that should be treated as an
+            unsplittable group for the purposes of diffing. This is typically used when appending
+            a tree fragment generated by external code, because the sequence numbers in that tree
+            fragment are not comparable to sequence numbers outside it.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Routing.NavLink">
+            <summary>
+            A component that renders an anchor tag, automatically toggling its 'active'
+            class based on whether its 'href' matches the current URI.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Routing.NavLink.ActiveClass">
+            <summary>
+            Gets or sets the CSS class name applied to the NavLink when the 
+            current route matches the NavLink href.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Routing.NavLink.Match">
+            <summary>
+            Gets or sets a value representing the URL matching behavior.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.NavLink.Init(Microsoft.AspNetCore.Blazor.Components.RenderHandle)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.NavLink.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.NavLink.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Routing.NavLinkMatch">
+            <summary>
+            Modifies the URL matching behavior for a <see cref="T:Microsoft.AspNetCore.Blazor.Routing.NavLink"/>.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Routing.NavLinkMatch.Prefix">
+            <summary>
+            Specifies that the <see cref="T:Microsoft.AspNetCore.Blazor.Routing.NavLink"/> should be active when it matches any prefix
+            of the current URL.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.Routing.NavLinkMatch.All">
+            <summary>
+            Specifies that the <see cref="T:Microsoft.AspNetCore.Blazor.Routing.NavLink"/> should be active when it matches the entire
+            current URL.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Routing.Router">
+            <summary>
+            A component that displays whichever other component corresponds to the
+            current navigation location.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Routing.Router.AppAssembly">
+            <summary>
+            Gets or sets the assembly that should be searched, along with its referenced
+            assemblies, for components matching the URI.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.Router.Init(Microsoft.AspNetCore.Blazor.Components.RenderHandle)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.Router.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.Router.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.Router.Render(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Type,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Routing.RouteTable.RouteComparison(Microsoft.AspNetCore.Blazor.Routing.RouteEntry,Microsoft.AspNetCore.Blazor.Routing.RouteEntry)">
+             <summary>
+             Route precedence algorithm.
+             We collect all the routes and sort them from most specific to
+             less specific. The specificity of a route is given by the specificity
+             of its segments and the position of those segments in the route.
+             * A literal segment is more specific than a parameter segment.
+             * A parameter segment with more constraints is more specific than one with fewer constraints
+             * Segment earlier in the route are evaluated before segments later in the route.
+             For example:
+             /Literal is more specific than /Parameter
+             /Route/With/{parameter} is more specific than /{multiple}/With/{parameters}
+             /Product/{id:int} is more specific than /Product/{id}
+            
+             Routes can be ambiguous if:
+             They are composed of literals and those literals have the same values (case insensitive)
+             They are composed of a mix of literals and parameters, in the same relative order and the
+             literals have the same values.
+             For example:
+             * /literal and /Literal
+             /{parameter}/literal and /{something}/literal
+             /{parameter:constraint}/literal and /{something:constraint}/literal
+            
+             To calculate the precedence we sort the list of routes as follows:
+             * Shorter routes go first.
+             * A literal wins over a parameter in precedence.
+             * For literals with different values (case insensitive) we choose the lexical order
+             * For parameters with different numbers of constraints, the one with more wins
+             If we get to the end of the comparison routing we've detected an ambiguous pair of routes.
+             </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Routing.TypeRouteConstraint`1">
+            <summary>
+            A route constraint that requires the value to be parseable as a specified type.
+            </summary>
+            <typeparam name="T">The type to which the value must be parseable.</typeparam>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper">
+            <summary>
+            Helpers for working with URIs and navigation state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetAbsoluteUri">
+            <summary>
+            Gets the current absolute URI.
+            </summary>
+            <returns>The current absolute URI.</returns>
+        </member>
+        <member name="E:Microsoft.AspNetCore.Blazor.Services.IUriHelper.OnLocationChanged">
+            <summary>
+            An event that fires when the navigation location has changed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.ToAbsoluteUri(System.String)">
+            <summary>
+            Converts a relative URI into an absolute one (by resolving it
+            relative to the current absolute URI).
+            </summary>
+            <param name="href">The relative URI.</param>
+            <returns>The absolute URI.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix">
+            <summary>
+            Gets the URI prefix that can be prepended before URI paths to produce an absolute URI.
+            Typically this corresponds to the 'href' attribute on the document's &lt;base&gt; element.
+            </summary>
+            <returns>The URI prefix.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.ToBaseRelativePath(System.String,System.String)">
+            <summary>
+            Given a base URI prefix (e.g., one previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix"/>),
+            converts an absolute URI into one relative to the base URI prefix.
+            </summary>
+            <param name="baseUriPrefix">The base URI prefix (e.g., previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix"/>).</param>
+            <param name="locationAbsolute">An absolute URI that is within the space of the base URI prefix.</param>
+            <returns>A relative URI path.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.NavigateTo(System.String)">
+            <summary>
+            Navigates to the specified URI.
+            </summary>
+            <param name="uri">The destination URI. This can be absolute, or relative to the base URI
+            prefix (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix"/>).</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIEventArgs">
+            <summary>
+            Supplies information about an event that is being raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIEventArgs.Type">
+            <summary>
+            Gets or sets the type of the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIChangeEventArgs">
+            <summary>
+            Supplies information about an input change event that is being raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIChangeEventArgs.Value">
+            <summary>
+            Gets or sets the new value of the input. This may be a <see cref="T:System.String"/>
+            or a <see cref="T:System.Boolean"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs">
+            <summary>
+            Supplies information about a keyboard event that is being raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.Key">
+            <summary>
+            If applicable, gets or sets the key that produced the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIMouseEventArgs">
+            <summary>
+            Supplies information about a mouse event that is being raised.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIEventHandler">
+            <summary>
+            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIChangeEventHandler">
+            <summary>
+            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIChangeEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventHandler">
+            <summary>
+            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIMouseEventHandler">
+            <summary>
+            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIMouseEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions">
+            <summary>
+            Extensions methods on <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/> for event handlers.
+            </summary>
+            <remarks>
+            <para>
+            These methods enable method-group to delegate conversion for delegates and methods that accept
+            types derived from <see cref="T:Microsoft.AspNetCore.Blazor.UIEventArgs"/>.
+            </para>
+            <para>
+            This enhances the programming experience for using event handlers with the render tree builder
+            in components written in pure C#. These extension methods make it possible to write code like:
+            <code>
+            builder.AddAttribute(0, "onkeypress", MyKeyPressHandler);
+            </code>
+            Where <c>void MyKeyPressHandler(UIKeyboardEventArgs e)</c> is a method defined in the same class.
+            In this example, the author knows that the <c>onclick</c> event is associated with the
+            <see cref="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs"/> event args type. The component author is responsible for 
+            providing a delegate that matches the expected event args type, an error will result in a failure
+            at runtime.
+            </para>
+            <para>
+            When a component is authored in Razor (.cshtml), the Razor code generator will maintain a mapping
+            between event names and event arg types that can be used to generate more strongly typed code.
+            Generated code for the same case will look like:
+            <code>
+            builder.AddAttribute(0, "onkeypress", BindMethods.GetEventHandlerValue&lt;UIKeyboardEventArgs&gt;(MyKeyPressHandler));
+            </code>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIChangeEventHandler)">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIChangeEventArgs"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIKeyboardEventHandler)">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventHandler"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIMouseEventHandler)">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIMouseEventHandler"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="T:SimpleJson.JsonArray">
+            <summary>
+            Represents the json array.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonArray.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonArray.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
+            </summary>
+            <param name="capacity">The capacity of the json array.</param>
+        </member>
+        <member name="M:SimpleJson.JsonArray.ToString">
+            <summary>
+            The json representation of the array.
+            </summary>
+            <returns>The json representation of the array.</returns>
+        </member>
+        <member name="T:SimpleJson.JsonObject">
+            <summary>
+            Represents the json object.
+            </summary>
+        </member>
+        <member name="F:SimpleJson.JsonObject._members">
+            <summary>
+            The internal member dictionary.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.#ctor(System.Collections.Generic.IEqualityComparer{System.String})">
+            <summary>
+            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing keys, or null to use the default <see cref="T:System.Collections.Generic.EqualityComparer`1"/> for the type of the key.</param>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Object"/> at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Add(System.String,System.Object)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:SimpleJson.JsonObject.ContainsKey(System.String)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>
+                <c>true</c> if the specified key contains key; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Keys">
+            <summary>
+            Gets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Remove(System.String)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Tries the get value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Values">
+            <summary>
+            Gets the values.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified key.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Determines whether [contains] [the specified item].
+            </summary>
+            <param name="item">The item.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="arrayIndex">Index of the array.</param>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:SimpleJson.JsonObject.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.ToString">
+            <summary>
+            Returns a json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="T:SimpleJson.SimpleJson">
+            <summary>
+            This class encodes and decodes JSON strings.
+            Spec. details, see http://www.json.org/
+            
+            JSON uses Arrays and Objects. These correspond here to the datatypes JsonArray(IList&lt;object>) and JsonObject(IDictionary&lt;string,object>).
+            All numbers are parsed to doubles.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.DeserializeObject(System.String)">
+            <summary>
+            Parses the string json into a value
+            </summary>
+            <param name="json">A JSON string.</param>
+            <returns>An IList&lt;object>, a IDictionary&lt;string,object>, a double, a string, null, true, or false</returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.TryDeserializeObject(System.String,System.Object@)">
+            <summary>
+            Try parsing the json string into a value.
+            </summary>
+            <param name="json">
+            A JSON string.
+            </param>
+            <param name="obj">
+            The object.
+            </param>
+            <returns>
+            Returns true if successful otherwise false.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.SerializeObject(System.Object,SimpleJson.IJsonSerializerStrategy)">
+            <summary>
+            Converts a IDictionary&lt;string,object> / IList&lt;object> object into a JSON string
+            </summary>
+            <param name="json">A IDictionary&lt;string,object> / IList&lt;object></param>
+            <param name="jsonSerializerStrategy">Serializer strategy to use</param>
+            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.IsNumeric(System.Object)">
+            <summary>
+            Determines if a given object is numeric in any way
+            (can be integer, double, null, etc).
+            </summary>
+        </member>
+    </members>
+</doc>

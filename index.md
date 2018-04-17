@@ -106,7 +106,7 @@ documentType: index
         <section>
           <h2>Get involved</h2>
           <p class="lead">Join the community that's building Blazor, writing documentation, building samples, and more!</p>
-          <p class="lead"><a href="community.html">Community</a></p>
+          <p class="lead"><a href="community.md">Community</a></p>
         </section>
       </div>
     </div>

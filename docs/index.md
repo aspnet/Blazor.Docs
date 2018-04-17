@@ -74,7 +74,7 @@ Several topics show source code and samples that are available to view or downlo
    * Clone the repository locally. If you clone a docs repository directly to your local system, you won't be able to make commits directly against the repository, so you won't be able to make documentation contributions later. Use the fork and clone procedure previously described if you want to preserve the opportunity to contribute to the documentation later.
 1. Navigate within the repository's folders to the sample's location. The relative path to the sample's location appears in your browser's address bar when you follow the link to the sample in your browser.
 1. To run a sample, you have several options:
-   * Use the [dotnet CLI tools](../core/tools/index.md): In a console window, navigate to the sample's folder and use dotnet CLI commands.
+   * Use the [.NET CLI tools](https://docs.microsoft.com/dotnet/core/tools): In a console window, navigate to the sample's folder and use dotnet CLI commands.
    * Use [Visual Studio](https://www.visualstudio.com/) or [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/): Open the sample by selecting **File** > **Open** > **Project/Solution** from the menu bar, navigate to the sample project folder, and select the project file (*\*.csproj* or *\*.fsproj*).
    * Use [Visual Studio Code](https://code.visualstudio.com/): Open the sample by selecting **File** > **Open Folder** from the menu bar and selecting the sample's project folder.
    * Use a different IDE that supports .NET Core projects.

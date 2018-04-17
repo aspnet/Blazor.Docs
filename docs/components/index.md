@@ -112,32 +112,6 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 }
 ```
 
-**Conditional attributes**
-
-Blazor conditionally renders attributes based on the .NET value. If the value is `false` or `null`, Blazor won't render the attribute. If the value is `true`, the attribute is rendered minimized.
-
-In the following example, `IsCompleted` determines if `checked` is rendered in the control's markup.
-
-```cshtml
-<input type="checkbox" checked="@IsCompleted" />
-
-@functions {
-    public bool IsCompleted { get; set; }
-}
-```
-
-If `IsCompleted` is `true`, the check box is rendered as:
-
-```html
-<input type="checkbox" checked />
-```
-
-If `IsCompleted` is `false`, the check box is rendered as:
-
-```html
-<input type="checkbox" />
-```
-
 **Component attributes**
 
 Binding also recognizes component attributes, where `bind-{property}` can bind a property value across components.
@@ -335,6 +309,8 @@ The Mono team is working on a library that exposes standard browser APIs to .NET
 
 ## Razor support
 
+**Razor directives**
+
 Razor directives active with Blazor apps are shown in the following table.
 
 | Directive | Description |
@@ -347,5 +323,33 @@ Razor directives active with Blazor apps are shown in the following table.
 | [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
 | [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
 | [@addTagHelper](https://docs.microsoft.com/aspnet/core/mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
+
+**Conditional attributes**
+
+Blazor conditionally renders attributes based on the .NET value. If the value is `false` or `null`, Blazor won't render the attribute. If the value is `true`, the attribute is rendered minimized.
+
+In the following example, `IsCompleted` determines if `checked` is rendered in the control's markup.
+
+```cshtml
+<input type="checkbox" checked="@IsCompleted" />
+
+@functions {
+    public bool IsCompleted { get; set; }
+}
+```
+
+If `IsCompleted` is `true`, the check box is rendered as:
+
+```html
+<input type="checkbox" checked />
+```
+
+If `IsCompleted` is `false`, the check box is rendered as:
+
+```html
+<input type="checkbox" />
+```
+
+**Additional information on Razor**
 
 For more information on Razor, see the [Razor syntax reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.

@@ -25,8 +25,6 @@ Welcome to the Blazor API area!
 
 [Microsoft.AspNetCore.Blazor.Layouts](/api/Microsoft.AspNetCore.Blazor.Layouts.html)
 
-[Microsoft.AspNetCore.Blazor.Razor](/api/Microsoft.AspNetCore.Blazor.Razor.html)
-
 [Microsoft.AspNetCore.Blazor.Rendering](/api/Microsoft.AspNetCore.Blazor.Rendering.html)
 
 [Microsoft.AspNetCore.Blazor.RenderTree](/api/Microsoft.AspNetCore.Blazor.RenderTree.html)

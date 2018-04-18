@@ -6,9 +6,9 @@ documentType: index
 
 <div class="hero">
   <div class="wrap">
-    <div class="text">
+    <h1 class="text">
       <strong>Blazor</strong>
-    </div>
+    </h1>
     <div class="minitext">
         Full-stack web development with C# and WebAssembly
     </div>
@@ -25,7 +25,7 @@ documentType: index
         <section>
           <h2>Build a Web UI with C#</h2>
           <p class="lead">Blazor is an experimental .NET web framework using C# and HTML that runs in the browser.</p>
-          <p class="lead"><a href="/docs/introduction/faq.html">What is Blazor?</a></p>
+          <div class="lead"><a href="/docs/introduction/faq.html">What is Blazor?</a></div>
         </section>
       </div>
     </div>
@@ -38,7 +38,7 @@ documentType: index
         <section>
           <h2>Full-stack .NET</h2>
           <p class="lead">Do full-stack .NET development using stable and consistent tools, languages, and APIs both in the browser and on the server.</p>
-          <p class="lead"><a href="https://www.microsoft.com/net">Learn more about the .NET platform</a></p>
+          <div class="lead"><a href="https://www.microsoft.com/net">Learn more about the .NET platform</a></div>
         </section>
         <i class="glyphicon glyphicon-tasks"></i>
       </div>
@@ -53,7 +53,7 @@ documentType: index
         <section>
           <h2>Runs in all browsers and implements .NET Standard</h2>
           <p class="lead">Blazor runs in all browsers on the real .NET runtime with full support for .NET Standard. Blazor requires no plugins and no code transpilation, only open web standards.</p>
-          <p class="lead"><a href="/docs/introduction/index.html">How Blazor works</a></p>
+          <div class="lead"><a href="/docs/introduction/index.html">How Blazor works</a></div>
         </section>
       </div>
     </div>
@@ -106,7 +106,7 @@ documentType: index
         <section>
           <h2>Get involved</h2>
           <p class="lead">Join the community that's building Blazor, writing documentation, building samples, and more!</p>
-          <p class="lead"><a href="community.md">Community</a></p>
+          <div class="lead"><a href="community.md">Community</a></div>
         </section>
       </div>
     </div>
@@ -119,7 +119,7 @@ documentType: index
         <section>
           <h2>Open-source & free </h2>
           <p class="lead">Blazor is part of the open-source .NET platform that has a strong community of over 25,000 contributors from over 1,700 companies.</p>
-          <p class="lead"><a href="https://github.com/aspnet/blazor">Blazor on GitHub</a></p>
+          <div class="lead"><a href="https://github.com/aspnet/blazor">Blazor on GitHub</a></div>
         </section>
         <i class="glyphicon glyphicon-road"></i>
       </div>
@@ -129,11 +129,9 @@ documentType: index
 <div class="get-started-section">
   <div class="container">
     <div class="row">
-      <section>
-        <div class="buttons-unit">
-          <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
-        </div>
-      </section>
+      <div class="buttons-unit" style="padding-bottom:50px">
+        <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
+      </div>
     </div>
   </div>
 </div>

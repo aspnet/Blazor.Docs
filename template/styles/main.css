@@ -125,6 +125,7 @@ svg:hover path {
 .hero .text {
   font-size: 64px;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Helvetica, sans-serif;
 }
 
 .hero .minitext {

@@ -129,11 +129,9 @@ documentType: index
 <div class="get-started-section">
   <div class="container">
     <div class="row">
-      <section>
-        <div class="buttons-unit">
-          <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
-        </div>
-      </section>
+      <div class="buttons-unit" style="padding-bottom:50px">
+        <a href="/docs/get-started.html" class="btn btn-primary" style="font-size:2em;display:inline;padding:15px"><i class="glyphicon glyphicon-send" style="font-size:1em;padding:0 20px 0 0"></i>Get Started</a>
+      </div>
     </div>
   </div>
 </div>

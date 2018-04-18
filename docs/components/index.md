@@ -17,7 +17,7 @@ By [Luke Latham](https://github.com/guardrex) and [Daniel Roth](https://github.c
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnet/Blazor.Docs/docs/components/common/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
+[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/components/common/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
 
 Blazor apps are built using *components*. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes both the HTML markup to render along with the processing logic needed to inject data or respond to UI events. Components are flexible and lightweight, and they can be nested, reused, and shared between projects.
 
@@ -248,7 +248,7 @@ protected override bool ShouldRender()
 
 ## Component disposal with IDisposable
 
-If a component implements [IDisposable](/dotnet/api/system.idisposable), the [Dispose method](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose) is called when the component is removed from the UI. The following component uses `@implements IDisposable` and the `Dispose` method:
+If a component implements [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable), the [Dispose method](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose) is called when the component is removed from the UI. The following component uses `@implements IDisposable` and the `Dispose` method:
 
 ```csharp
 @using System

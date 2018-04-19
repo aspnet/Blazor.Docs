@@ -17,38 +17,34 @@
       {
         "files": [
           "api/**.yml",
-          "api/index.md"
-        ]
-      },
-      {
-        "files": [
-          "docs/**.md",
-          "docs/**/toc.md",
           "toc.yml",
-          "*.md"
-        ]
+          "**/*.md"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/sample/**",
+          "**/samples/**",
+          "**/includes/**",
+          "_site/**"
+        ],
+        "src": "."
       }
     ],
     "resource": [
       {
         "files": [
           "**/*.png",
-          "**/*.jpg",
-          "stylesheets/**"
-        ]
-      }
-    ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
+          "**/*.jpg"
         ],
         "exclude": [
-          "obj/**",
+          "**/obj/**",
+          "**/includes/**",
           "_site/**"
-        ]
+        ],
+        "src": "."
       }
     ],
+    "overwrite": [],
     "dest": "_site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],

@@ -62,9 +62,6 @@
     "cleanupCacheHistory": false,
     "disableGitFeatures": false,
     "globalMetadata": {
-      "newFileRepository": {
-        "branch": "master"
-      },
       "_gitContribute": {
         "branch": "master"
       }

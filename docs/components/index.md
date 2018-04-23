@@ -309,7 +309,7 @@ The Mono team is working on a library that exposes standard browser APIs to .NET
 
 ## Base class inheritance for a "code-behind" experience
 
-Blazor's Razor files (*\*.cshtml*) mix HTML markup and C# processing code in the same file. The `@inherits` directive can be used to provide Blazor with a "code-behind" experience that separates component markup from processing code.
+Blazor component files (*\*.cshtml*) mix HTML markup and C# processing code in the same file. The `@inherits` directive can be used to provide Blazor with a "code-behind" experience that separates component markup from processing code.
 
 The [sample app](https://github.com/aspnet/Blazor.Docs/tree/master/docs/components/common/samples/) shows how a component can inherit a base class, `BlazorRocksBase`, to provide the component's properties and methods.
 
@@ -321,7 +321,7 @@ The [sample app](https://github.com/aspnet/Blazor.Docs/tree/master/docs/componen
 
 [!code-csharp[](common/samples/2.x/ComponentsSample/Pages/BlazorRocksBase.cs)]
 
-The base class must derive from [BlazorComponent](/api/Microsoft.AspNetCore.Blazor.Components.BlazorComponent.html).
+The base class should derive from [BlazorComponent](/api/Microsoft.AspNetCore.Blazor.Components.BlazorComponent.html).
 
 ## Razor support
 

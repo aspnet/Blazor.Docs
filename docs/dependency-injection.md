@@ -44,7 +44,7 @@ static void Main(string[] args)
 }
 ```
 
-`BrowserServiceProvider` receives an action where app services are added to DI. `services` references the underlying `IServiceCollection`, which is a list of service descriptor objects ([Microsoft.Extensions.DependencyInjection.ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following code sample demonstrates the concept:
+`BrowserServiceProvider` receives an action where app services are added to DI. `services` references the underlying [IServiceCollection](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection), which is a list of service descriptor objects ([ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following code sample demonstrates the concept:
 
 ```csharp
 @using Microsoft.Extensions.DependencyInjection
@@ -64,18 +64,18 @@ Services can be configured with the following lifetimes:
 
 | Method      | Description |
 | ----------- | ----------- |
-| `Singleton` | DI creates a *single instance* of the service. All components requiring this service receive a reference to this instance. |
-| `Transient` | Whenever a component requires this service, it receives a *new instance* of the service. |
-| `Scoped`    | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
+| [Singleton](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.singleton#Microsoft_Extensions_DependencyInjection_ServiceDescriptor_Singleton__1_System_Func_System_IServiceProvider___0__) | DI creates a *single instance* of the service. All components requiring this service receive a reference to this instance. |
+| [Transient](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.transient) | Whenever a component requires this service, it receives a *new instance* of the service. |
+| [Scoped](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.scoped) | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
 
 ## Default services
 
-Blazor provides default services that are automatically added to the service collection of an app. The following table shows a list of the default services currently provided by Blazor's `BrowserServiceProvider`.
+Blazor provides default services that are automatically added to the service collection of an app. The following table shows a list of the default services currently provided by Blazor's [BrowserServiceProvider](/api/Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.html).
 
 | Method       | Description |
 | ------------ | ----------- |
-| `IUriHelper` | Helpers for working with URIs and navigation state (singleton). |
-| `HttpClient` | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of [System.Net.Http.HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) uses the browser for handling the HTTP traffic in the background. [HttpClient.BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
+| [IUriHelper](/api/Microsoft.AspNetCore.Blazor.Services.IUriHelper.html) | Helpers for working with URIs and navigation state (singleton). |
+| [HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of `HttpClient` uses the browser for handling the HTTP traffic in the background. [HttpClient.BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
 
 Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` that's added by the default template. A custom service provider doesn't automatically provide the default services listed in the table. Those services must be added to the new service provider explicitly.
 
@@ -118,7 +118,7 @@ The following example shows how to use `@inject`. The service implementing `Serv
 }
 ```
 
-Internally, the generated property (`DataRepository`) is decorated with the `Microsoft.AspNetCore.Blazor.Components.InjectAttribute` attribute. Typically, this attribute isn't used directly. If a base class is required for components and injected properties are also required for the base class, `InjectAttribute` can be manually added:
+Internally, the generated property (`DataRepository`) is decorated with the [InjectAttribute](/api/Microsoft.AspNetCore.Blazor.Components.InjectAttribute.html) attribute. Typically, this attribute isn't used directly. If a base class is required for components and injected properties are also required for the base class, `InjectAttribute` can be manually added:
 
 ```csharp
 public class ComponentBase : BlazorComponent

@@ -23,7 +23,7 @@ Blazor apps typically contain more than one page. Layout elements, such as menus
 
 Technically, a layout is just another Blazor component. A layout is defined in a Razor template or in C# code and can contain data binding, dependency injection, and other ordinary features of components. Two additional aspects turn a *component* into a *layout*:
 
-* The layout component must implement [Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent](/api/Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent.html). `ILayoutComponent` adds a `Body` property to the component that contains the content to be rendered inside the layout.
+* The layout component must implement [ILayoutComponent](/api/Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent.html). `ILayoutComponent` adds a `Body` property to the component that contains the content to be rendered inside the layout.
 * The layout component uses the `Body` property to specify where the body content should be rendered using the Razor syntax `@Body`. During rendering, `@Body` is replaced by the content of the layout.
 
 The following code sample shows the Razor template of a layout component. Note the use of `ILayoutComponent` and `@Body`:
@@ -56,7 +56,7 @@ The following code sample shows the Razor template of a layout component. Note t
 
 ## Use a layout in a component
 
-Use the Razor directive `@layout` to apply a layout to a component. The compiler converts this directive into a [Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute](/api/Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute.html), which is applied to the component class.
+Use the Razor directive `@layout` to apply a layout to a component. The compiler converts this directive into a [LayoutAttribute](/api/Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute.html), which is applied to the component class.
 
 The following code sample demonstrates the concept. The content of this component is inserted into the *MasterLayout* at the position of `@Body`:
 

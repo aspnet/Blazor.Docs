@@ -69,7 +69,7 @@ In the following example, the `ParentComponent` sets the value of the `Title` pr
 
 Components can set the content of an element in another component by assigning to a property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html) type.
 
-In the following example, the `ChildContent` element of the `ParentComponent` sets the value of the `ChildComponent`'s `PanelContent` property. `PanelContent` is a `RenderFragment` type and supplies the content to the Bootstrap panel.
+In the following example, the `ChildContent` element of the `ParentComponent` sets the value of the `ChildComponent`'s `ChildContent` property. `ChildContent` is a `RenderFragment` type and supplies the content to the Bootstrap panel.
 
 *ParentComponent.cshtml*:
 

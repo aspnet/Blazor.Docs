@@ -18,5 +18,8 @@ Below is a list of projects and resources from the Blazor community. If you know
 ## Tooling
 * [Razor+ Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=austincummings.razor-plus)
 
+## JS interop libraries
+* [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage)
+
 ## Other
 * [Trail: Blazor rendering with F#](https://github.com/panesofglass/trail)

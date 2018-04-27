@@ -67,13 +67,13 @@ In the following example, the `ParentComponent` sets the value of the `Title` pr
 
 ## Child content
 
-Components can set the content of an element in another component. The assigning component provides the content in the tags that specify the receiving component. For example, a `ParentComponent` can provide content that is to be rendered by a `ChildComponent` by placing the content inside **\<ChildComponent>** tags.
+Components can set the content in another component. The assigning component provides the content between the tags that specify the receiving component. For example, a `ParentComponent` can provide content that is to be rendered by a `ChildComponent` by placing the content inside **\<ChildComponent>** tags.
 
 *ParentComponent.cshtml*:
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
 
-The receiving component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html) type. The value of `ChildContent` is positioned in the markup where the content should be rendered.
+The child component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html). The value of `ChildContent` is positioned in the child component's markup where the content should be rendered.
 
 *ChildComponent.cshtml*:
 

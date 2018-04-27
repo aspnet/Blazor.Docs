@@ -138,9 +138,11 @@ Child component:
 
 @functions {
     public int Year { get; set; }
-    public Action<int> ValueChanged { get; set; }
+    public Action<int> YearChanged { get; set; }
 }
 ```
+
+The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
 
 ## Event handling
 

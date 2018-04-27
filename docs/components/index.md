@@ -67,17 +67,20 @@ In the following example, the `ParentComponent` sets the value of the `Title` pr
 
 ## Child content
 
-Components can set the content of an element in another component by assigning to a property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html) type.
-
-In the following example, the `ChildContent` element of the `ParentComponent` sets the value of the `ChildComponent`'s `ChildContent` property. `ChildContent` is a `RenderFragment` type and supplies the content to the Bootstrap panel.
+Components can set the content in another component. The assigning component provides the content between the tags that specify the receiving component. For example, a `ParentComponent` can provide content that is to be rendered by a `ChildComponent` by placing the content inside **\<ChildComponent>** tags.
 
 *ParentComponent.cshtml*:
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
 
+The child component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html). The value of `ChildContent` is positioned in the child component's markup where the content should be rendered. In the following example, the value of `ChildContent` is received from the parent component and rendered inside the Bootstrap panel's `panel-body`.
+
 *ChildComponent.cshtml*:
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=3,8)]
+
+> [!NOTE]
+> The property receiving the `RenderFragment` content must be named `ChildContent` by convention.
 
 ## Data binding
 
@@ -135,9 +138,11 @@ Child component:
 
 @functions {
     public int Year { get; set; }
-    public Action<int> ValueChanged { get; set; }
+    public Action<int> YearChanged { get; set; }
 }
 ```
+
+The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
 
 ## Event handling
 

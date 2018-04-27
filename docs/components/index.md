@@ -73,7 +73,7 @@ Components can set the content in another component. The assigning component pro
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
 
-The child component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html). The value of `ChildContent` is positioned in the child component's markup where the content should be rendered.
+The child component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html). The value of `ChildContent` is positioned in the child component's markup where the content should be rendered. In the following example, the value of `ChildContent` is received from the parent component and rendered inside the Bootstrap panel's `panel-body`.
 
 *ChildComponent.cshtml*:
 

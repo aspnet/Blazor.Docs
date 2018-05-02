@@ -269,26 +269,6 @@ If a component implements [IDisposable](https://docs.microsoft.com/dotnet/api/sy
 }
 ```
 
-## Routing
-
-Routing in Blazor is achieved by providing a route template to each accessible component in the app.
-
-When a *\*.cshtml* file with an `@page` directive is compiled, the generated class is given a [RouteAttribute](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) specifying the route template. At runtime, the router looks for component classes with a `RouteAttribute` and renders whichever component has a route template that matches the requested URL.
-
-Multiple route templates can be applied to a component. The following component responds to requests for `/BlazorRoute` and `/DifferentBlazorRoute`:
-
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
-
-## Route parameters
-
-Blazor components can receive route parameters from the route template provided in the `@page` directive. The Blazor client-side router uses route parameters to populate the corresponding component parameters.
-
-*RouteParameter.cshtml*:
-
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/RouteParameter.cshtml?start=1&end=8)]
-
-Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
-
 ## JavaScript/TypeScript interop
 
 To call JavaScript libraries or custom JavaScript/TypeScript code from .NET, the current approach is to register a named function with JavaScript/TypeScript. Place the `registerFunction` call in the *index.html* file or a JavaScript file (*\*.js*) loaded by the *index.html* file. Place the inline JavaScript or `<script>` tag below `<script type="blazor-boot"></script>`, and the JavaScript/TypeScript loads at the correct time and only executes once. 
@@ -341,7 +321,7 @@ Razor directives active with Blazor apps are shown in the following table.
 | [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
 | [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
 | `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
-| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
+| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. For more information, see [Routing](xref:client-side/blazor/routing). |
 | [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
 | [@addTagHelper](https://docs.microsoft.com/aspnet/core/mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
 

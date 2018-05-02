@@ -1,7 +1,7 @@
 ---
 title: Dependency injection in Blazor
 author: rstropek
-description: Learn how Blazor apps can use built-in services by having them injected into components.
+description: See how Blazor apps can use built-in services by having them injected into components.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc

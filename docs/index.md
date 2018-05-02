@@ -39,7 +39,10 @@ Create and use Blazor components, the fundamental building blocks of Blazor apps
 Learn how to create reusable layout components for Blazor apps.
 
 [Dependency injection](xref:client-side/blazor/dependency-injection)  
-Learn how Blazor apps can use built-in services by having them injected into components.
+See how Blazor apps can use built-in services by having them injected into components.
+
+[Routing](xref:client-side/blazor/routing)  
+Learn how to route requests in a client-side Blazor app and about the NavLink component.
 
 [Host and deploy](xref:client-side/blazor/host-and-deploy/index)  
 Discover how to host and deploy Blazor apps using hosted and standalone deployment models.

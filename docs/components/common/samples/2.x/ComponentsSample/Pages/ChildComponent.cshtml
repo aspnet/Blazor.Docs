@@ -4,6 +4,9 @@
 </div>
 
 @functions {
-    public string Title { get; set; }
-    public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    private string Title { get; set; }
+
+    [Parameter]
+    private RenderFragment ChildContent { get; set; }
 }

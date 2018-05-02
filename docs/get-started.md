@@ -17,23 +17,21 @@ uid: client-side/blazor/get-started
 
 ## Setup
 
-1. Install the [.NET Core 2.1 Preview 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2).
-    - If you've installed the .NET Core 2.1 Preview 2 SDK previously, make sure the version is 2.1.300-preview2-**008533** by running `dotnet --version`. If not, then you need to install it again to get the updated build.
-1. Install the latest *preview* of [Visual Studio 2017 (15.7)](https://www.visualstudio.com/vs/preview) with the *ASP.NET and web development* workload. 
-    - You can install Visual Studio previews side-by-side with an existing Visual Studio installation without impacting your existing development environment.
-1. Install the [ASP.NET Core Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
+1. Install the [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.300-preview2-008533 or later).
+1. Install [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.7 Preview 5 or later) with the *ASP.NET and web development* workload selected.
+1. Install the latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
 
 To create your first project from Visual Studio:
 
 1. Select **File** > **New Project** > **Web** > **ASP.NET Core Web Application**.
-1. Make sure **.NET Core** and **ASP.NET Core 2.0** are selected at the top.
+1. Make sure **.NET Core** and **ASP.NET Core 2.0** (or later) are selected at the top.
 1. Choose the Blazor template and select **OK**.
 
    ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/03/new-blazor-app-dialog.png)
    
 1. Press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
-If you're not using Visual Studio, you can install the Blazor templates from the command-line:
+You can also install and use the Blazor templates from the command-line:
 
 ```console
 dotnet new -i Microsoft.AspNetCore.Blazor.Templates
@@ -44,7 +42,7 @@ dotnet run
 
 Congrats! You just ran your first Blazor app!
 
-![Blazor app home page](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-home.png)
+![Blazor app home page](https://msdnshared.blob.core.windows.net/media/2018/04/blazor-bootstrap-4.png)
 
 ## Help & feedback
 
@@ -55,7 +53,7 @@ Your feedback is especially important to us during this experimental phase for B
 
 After you've tried out Blazor, please let us know what you think by taking our in-product survey. Just click the survey link shown on the app home page when running one of the Blazor project templates:
 
-![Blazor survey](https://msdnshared.blob.core.windows.net/media/2018/03/blazor-survey.png)
+![Blazor survey](https://msdnshared.blob.core.windows.net/media/2018/05/blazor-survey-new.png)
 
 ## What's next?
 

@@ -107,7 +107,17 @@
             Not intended to be used directly.
             </summary>
         </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetEventHandlerValue``1(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetEventHandlerValue``1(System.Action{``0})">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.GetEventHandlerValue``1(System.Func{``0,System.Threading.Tasks.Task})">
             <summary>
             Not intended to be used directly.
             </summary>
@@ -138,36 +148,6 @@
             </summary>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler``1(System.Action{``0},``0)">
-            <summary>
-            Not intended to be used directly.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.String},System.String)">
-            <summary>
-            Not intended to be used directly.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.Boolean},System.Boolean)">
-            <summary>
-            Not intended to be used directly.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.Int32},System.Int32)">
-            <summary>
-            Not intended to be used directly.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue``1(System.Action{``0},``0)">
-            <summary>
-            Not intended to be used directly.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.DateTime},System.DateTime)">
-            <summary>
-            Not intended to be used directly.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValue(System.Action{System.DateTime},System.DateTime,System.String)">
             <summary>
             Not intended to be used directly.
             </summary>
@@ -221,6 +201,7 @@
             Method invoked when the component has received parameters from its parent in
             the render tree, and the incoming values have been assigned to properties.
             </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation, or <see langword="null"/>.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.StateHasChanged">
             <summary>
@@ -233,6 +214,19 @@
             Returns a flag to indicate whether the component should render.
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnAfterRender">
+            <summary>
+            Method invoked after each time the component has been rendered.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnAfterRenderAsync">
+            <summary>
+            Method invoked after each time the component has been rendered. Note that the component does
+            not automatically re-render after the completion of any returned <see cref="T:System.Threading.Tasks.Task"/>, because
+            that would cause an infinite render loop.
+            </summary>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation, or <see langword="null"/>.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
             <summary>
@@ -274,6 +268,24 @@
             Gets the event argument type.
             </summary>
         </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.EventHandlerInvoker">
+            <summary>
+            A bound event handler delegate.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.EventHandlerInvoker.#ctor(System.MulticastDelegate)">
+            <summary>
+            Creates the new <see cref="T:Microsoft.AspNetCore.Blazor.Components.EventHandlerInvoker"/>.
+            </summary>
+            <param name="delegate">The delegate to bind.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.EventHandlerInvoker.Invoke(Microsoft.AspNetCore.Blazor.UIEventArgs)">
+            <summary>
+            Invokes the delegate associated with this binding.
+            </summary>
+            <param name="e">The <see cref="T:Microsoft.AspNetCore.Blazor.UIEventArgs"/>.</param>
+            <returns></returns>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.EventHandlers">
             <summary>
             Holds <see cref="T:System.EventHandler"/> attributes to configure the mappings between event names and
@@ -297,16 +309,26 @@
             </summary>
             <param name="parameters">The parameters.</param>
         </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.IHandleAfterRender">
+            <summary>
+            Interface implemented by components that receive notification that they have been rendered.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.IHandleAfterRender.OnAfterRender">
+            <summary>
+            Notifies the component that it has been rendered.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.IHandleEvent">
             <summary>
             Interface implemented by components that receive notification of their events.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.IHandleEvent.HandleEvent(Microsoft.AspNetCore.Blazor.UIEventHandler,Microsoft.AspNetCore.Blazor.UIEventArgs)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.IHandleEvent.HandleEvent(Microsoft.AspNetCore.Blazor.Components.EventHandlerInvoker,Microsoft.AspNetCore.Blazor.UIEventArgs)">
             <summary>
             Notifies the component that one of its event handlers has been triggered.
             </summary>
-            <param name="handler">The event handler.</param>
+            <param name="binding">The event binding.</param>
             <param name="args">Arguments for the event handler.</param>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.InjectAttribute">
@@ -329,6 +351,16 @@
         <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Value">
             <summary>
             Gets the value of the parameter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Frame">
+            <summary>
+            Gets the <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame" /> that holds the parameter name and value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.ParameterAttribute">
+            <summary>
+            Denotes the target member as a component parameter.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection">
@@ -444,6 +476,11 @@
             Gets the route template.
             </summary>
         </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.ElementRef">
+            <summary>
+            Represents a reference to a rendered element.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions">
             <summary>
             Extension methods for working with JSON APIs.
@@ -522,6 +559,14 @@
             <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
             <returns>The response parsed as an object of the generic type.</returns>
         </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Json.ICustomJsonSerializer.ToJsonPrimitive">
+            <summary>
+            Supplies a representation suitable for JSON serialization. For example, the
+            return value may be a string->object dictionary containing properties to
+            serialize, or simply a string.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.JsonUtil">
             <summary>
             Provides mechanisms for converting between .NET objects and JSON strings.
@@ -542,14 +587,16 @@
             <param name="json">The JSON string.</param>
             <returns>An object of the specified type.</returns>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent">
+        <member name="T:Microsoft.AspNetCore.Blazor.Layouts.BlazorLayoutComponent">
             <summary>
-            Indicates that the type represents a layout.
+            Optional base class for components that represent a layout.
+            Alternatively, Blazor components may implement <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> directly
+            and declare their own parameter named <see cref="P:Microsoft.AspNetCore.Blazor.Layouts.BlazorLayoutComponent.Body"/>.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent.Body">
+        <member name="P:Microsoft.AspNetCore.Blazor.Layouts.BlazorLayoutComponent.Body">
             <summary>
-            Gets or sets the content to be rendered inside the layout.
+            Gets the content to be rendered inside the layout.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute">
@@ -559,14 +606,15 @@
         </member>
         <member name="P:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute.LayoutType">
             <summary>
-            The type of the layout. The type always implements <see cref="T:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent"/>.
+            The type of the layout. The type myst implement <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/>
+            and must accept a parameter with the name 'Body'.
             </summary>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute.#ctor(System.Type)">
             <summary>
             Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Layouts.LayoutAttribute"/>.
             </summary>
-            <param name="layoutType">The type of the layout. This must implement <see cref="T:Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent"/>.</param>
+            <param name="layoutType">The type of the layout.</param>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay">
             <summary>
@@ -884,10 +932,38 @@
             <param name="name">The name of the attribute.</param>
             <param name="value">The value of the attribute.</param>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIEventHandler)">
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIEventArgs})">
             <summary>
             <para>
-            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIEventHandler"/>-valued attribute.
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing a <see cref="T:System.Func`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing a <see cref="T:System.Func`2"/>-valued attribute.
             </para>
             <para>
             The attribute is associated with the most recently added element. If the value is <c>null</c> and the
@@ -913,10 +989,10 @@
             <param name="value">The value of the attribute.</param>
             <remarks>
             This method is provided for infrastructure purposes, and is used to be
-            <see cref="T:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions"/> to provide support for delegates of specific
+            <see cref="T:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions"/> to provide support for delegates of specific
             types. For a good programming experience when using a custom delegate type, define an
             extension method similar to 
-            <see cref="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIChangeEventHandler)"/>
+            <see cref="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIChangeEventArgs})"/>
             that calls this method.
             </remarks>
         </member>
@@ -962,6 +1038,20 @@
             Marks a previously appended component frame as closed. Calls to this method
             must be balanced with calls to <see cref="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenComponent``1(System.Int32)"/>.
             </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddElementReferenceCapture(System.Int32,System.Action{Microsoft.AspNetCore.Blazor.ElementRef})">
+            <summary>
+            Appends a frame representing an instruction to capture a reference to the parent element.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="elementReferenceCaptureAction">An action to be invoked whenever the reference value changes.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddComponentReferenceCapture(System.Int32,System.Action{System.Object})">
+            <summary>
+            Appends a frame representing an instruction to capture a reference to the parent component.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="componentReferenceCaptureAction">An action to be invoked whenever the reference value changes.</param>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.Clear">
             <summary>
@@ -1096,13 +1186,13 @@
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ElementName">
             <summary>
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Element"/>,
-            gets a name representing the type of the element. Otherwise, the value is <see langword="null"/>.
+            gets a name representing the type of the element. Otherwise, the value is undefined.
             </summary>
         </member>
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.TextContent">
             <summary>
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Text"/>,
-            gets the content of the text frame. Otherwise, the value is <see langword="null"/>.
+            gets the content of the text frame. Otherwise, the value is undefined.
             </summary>
         </member>
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeEventHandlerId">
@@ -1114,13 +1204,13 @@
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeName">
             <summary>
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Attribute"/>,
-            gets the attribute name. Otherwise, the value is <see langword="null"/>.
+            gets the attribute name. Otherwise, the value is undefined.
             </summary>
         </member>
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeValue">
             <summary>
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Attribute"/>,
-            gets the attribute value. Otherwise, the value is <see langword="null"/>.
+            gets the attribute value. Otherwise, the value is undefined.
             </summary>
         </member>
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentSubtreeLength">
@@ -1145,7 +1235,7 @@
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.Component">
             <summary>
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>,
-            gets the child component instance. Otherwise, the value is <see langword="null"/>.
+            gets the child component instance. Otherwise, the value is undefined.
             </summary>
         </member>
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.RegionSubtreeLength">
@@ -1153,6 +1243,36 @@
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Region"/>
             gets the number of frames in the subtree for which this frame is the root.
             The value is zero if the frame has not yet been closed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ElementReferenceCaptureId">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ElementReferenceCapture"/>,
+            gets the ID of the reference capture. Otherwise, the value is undefined.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ElementReferenceCaptureAction">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ElementReferenceCapture"/>,
+            gets the action that writes the reference to its target. Otherwise, the value is undefined.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentReferenceCaptureParentFrameIndex">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ComponentReferenceCapture"/>,
+            gets the index of the parent frame representing the component being captured. Otherwise, the value is undefined.
+            WARNING: This index can only be used in the context of the frame's original render tree. If the frame is
+                     copied elsewhere, such as to the ReferenceFrames buffer of a RenderTreeDiff, then the index will
+                     not relate to entries in that other buffer.
+                     Currently there's no scenario where this matters, but if there was, we could change all of the subtree
+                     initialization logic in RenderTreeDiffBuilder to walk the frames hierarchically, then it would know
+                     the parent index at the point where it wants to initialize the ComponentReferenceCapture frame.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentReferenceCaptureAction">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ComponentReferenceCapture"/>,
+            gets the action that writes the reference to its target. Otherwise, the value is undefined.
             </summary>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ToString">
@@ -1189,6 +1309,16 @@
             unsplittable group for the purposes of diffing. This is typically used when appending
             a tree fragment generated by external code, because the sequence numbers in that tree
             fragment are not comparable to sequence numbers outside it.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ElementReferenceCapture">
+            <summary>
+            Represents an instruction to capture or update a reference to the parent element.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ComponentReferenceCapture">
+            <summary>
+            Represents an instruction to capture or update a reference to the parent component.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Routing.NavLink">
@@ -1363,6 +1493,26 @@
             or a <see cref="T:System.Boolean"/>.
             </summary>
         </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIClipboardEventArgs">
+            <summary>
+            Supplies information about an clipboard event that is being raised.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIDragEventArgs">
+            <summary>
+            Supplies information about an drag event that is being raised.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIErrorEventArgs">
+            <summary>
+            Supplies information about an error event that is being raised.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIFocusEventArgs">
+            <summary>
+            Supplies information about a focus event that is being raised.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs">
             <summary>
             Supplies information about a keyboard event that is being raised.
@@ -1378,27 +1528,27 @@
             Supplies information about a mouse event that is being raised.
             </summary>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.UIEventHandler">
+        <member name="T:Microsoft.AspNetCore.Blazor.UIPointerEventArgs">
             <summary>
-            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            Supplies information about a mouse event that is being raised.
             </summary>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.UIChangeEventHandler">
+        <member name="T:Microsoft.AspNetCore.Blazor.UIProgressEventArgs">
             <summary>
-            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIChangeEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            Supplies information about a progress event that is being raised.
             </summary>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventHandler">
+        <member name="T:Microsoft.AspNetCore.Blazor.UITouchEventArgs">
             <summary>
-            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            Supplies information about a touch event that is being raised.
             </summary>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.UIMouseEventHandler">
+        <member name="T:Microsoft.AspNetCore.Blazor.UIWheelEventArgs">
             <summary>
-            Handles an <see cref="T:Microsoft.AspNetCore.Blazor.UIMouseEventArgs"/> event raised for a <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame"/>.
+            Supplies information about a mouse wheel event that is being raised.
             </summary>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions">
+        <member name="T:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions">
             <summary>
             Extensions methods on <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/> for event handlers.
             </summary>
@@ -1429,10 +1579,10 @@
             </para>
             </remarks>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIChangeEventHandler)">
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIChangeEventArgs})">
             <summary>
             <para>
-            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIChangeEventArgs"/>-valued attribute.
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
             </para>
             <para>
             The attribute is associated with the most recently added element. If the value is <c>null</c> and the
@@ -1444,10 +1594,10 @@
             <param name="name">The name of the attribute.</param>
             <param name="value">The value of the attribute.</param>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIKeyboardEventHandler)">
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIChangeEventArgs,System.Threading.Tasks.Task})">
             <summary>
             <para>
-            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIKeyboardEventHandler"/>-valued attribute.
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
             </para>
             <para>
             The attribute is associated with the most recently added element. If the value is <c>null</c> and the
@@ -1459,10 +1609,295 @@
             <param name="name">The name of the attribute.</param>
             <param name="value">The value of the attribute.</param>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.UIEventHandlerRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,Microsoft.AspNetCore.Blazor.UIMouseEventHandler)">
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIDragEventArgs})">
             <summary>
             <para>
-            Appends a frame representing an <see cref="T:Microsoft.AspNetCore.Blazor.UIMouseEventHandler"/>-valued attribute.
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIDragEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIClipboardEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIClipboardEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIErrorEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIErrorEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIFocusEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIFocusEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIMouseEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIMouseEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIPointerEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIPointerEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIProgressEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIProgressEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UITouchEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UITouchEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Action{Microsoft.AspNetCore.Blazor.UIWheelEventArgs})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Action`1"/>-valued attribute.
+            </para>
+            <para>
+            The attribute is associated with the most recently added element. If the value is <c>null</c> and the
+            current element is not a component, the frame will be omitted.
+            </para>
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/>.</param>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="name">The name of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions.AddAttribute(Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder,System.Int32,System.String,System.Func{Microsoft.AspNetCore.Blazor.UIWheelEventArgs,System.Threading.Tasks.Task})">
+            <summary>
+            <para>
+            Appends a frame representing an <see cref="T:System.Func`2"/>-valued attribute.
             </para>
             <para>
             The attribute is associated with the most recently added element. If the value is <c>null</c> and the

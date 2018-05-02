@@ -23,13 +23,13 @@ Blazor apps typically contain more than one page. Layout elements, such as menus
 
 Technically, a layout is just another Blazor component. A layout is defined in a Razor template or in C# code and can contain data binding, dependency injection, and other ordinary features of components. Two additional aspects turn a *component* into a *layout*:
 
-* The layout component must implement [ILayoutComponent](/api/Microsoft.AspNetCore.Blazor.Layouts.ILayoutComponent.html). `ILayoutComponent` adds a `Body` property to the component that contains the content to be rendered inside the layout.
+* The layout component must inherit from [BlazorLayoutComponent](/api/Microsoft.AspNetCore.Blazor.Layouts.BlazorLayoutComponent.html). `BlazorLayoutComponent` defines a `Body` property that contains the content to be rendered inside the layout.
 * The layout component uses the `Body` property to specify where the body content should be rendered using the Razor syntax `@Body`. During rendering, `@Body` is replaced by the content of the layout.
 
-The following code sample shows the Razor template of a layout component. Note the use of `ILayoutComponent` and `@Body`:
+The following code sample shows the Razor template of a layout component. Note the use of `BlazorLayoutComponent` and `@Body`:
 
 ```csharp
-@implements ILayoutComponent
+@inherits BlazorLayoutComponent
 
 <header>
     <h1>ERP Master 3000</h1>
@@ -49,7 +49,6 @@ The following code sample shows the Razor template of a layout component. Note t
 
 @functions {
     public string CopyrightMessage { get; set; }
-    public RenderFragment Body { get; set; }
     ...
 }
 ```
@@ -98,7 +97,7 @@ The *MasterDataLayout.cshtml* file provides the `MasterDataLayout`. The layout r
 
 ```csharp
 @layout MainLayout
-@implements ILayoutComponent
+@inherits BlazorLayoutComponent
 
 <nav>
     <!-- Menu structure of master data module -->
@@ -106,10 +105,6 @@ The *MasterDataLayout.cshtml* file provides the `MasterDataLayout`. The layout r
 </nav>
 
 @Body
-
-@functions {
-    public RenderFragment Body { get; set; }
-}
 ```
 
 Finally, `MainLayout` contains the top-level layout elements, such as the header, footer, and main menu.
@@ -117,14 +112,10 @@ Finally, `MainLayout` contains the top-level layout elements, such as the header
 *MainLayout.cshtml*:
 
 ```csharp
-@implements ILayoutComponent
+@inherits BlazorLayoutComponent
 
 <header>...</header>
 <nav>...</nav>
 
 @Body
-
-@functions {
-    public RenderFragment Body { get; set; }
-}
 ```

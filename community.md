@@ -22,6 +22,7 @@ Below is a list of projects and resources from the Blazor community. If you know
 ## JS interop libraries
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage)
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)
+* [BlazorComponents (ChartJS Interop)](https://github.com/muqeet-khan/BlazorComponents)
 
 ## Other
 * [Trail: Blazor rendering with F#](https://github.com/panesofglass/trail)

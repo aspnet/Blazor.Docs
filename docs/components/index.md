@@ -137,7 +137,10 @@ Child component:
 <div> ... </div>
 
 @functions {
+    [Parameter]
     public int Year { get; set; }
+    
+    [Parameter]
     public Action<int> YearChanged { get; set; }
 }
 ```

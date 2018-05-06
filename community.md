@@ -25,7 +25,7 @@ Below is a list of projects and resources from the Blazor community. If you know
 * [BlazorComponents (ChartJS Interop)](https://github.com/muqeet-khan/BlazorComponents)
 
 ## Bootstrap components
-* [BlazorComponents](https://github.com/muqeet-khan/BlazorComponents)
+* [BlazorStrap](https://github.com/chanan/BlazorStrap)
 
 ## Other
 * [Trail: Blazor rendering with F#](https://github.com/panesofglass/trail)

@@ -138,10 +138,10 @@ Child component:
 
 @functions {
     [Parameter]
-    public int Year { get; set; }
+    private int Year { get; set; }
     
     [Parameter]
-    public Action<int> YearChanged { get; set; }
+    private Action<int> YearChanged { get; set; }
 }
 ```
 

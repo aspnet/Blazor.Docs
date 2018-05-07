@@ -133,7 +133,7 @@ After a component is defined, the component can be used to implement other compo
 
 ## Component parameters
 
-Components can also have parameters, which are defined using private properties on the component class. Use attributes to specify arguments for a component in markup. 
+Components can also have parameters, which are defined using private properties on the component class decorated with `[Parameter]`. Use attributes to specify arguments for a component in markup. 
 
 1. Update the `Counter` component to have an `IncrementAmount` property that defaults to 1.
 

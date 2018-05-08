@@ -152,7 +152,7 @@ public class DataAccess : IDataAccess
 {
     // The constructor receives an HttpClient via dependency
     // injection. HttpClient is a default service offered by Blazor.
-    public Repository(HttpClient client)
+    public DataAccess(HttpClient client)
     {
         ...
     }

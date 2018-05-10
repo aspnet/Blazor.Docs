@@ -20,6 +20,7 @@ Below is a list of projects and resources from the Blazor community. If you know
 * [Razor+ Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=austincummings.razor-plus)
 
 ## JS interop libraries
+* [Blazor Extensions](https://github.com/BlazorExtensions/)
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage)
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)
 * [BlazorComponents (ChartJS Interop)](https://github.com/muqeet-khan/BlazorComponents)

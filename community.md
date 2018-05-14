@@ -5,6 +5,7 @@
 Below is a list of projects and resources from the Blazor community. If you know about another Blazor related project that isn't listed here, please let us know and we'd be happy to add it to the list.
 
 ## State management
+* [Blazor Fluxor] - Flux/Redux library (https://mrpmorris.github.io/blazor-fluxor/)
 * [Blazor Redux](https://github.com/torhovland/blazor-redux)
 
 ## Community documentation

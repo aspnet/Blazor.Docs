@@ -242,9 +242,9 @@ Add a new page to the app that implements a simple todo list.
 1. Add the Todo page to the navigation bar by updating *Shared/NavMenu.cshtml*. Add a `NavLink` for the Todo page by adding the following list item markup below the existing list items.
 
     ```cshtml
-    <li>
-        <NavLink href="/todo">
-            <span class='glyphicon glyphicon-th-list'></span> Todo
+    <li class="nav-item px-3">
+        <NavLink class="nav-link" href="/todo">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Todo
         </NavLink>
     </li>
     ```

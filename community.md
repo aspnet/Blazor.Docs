@@ -6,7 +6,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## State management
 
-* [Blazor Fluxor] - Flux/Redux library (https://mrpmorris.github.io/blazor-fluxor/)
+* [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library 
 * [Blazor Redux](https://github.com/torhovland/blazor-redux)
 
 ## Community documentation
@@ -17,6 +17,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Samples
 
+* [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor)
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
 

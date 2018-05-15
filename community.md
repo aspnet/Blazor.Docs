@@ -32,6 +32,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorStrap (Bootstrap 4 Components)](https://github.com/chanan/BlazorStrap)
 * [Blazor Extensions](https://github.com/BlazorExtensions/)
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)
+* [Blazorous - Maintainable CSS with Blazor](https://github.com/chanan/Blazorous)
+* [BlazorDB - In memory, persisted to localstorage, database for .net Blazor browser framework](https://github.com/chanan/BlazorDB)
 
 ## Other
 

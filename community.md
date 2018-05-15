@@ -6,9 +6,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## State management
 
+* [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library 
 * [Blazor Redux](https://github.com/torhovland/blazor-redux)
-* [BlazorDB - In memory, persisted to localstorage, database](https://github.com/chanan/BlazorDB)
 
 ## Community documentation
 

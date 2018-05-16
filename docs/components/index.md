@@ -111,7 +111,8 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 <input bind="@StartDate" format-value="yyyy-MM-dd" />
 
 @functions {
-    public DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
+    [Parameter]
+    private DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
 }
 ```
 
@@ -127,7 +128,8 @@ Parent component:
 <ChildComponent bind-Year="@ParentYear" />
 
 @functions {
-    public int ParentYear { get; set; } = 1979;
+    [Parameter]
+    private int ParentYear { get; set; } = 1979;
 }
 ```
 
@@ -137,8 +139,11 @@ Child component:
 <div> ... </div>
 
 @functions {
-    public int Year { get; set; }
-    public Action<int> YearChanged { get; set; }
+    [Parameter]
+    private int Year { get; set; }
+    
+    [Parameter]
+    private Action<int> YearChanged { get; set; }
 }
 ```
 
@@ -371,7 +376,8 @@ In the following example, `IsCompleted` determines if `checked` is rendered in t
 <input type="checkbox" checked="@IsCompleted" />
 
 @functions {
-    public bool IsCompleted { get; set; }
+    [Parameter]
+    private bool IsCompleted { get; set; }
 }
 ```
 

@@ -29,6 +29,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
 * [BlazorComponents (ChartJS Interop)](https://github.com/muqeet-khan/BlazorComponents)
+* [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage)
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.

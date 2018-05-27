@@ -27,10 +27,11 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Libraries
 
-* [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
+* [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
 * [BlazorComponents (ChartJS Interop)](https://github.com/muqeet-khan/BlazorComponents)
+* [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage)
-* [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor
+* [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
 * [BlazorStrap (Bootstrap 4 Components)](https://github.com/chanan/BlazorStrap)
 * [Blazor Extensions](https://github.com/BlazorExtensions/)
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)

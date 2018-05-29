@@ -3,7 +3,7 @@
 <h1>Parent-child example</h1>
 
 <ChildComponent Title="Panel Title from Parent">
-    Panel content of the child component is supplied by the parent component.
+    Child content of the child component is supplied by the parent component.
 </ChildComponent>
 
 <p>
@@ -21,17 +21,20 @@
 <h2>ParentComponent.cshtml</h2>
 
 <pre><code>&lt;ChildComponent Title="Panel Title from Parent"&gt;
-    Panel content of the child component is supplied by the parent component.
+    Child content of the child component is supplied by the parent component.
 &lt;/ChildComponent&gt;</code></pre>
 
 <h2>ChildComponent.cshtml</h2>
 
 <pre><code>&lt;div class="panel panel-success"&gt;
   &lt;div class="panel-heading"&gt;@@Title&lt;/div&gt;
-  &lt;div class="panel-body"&gt;@@PanelContent&lt;/div&gt;
+  &lt;div class="panel-body"&gt;@@ChildContent&lt;/div&gt;
 &lt;/div&gt;
 
 @@functions {
-    public string Title { get; set; }
-    public RenderFragment PanelContent { get; set; }
+    [Parameter]
+    private string Title { get; set; }
+
+    [Parameter]
+    private RenderFragment ChildContent { get; set; }
 }</code></pre>

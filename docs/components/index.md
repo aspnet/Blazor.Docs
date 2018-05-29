@@ -53,7 +53,7 @@ The following markup renders a `HeadingComponent` (*HeadingComponent.cshtml*) in
 
 ## Component parameters
 
-Components can have *component parameters*, which are defined using public properties on the component class. Use attributes to specify arguments for a component in markup.
+Components can have *component parameters*, which are defined using *non-public* properties on the component class decorated with `[Parameter]`. Use attributes to specify arguments for a component in markup.
 
 In the following example, the `ParentComponent` sets the value of the `Title` property of the `ChildComponent`:
 
@@ -63,21 +63,24 @@ In the following example, the `ParentComponent` sets the value of the `Title` pr
 
 *ChildComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=7)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=7-8)]
 
 ## Child content
 
-Components can set the content of an element in another component by assigning to a property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html) type.
-
-In the following example, the `ChildContent` element of the `ParentComponent` sets the value of the `ChildComponent`'s `PanelContent` property. `PanelContent` is a `RenderFragment` type and supplies the content to the Bootstrap panel.
+Components can set the content in another component. The assigning component provides the content between the tags that specify the receiving component. For example, a `ParentComponent` can provide content that is to be rendered by a `ChildComponent` by placing the content inside **\<ChildComponent>** tags.
 
 *ParentComponent.cshtml*:
 
 [!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
 
+The child component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html). The value of `ChildContent` is positioned in the child component's markup where the content should be rendered. In the following example, the value of `ChildContent` is received from the parent component and rendered inside the Bootstrap panel's `panel-body`.
+
 *ChildComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=3,8)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=3,10-11)]
+
+> [!NOTE]
+> The property receiving the `RenderFragment` content must be named `ChildContent` by convention.
 
 ## Data binding
 
@@ -108,7 +111,8 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 <input bind="@StartDate" format-value="yyyy-MM-dd" />
 
 @functions {
-    public DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
+    [Parameter]
+    private DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
 }
 ```
 
@@ -124,7 +128,8 @@ Parent component:
 <ChildComponent bind-Year="@ParentYear" />
 
 @functions {
-    public int ParentYear { get; set; } = 1979;
+    [Parameter]
+    private int ParentYear { get; set; } = 1979;
 }
 ```
 
@@ -134,10 +139,15 @@ Child component:
 <div> ... </div>
 
 @functions {
-    public int Year { get; set; }
-    public Action<int> ValueChanged { get; set; }
+    [Parameter]
+    private int Year { get; set; }
+    
+    [Parameter]
+    private Action<int> YearChanged { get; set; }
 }
 ```
+
+The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
 
 ## Event handling
 
@@ -222,6 +232,22 @@ protected override void OnParametersSet()
 }
 ```
 
+`OnAfterRenderAsync` and `OnAfterRender` are called each time after a component has finished rendering. Element and component references are populated at this point. Use this stage to perform additional initialization steps using the rendered content, such as activating third-party JavaScript libraries that operate on the rendered DOM elements.
+
+```csharp
+protected override async Task OnAfterRenderAsync()
+{
+    await ...
+}
+```
+
+```csharp
+protected override void OnAfterRender()
+{
+    ...
+}
+```
+
 `SetParameters` can be overridden to execute code before parameters are set:
 
 ```csharp
@@ -280,7 +306,7 @@ Blazor components can receive route parameters from the route template provided 
 
 *RouteParameter.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/RouteParameter.cshtml?start=1&end=8)]
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/RouteParameter.cshtml?start=1&end=9)]
 
 Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
@@ -332,7 +358,7 @@ Razor directives active with Blazor apps are shown in the following table.
 | Directive | Description |
 | --------- | ----------- |
 | [@functions](https://docs.microsoft.com/aspnet/core/mvc/views/razor#functions) | Adds a C# code block to a component. |
-| `@implements` | Implements an interface for the generated component class. Often used to create a component layout by implementing `ILayoutComponent`. |
+| `@implements` | Implements an interface for the generated component class. |
 | [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
 | [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
 | `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
@@ -350,7 +376,8 @@ In the following example, `IsCompleted` determines if `checked` is rendered in t
 <input type="checkbox" checked="@IsCompleted" />
 
 @functions {
-    public bool IsCompleted { get; set; }
+    [Parameter]
+    private bool IsCompleted { get; set; }
 }
 ```
 

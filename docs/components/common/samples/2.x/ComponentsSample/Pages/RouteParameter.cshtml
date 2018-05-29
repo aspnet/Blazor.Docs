@@ -4,7 +4,8 @@
 <h1>Blazor is @Text!</h1>
 
 @functions {
-    public string Text { get; set; } = "fantastic";
+    [Parameter]
+    private string Text { get; set; } = "fantastic";
 }
 
 <h2>RouteParameter.cshtml</h2>
@@ -22,7 +23,8 @@
 &lt;h1&gt;Blazor is @@Text!&lt;/h1&gt;
 
 @@functions {
-    public string Text { get; set; } = "fantastic";
+    [Parameter]
+    private string Text { get; set; } = "fantastic";
 }</code></pre>
 <p>
     Example:

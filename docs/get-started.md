@@ -18,7 +18,7 @@ uid: client-side/blazor/get-started
 ## Setup
 
 1. Install the [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.300-preview2-008533 or later).
-1. Install [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.7 Preview 5 or later) with the *ASP.NET and web development* workload selected.
+1. Install [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.7 or later) with the *ASP.NET and web development* workload selected.
 1. Install the latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
 
 To create your first project from Visual Studio:

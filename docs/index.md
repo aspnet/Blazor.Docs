@@ -61,6 +61,7 @@ Blazor preview documentation is provided to assist you in trying out Blazor. We 
 
 ## Blazor release notes
 
+* [Release notes (0.3.0)](https://github.com/aspnet/Blazor/releases/tag/0.3.0)
 * [Release notes (0.2.0)](https://github.com/aspnet/Blazor/releases/tag/0.2.0)
 * [Release notes (0.1.0)](https://github.com/aspnet/Blazor/releases/tag/0.1.0)
 

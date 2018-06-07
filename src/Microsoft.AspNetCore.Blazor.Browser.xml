@@ -51,12 +51,32 @@
             Represents errors that occur during an interop call from .NET to JavaScript.
             </summary>
         </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Interop.MethodIdentifier.TypeArguments">
+            <summary>
+            Required if the method is generic.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Interop.MethodIdentifier.ParameterTypes">
+            <summary>
+            Required if the method has overloads.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction">
             <summary>
             Provides methods for invoking preregistered JavaScript functions from .NET code.
             </summary>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.Invoke``1(System.String,System.Object[])">
+            <summary>
+            Invokes the JavaScript function registered with the specified identifier.
+            Arguments and return values are marshalled via JSON serialization.
+            </summary>
+            <typeparam name="TRes">The .NET type corresponding to the function's return value type. This type must be JSON deserializable.</typeparam>
+            <param name="identifier">The identifier used when registering the target function.</param>
+            <param name="args">The arguments to pass, each of which must be JSON serializable.</param>
+            <returns>The result of the function invocation.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeAsync``1(System.String,System.Object[])">
             <summary>
             Invokes the JavaScript function registered with the specified identifier.
             Arguments and return values are marshalled via JSON serialization.
@@ -162,7 +182,7 @@
             Disposes the instance.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
             <inheritdoc />
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher">
@@ -230,7 +250,7 @@
         <member name="E:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.OnLocationChanged">
             <inheritdoc />
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetBaseUriPrefix">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetBaseUri">
             <inheritdoc />
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetAbsoluteUri">
@@ -245,14 +265,14 @@
         <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.NavigateTo(System.String)">
             <inheritdoc />
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToBaseUriPrefix(System.String)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToBaseUri(System.String)">
             <summary>
-            Given the document's document.baseURI value, returns the URI prefix
-            that can be prepended to URI paths to produce an absolute URI.
-            This is computed by removing the final slash and any following characters.
+            Given the document's document.baseURI value, returns the URI
+            that can be prepended to relative URI paths to produce an absolute URI.
+            This is computed by removing anything after the final slash.
             Internal for tests.
             </summary>
-            <param name="baseUri">The page's document.baseURI value.</param>
+            <param name="absoluteBaseUri">The page's document.baseURI value.</param>
             <returns>The URI prefix</returns>
         </member>
     </members>

@@ -137,6 +137,26 @@
             Not intended to be used directly.
             </summary>
         </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.Int64},System.Int64)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.Single},System.Single)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.Double},System.Double)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.Decimal},System.Decimal)">
+            <summary>
+            Not intended to be used directly.
+            </summary>
+        </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BindMethods.SetValueHandler(System.Action{System.DateTime},System.DateTime)">
             <summary>
             Not intended to be used directly.
@@ -419,7 +439,7 @@
             Extension methods for the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/> type.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollectionExtensions.AssignToProperties(Microsoft.AspNetCore.Blazor.Components.ParameterCollection,System.Object)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.ParameterCollectionExtensions.AssignToProperties(Microsoft.AspNetCore.Blazor.Components.ParameterCollection@,System.Object)">
             <summary>
             Iterates through the <see cref="T:Microsoft.AspNetCore.Blazor.Components.ParameterCollection"/>, assigning each parameter
             to a property of the same name on <paramref name="target"/>.
@@ -476,10 +496,32 @@
             Gets the route template.
             </summary>
         </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.RuntimeHelpers">
+            <summary>
+            Used by generated code produced by the Blazor code generator. Not intended or supported
+            for use in application code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.RuntimeHelpers.TypeCheck``1(``0)">
+            <summary>
+            Not intended for use by application code.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.ElementRef">
             <summary>
             Represents a reference to a rendered element.
             </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Json.ICustomJsonSerializer.ToJsonPrimitive">
+            <summary>
+            Supplies a representation suitable for JSON serialization. For example, the
+            return value may be a string->object dictionary containing properties to
+            serialize, or simply a string.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions">
             <summary>
@@ -558,14 +600,6 @@
             <param name="requestUri">The URI that the request will be sent to.</param>
             <param name="content">Content for the request body. This will be JSON-encoded and sent as a string.</param>
             <returns>The response parsed as an object of the generic type.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Json.ICustomJsonSerializer.ToJsonPrimitive">
-            <summary>
-            Supplies a representation suitable for JSON serialization. For example, the
-            return value may be a string->object dictionary containing properties to
-            serialize, or simply a string.
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.JsonUtil">
             <summary>
@@ -723,7 +757,7 @@
             <param name="component">The component.</param>
             <returns>The component's assigned identifier.</returns>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
             <summary>
             Updates the visible UI.
             </summary>
@@ -1007,7 +1041,7 @@
             <param name="name">The name of the attribute.</param>
             <param name="value">The value of the attribute.</param>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame)">
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddAttribute(System.Int32,Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame@)">
             <summary>
             <para>
             Appends a frame representing an attribute.
@@ -1449,20 +1483,20 @@
             <param name="href">The relative URI.</param>
             <returns>The absolute URI.</returns>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix">
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUri">
             <summary>
-            Gets the URI prefix that can be prepended before URI paths to produce an absolute URI.
+            Gets the base URI (with trailing slash) that can be prepended before relative URI paths to produce an absolute URI.
             Typically this corresponds to the 'href' attribute on the document's &lt;base&gt; element.
             </summary>
-            <returns>The URI prefix.</returns>
+            <returns>The URI prefix, which has a trailing slash.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.ToBaseRelativePath(System.String,System.String)">
             <summary>
-            Given a base URI prefix (e.g., one previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix"/>),
+            Given a base URI (e.g., one previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUri"/>),
             converts an absolute URI into one relative to the base URI prefix.
             </summary>
-            <param name="baseUriPrefix">The base URI prefix (e.g., previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix"/>).</param>
-            <param name="locationAbsolute">An absolute URI that is within the space of the base URI prefix.</param>
+            <param name="baseUri">The base URI prefix (e.g., previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUri"/>).</param>
+            <param name="locationAbsolute">An absolute URI that is within the space of the base URI.</param>
             <returns>A relative URI path.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.NavigateTo(System.String)">
@@ -1470,7 +1504,7 @@
             Navigates to the specified URI.
             </summary>
             <param name="uri">The destination URI. This can be absolute, or relative to the base URI
-            prefix (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUriPrefix"/>).</param>
+            (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUri"/>).</param>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIEventArgs">
             <summary>
@@ -1503,9 +1537,153 @@
             Supplies information about an drag event that is being raised.
             </summary>
         </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.Detail">
+            <summary>
+            A count of consecutive clicks that happened in a short amount of time, incremented by one.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.DataTransfer">
+            <summary>
+            The data that underlies a drag-and-drop operation, known as the drag data store.
+            See <see cref="T:Microsoft.AspNetCore.Blazor.DataTransfer"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.ScreenX">
+            <summary>
+            The X coordinate of the mouse pointer in global (screen) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.ScreenY">
+            <summary>
+            The Y coordinate of the mouse pointer in global (screen) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.ClientX">
+            <summary>
+            The X coordinate of the mouse pointer in local (DOM content) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.ClientY">
+            <summary>
+            	The Y coordinate of the mouse pointer in local (DOM content) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.Button">
+            <summary>
+            The button number that was pressed when the mouse event was fired:
+            Left button=0,
+            middle button=1 (if present),
+            right button=2.
+            For mice configured for left handed use in which the button actions are reversed the values are instead read from right to left.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.Buttons">
+            <summary>
+            The buttons being pressed when the mouse event was fired:
+            Left button=1,
+            Right button=2,
+            Middle (wheel) button=4,
+            4th button (typically, "Browser Back" button)=8,
+            5th button (typically, "Browser Forward" button)=16.
+            If two or more buttons are pressed, returns the logical sum of the values.
+            E.g., if Left button and Right button are pressed, returns 3 (=1 | 2).
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.CtrlKey">
+            <summary>
+            true if the control key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.ShiftKey">
+            <summary>
+            true if the shift key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.AltKey">
+            <summary>
+            true if the alt key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDragEventArgs.MetaKey">
+            <summary>
+            true if the meta key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.DataTransfer">
+            <summary>
+            The <see cref="T:Microsoft.AspNetCore.Blazor.DataTransfer"/> object is used to hold the data that is being dragged during a drag and drop operation.
+            It may hold one or more <see cref="T:Microsoft.AspNetCore.Blazor.UIDataTransferItem"/>, each of one or more data types.
+            For more information about drag and drop, see HTML Drag and Drop API.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.DataTransfer.DropEffect">
+            <summary>
+            Gets the type of drag-and-drop operation currently selected or sets the operation to a new type.
+            The value must be none, copy, link or move.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.DataTransfer.EffectAllowed">
+            <summary>
+            Provides all of the types of operations that are possible.
+            Must be one of none, copy, copyLink, copyMove, link, linkMove, move, all or uninitialized.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.DataTransfer.Files">
+            <summary>
+            Contains a list of all the local files available on the data transfer.
+            If the drag operation doesn't involve dragging files, this property is an empty list.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.DataTransfer.Items">
+            <summary>
+            Gives a <see cref="T:Microsoft.AspNetCore.Blazor.UIDataTransferItem"/> array which is a list of all of the drag data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.DataTransfer.Types">
+            <summary>
+            An array of <see cref="T:System.String"/> giving the formats that were set in the dragstart event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UIDataTransferItem">
+            <summary>
+            The <see cref="T:Microsoft.AspNetCore.Blazor.UIDataTransferItem"/> object represents one drag data item.
+            During a drag operation, each drag event has a dataTransfer property which contains a list of drag data items.
+            Each item in the list is a <see cref="T:Microsoft.AspNetCore.Blazor.UIDataTransferItem"/> object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDataTransferItem.Kind">
+            <summary>
+            The kind of drag data item, string or file
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIDataTransferItem.Type">
+            <summary>
+            The drag data item's type, typically a MIME type
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIErrorEventArgs">
             <summary>
             Supplies information about an error event that is being raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIErrorEventArgs.Message">
+            <summary>
+            Gets a a human-readable error message describing the problem.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIErrorEventArgs.Filename">
+            <summary>
+            Gets the name of the script file in which the error occurred.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIErrorEventArgs.Lineno">
+            <summary>
+            Gets the line number of the script file on which the error occurred.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIErrorEventArgs.Colno">
+            <summary>
+            Gets the column number of the script file on which the error occurred.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIFocusEventArgs">
@@ -1520,7 +1698,46 @@
         </member>
         <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.Key">
             <summary>
-            If applicable, gets or sets the key that produced the event.
+            The key value of the key represented by the event. 
+            If the value has a printed representation, this attribute's value is the same as the char attribute. 
+            Otherwise, it's one of the key value strings specified in 'Key values'. 
+            If the key can't be identified, this is the string "Unidentified"
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.Code">
+            <summary>
+            Holds a string that identifies the physical key being pressed. 
+            The value is not affected by the current keyboard layout or modifier state, so a particular key will always return the same value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.Location">
+            <summary>
+            The location of the key on the device.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.Repeat">
+            <summary>
+            true if a key has been depressed long enough to trigger key repetition, otherwise false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.CtrlKey">
+            <summary>
+            true if the control key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.ShiftKey">
+            <summary>
+            true if the shift key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.AltKey">
+            <summary>
+            true if the alt key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIKeyboardEventArgs.MetaKey">
+            <summary>
+            true if the meta key was down when the event was fired. false otherwise.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIMouseEventArgs">
@@ -1528,9 +1745,119 @@
             Supplies information about a mouse event that is being raised.
             </summary>
         </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.Detail">
+            <summary>
+            A count of consecutive clicks that happened in a short amount of time, incremented by one.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.ScreenX">
+            <summary>
+            The X coordinate of the mouse pointer in global (screen) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.ScreenY">
+            <summary>
+            The Y coordinate of the mouse pointer in global (screen) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.ClientX">
+            <summary>
+            The X coordinate of the mouse pointer in local (DOM content) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.ClientY">
+            <summary>
+            	The Y coordinate of the mouse pointer in local (DOM content) coordinates.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.Button">
+            <summary>
+            The button number that was pressed when the mouse event was fired:
+            Left button=0,
+            middle button=1 (if present),
+            right button=2.
+            For mice configured for left handed use in which the button actions are reversed the values are instead read from right to left.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.Buttons">
+            <summary>
+            The buttons being pressed when the mouse event was fired:
+            Left button=1,
+            Right button=2,
+            Middle (wheel) button=4,
+            4th button (typically, "Browser Back" button)=8,
+            5th button (typically, "Browser Forward" button)=16.
+            If two or more buttons are pressed, returns the logical sum of the values.
+            E.g., if Left button and Right button are pressed, returns 3 (=1 | 2).
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.CtrlKey">
+            <summary>
+            true if the control key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.ShiftKey">
+            <summary>
+            true if the shift key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.AltKey">
+            <summary>
+            true if the alt key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIMouseEventArgs.MetaKey">
+            <summary>
+            true if the meta key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIPointerEventArgs">
             <summary>
             Supplies information about a mouse event that is being raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.PointerId">
+            <summary>
+            A unique identifier for the pointer causing the event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.Width">
+            <summary>
+            The width (magnitude on the X axis), in CSS pixels, of the contact geometry of the pointer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.Height">
+            <summary>
+            The height (magnitude on the Y axis), in CSS pixels, of the contact geometry of the pointer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.Pressure">
+            <summary>
+            The normalized pressure of the pointer input in the range of 0 to 1,
+            where 0 and 1 represent the minimum and maximum pressure the hardware is capable of detecting, respectively.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.TiltX">
+            <summary>
+            The plane angle (in degrees, in the range of -90 to 90) between the Y-Z plane
+            and the plane containing both the transducer (e.g. pen stylus) axis and the Y axis.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.TiltY">
+            <summary>
+            The plane angle (in degrees, in the range of -90 to 90) between the X-Z plane
+            and the plane containing both the transducer (e.g. pen stylus) axis and the X axis.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.PointerType">
+            <summary>
+            Indicates the device type that caused the event.
+            Must be one of the strings mouse, pen or touch, or an empty string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIPointerEventArgs.IsPrimary">
+            <summary>
+            Indicates if the pointer represents the primary pointer of this pointer type.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIProgressEventArgs">
@@ -1538,14 +1865,139 @@
             Supplies information about a progress event that is being raised.
             </summary>
         </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIProgressEventArgs.LengthComputable">
+            <summary>
+            Whether or not the total size of the transfer is known.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIProgressEventArgs.Loaded">
+            <summary>
+            The number of bytes transferred since the beginning of the operation.
+            This doesn't include headers and other overhead, but only the content itself.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIProgressEventArgs.Total">
+            <summary>
+            The total number of bytes of content that will be transferred during the operation.
+            If the total size is unknown, this value is zero. 
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UITouchEventArgs">
             <summary>
             Supplies information about a touch event that is being raised.
             </summary>
         </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.Detail">
+            <summary>
+            A count of consecutive clicks that happened in a short amount of time, incremented by one.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.Touches">
+            <summary>
+            A list of <see cref="T:Microsoft.AspNetCore.Blazor.UITouchPoint"/> for every point of contact currently touching the surface.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.TargetTouches">
+            <summary>
+            A list of <see cref="T:Microsoft.AspNetCore.Blazor.UITouchPoint"/> for every point of contact that is touching the surface and started on the element that is the target of the current event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.ChangedTouches">
+            <summary>
+            A list of Touches for every point of contact which contributed to the event.
+            For the touchstart event this must be a list of the touch points that just became active with the current event.
+            For the touchmove event this must be a list of the touch points that have moved since the last event.
+            For the touchend and touchcancel events this must be a list of the touch points that have just been removed from the surface.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.CtrlKey">
+            <summary>
+            true if the control key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.ShiftKey">
+            <summary>
+            true if the shift key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.AltKey">
+            <summary>
+            true if the alt key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchEventArgs.MetaKey">
+            <summary>
+            true if the meta key was down when the event was fired. false otherwise.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.UITouchPoint">
+            <summary>
+            Represents a single contact point on a touch-sensitive device.
+            The contact point is commonly a finger or stylus and the device may be a touchscreen or trackpad.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.Identifier">
+            <summary>
+            A unique identifier for this Touch object.
+            A given touch point (say, by a finger) will have the same identifier for the duration of its movement around the surface.
+            This lets you ensure that you're tracking the same touch all the time.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.ScreenX">
+            <summary>
+            The X coordinate of the touch point relative to the left edge of the screen.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.ScreenY">
+            <summary>
+            The Y coordinate of the touch point relative to the top edge of the screen.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.ClientX">
+            <summary>
+            The X coordinate of the touch point relative to the left edge of the browser viewport, not including any scroll offset.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.ClientY">
+            <summary>
+            The Y coordinate of the touch point relative to the top edge of the browser viewport, not including any scroll offset.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.PageX">
+            <summary>
+            The X coordinate of the touch point relative to the left edge of the document.
+            Unlike <see cref="P:Microsoft.AspNetCore.Blazor.UITouchPoint.ClientX"/>, this value includes the horizontal scroll offset, if any.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UITouchPoint.PageY">
+            <summary>
+            The Y coordinate of the touch point relative to the top of the document.
+            Unlike <see cref="P:Microsoft.AspNetCore.Blazor.UITouchPoint.ClientY"/>, this value includes the vertical scroll offset, if any.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIWheelEventArgs">
             <summary>
             Supplies information about a mouse wheel event that is being raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIWheelEventArgs.DeltaX">
+            <summary>
+            The horizontal scroll amount.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIWheelEventArgs.DeltaY">
+            <summary>
+            The vertical scroll amount.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIWheelEventArgs.DeltaZ">
+            <summary>
+            The scroll amount for the z-axis.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.UIWheelEventArgs.DeltaMode">
+            <summary>
+            The unit of the delta values scroll amount. 
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIEventArgsRenderTreeBuilderExtensions">

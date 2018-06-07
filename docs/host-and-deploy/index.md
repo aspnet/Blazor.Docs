@@ -59,7 +59,7 @@ In many hosting scenarios, the server's virtual path to the app is the root of t
 
 When a client-side Blazor app has access to the Internet, host large static assets (for example, images) on a Content Delivery Network (CDN), such as the [Azure CDN](https://azure.microsoft.com/services/cdn/). By hosting large static assets outside of the app, the app's payload size is reduced.
 
-Alternatively, a client-side Blazor app configures [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to handle static file requests within the app, not from the server project. Static assets can't be served from a Blazor server-side app to a Blazor client-side app outside of the app's initial load from the server. Attempting to add Static File Middleware to the server project with assets in the server project's *wwwroot* folder won't work.
+Alternatively, a client-side Blazor app configures [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to handle static file requests within the app, not from the server project. Static assets can't be served from a Blazor server-side app to a Blazor client-side app outside of the app's initial load from the server. An attempt to add Static File Middleware to the server project with assets in the server project's *wwwroot* folder will fail to serve the assets to the client-side app.
 
 ## Deployment models
 

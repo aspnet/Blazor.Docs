@@ -116,38 +116,79 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 }
 ```
 
+The `bind` Tag Helper uses the `format-value` attribute to apply the date format to the `value` node of the `input` element. The format is also applied by the value handler of the `onchange` node.
+
 **Component attributes**
 
 Binding also recognizes component attributes, where `bind-{property}` can bind a property value across components.
 
-The following parent component uses `ChildComponent` and binds the value `1979` from `ParentYear` to the child component's `Year` property:
+The following component uses `ChildComponent` and binds the value `1978` from the `ParentYear` property to the child component's `Year` property:
 
 Parent component:
 
 ```cshtml
+@page "/ParentComponent"
+
+<h1>Parent Component</h1>
+
+<p>ParentYear: @ParentYear</p>
+
 <ChildComponent bind-Year="@ParentYear" />
+
+<button class="btn btn-primary" onclick="@ChangeTheYear">Change Year to 1986</button>
 
 @functions {
     [Parameter]
-    private int ParentYear { get; set; } = 1979;
+    private int ParentYear { get; set; } = 1978;
+
+    void ChangeTheYear()
+    {
+        ParentYear = 1986;
+    }
 }
 ```
 
 Child component:
 
 ```cshtml
-<div> ... </div>
+<h2>Child Component</h2>
+
+<p>Year: @Year</p>
 
 @functions {
     [Parameter]
     private int Year { get; set; }
-    
+
     [Parameter]
     private Action<int> YearChanged { get; set; }
 }
 ```
 
-The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
+A `bind` Tag Helper is created when a property (`Year` in the example) and a `<PROPERTY_NAME>Changed` (`YearChanged`) delegate property exist. The `Year` property results in a `ChildComponent` `value` node bound to the `ParentYear` property. The `YearChanged` delegate property results in a `ChildComponent` node for a [System.Action&lt;T&gt;](/dotnet/api/system.action-1) delegate acting as the `ParentYear`-changed handler.
+
+Loading the `ParentComponent` produces the following markup:
+
+```html
+<h1>Parent Component</h1>
+
+<p>ParentYear: 1978</p>
+
+<h2>Child Component</h2>
+
+<p>Year: 1978</p>
+```
+
+If the value of the `ParentYear` property is changed by selecting the button in the `ParentComponent`, the `Year` property of the `ChildComponent` is updated. The new value of `Year` is rendered in the UI when the `ParentComponent` is rerendered:
+
+```html
+<h1>Parent Component</h1>
+
+<p>ParentYear: 1986</p>
+
+<h2>Child Component</h2>
+
+<p>Year: 1986</p>
+```
 
 ## Event handling
 

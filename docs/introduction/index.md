@@ -91,7 +91,7 @@ Blazor apps can reference and use existing [.NET Standard](https://docs.microsof
 
 ## JavaScript/TypeScript interop
 
-For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code.
+For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code. For more information, see [JavaScript/TypeScript interop](xref:client-side/blazor/javascript-typescript-interop).
 
 ## Optimization
 

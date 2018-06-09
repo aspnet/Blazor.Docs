@@ -110,7 +110,7 @@ The following example shows how to use `@inject`. The service implementing `Serv
 
     protected override async Task OnInitAsync()
     {
-        // The property DataRepository received an implemenation
+        // The property DataRepository received an implementation
         // of IDataAccess through dependency injection. Use 
         // DataRepository to obtain data from the server.
         Customers = await DataRepository.GetAllCustomersAsync();

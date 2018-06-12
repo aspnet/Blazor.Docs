@@ -8,6 +8,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library 
 * [Blazor Redux](https://github.com/torhovland/blazor-redux)
+* [Blazor-State](https://timewarpengineering.github.io/blazor-state/)
 
 ## Community documentation
 

@@ -38,6 +38,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorStrap (Bootstrap 4 Components)](https://github.com/chanan/BlazorStrap)
 * [Blazor Extensions](https://github.com/BlazorExtensions/)
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)
+* [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
+* [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
 
 ## Other
 

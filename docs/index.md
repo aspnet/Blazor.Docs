@@ -41,7 +41,7 @@ Learn how to create reusable layout components for Blazor apps.
 [Dependency injection](xref:client-side/blazor/dependency-injection)  
 Learn how Blazor apps can use built-in services by having them injected into components.
 
-[JavaScript/TypeScript interop](xref:client-side/blazor/javascript-typescript-interop)  
+[JavaScript interop](xref:client-side/blazor/javascript-interop)  
 Learn how to invoke JavaScript functions from .NET and .NET methods from JavaScript.
 
 [Host and deploy](xref:client-side/blazor/host-and-deploy/index)  

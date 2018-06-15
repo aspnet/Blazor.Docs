@@ -89,9 +89,9 @@ All of these features are optional. When one of these features isn't used in an 
 
 Blazor apps can reference and use existing [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) libraries. .NET Standard is a formal specification of .NET APIs that are common across .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that aren't applicable inside a web browser (for example, accessing the file system, opening a socket, threading, and other features) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
 
-## JavaScript/TypeScript interop
+## JavaScript interop
 
-For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code. For more information, see [JavaScript/TypeScript interop](xref:client-side/blazor/javascript-typescript-interop).
+For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code. For more information, see [JavaScript interop](xref:client-side/blazor/javascript-interop).
 
 ## Optimization
 

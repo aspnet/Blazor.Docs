@@ -40,6 +40,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)
 * [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
+* [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
 
 ## Other
 

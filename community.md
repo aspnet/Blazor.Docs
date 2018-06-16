@@ -22,6 +22,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone)
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
+* [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
 
 ## Tooling
 
@@ -38,6 +39,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorStrap (Bootstrap 4 Components)](https://github.com/chanan/BlazorStrap)
 * [Blazor Extensions](https://github.com/BlazorExtensions/)
 * [Blazor local and session storage support](https://github.com/cloudcrate/BlazorStorage)
+* [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
 * [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
 

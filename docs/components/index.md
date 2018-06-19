@@ -310,29 +310,6 @@ Blazor components can receive route parameters from the route template provided 
 
 Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
-## JavaScript/TypeScript interop
-
-To call JavaScript libraries or custom JavaScript/TypeScript code from .NET, the current approach is to register a named function with JavaScript/TypeScript. Place the `registerFunction` call in the *index.html* file or a JavaScript file (*\*.js*) loaded by the *index.html* file. Place the inline JavaScript or `<script>` tag below `<script type="blazor-boot"></script>`, and the JavaScript/TypeScript loads at the correct time and only executes once. 
-
-```javascript
-Blazor.registerFunction('doPrompt', function(message) {
-    return prompt(message);
-});
-```
-
-Wrap the named function for calls from .NET:
-
-```csharp
-public static bool DoPrompt(string message)
-{
-    return RegisteredFunction.Invoke<bool>("doPrompt", message);
-}
-```
-
-This approach has the benefit of working with JavaScript build tools, such as [webpack](https://webpack.js.org/).
-
-The Mono team is working on a library that exposes standard browser APIs to .NET.
-
 ## Base class inheritance for a "code-behind" experience
 
 Blazor component files (*\*.cshtml*) mix HTML markup and C# processing code in the same file. The `@inherits` directive can be used to provide Blazor with a "code-behind" experience that separates component markup from processing code.

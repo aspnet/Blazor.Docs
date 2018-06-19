@@ -100,11 +100,11 @@ To call a .NET method, create the method in C# and invoke the method from JavaSc
    ```json
    {
      "type": {
-       "assembly": "TypeIdentifier",
-       "name": "NameIdenfifier"
+       "assembly": "AssemblyName",
+       "name": "NamespaceWithClass"
      },
      "method": {
-       "name": "MethodIdenfifier"
+       "name": "MethodName"
      }
    }
    ```

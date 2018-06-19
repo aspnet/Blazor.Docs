@@ -95,6 +95,20 @@ To call a .NET method, create the method in C# and invoke the method from JavaSc
     });
     ```
 
+   The schema for the object parameter is:
+
+   ```json
+   {
+     "type": {
+       "assembly": "TypeIdentifier",
+       "name": "NameIdenfifier"
+     },
+     "method": {
+       "name": "MethodIdenfifier"
+     }
+   }
+   ```
+
 ## Share interop code in a Blazor class library
 
 JavaScript interop code can be included in a Blazor class library (`dotnet new blazorlib`), which allows you to share the code in a NuGet package.

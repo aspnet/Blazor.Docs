@@ -116,13 +116,13 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 }
 ```
 
-The `bind` Tag Helper uses the `format-value` attribute to apply the date format to the `value` node of the `input` element. The format is also applied by the value handler of the `onchange` node.
+The `format-value` attribute specifies the date format to apply to the `value` of the `input` element. The format is also used to parse the value when an `onchange` event occurs.
 
-**Component attributes**
+**Component parameters**
 
-Binding also recognizes component attributes, where `bind-{property}` can bind a property value across components.
+Binding also recognizes component parameters, where `bind-{property}` can bind a property value across components.
 
-The following component uses `ChildComponent` and binds the value `1978` from the `ParentYear` property to the child component's `Year` property:
+The following component uses `ChildComponent` and binds the `ParentYear` parameter from the parent to the `Year` parameter on the child component:
 
 Parent component:
 
@@ -164,7 +164,7 @@ Child component:
 }
 ```
 
-A `bind` Tag Helper is created when a property (`Year` in the example) and a `<PROPERTY_NAME>Changed` (`YearChanged`) delegate property exist. The `Year` property results in a `ChildComponent` `value` node bound to the `ParentYear` property. The `YearChanged` delegate property results in a `ChildComponent` node for a [System.Action&lt;T&gt;](/dotnet/api/system.action-1) delegate acting as the `ParentYear`-changed handler.
+The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
 
 Loading the `ParentComponent` produces the following markup:
 

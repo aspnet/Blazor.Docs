@@ -23,7 +23,11 @@ Learn how to route requests in a client-side Blazor app and about the NavLink co
 
 ## Route templates
 
-Routing in Blazor is achieved by providing a route template to each accessible component in the app.
+The **&lt;Router&gt;** component enables routing, and a route template is provided to each accessible component. The **&lt;Router&gt;** component appears in the *App.cshtml* file:
+
+```cshtml
+<Router AppAssembly=typeof(Program).Assembly />
+```
 
 When a *\*.cshtml* file with an `@page` directive is compiled, the generated class is given a [RouteAttribute](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) specifying the route template. At runtime, the router looks for component classes with a `RouteAttribute` and renders whichever component has a route template that matches the requested URL.
 
@@ -35,13 +39,13 @@ Multiple route templates can be applied to a component. In the [sample app](http
 
 ## Route parameters
 
-Blazor components can receive route parameters from the route template provided in the `@page` directive. The Blazor client-side router uses route parameters to populate the corresponding component parameters.
+The Blazor client-side router uses route parameters to populate the corresponding component parameters with the same name (case insensitive).
 
 *Pages/RouteParameter.cshtml*:
 
 [!code-cshtml[](components/common/samples/2.x/ComponentsSample/Pages/RouteParameter.cshtml?start=1&end=8)]
 
-Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
+Optional parameters aren't supported yet, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
 ## NavLink component
 

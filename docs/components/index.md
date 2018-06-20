@@ -98,7 +98,7 @@ Using `bind` with a `CurrentValue` property (`<input bind="@CurrentValue" />`) i
 
 ```cshtml
 <input value="@CurrentValue" 
-    onchange="@((UIValueEventArgs __e) => CurrentValue = __e.Value) />
+    onchange="@((UIValueEventArgs __e) => CurrentValue = __e.Value)" />
 ```
 
 When the component is rendered, the `value` of the input element comes from the `CurrentValue` property. When the user types in the text box, the `onchange` is fired and the `CurrentValue` property is set to the changed value. In reality, the code generation is a little more complex because `bind` deals with a few cases where type conversions are performed. In principle, `bind` associates the current value of an expression with a `value` attribute and handles changes using the registered handler.
@@ -111,38 +111,84 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 <input bind="@StartDate" format-value="yyyy-MM-dd" />
 
 @functions {
-    public DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
+    [Parameter]
+    private DateTime StartDate { get; set; } = new DateTime(2020, 1, 1);
 }
 ```
 
-**Component attributes**
+The `format-value` attribute specifies the date format to apply to the `value` of the `input` element. The format is also used to parse the value when an `onchange` event occurs.
 
-Binding also recognizes component attributes, where `bind-{property}` can bind a property value across components.
+**Component parameters**
 
-The following parent component uses `ChildComponent` and binds the value `1979` from `ParentYear` to the child component's `Year` property:
+Binding also recognizes component parameters, where `bind-{property}` can bind a property value across components.
+
+The following component uses `ChildComponent` and binds the `ParentYear` parameter from the parent to the `Year` parameter on the child component:
 
 Parent component:
 
 ```cshtml
+@page "/ParentComponent"
+
+<h1>Parent Component</h1>
+
+<p>ParentYear: @ParentYear</p>
+
 <ChildComponent bind-Year="@ParentYear" />
 
+<button class="btn btn-primary" onclick="@ChangeTheYear">Change Year to 1986</button>
+
 @functions {
-    public int ParentYear { get; set; } = 1979;
+    [Parameter]
+    private int ParentYear { get; set; } = 1978;
+
+    void ChangeTheYear()
+    {
+        ParentYear = 1986;
+    }
 }
 ```
 
 Child component:
 
 ```cshtml
-<div> ... </div>
+<h2>Child Component</h2>
+
+<p>Year: @Year</p>
 
 @functions {
-    public int Year { get; set; }
-    public Action<int> YearChanged { get; set; }
+    [Parameter]
+    private int Year { get; set; }
+
+    [Parameter]
+    private Action<int> YearChanged { get; set; }
 }
 ```
 
 The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
+
+Loading the `ParentComponent` produces the following markup:
+
+```html
+<h1>Parent Component</h1>
+
+<p>ParentYear: 1978</p>
+
+<h2>Child Component</h2>
+
+<p>Year: 1978</p>
+```
+
+If the value of the `ParentYear` property is changed by selecting the button in the `ParentComponent`, the `Year` property of the `ChildComponent` is updated. The new value of `Year` is rendered in the UI when the `ParentComponent` is rerendered:
+
+```html
+<h1>Parent Component</h1>
+
+<p>ParentYear: 1986</p>
+
+<h2>Child Component</h2>
+
+<p>Year: 1986</p>
+```
 
 ## Event handling
 
@@ -285,28 +331,25 @@ If a component implements [IDisposable](https://docs.microsoft.com/dotnet/api/sy
 }
 ```
 
-## JavaScript/TypeScript interop
+## Routing
 
-To call JavaScript libraries or custom JavaScript/TypeScript code from .NET, the current approach is to register a named function with JavaScript/TypeScript. Place the `registerFunction` call in the *index.html* file or a JavaScript file (*\*.js*) loaded by the *index.html* file. Place the inline JavaScript or `<script>` tag below `<script type="blazor-boot"></script>`, and the JavaScript/TypeScript loads at the correct time and only executes once. 
+Routing in Blazor is achieved by providing a route template to each accessible component in the app.
 
-```javascript
-Blazor.registerFunction('doPrompt', function(message) {
-    return prompt(message);
-});
-```
+When a *\*.cshtml* file with an `@page` directive is compiled, the generated class is given a [RouteAttribute](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.routeattribute) specifying the route template. At runtime, the router looks for component classes with a `RouteAttribute` and renders whichever component has a route template that matches the requested URL.
 
-Wrap the named function for calls from .NET:
+Multiple route templates can be applied to a component. The following component responds to requests for `/BlazorRoute` and `/DifferentBlazorRoute`:
 
-```csharp
-public static bool DoPrompt(string message)
-{
-    return RegisteredFunction.Invoke<bool>("doPrompt", message);
-}
-```
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
-This approach has the benefit of working with JavaScript build tools, such as [webpack](https://webpack.js.org/).
+## Route parameters
 
-The Mono team is working on a library that exposes standard browser APIs to .NET.
+Blazor components can receive route parameters from the route template provided in the `@page` directive. The Blazor client-side router uses route parameters to populate the corresponding component parameters.
+
+*RouteParameter.cshtml*:
+
+[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/RouteParameter.cshtml?start=1&end=9)]
+
+Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
 ## Base class inheritance for a "code-behind" experience
 
@@ -351,7 +394,8 @@ In the following example, `IsCompleted` determines if `checked` is rendered in t
 <input type="checkbox" checked="@IsCompleted" />
 
 @functions {
-    public bool IsCompleted { get; set; }
+    [Parameter]
+    private bool IsCompleted { get; set; }
 }
 ```
 

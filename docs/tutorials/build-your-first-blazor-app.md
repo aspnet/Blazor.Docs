@@ -133,7 +133,7 @@ After a component is defined, the component can be used to implement other compo
 
 ## Component parameters
 
-Components can also have parameters, which are defined using public properties on the component class. Use attributes to specify arguments for a component in markup. 
+Components can also have parameters, which are defined using private properties on the component class decorated with `[Parameter]`. Use attributes to specify arguments for a component in markup. 
 
 1. Update the `Counter` component to have an `IncrementAmount` property that defaults to 1.
 
@@ -242,9 +242,9 @@ Add a new page to the app that implements a simple todo list.
 1. Add the Todo page to the navigation bar by updating *Shared/NavMenu.cshtml*. Add a `NavLink` for the Todo page by adding the following list item markup below the existing list items.
 
     ```cshtml
-    <li>
-        <NavLink href="/todo">
-            <span class='glyphicon glyphicon-th-list'></span> Todo
+    <li class="nav-item px-3">
+        <NavLink class="nav-link" href="/todo">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Todo
         </NavLink>
     </li>
     ```

@@ -44,6 +44,9 @@ See how Blazor apps can use built-in services by having them injected into compo
 [Routing](xref:client-side/blazor/routing)  
 Learn how to route requests in a client-side Blazor app and about the NavLink component.
 
+[JavaScript interop](xref:client-side/blazor/javascript-interop)  
+Learn how to invoke JavaScript functions from .NET and .NET methods from JavaScript.
+
 [Host and deploy](xref:client-side/blazor/host-and-deploy/index)  
 Discover how to host and deploy Blazor apps using hosted and standalone deployment models.
 
@@ -64,6 +67,8 @@ Blazor preview documentation is provided to assist you in trying out Blazor. We 
 
 ## Blazor release notes
 
+* [Release notes (0.4.0)](https://github.com/aspnet/Blazor/releases/tag/0.4.0)
+* [Release notes (0.3.0)](https://github.com/aspnet/Blazor/releases/tag/0.3.0)
 * [Release notes (0.2.0)](https://github.com/aspnet/Blazor/releases/tag/0.2.0)
 * [Release notes (0.1.0)](https://github.com/aspnet/Blazor/releases/tag/0.1.0)
 

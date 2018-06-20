@@ -4,5 +4,7 @@
 # [Components](xref:client-side/blazor/components/index)
 # [Layouts](xref:client-side/blazor/layouts)
 # [Dependency injection](xref:client-side/blazor/dependency-injection)
+# [Routing](xref:client-side/blazor/routing)
+# [JavaScript interop](xref:client-side/blazor/javascript-interop)
 # [Host and deploy](xref:client-side/blazor/host-and-deploy/index)
 # [FAQ](xref:client-side/blazor/introduction/faq)

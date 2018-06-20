@@ -116,38 +116,79 @@ Data binding works with [DateTime](https://docs.microsoft.com/dotnet/api/system.
 }
 ```
 
-**Component attributes**
+The `format-value` attribute specifies the date format to apply to the `value` of the `input` element. The format is also used to parse the value when an `onchange` event occurs.
 
-Binding also recognizes component attributes, where `bind-{property}` can bind a property value across components.
+**Component parameters**
 
-The following parent component uses `ChildComponent` and binds the value `1979` from `ParentYear` to the child component's `Year` property:
+Binding also recognizes component parameters, where `bind-{property}` can bind a property value across components.
+
+The following component uses `ChildComponent` and binds the `ParentYear` parameter from the parent to the `Year` parameter on the child component:
 
 Parent component:
 
 ```cshtml
+@page "/ParentComponent"
+
+<h1>Parent Component</h1>
+
+<p>ParentYear: @ParentYear</p>
+
 <ChildComponent bind-Year="@ParentYear" />
+
+<button class="btn btn-primary" onclick="@ChangeTheYear">Change Year to 1986</button>
 
 @functions {
     [Parameter]
-    private int ParentYear { get; set; } = 1979;
+    private int ParentYear { get; set; } = 1978;
+
+    void ChangeTheYear()
+    {
+        ParentYear = 1986;
+    }
 }
 ```
 
 Child component:
 
 ```cshtml
-<div> ... </div>
+<h2>Child Component</h2>
+
+<p>Year: @Year</p>
 
 @functions {
     [Parameter]
     private int Year { get; set; }
-    
+
     [Parameter]
     private Action<int> YearChanged { get; set; }
 }
 ```
 
 The `Year` parameter is bindable because it has a companion `YearChanged` event that matches the type of the `Year` parameter.
+
+Loading the `ParentComponent` produces the following markup:
+
+```html
+<h1>Parent Component</h1>
+
+<p>ParentYear: 1978</p>
+
+<h2>Child Component</h2>
+
+<p>Year: 1978</p>
+```
+
+If the value of the `ParentYear` property is changed by selecting the button in the `ParentComponent`, the `Year` property of the `ChildComponent` is updated. The new value of `Year` is rendered in the UI when the `ParentComponent` is rerendered:
+
+```html
+<h1>Parent Component</h1>
+
+<p>ParentYear: 1986</p>
+
+<h2>Child Component</h2>
+
+<p>Year: 1986</p>
+```
 
 ## Event handling
 
@@ -310,29 +351,6 @@ Blazor components can receive route parameters from the route template provided 
 
 Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
-## JavaScript/TypeScript interop
-
-To call JavaScript libraries or custom JavaScript/TypeScript code from .NET, the current approach is to register a named function with JavaScript/TypeScript. Place the `registerFunction` call in the *index.html* file or a JavaScript file (*\*.js*) loaded by the *index.html* file. Place the inline JavaScript or `<script>` tag below `<script type="blazor-boot"></script>`, and the JavaScript/TypeScript loads at the correct time and only executes once. 
-
-```javascript
-Blazor.registerFunction('doPrompt', function(message) {
-    return prompt(message);
-});
-```
-
-Wrap the named function for calls from .NET:
-
-```csharp
-public static bool DoPrompt(string message)
-{
-    return RegisteredFunction.Invoke<bool>("doPrompt", message);
-}
-```
-
-This approach has the benefit of working with JavaScript build tools, such as [webpack](https://webpack.js.org/).
-
-The Mono team is working on a library that exposes standard browser APIs to .NET.
-
 ## Base class inheritance for a "code-behind" experience
 
 Blazor component files (*\*.cshtml*) mix HTML markup and C# processing code in the same file. The `@inherits` directive can be used to provide Blazor with a "code-behind" experience that separates component markup from processing code.
@@ -362,7 +380,7 @@ Razor directives active with Blazor apps are shown in the following table.
 | [@inherits](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inherits) | Provides full control of the class that the component inherits. |
 | [@inject](https://docs.microsoft.com/aspnet/core/mvc/views/razor#inject) | Enables service injection from the [service container](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). For more information, see [Dependency injection into views](https://docs.microsoft.com/aspnet/core/mvc/views/dependency-injection). |
 | `@layout` | Specifies a layout component. Layout components are used to avoid code duplication and inconsistency. |
-| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. |
+| [@page](https://docs.microsoft.com/aspnet/core/mvc/razor-pages#razor-pages) | Specifies that the component should handle requests directly. The `@page` directive can be specified with a route and optional parameters. Unlike Razor Pages, the `@page` directive doesn't need to be the first directive at the top of the file. For more information, see [Routing](xref:client-side/blazor/routing). |
 | [@using](https://docs.microsoft.com/aspnet/core/mvc/views/razor#using) | Adds the C# `using` directive to the generated component class. |
 | [@addTagHelper](https://docs.microsoft.com/aspnet/core/mvc/views/razor#tag-helpers) | Use `@addTagHelper` to use a component in a different assembly than the app's assembly. |
 

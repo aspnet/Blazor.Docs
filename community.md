@@ -23,6 +23,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
+* [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
 
 ## Tooling
 

@@ -192,25 +192,25 @@ To host Blazor in SharePoint Online (and simmilary on Prem), the idea is to use 
 The application must be accessed by the file ****index.html***. This file however won't load in the application if you call it directly. In the browser console you will get an error message complaining about there being no route to it. To solve this change your ***index.cshtml*** file so that page directive goes to index.html.
 
 from
-````
+```
     @page "/"
-````
+```
 to
-````
+```
     @page "/index.html"
-````
+```
 
 Next Modify these lines in the index.html file:
-````
+```html
     <base href="/" />
     <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="../../css/site.css" rel="stylesheet" />
-````
+```
 to
-````
+```html
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
-````
+```
 Notice the ***<base href="/" />*** was removed.
 
 Publish the application to the file system. This will bring all the nessary files into a single location. The files that need to be uploaded will be located in a directory simmilar to ***publish\Blazor1\dist***

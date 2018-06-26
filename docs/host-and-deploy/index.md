@@ -189,7 +189,7 @@ When using a project site instead of an organization site, update the **\<base>*
 
 To host Blazor in SharePoint Online (and simmilary on Prem), the idea is to use SharePoint Designer to create a folder on the site, then upload them (again with designer) to SharePoint Online. There are limitations to this hosting method. A major one is that you cannot use .json file in SharePoint online; therefore to get the example application to work, you must change the extention of the weather.json file both on the file system as we as in the project from ".json" to ".txt". 
 
-The application must be accessed by the file ****index.html***. This file however won't load in the application if you call it directly. In the browser console you will get an error message complaining about there being no route to it. To solve this change your ***index.cshtml*** file so that page directive goes to index.html.
+The application must be accessed by the file ***index.html***. This file however won't load in the application if you call it directly. In the browser console you will get an error message complaining about there being no route to it. To solve this change your ***index.cshtml*** file so that page directive goes to index.html.
 
 from
 ```
@@ -211,7 +211,7 @@ to
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 ```
-Notice the **<base href="/" />** was removed.
+Notice that the ***<base href="/" />*** was removed.
 
 Publish the application to the file system. This will bring all the nessary files into a single location. The files that need to be uploaded will be located in a directory simmilar to ***publish\Blazor1\dist***
 

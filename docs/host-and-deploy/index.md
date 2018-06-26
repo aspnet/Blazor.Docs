@@ -200,7 +200,7 @@ to
     @page "/index.html"
 ```
 
-Next Modify these lines in the index.html file:
+Next Modify these lines in the index.html file (if it exists):
 ```html
     <base href="/" />
     <link href="../../css/bootstrap/bootstrap.min.css" rel="stylesheet" />

@@ -211,7 +211,7 @@ to
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
 ```
-Notice that the ***<base href="/" />*** was removed.
+Notice that the base tag was removed.
 
 Publish the application to the file system. This will bring all the nessary files into a single location. The files that need to be uploaded will be located in a directory simmilar to ***publish\Blazor1\dist***
 

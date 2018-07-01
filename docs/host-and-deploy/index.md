@@ -53,7 +53,7 @@ Because browsers make requests to Internet-based hosts for client-side pages, we
 
 The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `/CoolBlazorApp/` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `/CoolBlazorApp/`. By setting the app base path to `/CoolBlazorApp/`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
 
-In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is `/`, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, update the **\<base>** tag in *index.html* on the **\<head>** tag. Change the `href` attribute value from `/` to `/<virtual-path>/` (the trailing slash is required), where `/<virtual-path>/` is the full virtual app root path on the server for the app. 
+In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is `/`, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, update the **\<base>** tag in *wwwroot/index.html*. Change the `href` attribute value from `/` to `/<virtual-path>/` (the trailing slash is required), where `/<virtual-path>/` is the full virtual app root path on the server for the app. 
 
 ## Deployment models
 
@@ -69,6 +69,7 @@ In a hosted deployment, an ASP.NET Core app handles single-page application rout
 To host a Blazor app, the ASP.NET Core app must:
 
 * Reference the Blazor app project.
+* Reference the [Microsoft.AspNetCore.Blazor.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Blazor.Server/) package in its project file.
 * Configure Blazor app hosting with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`.
 
 ```csharp
@@ -85,8 +86,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 The `UseBlazor` extension method performs the following tasks:
 
-* Configure [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* are served.
-* Configure single-page application routing for resource requests that aren't for actual files that exist on disk. The app serves the default document (*index.html*) for any request that hasn't been served by a prior Static File Middleware instance. For example, a request to receive a page from the app that should be handled by the Blazor router on the client is rewritten into a request for the *index.html* page.
+* Configure [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* folder are served.
+* Configure single-page application routing for resource requests that aren't for actual files that exist on disk. The app serves the default document (*wwwroot/index.html*) for any request that hasn't been served by a prior Static File Middleware instance. For example, a request to receive a page from the app that should be handled by the Blazor router on the client is rewritten into a request for the *wwwroot/index.html* page.
 
 When the ASP.NET Core app is published, the Blazor app is included in the published output so that the ASP.NET Core app and the Blazor app can be deployed together. For more information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
 

@@ -17,7 +17,7 @@ By [Luke Latham](https://github.com/guardrex) and [Daniel Roth](https://github.c
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/components/common/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
+[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
 
 Blazor apps are built using *components*. A component is a self-contained chunk of user interface (UI), such as a page, dialog, or form. A component includes both the HTML markup to render along with the processing logic needed to inject data or respond to UI events. Components are flexible and lightweight, and they can be nested, reused, and shared between projects.
 
@@ -49,7 +49,7 @@ Components can include other components by declaring them using HTML element syn
 
 The following markup renders a `HeadingComponent` (*HeadingComponent.cshtml*) instance:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/Index.cshtml?start=11&end=11)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/Index.cshtml?start=11&end=11)]
 
 ## Component parameters
 
@@ -59,11 +59,11 @@ In the following example, the `ParentComponent` sets the value of the `Title` pr
 
 *ParentComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=5)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=5)]
 
 *ChildComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=7-8)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/ChildComponent.cshtml?highlight=7-8)]
 
 ## Child content
 
@@ -71,13 +71,13 @@ Components can set the content in another component. The assigning component pro
 
 *ParentComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/ParentComponent.cshtml?start=1&end=7&highlight=6)]
 
 The child component has a `ChildContent` property that represents a [RenderFragment](/api/Microsoft.AspNetCore.Blazor.RenderFragment.html). The value of `ChildContent` is positioned in the child component's markup where the content should be rendered. In the following example, the value of `ChildContent` is received from the parent component and rendered inside the Bootstrap panel's `panel-body`.
 
 *ChildComponent.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/ChildComponent.cshtml?highlight=3,10-11)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/ChildComponent.cshtml?highlight=3,10-11)]
 
 > [!NOTE]
 > The property receiving the `RenderFragment` content must be named `ChildContent` by convention.
@@ -339,7 +339,7 @@ When a *\*.cshtml* file with an `@page` directive is compiled, the generated cla
 
 Multiple route templates can be applied to a component. The following component responds to requests for `/BlazorRoute` and `/DifferentBlazorRoute`:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
 ## Route parameters
 
@@ -347,7 +347,7 @@ Blazor components can receive route parameters from the route template provided 
 
 *RouteParameter.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/RouteParameter.cshtml?start=1&end=9)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/RouteParameter.cshtml?start=1&end=9)]
 
 Optional parameters aren't supported, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
@@ -355,15 +355,15 @@ Optional parameters aren't supported, so two `@page` directives are applied in t
 
 Blazor component files (*\*.cshtml*) mix HTML markup and C# processing code in the same file. The `@inherits` directive can be used to provide Blazor with a "code-behind" experience that separates component markup from processing code.
 
-The [sample app](https://github.com/aspnet/Blazor.Docs/tree/master/docs/components/common/samples/) shows how a component can inherit a base class, `BlazorRocksBase`, to provide the component's properties and methods.
+The [sample app](https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/) shows how a component can inherit a base class, `BlazorRocksBase`, to provide the component's properties and methods.
 
 *BlazorRocks.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/ComponentsSample/Pages/BlazorRocks.cshtml?start=1&end=8)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Pages/BlazorRocks.cshtml?start=1&end=8)]
 
 *BlazorRocksBase.cs*:
 
-[!code-csharp[](common/samples/2.x/ComponentsSample/Pages/BlazorRocksBase.cs)]
+[!code-csharp[](../common/samples/2.x/BlazorSample/Pages/BlazorRocksBase.cs)]
 
 The base class should derive from [BlazorComponent](/api/Microsoft.AspNetCore.Blazor.Components.BlazorComponent.html).
 

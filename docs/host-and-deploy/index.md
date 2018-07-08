@@ -25,7 +25,7 @@ Blazor apps are published for deployment in Release configuration with the [dotn
 dotnet publish -c Release
 ```
 
-`dotnet publish` triggers a [restore](https://docs.microsoft.com/dotnet/core/tools/dotnet-restore) of the project's dependencies and [builds](https://docs.microsoft.com/dotnet/core/tools/dotnet-build) the project before creating the assets for deployment. As part of the build process, unused methods and assemblies are removed to reduce app download size and load times. The deployment is created in the */bin/Release/\<target-framework>/publish* folder.
+`dotnet publish` triggers a [restore](https://docs.microsoft.com/dotnet/core/tools/dotnet-restore) of the project's dependencies and [builds](https://docs.microsoft.com/dotnet/core/tools/dotnet-build) the project before creating the assets for deployment. As part of the build process, unused methods and assemblies are removed to reduce app download size and load times. The deployment is created in the */bin/Release/&lt;target-framework&gt;/publish* folder.
 
 The assets in the *publish* folder are deployed to the web server. Deployment might be a manual or automated process depending on the development tools in use.
 
@@ -33,7 +33,7 @@ The assets in the *publish* folder are deployed to the web server. Deployment mi
 
 Routing requests for page components in a client-side app isn't as simple as routing requests to a server-side, hosted app. Consider a client-side app with two pages:
 
-* **_Main.cshtml_** &ndash; Loads at the root of the app and contains a link to the About page (`href="/About"`).
+* **_Main.cshtml_** &ndash; Loads at the root of the app and contains a link to the About page (`href="About"`).
 * **_About.cshtml_** &ndash; About page.
 
 When the app's default document is requested using the browser's address bar (for example, `https://www.contoso.com/`):
@@ -43,7 +43,7 @@ When the app's default document is requested using the browser's address bar (fo
 1. *index.html* bootstraps the app.
 1. Blazor's router loads and the Razor Main page (*Main.cshtml*) is displayed.
 
-On the Main page, selecting the link to the About page loads the About page. Selecting the link to the About page works on the client because the Blazor router stops the browser from making a request on the Internet to `www.contoso.com` for `/About` and serves the About page itself. All of the requests for internal pages *within the client-side app* work the same way: Requests don't trigger browser-based requests to server-hosted resources on the Internet. The router handles the requests internally.
+On the Main page, selecting the link to the About page loads the About page. Selecting the link to the About page works on the client because the Blazor router stops the browser from making a request on the Internet to `www.contoso.com` for `About` and serves the About page itself. All of the requests for internal pages *within the client-side app* work the same way: Requests don't trigger browser-based requests to server-hosted resources on the Internet. The router handles the requests internally.
 
 If a request is made using the browser's address bar for `www.contoso.com/About`, the request fails. No such resource exists on the app's Internet host, so a *404 Not found* response is returned.
 
@@ -51,9 +51,9 @@ Because browsers make requests to Internet-based hosts for client-side pages, we
 
 ## App base path
 
-The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `/CoolBlazorApp/` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `/CoolBlazorApp/`. By setting the app base path to `/CoolBlazorApp/`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
+The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `CoolBlazorApp/` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `CoolBlazorApp/`. By setting the app base path to `CoolBlazorApp/`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
 
-In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is `/`, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, update the **\<base>** tag in *index.html* on the **\<head>** tag. Change the `href` attribute value from `/` to `/<virtual-path>/` (the trailing slash is required), where `/<virtual-path>/` is the full virtual app root path on the server for the app. 
+In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is an empty string, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, add or update the **&lt;base&gt;** tag in *index.html* on the **&lt;head&gt;** tag. Set the `href` attribute value to `<virtual-path>/` (the trailing slash is required), where `<virtual-path>/` is the full virtual app root path on the server for the app.
 
 ## Deployment models
 
@@ -108,7 +108,7 @@ When deploying a standalone Blazor app from the published *dist* folder, any web
 
 IIS is a capable static file server for Blazor apps. To configure IIS to host Blazor, see [Build a Static Website on IIS](https://docs.microsoft.com/iis/manage/creating-websites/scenario-build-a-static-website-on-iis).
 
-Published assets are created in the *\\bin\\Release\\\<target-framework>\\publish* folder. Host the contents of the *publish* folder on the web server or hosting service.
+Published assets are created in the *\\bin\\Release\\&lt;target-framework&gt;\\publish* folder. Host the contents of the *publish* folder on the web server or hosting service.
 
 **web.config**
 
@@ -124,8 +124,8 @@ When a Blazor project is published, a *web.config* file is created with the foll
   - `application/octet-stream`
   - `application/wasm`
 * URL Rewrite Module rules are established:
-  - Serve the sub-directory where the app's static assets reside (*\<assembly_name>\\dist\\\<path_requested>*).
-  - Create SPA fallback routing so that requests for non-file assets are redirected to the app's default document in its static assets folder (*\<assembly_name>\\dist\\index.html*).
+  - Serve the sub-directory where the app's static assets reside (*&lt;assembly_name&gt;\\dist\\&lt;path_requested&gt;*).
+  - Create SPA fallback routing so that requests for non-file assets are redirected to the app's default document in its static assets folder (*&lt;assembly_name&gt;\\dist\\index.html*).
 
 **Install the URL Rewrite Module**
 
@@ -183,4 +183,4 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 To handle URL rewrites, add a *404.html* file with a script that handles redirecting the request to the *index.html* page. For an example implementation provided by the community, see [Single Page Apps for GitHub Pages](http://spa-github-pages.rafrex.com/) ([rafrex/spa-github-pages on GitHub](https://github.com/rafrex/spa-github-pages#readme)). An example using the community approach can be seen at [blazor-demo/blazor-demo.github.io on GitHub](https://github.com/blazor-demo/blazor-demo.github.io) ([live site](https://blazor-demo.github.io/)).
 
-When using a project site instead of an organization site, update the **\<base>** tag in *index.html*. Change the `href` attribute value from `/` to `/<repository-name>`, where `<repository-name>` is the GitHub repository name.
+When using a project site instead of an organization site, add or update the **&lt;base&gt;** tag in *index.html*. Set the `href` attribute value to `<repository-name>/`, where `<repository-name>/` is the GitHub repository name.

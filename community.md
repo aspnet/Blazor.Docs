@@ -7,6 +7,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## State management
 
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library 
+* [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux)
 * [Blazor-State](https://timewarpengineering.github.io/blazor-state/)
 

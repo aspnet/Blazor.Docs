@@ -25,6 +25,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
+* [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) using SignalR via JS interop [demo](https://blazorchatsample.azurewebsites.net/)
 
 ## Tooling
 

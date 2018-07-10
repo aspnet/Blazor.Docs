@@ -69,6 +69,7 @@ In a hosted deployment, an ASP.NET Core app handles single-page application rout
 To host a Blazor app, the ASP.NET Core app must:
 
 * Reference the Blazor app project.
+* Reference the [Microsoft.AspNetCore.Blazor.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Blazor.Server/) package in its project file.
 * Configure Blazor app hosting with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`.
 
 ```csharp
@@ -85,8 +86,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 The `UseBlazor` extension method performs the following tasks:
 
-* Configure [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* are served.
-* Configure single-page application routing for resource requests that aren't for actual files that exist on disk. The app serves the default document (*index.html*) for any request that hasn't been served by a prior Static File Middleware instance. For example, a request to receive a page from the app that should be handled by the Blazor router on the client is rewritten into a request for the *index.html* page.
+* Configure [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* folder are served.
+* Configure single-page application routing for resource requests that aren't for actual files that exist on disk. The app serves the default document (*wwwroot/index.html*) for any request that hasn't been served by a prior Static File Middleware instance. For example, a request to receive a page from the app that should be handled by the Blazor router on the client is rewritten into a request for the *wwwroot/index.html* page.
 
 When the ASP.NET Core app is published, the Blazor app is included in the published output so that the ASP.NET Core app and the Blazor app can be deployed together. For more information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
 

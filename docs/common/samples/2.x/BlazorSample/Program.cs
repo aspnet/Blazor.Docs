@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Blazor.Browser.Rendering;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
 
-namespace ComponentsSample
+namespace BlazorSample
 {
     class Program
     {

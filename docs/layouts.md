@@ -36,9 +36,9 @@ The following code sample shows the Razor template of a layout component. Note t
 </header>
 
 <nav>
-    <a href="/master-data">Master Data Management</a>
-    <a href="/invoicing">Invoicing</a>
-    <a href="/accounting">Accounting</a>
+    <a href="master-data">Master Data Management</a>
+    <a href="invoicing">Invoicing</a>
+    <a href="accounting">Accounting</a>
 </nav>
 
 @Body

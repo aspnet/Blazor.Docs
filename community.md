@@ -22,6 +22,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [ASP.NET Core Blazor Master/Detail CRUD with Filtering and Sorting using EF](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a)
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor)
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) using SignalR via JS interop ([Demo](https://blazorchatsample.azurewebsites.net/))
+* [Blazor Clock Component](https://github.com/Lupusa87/LupusaBlazorProjects) ([Demo](http://lupusablazordemos.azurewebsites.net/))
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone)
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)

@@ -243,7 +243,7 @@ Add a new page to the app that implements a simple todo list.
 
     ```cshtml
     <li class="nav-item px-3">
-        <NavLink class="nav-link" href="/todo">
+        <NavLink class="nav-link" href="todo">
             <span class="oi oi-list-rich" aria-hidden="true"></span> Todo
         </NavLink>
     </li>

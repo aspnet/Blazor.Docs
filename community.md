@@ -29,6 +29,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
 * [Blazor + Sitecore - Dynamic pages and routes](https://github.com/GoranHalvarsson/SitecoreBlazor)
+* [Toss](https://github.com/RemiBou/Toss.Blazor)
 
 ## Tooling
 

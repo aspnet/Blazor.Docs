@@ -417,9 +417,10 @@ For more information on Razor, see the [Razor syntax reference](https://docs.mic
 
 ## Raw HTML
 
-Blazor normally renders strings using DOM text nodes, which means that any markup they may contain will be ignored and treated as literal text. To render raw HTML wrap the HTML content in a `MarkupString` value, which will then be parsed as HTML or SVG and inserted into the DOM.
+Blazor normally renders strings using DOM text nodes, which means that any markup they may contain is ignored and treated as literal text. To render raw HTML, wrap the HTML content in a `MarkupString` value, which is then parsed as HTML or SVG and inserted into the DOM.
 
-> WARNING: Rendering raw HTML constructed from any untrusted source is a **security risk** and should be avoided!
+> [!WARNING]
+> Rendering raw HTML constructed from any untrusted source is a **security risk** and should be avoided!
 
 The following example shows using the `MarkupString` type to add a block of static HTML content to the rendered output of a component:
 

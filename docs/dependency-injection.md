@@ -30,33 +30,21 @@ Blazor's DI system is responsible for supplying instances of services to compone
 
 ## Add services to DI
 
-After creating a new app, examine the `Main` method in *Program.cs*:
+After creating a new app, examine the `Startup.ConfigureServices` method:
 
 ```csharp
-static void Main(string[] args)
+public void ConfigureServices(IServiceCollection services)
 {
-    var serviceProvider = new BrowserServiceProvider(services =>
-    {
-        // Add custom services here
-    });
-
-    new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+    // Add custom services here
 }
 ```
 
-`BrowserServiceProvider` receives an action where app services are added to DI. `services` references the underlying [IServiceCollection](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection), which is a list of service descriptor objects ([ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following code sample demonstrates the concept:
+The `ConfigureServices` method is passed an [IServiceCollection](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection), which is a list of service descriptor objects ([ServiceDescriptor](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor)). Services are added by providing service descriptors to the service collection. The following code sample demonstrates the concept:
 
 ```csharp
-@using Microsoft.Extensions.DependencyInjection
-
-static void Main(string[] args)
+public void ConfigureServices(IServiceCollection services)
 {
-    var serviceProvider = new BrowserServiceProvider(services =>
-    {
-        services.AddSingleton<IDataAccess, DataAccess>();
-    });
-
-    new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+    services.AddSingleton<IDataAccess, DataAccess>();
 }
 ```
 
@@ -67,6 +55,8 @@ Services can be configured with the following lifetimes:
 | [Singleton](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.singleton#Microsoft_Extensions_DependencyInjection_ServiceDescriptor_Singleton__1_System_Func_System_IServiceProvider___0__) | DI creates a *single instance* of the service. All components requiring this service receive a reference to this instance. |
 | [Transient](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.transient) | Whenever a component requires this service, it receives a *new instance* of the service. |
 | [Scoped](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.scoped) | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
+
+Blazor's DI system is based on the DI system in ASP.NET Core. For more information, see [Dependency injection in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection).
 
 ## Default services
 

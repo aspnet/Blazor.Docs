@@ -151,7 +151,8 @@ Components can also have parameters, which are defined using private properties 
     }
     ```
 
-    > NOTE: From Visual Studio you can quickly add a component parameter by using the `para` snippet. Just type `para` and then hit `Tab` twice.
+    > [!NOTE]
+    > From Visual Studio, you can quickly add a component parameter by using the `para` snippet. Type `para` and then press the `Tab` key twice.
 
 1. On the Home page (*Index.cshtml*), change the increment amount for the `Counter` to 10 by setting an attribute that matches the name of the component's property for `IncrementCount`.
 

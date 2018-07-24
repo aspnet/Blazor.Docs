@@ -135,7 +135,7 @@ After a component is defined, the component can be used to implement other compo
 
 Components can also have parameters, which are defined using private properties on the component class decorated with `[Parameter]`. Use attributes to specify arguments for a component in markup. 
 
-1. Update the `Counter` component to have an `IncrementAmount` property that defaults to 1.
+1. Update the `Counter` component to have an `IncrementAmount` parameter that defaults to 1.
 
     ```cshtml
     @functions {
@@ -150,6 +150,9 @@ Components can also have parameters, which are defined using private properties 
         }
     }
     ```
+
+    > [!NOTE]
+    > From Visual Studio, you can quickly add a component parameter by using the `para` snippet. Type `para` and then press the `Tab` key twice.
 
 1. On the Home page (*Index.cshtml*), change the increment amount for the `Counter` to 10 by setting an attribute that matches the name of the component's property for `IncrementCount`.
 

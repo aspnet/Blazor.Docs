@@ -30,7 +30,7 @@ Blazor's DI system is responsible for supplying instances of services to compone
 
 ## Add services to DI
 
-After creating a new app, examine the `ConfigureServices` method in *Startup.cs*:
+After creating a new app, examine the `Startup.ConfigureServices` method:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -56,7 +56,7 @@ Services can be configured with the following lifetimes:
 | [Transient](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.transient) | Whenever a component requires this service, it receives a *new instance* of the service. |
 | [Scoped](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.scoped) | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
 
-Blazor's DI system is based on the DI system in ASP.NET Core. See [Dependency injection in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) for additional details.
+Blazor's DI system is based on the DI system in ASP.NET Core. For more information, see [Dependency injection in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection).
 
 ## Default services
 

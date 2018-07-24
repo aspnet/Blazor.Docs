@@ -472,7 +472,7 @@ The app should now be running in Azure. Mark the todo item to build your first B
 >
 > The deployment is created in the */bin/Release/\<target-framework>/publish* folder. Move the contents of the *publish* folder to the server or hosting service.
 >
-> For more information, see the [Host and deploy](xref:client-side/blazor/host-and-deploy/index#publish-the-app) topic.
+> For more information, see the [Publishing](xref:client-side/blazor/publishing/index#publish-the-app) topic.
 
 ## Additional resources
 

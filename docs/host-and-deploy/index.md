@@ -9,9 +9,9 @@ ms.date: 04/16/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
-uid: client-side/blazor/publish-and-deploy/index
+uid: client-side/blazor/host-and-deploy/index
 ---
-# Publish and deploy Blazor
+# Host and deploy Blazor
 
 By [Luke Latham](https://github.com/guardrex), [Rainer Stropek](https://www.timecockpit.com), and [Daniel Roth](https://github.com/danroth27)
 
@@ -89,7 +89,7 @@ The `UseBlazor` extension method performs the following tasks:
 * Configure [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* folder are served.
 * Configure single-page application routing for resource requests that aren't for actual files that exist on disk. The app serves the default document (*wwwroot/index.html*) for any request that hasn't been served by a prior Static File Middleware instance. For example, a request to receive a page from the app that should be handled by the Blazor router on the client is rewritten into a request for the *wwwroot/index.html* page.
 
-When the ASP.NET Core app is published, the Blazor app is included in the published output so that the ASP.NET Core app and the Blazor app can be deployed together. For more information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/publish-and-deploy).
+When the ASP.NET Core app is published, the Blazor app is included in the published output so that the ASP.NET Core app and the Blazor app can be deployed together. For more information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
 
 For information on deploying to Azure App Service, see the following topics:
 
@@ -146,7 +146,7 @@ Set the website's **Physical path** to the Blazor app's folder. The folder conta
 
 If a *500 Internal Server Error* is received and IIS Manager throws errors when attempting to access the website's configuration, confirm that the URL Rewrite Module is installed. When the module isn't installed, the *web.config* file can't be parsed by IIS. This prevents the IIS Manager from loading the website's configuration and the website from serving Blazor's static files.
 
-For more information on troubleshooting deployments to IIS, see [Troubleshoot ASP.NET Core on IIS](https://docs.microsoft.com/aspnet/core/publish-and-deploy/iis/troubleshoot).
+For more information on troubleshooting deployments to IIS, see [Troubleshoot ASP.NET Core on IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/troubleshoot).
 
 #### Nginx
 

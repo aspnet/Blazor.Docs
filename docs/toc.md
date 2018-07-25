@@ -6,6 +6,6 @@
 # [Dependency injection](xref:client-side/blazor/dependency-injection)
 # [Routing](xref:client-side/blazor/routing)
 # [JavaScript interop](xref:client-side/blazor/javascript-interop)
-# [Hosting models](xref:client-side/blazor/publish-and-deploy/hosting-models)
-# [Publish and deploy](xref:client-side/blazor/publish-and-deploy/index)
+# [Host and deploy](xref:client-side/blazor/host-and-deploy/index)
+## [Hosting models](xref:client-side/blazor/host-and-deploy/hosting-models)
 # [FAQ](xref:client-side/blazor/introduction/faq)

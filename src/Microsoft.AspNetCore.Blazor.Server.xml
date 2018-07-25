@@ -4,28 +4,9 @@
         <name>Microsoft.AspNetCore.Blazor.Server</name>
     </assembly>
     <members>
-        <member name="T:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions">
-            <summary>
-            Provides extension methods that add Blazor-related middleware to the ASP.NET pipeline.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions.UseBlazor``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
-            <summary>
-            Configures the middleware pipeline to work with Blazor.
-            </summary>
-            <typeparam name="TProgram">Any type from the client app project. This is used to identify the client app assembly.</typeparam>
-            <param name="applicationBuilder"></param>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions.UseBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)">
-            <summary>
-            Configures the middleware pipeline to work with Blazor.
-            </summary>
-            <param name="applicationBuilder"></param>
-            <param name="options"></param>
-        </member>
         <member name="T:Microsoft.AspNetCore.Builder.BlazorOptions">
             <summary>
-            Provides configuration options to the <see cref="M:Microsoft.AspNetCore.Builder.BlazorAppBuilderExtensions.UseBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)"/>
+            Provides configuration options to the <see cref="M:Microsoft.AspNetCore.Builder.BlazorApplicationBuilderExtensions.UseBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)"/>
             middleware.
             </summary>
         </member>
@@ -33,6 +14,55 @@
             <summary>
             Full path to the client assembly.
             </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.BlazorApplicationBuilderExtensions">
+            <summary>
+            Provides extension methods that add Blazor-related middleware to the ASP.NET pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.BlazorApplicationBuilderExtensions.UseBlazor``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configures the middleware pipeline to work with Blazor.
+            </summary>
+            <typeparam name="TProgram">Any type from the client app project. This is used to identify the client app assembly.</typeparam>
+            <param name="app"></param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.BlazorApplicationBuilderExtensions.UseBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions)">
+            <summary>
+            Configures the middleware pipeline to work with Blazor.
+            </summary>
+            <param name="app"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions">
+            <summary>
+            Extension methods to configure an <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> for Server-Side Blazor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Registers Server-Side Blazor in the pipeline.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</param>
+            <typeparam name="TStartup">A Blazor startup type.</typeparam>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Type)">
+            <summary>
+            Registers Server-Side Blazor in the pipeline.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</param>
+            <param name="startupType">A Blazor startup type.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ServerSideBlazorApplicationBuilderExtensions.UseServerSideBlazor(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Builder.BlazorOptions,System.Action{Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder})">
+            <summary>
+            Registers middleware for Server-Side Blazor.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</param>
+            <param name="options">A <see cref="T:Microsoft.AspNetCore.Builder.BlazorOptions"/> instance used to configure the Blazor file provider.</param>
+            <param name="startupAction">A delegate used to configure the renderer.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.</returns>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Server.AutoRebuild.IRebuildService">
             <summary>
@@ -44,6 +74,99 @@
             <summary>
             Finds the VS process that launched this app process (if any), and uses
             named pipes to communicate with its AutoRebuild listener (if any).
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit">
+            <summary>
+            Represents an active connection between a Blazor server and a client.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit.Current">
+            <summary>
+            Gets the current <see cref="T:Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit.JSRuntime">
+            <summary>
+            Gets the <see cref="T:Microsoft.JSInterop.IJSRuntime"/> associated with this circuit.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit.Services">
+            <summary>
+            Gets the <see cref="T:System.IServiceProvider"/> associated with this circuit.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.Current">
+            <summary>
+            Gets the current <see cref="P:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.Circuit"/>, if any.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.SetCurrentCircuitHost(Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost)">
+            <summary>
+            Sets the current <see cref="P:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.Circuit"/>.
+            </summary>
+            <param name="circuitHost">The <see cref="P:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.Circuit"/>.</param>
+            <remarks>
+            Calling <see cref="M:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.SetCurrentCircuitHost(Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost)"/> will store the circuit
+            and other related values such as the <see cref="T:Microsoft.JSInterop.IJSRuntime"/> and <see cref="P:Microsoft.AspNetCore.Blazor.Server.Circuits.CircuitHost.Renderer"/>
+            in the local execution context. Application code should not need to call this method,
+            it is primarily used by the Server-Side Blazor infrastructure.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper">
+            <summary>
+            A Server-Side Blazor implemenation of <see cref="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper.#ctor(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper"/>.
+            </summary>
+            <param name="jsRuntime"></param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper.Initialize(System.String,System.String)">
+            <summary>
+            Initializes the <see cref="T:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper"/>.
+            </summary>
+            <param name="uriAbsolute">The absolute URI of the current page.</param>
+            <param name="baseUriAbsolute">The absolute base URI of the current page.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper.NotifyLocationChanged(System.String)">
+            <summary>
+            For framework use only.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper.NavigateToCore(System.String)">
+            <summary>
+            Navigates to the specified URI.
+            </summary>
+            <param name="uri">The destination URI. This can be absolute, or relative to the base URI
+            (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUri"/>).</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.RenderBatchFormatterResolver">
+            <summary>
+            A MessagePack IFormatterResolver that provides an efficient binary serialization
+            of <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch"/>. The client-side code knows how to walk through this
+            binary representation directly, without it first being parsed as an object graph.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.RenderBatchWriter">
+            <summary>
+            Provides a custom binary serializer for <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch"/> instances.
+            This is designed with both server-side and client-side perf in mind:
+            
+             * Array-like regions always have a fixed size per entry (even if some entry types
+               don't require as much space as others) so the recipient can index directly.
+             * The indices describing where field data starts, where each string value starts,
+               etc., are written *after* that data, so when writing the data we don't have to
+               compute the locations up front or seek back to an earlier point in the stream.
+               The recipient can only process the data after reading it all into a buffer,
+               so it's no disadvantage for the location info to be at the end.
+             * We only serialize the data that the JS side will need. For example, we don't
+               emit frame sequence numbers, or any representation of nonstring attribute
+               values, or component instances, etc.
+               
+            We don't have or need a .NET reader for this format. We only read it from JS code.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Server.WasmMediaTypeNames">
@@ -60,6 +183,103 @@
             <summary>
             The standard media type name for WebAssembly binary files.
             </summary>
+        </member>
+        <member name="E:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.UnhandledException">
+            <summary>
+            Notifies when a rendering exception occured.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.#ctor(System.IServiceProvider,Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry,Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.SignalR.IClientProxy)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer"/>.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/>.</param>
+            <param name="rendererRegistry">The <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry"/>.</param>
+            <param name="jsRuntime">The <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.</param>
+            <param name="client">The <see cref="T:Microsoft.AspNetCore.SignalR.IClientProxy"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.AddComponent``1(System.String)">
+            <summary>
+            Attaches a new root component to the renderer,
+            causing it to be displayed in the specified DOM element.
+            </summary>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <param name="domElementSelector">A CSS selector that uniquely identifies a DOM element.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.AddComponent(System.Type,System.String)">
+            <summary>
+            Associates the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> with the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/>,
+            causing it to be displayed in the specified DOM element.
+            </summary>
+            <param name="componentType">The type of the component.</param>
+            <param name="domElementSelector">A CSS selector that uniquely identifies a DOM element.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.Dispose">
+            <summary>
+            Disposes the instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions">
+            <summary>
+            Options for Server-Side Blazor.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions">
+            <summary>
+            Extension methods to configure an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> for Server-Side Blazor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Server-Side Blazor services to the service collection.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})">
+            <summary>
+            Adds Server-Side Blazor services to the service collection.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="configure">A delegate to configure the <see cref="T:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions"/>.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type)">
+            <summary>
+            Adds Server-Side Blazor services to the service collection.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="startupType">A Blazor startup type.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Server-Side Blazor services to the service collection.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <typeparam name="TStartup">A Blazor startup type.</typeparam>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})">
+            <summary>
+            Adds Server-Side Blazor services to the service collection.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="startupType">A Blazor startup type.</param>
+            <param name="configure">A delegate to configure the <see cref="T:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions"/>.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions.AddServerSideBlazor``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions})">
+            <summary>
+            Adds Server-Side Blazor services to the service collection.
+            </summary>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</param>
+            <param name="configure">A delegate to configure the <see cref="T:Microsoft.AspNetCore.Blazor.ServerSideBlazorOptions"/>.</param>
+            <typeparam name="TStartup">A Blazor startup type.</typeparam>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.</returns>
         </member>
     </members>
 </doc>

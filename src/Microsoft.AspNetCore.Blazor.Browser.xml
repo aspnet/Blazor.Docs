@@ -4,6 +4,176 @@
         <name>Microsoft.AspNetCore.Blazor.Browser</name>
     </assembly>
     <members>
+        <member name="T:Microsoft.AspNetCore.Blazor.Builder.BlazorApplicationBuilderExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Builder.BlazorApplicationBuilderExtensions.AddComponent``1(Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder,System.String)">
+            <summary>
+            Associates the component type with the application,
+            causing it to be displayed in the specified DOM element.
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder"/>.</param>
+            <typeparam name="TComponent">The type of the component.</typeparam>
+            <param name="domElementSelector">A CSS selector that uniquely identifies a DOM element.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder">
+            <summary>
+            A builder for constructing a Blazor application.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder.Services">
+            <summary>
+            Gets the application services.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Builder.IBlazorApplicationBuilder.AddComponent(System.Type,System.String)">
+            <summary>
+            Associates the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> with the application,
+            causing it to be displayed in the specified DOM element.
+            </summary>
+            <param name="componentType">The type of the component.</param>
+            <param name="domElementSelector">A CSS selector that uniquely identifies a DOM element.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Hosting.BlazorWebAssemblyHost">
+            <summary>
+            Used to to create instances a Blazor host builder for a Browser application.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.BlazorWebAssemblyHost.CreateDefaultBuilder">
+            <summary>
+            Creates a an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/>.
+            </summary>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost">
+            <summary>
+            A program abstraction.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost.Services">
+            <summary>
+            The programs configured services.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Start the program.
+            </summary>
+            <param name="cancellationToken">Used to abort program start.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Attempts to gracefully stop the program.
+            </summary>
+            <param name="cancellationToken">Used to indicate when stop should no longer be graceful.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder">
+            <summary>
+            Abstraction for configuring a Blazor browser-based application.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder.Properties">
+            <summary>
+            A central location for sharing state between components during the host building process.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder.ConfigureServices(System.Action{Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            Adds services to the container. This can be called multiple times and the results will be additive.
+            </summary>
+            <param name="configureDelegate">The delegate for configuring the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> that will be used
+            to construct the <see cref="T:System.IServiceProvider"/>.</param>
+            <returns>The same instance of the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/> for chaining.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder.Build">
+            <summary>
+            Run the given actions to initialize the host. This can only be called once.
+            </summary>
+            <returns>An initialized <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost"/></returns>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilder.Properties">
+            <summary>
+            A central location for sharing state between components during the host building process.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilder.ConfigureServices(System.Action{Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderContext,Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            Adds services to the container. This can be called multiple times and the results will be additive.
+            </summary>
+            <param name="configureDelegate"></param>
+            <returns>The same instance of the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/> for chaining.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilder.Build">
+            <summary>
+            Run the given actions to initialize the host. This can only be called once.
+            </summary>
+            <returns>An initialized <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost"/></returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderContext">
+            <summary>
+            Context containing the common services on the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost" />. Some properties may be null until set by the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderContext.#ctor(System.Collections.Generic.IDictionary{System.Object,System.Object})">
+            <summary>
+            Creates a new <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderContext" />.
+            </summary>
+            <param name="properties">The property collection.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderContext.Properties">
+            <summary>
+            A central location for sharing state between components during the host building process.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderExtensions">
+            <summary>
+            Provides Blazor-specific support for <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderExtensions.ConfigureServices(Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder,System.Action{Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            Adds services to the container. This can be called multiple times and the results will be additive.
+            </summary>
+            <param name="hostBuilder">The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder" /> to configure.</param>
+            <param name="configureDelegate"></param>
+            <returns>The same instance of the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/> for chaining.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderExtensions.UseBlazorStartup(Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder,System.Type)">
+            <summary>
+            Configures the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/> to use the provided startup class.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/>.</param>
+            <param name="startupType">A type that configures a Blazor application.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostBuilderExtensions.UseBlazorStartup``1(Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder)">
+            <summary>
+            Configures the <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/> to use the provided startup class.
+            </summary>
+            <typeparam name="TStartup">A type that configures a Blazor application.</typeparam>
+            <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/>.</param>
+            <returns>The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHostBuilder"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostExtensions.Run(Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost)">
+            <summary>
+            Runs the application.
+            </summary>
+            <param name="host">The <see cref="T:Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost"/> to run.</param>
+            <remarks>
+            Currently, Blazor applications running in the browser don't have a lifecycle - the application does not
+            get a chance to gracefully shut down. For now, <see cref="M:Microsoft.AspNetCore.Blazor.Hosting.WebAssemblyHostExtensions.Run(Microsoft.AspNetCore.Blazor.Hosting.IWebAssemblyHost)"/> simply starts the host
+            and allows execution to continue.
+            </remarks>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Browser.Http.BrowserHttpMessageHandler">
             <summary>
             A browser-compatible implementation of <see cref="T:System.Net.Http.HttpMessageHandler"/>
@@ -45,104 +215,6 @@
             Advises the browser to send credentials (such as cookies or HTTP auth headers)
             even for cross-origin requests.
             </summary>
-        </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Interop.JavaScriptException">
-            <summary>
-            Represents errors that occur during an interop call from .NET to JavaScript.
-            </summary>
-        </member>
-        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Interop.MethodIdentifier.TypeArguments">
-            <summary>
-            Required if the method is generic.
-            </summary>
-        </member>
-        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Interop.MethodIdentifier.ParameterTypes">
-            <summary>
-            Required if the method has overloads.
-            </summary>
-        </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction">
-            <summary>
-            Provides methods for invoking preregistered JavaScript functions from .NET code.
-            </summary>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.Invoke``1(System.String,System.Object[])">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            Arguments and return values are marshalled via JSON serialization.
-            </summary>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type. This type must be JSON deserializable.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <param name="args">The arguments to pass, each of which must be JSON serializable.</param>
-            <returns>The result of the function invocation.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeAsync``1(System.String,System.Object[])">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            Arguments and return values are marshalled via JSON serialization.
-            </summary>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type. This type must be JSON deserializable.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <param name="args">The arguments to pass, each of which must be JSON serializable.</param>
-            <returns>The result of the function invocation.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``1(System.String,System.Object[])">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            
-            When using this overload, all arguments will be supplied as <see cref="T:System.Object" />
-            references, meaning that any reference types will be boxed. If you are passing
-            3 or fewer arguments, it is preferable to instead call the overload that
-            specifies generic type arguments for each argument.
-            </summary>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <param name="args">The arguments to pass, each of which will be supplied as a <see cref="T:System.Object" /> instance.</param>
-            <returns>The result of the function invocation.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``1(System.String)">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            </summary>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <returns>The result of the function invocation.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``2(System.String,``0)">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            </summary>
-            <typeparam name="T0">The type of the first argument.</typeparam>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <param name="arg0">The first argument.</param>
-            <returns>The result of the function invocation.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``3(System.String,``0,``1)">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            </summary>
-            <typeparam name="T0">The type of the first argument.</typeparam>
-            <typeparam name="T1">The type of the second argument.</typeparam>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <param name="arg0">The first argument.</param>
-            <param name="arg1">The second argument.</param>
-            <returns>The result of the function invocation.</returns>
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Interop.RegisteredFunction.InvokeUnmarshalled``4(System.String,``0,``1,``2)">
-            <summary>
-            Invokes the JavaScript function registered with the specified identifier.
-            </summary>
-            <typeparam name="T0">The type of the first argument.</typeparam>
-            <typeparam name="T1">The type of the second argument.</typeparam>
-            <typeparam name="T2">The type of the third argument.</typeparam>
-            <typeparam name="TRes">The .NET type corresponding to the function's return value type.</typeparam>
-            <param name="identifier">The identifier used when registering the target function.</param>
-            <param name="arg0">The first argument.</param>
-            <param name="arg1">The second argument.</param>
-            <param name="arg2">The third argument.</param>
-            <returns>The result of the function invocation.</returns>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer">
             <summary>
@@ -191,36 +263,49 @@
             This is marked 'internal' because it only gets invoked from JS code.
             </summary>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.DispatchEvent(Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.BrowserEventDescriptor,System.String)">
             <summary>
-            Provides mechanisms for locating <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> instances
-            by ID. This is used when receiving incoming events from the browser. It
-            implicitly ensures that the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> instances and
-            their associated component instances aren't GCed when events may still
-            be received for them.
+            For framework use only.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry.Add(Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer)">
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.BrowserEventDescriptor">
             <summary>
-            Adds the <paramref name="browserRenderer"/> and gets a unique identifier for it.
+            For framework use only.
             </summary>
-            <param name="browserRenderer"></param>
-            <returns>A unique identifier for the <paramref name="browserRenderer"/>.</returns>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry.Find(System.Int32)">
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.BrowserEventDescriptor.BrowserRendererId">
             <summary>
-            Gets the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> with the specified
-            <paramref name="browserRendererId"/>.
+            For framework use only.
             </summary>
-            <param name="browserRendererId">The identifier of the instance to be returned.</param>
-            <returns>The corresponding <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> instance.</returns>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererRegistry.TryRemove(System.Int32)">
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.BrowserEventDescriptor.ComponentId">
             <summary>
-            Removes the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> with the specified identifier, if present.
+            For framework use only.
             </summary>
-            <param name="browserRendererId">The identifier of the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> to remove.</param>
-            <returns><see langword="true"/> if the <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer"/> was present; otherwise <see langword="false" />.</returns>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.BrowserEventDescriptor.EventHandlerId">
+            <summary>
+            For framework use only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher.BrowserEventDescriptor.EventArgsType">
+            <summary>
+            For framework use only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Services.ActivateMonoJSRuntime">
+            <summary>
+            Temporary mechanism for registering the Mono JS runtime. Developers do not need to
+            use this directly, and it will be removed shortly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.ActivateMonoJSRuntime.EnsureActivated">
+            <summary>
+            Temporary mechanism for registering the Mono JS runtime. Developers do not need to
+            use this directly, and it will be removed shortly.
+            The return value is intended to be used with GC.KeepAlive purely as a way of ensuring
+            the invocation doesn't get stripped out by the linker (if it's smart enough to do so).
+            </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider">
             <summary>
@@ -247,23 +332,24 @@
             Default browser implementation of <see cref="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper"/>.
             </summary>
         </member>
-        <member name="E:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.OnLocationChanged">
+        <member name="F:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.Instance">
+            <summary>
+            Gets the instance of <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.InitializeState">
+            <summary>
+            Called to initialize BaseURI and current URI before those values the first time.
+            Override this method to dynamically calculate the those values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.NavigateToCore(System.String)">
             <inheritdoc />
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetBaseUri">
-            <inheritdoc />
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.GetAbsoluteUri">
-            <inheritdoc />
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToAbsoluteUri(System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToBaseRelativePath(System.String,System.String)">
-            <inheritdoc />
-        </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.NavigateTo(System.String)">
-            <inheritdoc />
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.NotifyLocationChanged(System.String)">
+            <summary>
+            For framework use only.
+            </summary>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Browser.Services.BrowserUriHelper.ToBaseUri(System.String)">
             <summary>
@@ -274,6 +360,36 @@
             </summary>
             <param name="absoluteBaseUri">The page's document.baseURI value.</param>
             <returns>The URI prefix</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry">
+            <summary>
+            Framework infrastructure, not intended to be used by application code.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry.Current">
+            <summary>
+            Framework infrastructure, not intended to be used by application code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry.SetCurrentRendererRegistry(Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry)">
+            <summary>
+            Framework infrastructure, not intended by used by application code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry.Add(Microsoft.AspNetCore.Blazor.Rendering.Renderer)">
+            <summary>
+            Framework infrastructure, not intended by used by application code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry.Find(System.Int32)">
+            <summary>
+            Framework infrastructure, not intended by used by application code.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry.TryRemove(System.Int32)">
+            <summary>
+            Framework infrastructure, not intended by used by application code.
+            </summary>
         </member>
     </members>
 </doc>

@@ -414,3 +414,20 @@ If `IsCompleted` is `false`, the check box is rendered as:
 **Additional information on Razor**
 
 For more information on Razor, see the [Razor syntax reference](https://docs.microsoft.com/aspnet/core/mvc/views/razor). Note that not all of the features of Razor are available in Blazor at this time.
+
+## Raw HTML
+
+Blazor normally renders strings using DOM text nodes, which means that any markup they may contain is ignored and treated as literal text. To render raw HTML, wrap the HTML content in a `MarkupString` value, which is then parsed as HTML or SVG and inserted into the DOM.
+
+> [!WARNING]
+> Rendering raw HTML constructed from any untrusted source is a **security risk** and should be avoided!
+
+The following example shows using the `MarkupString` type to add a block of static HTML content to the rendered output of a component:
+
+```html
+@((MarkupString)myMarkup)
+
+@functions {
+    string myMarkup = "<p class='markup'>This is a <em>markup string</em>.</p>";
+}
+```

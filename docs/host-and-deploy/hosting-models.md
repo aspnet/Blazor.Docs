@@ -9,7 +9,7 @@ ms.date: 07/24/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
-uid: client-side/blazor/hosting-models
+uid: client-side/blazor/host-and-deploy/hosting-models
 ---
 # Blazor hosting models
 
@@ -21,7 +21,7 @@ Blazor is a client-side web framework designed primarily to run in the browser o
 
 ## Client-side (in-process) hosting model
 
-The principal hosting model for Blazor is running client-side in the browser. In this model, the Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. (We may also support running Blazor in a Web Worker in the future). All UI updates and event handling happens within the same process. The app assets can be hosted as static files using whatever web server is preferred (see [Publishing](xref:client-side/blazor/publishing/index)).
+The principal hosting model for Blazor is running client-side in the browser. In this model, the Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. (We may also support running Blazor in a Web Worker in the future). All UI updates and event handling happens within the same process. The app assets can be hosted as static files using whatever web server is preferred (see [Host and deploy](xref:client-side/blazor/host-and-deploy/index)).
 
 ![Blazor client-side](https://user-images.githubusercontent.com/1874516/43042852-998bb680-8d3b-11e8-9d39-adf8d3d77360.png)
 

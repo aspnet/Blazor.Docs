@@ -9,7 +9,7 @@ ms.date: 07/24/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
-uid: client-side/blazor/host-and-deploy/hosting-models
+uid: client-side/blazor/publish-and-deploy/hosting-models
 ---
 # Blazor hosting models
 
@@ -17,11 +17,11 @@ By [Daniel Roth](https://github.com/danroth27)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-Blazor is a client-side web framework designed primarily to run in the browser on a WebAssembly-based .NET runtime. Blazor supports multiple hosting models, including out-of-process hosting models, where the Blazor component logic runs separately from the UI thread. Regardless of the hosting model, the Blazor app and component model remain *the same*. This article discusses the available hosting models for Blazor.
+Blazor is a client-side web framework designed primarily to run in the browser on a WebAssembly-based .NET runtime. Blazor supports multiple hosting models, including out-of-process hosting models, where the Blazor component logic runs separately from the UI thread. Regardless of the hosting model, the Blazor app and component models remain *the same*. This article discusses the available hosting models for Blazor.
 
 ## Client-side (in-process) hosting model
 
-The principal hosting model for Blazor is running client-side in the browser. In this model, the Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. (We may also support running Blazor in a Web Worker in the future). All UI updates and event handling happens within the same process. The app assets can be hosted as static files using whatever web server is preferred (see [Host and deploy](xref:client-side/blazor/host-and-deploy/index)).
+The principal hosting model for Blazor is running client-side in the browser. In this model, the Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. All UI updates and event handling happens within the same process. The app assets can be published as static files using whatever web server is preferred (see [Publish and deploy](xref:client-side/blazor/publish-and-deploy/index)).
 
 ![Blazor client-side](https://user-images.githubusercontent.com/1874516/43042852-998bb680-8d3b-11e8-9d39-adf8d3d77360.png)
 
@@ -29,8 +29,6 @@ To create a Blazor app using the client-side hosting model, use the "Blazor" or 
 
 * Downloading the .NET runtime, the app, and its dependencies.
 * Initialization of the runtime to run the app. 
-
-In the "Blazor" stand-alone template, a basic web host is provided during development, and the production web server is left to the user to provide. In the "Blazor (ASP.NET Core Hosted)" template, an ASP.NET Core app is used to host the Blazor client-side app enabling full-stack .NET web development.
 
 The benefits of the client-side hosting model are:
 
@@ -49,11 +47,30 @@ The downsides to the client-side hosting model are:
 
 ## Server-side hosting model
 
-In the server-side hosting model, Blazor is executed on the server using .NET Core. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
+In the server-side hosting model, Blazor is executed on the server from within an ASP.NET COre app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
 ![Blazor server-side](https://user-images.githubusercontent.com/1874516/43042867-eaa8bb76-8d3b-11e8-8f1d-60768f86f710.png)
 
-To create a Blazor app using the server-side hosting model, use the "Blazor (Server-side on ASP.NET Core)" template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The Blazor app project uses the *blazor.server.js* script to establish the client connection. It's the app's responsibility to persist and restore app state as needed (for example, in the event of a lost network connection).
+To create a Blazor app using the server-side hosting model, use the "Blazor (Server-side on ASP.NET Core)" template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to both add the server-side  Blazor services and to add the Blazor app to the request handling pipeline:
+
+```csharp
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+        services.AddServerSideBlazor<App.Startup>();
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+        app.UseServerSideBlazor<App.Startup>();
+    }
+}
+```
+
+The *blazor.server.js* script establishes the client connection. It's the app's responsibility to persist and restore app state as needed (for example, in the event of a lost network connection).
 
 The benefits of the server-side hosting model are:
 

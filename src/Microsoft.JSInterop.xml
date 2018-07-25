@@ -1,0 +1,509 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.JSInterop</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.JSInterop.DotNetDispatcher">
+            <summary>
+            Provides methods that receive incoming calls from JS to .NET.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.Invoke(System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Receives a call from JS to .NET, locating and invoking the specified method.
+            </summary>
+            <param name="assemblyName">The assembly containing the method to be invoked.</param>
+            <param name="methodIdentifier">The identifier of the method to be invoked. The method must be annotated with a <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> matching this identifier string.</param>
+            <param name="dotNetObjectId">For instance method calls, identifies the target object.</param>
+            <param name="argsJson">A JSON representation of the parameters.</param>
+            <returns>A JSON representation of the return value, or null.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.BeginInvoke(System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Receives a call from JS to .NET, locating and invoking the specified method asynchronously.
+            </summary>
+            <param name="callId">A value identifying the asynchronous call that should be passed back with the result, or null if no result notification is required.</param>
+            <param name="assemblyName">The assembly containing the method to be invoked.</param>
+            <param name="methodIdentifier">The identifier of the method to be invoked. The method must be annotated with a <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> matching this identifier string.</param>
+            <param name="dotNetObjectId">For instance method calls, identifies the target object.</param>
+            <param name="argsJson">A JSON representation of the parameters.</param>
+            <returns>A JSON representation of the return value, or null.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.EndInvoke(System.Int64,System.Boolean,Microsoft.JSInterop.Internal.JSAsyncCallResult)">
+            <summary>
+            Receives notification that a call from .NET to JS has finished, marking the
+            associated <see cref="T:System.Threading.Tasks.Task"/> as completed.
+            </summary>
+            <param name="asyncHandle">The identifier for the function invocation.</param>
+            <param name="succeeded">A flag to indicate whether the invocation succeeded.</param>
+            <param name="result">If <paramref name="succeeded"/> is <c>true</c>, specifies the invocation result. If <paramref name="succeeded"/> is <c>false</c>, gives the <see cref="T:System.Exception"/> corresponding to the invocation failure.</param>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetDispatcher.ReleaseDotNetObject(System.Int64)">
+             <summary>
+             Releases the reference to the specified .NET object. This allows the .NET runtime
+             to garbage collect that object if there are no other references to it.
+            
+             To avoid leaking memory, the JavaScript side code must call this for every .NET
+             object it obtains a reference to. The exception is if that object is used for
+             the entire lifetime of a given user's session, in which case it is released
+             automatically when the JavaScript runtime is disposed.
+             </summary>
+             <param name="dotNetObjectId">The identifier previously passed to JavaScript code.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.DotNetObjectRef">
+             <summary>
+             Wraps a JS interop argument, indicating that the value should not be serialized as JSON
+             but instead should be passed as a reference.
+            
+             To avoid leaking memory, the reference must later be disposed by JS code or by .NET code.
+             </summary>
+        </member>
+        <member name="P:Microsoft.JSInterop.DotNetObjectRef.Value">
+            <summary>
+            Gets the object instance represented by this wrapper.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef.#ctor(System.Object)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.DotNetObjectRef"/>.
+            </summary>
+            <param name="value">The value being wrapped.</param>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef.EnsureAttachedToJsRuntime(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Ensures the <see cref="T:Microsoft.JSInterop.DotNetObjectRef"/> is associated with the specified <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.
+            Developers do not normally need to invoke this manually, since it is called automatically by
+            framework code.
+            </summary>
+            <param name="runtime">The <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.</param>
+        </member>
+        <member name="M:Microsoft.JSInterop.DotNetObjectRef.Dispose">
+            <summary>
+            Stops tracking this object reference, allowing it to be garbage collected
+            (if there are no other references to it). Once the instance is disposed, it
+            can no longer be used in interop calls from JavaScript code.
+            </summary>
+        </member>
+        <member name="T:Microsoft.JSInterop.Internal.ICustomArgSerializer">
+            <summary>
+            Internal. Intended for framework use only.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.Internal.ICustomArgSerializer.ToJsonPrimitive">
+            <summary>
+            Internal. Intended for framework use only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.JSInterop.Internal.JSAsyncCallResult">
+            <summary>
+            Intended for framework use only.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.Internal.JSAsyncCallResult.#ctor(System.Object)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.Internal.JSAsyncCallResult"/>.
+            </summary>
+            <param name="resultOrException">The result of the call.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.IJSInProcessRuntime">
+            <summary>
+            Represents an instance of a JavaScript runtime to which calls may be dispatched.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.IJSInProcessRuntime.Invoke``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function synchronously.
+            </summary>
+            <typeparam name="T">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="T"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="T:Microsoft.JSInterop.IJSRuntime">
+            <summary>
+            Represents an instance of a JavaScript runtime to which calls may be dispatched.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.IJSRuntime.InvokeAsync``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function asynchronously.
+            </summary>
+            <typeparam name="T">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="T"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.IJSRuntime.UntrackObjectRef(Microsoft.JSInterop.DotNetObjectRef)">
+            <summary>
+            Stops tracking the .NET object represented by the <see cref="T:Microsoft.JSInterop.DotNetObjectRef"/>.
+            This allows it to be garbage collected (if nothing else holds a reference to it)
+            and means the JS-side code can no longer invoke methods on the instance or pass
+            it as an argument to subsequent calls.
+            </summary>
+            <param name="dotNetObjectRef">The reference to stop tracking.</param>
+            <remarks>This method is called automaticallly by <see cref="M:Microsoft.JSInterop.DotNetObjectRef.Dispose"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.JSInterop.InteropArgSerializerStrategy.ReleaseDotNetObject(System.Int64)">
+            <summary>
+            Stops tracking the specified .NET object reference.
+            This overload is typically invoked from JS code via JS interop.
+            </summary>
+            <param name="dotNetObjectId">The ID of the <see cref="T:Microsoft.JSInterop.DotNetObjectRef"/>.</param>
+        </member>
+        <member name="M:Microsoft.JSInterop.InteropArgSerializerStrategy.ReleaseDotNetObject(Microsoft.JSInterop.DotNetObjectRef)">
+            <summary>
+            Stops tracking the specified .NET object reference.
+            This overload is typically invoked from .NET code by <see cref="M:Microsoft.JSInterop.DotNetObjectRef.Dispose"/>.
+            </summary>
+            <param name="dotNetObjectRef">The <see cref="T:Microsoft.JSInterop.DotNetObjectRef"/>.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSException">
+            <summary>
+            Represents errors that occur during an interop call from .NET to JavaScript.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSException.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSException"/>.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSInProcessRuntimeBase">
+            <summary>
+            Abstract base class for an in-process JavaScript runtime.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInProcessRuntimeBase.Invoke``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function synchronously.
+            </summary>
+            <typeparam name="T">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="T"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInProcessRuntimeBase.InvokeJS(System.String,System.String)">
+            <summary>
+            Performs a synchronous function invocation.
+            </summary>
+            <param name="identifier">The identifier for the function to invoke.</param>
+            <param name="argsJson">A JSON representation of the arguments.</param>
+            <returns>A JSON representation of the result.</returns>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSInvokableAttribute">
+            <summary>
+            Identifies a .NET method as allowing invocation from JavaScript code.
+            Any method marked with this attribute may receive arbitrary parameter values
+            from untrusted callers. All inputs should be validated carefully.
+            </summary>
+        </member>
+        <member name="P:Microsoft.JSInterop.JSInvokableAttribute.Identifier">
+             <summary>
+             Gets the identifier for the method. The identifier must be unique within the scope
+             of an assembly.
+            
+             If not set, the identifier is taken from the name of the method. In this case the
+             method name must be unique within the assembly.
+             </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInvokableAttribute.#ctor">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> without setting
+            an identifier for the method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSInvokableAttribute.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSInvokableAttribute"/> using the specified
+            identifier.
+            </summary>
+            <param name="identifier">An identifier for the method, which must be unique within the scope of the assembly.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.Json">
+            <summary>
+            Provides mechanisms for converting between .NET objects and JSON strings for use
+            when making calls to JavaScript functions via <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.
+            
+            Warning: This is not intended as a general-purpose JSON library. It is only intended
+            for use when making calls via <see cref="T:Microsoft.JSInterop.IJSRuntime"/>. Eventually its implementation
+            will be replaced by something more general-purpose.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.Json.Serialize(System.Object)">
+            <summary>
+            Serializes the value as a JSON string.
+            </summary>
+            <param name="value">The value to serialize.</param>
+            <returns>The JSON string.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.Json.Deserialize``1(System.String)">
+            <summary>
+            Deserializes the JSON string, creating an object of the specified generic type.
+            </summary>
+            <typeparam name="T">The type of object to create.</typeparam>
+            <param name="json">The JSON string.</param>
+            <returns>An object of the specified type.</returns>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSRuntime">
+            <summary>
+            Provides mechanisms for accessing the current <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.JSInterop.JSRuntime.Current">
+            <summary>
+            Gets the current <see cref="T:Microsoft.JSInterop.IJSRuntime"/>, if any.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntime.SetCurrentJSRuntime(Microsoft.JSInterop.IJSRuntime)">
+             <summary>
+             Sets the current JS runtime to the supplied instance.
+            
+             This is intended for framework use. Developers should not normally need to call this method.
+             </summary>
+             <param name="instance">The new current <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.</param>
+        </member>
+        <member name="T:Microsoft.JSInterop.JSRuntimeBase">
+            <summary>
+            Abstract base class for a JavaScript runtime.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntimeBase.#ctor">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.JSInterop.JSRuntimeBase"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntimeBase.UntrackObjectRef(Microsoft.JSInterop.DotNetObjectRef)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntimeBase.InvokeAsync``1(System.String,System.Object[])">
+            <summary>
+            Invokes the specified JavaScript function asynchronously.
+            </summary>
+            <typeparam name="T">The JSON-serializable return type.</typeparam>
+            <param name="identifier">An identifier for the function to invoke. For example, the value <code>"someScope.someFunction"</code> will invoke the function <code>window.someScope.someFunction</code>.</param>
+            <param name="args">JSON-serializable arguments.</param>
+            <returns>An instance of <typeparamref name="T"/> obtained by JSON-deserializing the return value.</returns>
+        </member>
+        <member name="M:Microsoft.JSInterop.JSRuntimeBase.BeginInvokeJS(System.Int64,System.String,System.String)">
+            <summary>
+            Begins an asynchronous function invocation.
+            </summary>
+            <param name="asyncHandle">The identifier for the function invocation, or zero if no async callback is required.</param>
+            <param name="identifier">The identifier for the function to invoke.</param>
+            <param name="argsJson">A JSON representation of the arguments.</param>
+        </member>
+        <member name="T:SimpleJson.JsonArray">
+            <summary>
+            Represents the json array.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonArray.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonArray.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
+            </summary>
+            <param name="capacity">The capacity of the json array.</param>
+        </member>
+        <member name="M:SimpleJson.JsonArray.ToString">
+            <summary>
+            The json representation of the array.
+            </summary>
+            <returns>The json representation of the array.</returns>
+        </member>
+        <member name="T:SimpleJson.JsonObject">
+            <summary>
+            Represents the json object.
+            </summary>
+        </member>
+        <member name="F:SimpleJson.JsonObject._members">
+            <summary>
+            The internal member dictionary.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.#ctor(System.Collections.Generic.IEqualityComparer{System.String})">
+            <summary>
+            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing keys, or null to use the default <see cref="T:System.Collections.Generic.EqualityComparer`1"/> for the type of the key.</param>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Object"/> at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Add(System.String,System.Object)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:SimpleJson.JsonObject.ContainsKey(System.String)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>
+                <c>true</c> if the specified key contains key; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Keys">
+            <summary>
+            Gets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Remove(System.String)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Tries the get value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Values">
+            <summary>
+            Gets the values.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified key.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Determines whether [contains] [the specified item].
+            </summary>
+            <param name="item">The item.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="arrayIndex">Index of the array.</param>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:SimpleJson.JsonObject.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.ToString">
+            <summary>
+            Returns a json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="T:SimpleJson.SimpleJson">
+            <summary>
+            This class encodes and decodes JSON strings.
+            Spec. details, see http://www.json.org/
+            
+            JSON uses Arrays and Objects. These correspond here to the datatypes JsonArray(IList&lt;object>) and JsonObject(IDictionary&lt;string,object>).
+            All numbers are parsed to doubles.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.DeserializeObject(System.String)">
+            <summary>
+            Parses the string json into a value
+            </summary>
+            <param name="json">A JSON string.</param>
+            <returns>An IList&lt;object>, a IDictionary&lt;string,object>, a double, a string, null, true, or false</returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.TryDeserializeObject(System.String,System.Object@)">
+            <summary>
+            Try parsing the json string into a value.
+            </summary>
+            <param name="json">
+            A JSON string.
+            </param>
+            <param name="obj">
+            The object.
+            </param>
+            <returns>
+            Returns true if successful otherwise false.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.SerializeObject(System.Object,SimpleJson.IJsonSerializerStrategy)">
+            <summary>
+            Converts a IDictionary&lt;string,object> / IList&lt;object> object into a JSON string
+            </summary>
+            <param name="json">A IDictionary&lt;string,object> / IList&lt;object></param>
+            <param name="jsonSerializerStrategy">Serializer strategy to use</param>
+            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.IsNumeric(System.Object)">
+            <summary>
+            Determines if a given object is numeric in any way
+            (can be integer, double, null, etc).
+            </summary>
+        </member>
+    </members>
+</doc>

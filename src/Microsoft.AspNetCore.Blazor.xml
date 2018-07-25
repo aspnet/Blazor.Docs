@@ -515,14 +515,6 @@
             Represents a reference to a rendered element.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Json.ICustomJsonSerializer.ToJsonPrimitive">
-            <summary>
-            Supplies a representation suitable for JSON serialization. For example, the
-            return value may be a string->object dictionary containing properties to
-            serialize, or simply a string.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.HttpClientJsonExtensions">
             <summary>
             Extension methods for working with JSON APIs.
@@ -671,6 +663,31 @@
             <inheritdoc />
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Layouts.LayoutDisplay.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.MarkupString">
+            <summary>
+            A string value that can be rendered as markup such as HTML.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.MarkupString.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.MarkupString"/>.
+            </summary>
+            <param name="value">The value for the new instance.</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.MarkupString.Value">
+            <summary>
+            Gets the value of the <see cref="T:Microsoft.AspNetCore.Blazor.MarkupString"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.MarkupString.op_Explicit(System.String)~Microsoft.AspNetCore.Blazor.MarkupString">
+            <summary>
+            Casts a <see cref="T:System.String"/> to a <see cref="T:Microsoft.AspNetCore.Blazor.MarkupString"/>.
+            </summary>
+            <param name="value">The <see cref="T:System.String"/> value.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.MarkupString.ToString">
             <inheritdoc />
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.RenderFragment">
@@ -903,6 +920,13 @@
             must be balanced with calls to <see cref="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.OpenElement(System.Int32,System.String)"/>.
             </summary>
         </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddMarkupContent(System.Int32,System.String)">
+            <summary>
+            Appends a frame representing markup content.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="markupContent">Content for the new markup frame.</param>
+        </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,System.String)">
             <summary>
             Appends a frame representing text content.
@@ -916,6 +940,13 @@
             </summary>
             <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
             <param name="fragment">Content to append.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,Microsoft.AspNetCore.Blazor.MarkupString)">
+            <summary>
+            Appends a frame representing markup content.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="markupContent">Content for the new markup frame.</param>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,System.Object)">
             <summary>
@@ -1193,6 +1224,12 @@
             edit position should move back to the parent frame.
             </summary>
         </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeEditType.UpdateMarkup">
+            <summary>
+            Indicates that the markup content of the specified frame (which must be a markup frame)
+            should be updated.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame">
             <summary>
             Represents an entry in a tree of user interface (UI) items.
@@ -1309,6 +1346,12 @@
             gets the action that writes the reference to its target. Otherwise, the value is undefined.
             </summary>
         </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.MarkupContent">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Markup"/>,
+            gets the content of the markup frame. Otherwise, the value is undefined.
+            </summary>
+        </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ToString">
             <inheritdoc />
         </member>
@@ -1353,6 +1396,11 @@
         <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.ComponentReferenceCapture">
             <summary>
             Represents an instruction to capture or update a reference to the parent component.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Markup">
+            <summary>
+            Represents a block of markup content.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Routing.NavLink">
@@ -1505,6 +1553,92 @@
             </summary>
             <param name="uri">The destination URI. This can be absolute, or relative to the base URI
             (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.IUriHelper.GetBaseUri"/>).</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Services.UriHelperBase">
+            <summary>
+            A base class for <see cref="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper"/> implementations.
+            </summary>
+        </member>
+        <member name="E:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.OnLocationChanged">
+            <summary>
+            An event that fires when the navigation location has changed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.NavigateTo(System.String)">
+            <summary>
+            Navigates to the specified URI.
+            </summary>
+            <param name="uri">The destination URI. This can be absolute, or relative to the base URI
+            (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.GetBaseUri"/>).</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.NavigateToCore(System.String)">
+            <summary>
+            Navigates to the specified URI.
+            </summary>
+            <param name="uri">The destination URI. This can be absolute, or relative to the base URI
+            (as returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.GetBaseUri"/>).</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.InitializeState">
+            <summary>
+            Called to initialize BaseURI and current URI before those values the first time.
+            Override this method to dynamically calculate the those values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.GetAbsoluteUri">
+            <summary>
+            Gets the current absolute URI.
+            </summary>
+            <returns>The current absolute URI.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.GetBaseUri">
+            <summary>
+            Gets the base URI (with trailing slash) that can be prepended before relative URI paths to
+            produce an absolute URI. Typically this corresponds to the 'href' attribute on the
+            document's &lt;base&gt; element.
+            </summary>
+            <returns>The URI prefix, which has a trailing slash.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.ToAbsoluteUri(System.String)">
+            <summary>
+            Converts a relative URI into an absolute one (by resolving it
+            relative to the current absolute URI).
+            </summary>
+            <param name="href">The relative URI.</param>
+            <returns>The absolute URI.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.ToBaseRelativePath(System.String,System.String)">
+            <summary>
+            Given a base URI (e.g., one previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.GetBaseUri"/>),
+            converts an absolute URI into one relative to the base URI prefix.
+            </summary>
+            <param name="baseUri">
+            The base URI prefix (e.g., previously returned by <see cref="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.GetBaseUri"/>).
+            </param>
+            <param name="locationAbsolute">An absolute URI that is within the space of the base URI.</param>
+            <returns>A relative URI path.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.SetAbsoluteUri(System.String)">
+            <summary>
+            Set the URI to the provided value.
+            </summary>
+            <param name="uri">The URI. Must be an absolute URI.</param>
+            <remarks>
+            Calling <see cref="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.SetAbsoluteUri(System.String)"/> does not trigger <see cref="E:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.OnLocationChanged"/>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.SetAbsoluteBaseUri(System.String)">
+            <summary>
+            Sets the base URI to the provided value (after normalization).
+            </summary>
+            <param name="baseUri">The base URI. Must be an absolute URI.</param>
+            <remarks>
+            Calling <see cref="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.SetAbsoluteBaseUri(System.String)"/> does not trigger <see cref="E:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.OnLocationChanged"/>.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.TriggerOnLocationChanged">
+            <summary>
+            Triggers the <see cref="E:Microsoft.AspNetCore.Blazor.Services.UriHelperBase.OnLocationChanged"/> event with the current URI value.
+            </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.UIEventArgs">
             <summary>
@@ -2360,218 +2494,6 @@
             <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
             <param name="name">The name of the attribute.</param>
             <param name="value">The value of the attribute.</param>
-        </member>
-        <member name="T:SimpleJson.JsonArray">
-            <summary>
-            Represents the json array.
-            </summary>
-        </member>
-        <member name="M:SimpleJson.JsonArray.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
-            </summary>
-        </member>
-        <member name="M:SimpleJson.JsonArray.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
-            </summary>
-            <param name="capacity">The capacity of the json array.</param>
-        </member>
-        <member name="M:SimpleJson.JsonArray.ToString">
-            <summary>
-            The json representation of the array.
-            </summary>
-            <returns>The json representation of the array.</returns>
-        </member>
-        <member name="T:SimpleJson.JsonObject">
-            <summary>
-            Represents the json object.
-            </summary>
-        </member>
-        <member name="F:SimpleJson.JsonObject._members">
-            <summary>
-            The internal member dictionary.
-            </summary>
-        </member>
-        <member name="M:SimpleJson.JsonObject.#ctor">
-            <summary>
-            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
-            </summary>
-        </member>
-        <member name="M:SimpleJson.JsonObject.#ctor(System.Collections.Generic.IEqualityComparer{System.String})">
-            <summary>
-            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
-            </summary>
-            <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing keys, or null to use the default <see cref="T:System.Collections.Generic.EqualityComparer`1"/> for the type of the key.</param>
-        </member>
-        <member name="P:SimpleJson.JsonObject.Item(System.Int32)">
-            <summary>
-            Gets the <see cref="T:System.Object"/> at the specified index.
-            </summary>
-            <value></value>
-        </member>
-        <member name="M:SimpleJson.JsonObject.Add(System.String,System.Object)">
-            <summary>
-            Adds the specified key.
-            </summary>
-            <param name="key">The key.</param>
-            <param name="value">The value.</param>
-        </member>
-        <member name="M:SimpleJson.JsonObject.ContainsKey(System.String)">
-            <summary>
-            Determines whether the specified key contains key.
-            </summary>
-            <param name="key">The key.</param>
-            <returns>
-                <c>true</c> if the specified key contains key; otherwise, <c>false</c>.
-            </returns>
-        </member>
-        <member name="P:SimpleJson.JsonObject.Keys">
-            <summary>
-            Gets the keys.
-            </summary>
-            <value>The keys.</value>
-        </member>
-        <member name="M:SimpleJson.JsonObject.Remove(System.String)">
-            <summary>
-            Removes the specified key.
-            </summary>
-            <param name="key">The key.</param>
-            <returns></returns>
-        </member>
-        <member name="M:SimpleJson.JsonObject.TryGetValue(System.String,System.Object@)">
-            <summary>
-            Tries the get value.
-            </summary>
-            <param name="key">The key.</param>
-            <param name="value">The value.</param>
-            <returns></returns>
-        </member>
-        <member name="P:SimpleJson.JsonObject.Values">
-            <summary>
-            Gets the values.
-            </summary>
-            <value>The values.</value>
-        </member>
-        <member name="P:SimpleJson.JsonObject.Item(System.String)">
-            <summary>
-            Gets or sets the <see cref="T:System.Object"/> with the specified key.
-            </summary>
-            <value></value>
-        </member>
-        <member name="M:SimpleJson.JsonObject.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
-            <summary>
-            Adds the specified item.
-            </summary>
-            <param name="item">The item.</param>
-        </member>
-        <member name="M:SimpleJson.JsonObject.Clear">
-            <summary>
-            Clears this instance.
-            </summary>
-        </member>
-        <member name="M:SimpleJson.JsonObject.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
-            <summary>
-            Determines whether [contains] [the specified item].
-            </summary>
-            <param name="item">The item.</param>
-            <returns>
-            	<c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
-            </returns>
-        </member>
-        <member name="M:SimpleJson.JsonObject.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
-            <summary>
-            Copies to.
-            </summary>
-            <param name="array">The array.</param>
-            <param name="arrayIndex">Index of the array.</param>
-        </member>
-        <member name="P:SimpleJson.JsonObject.Count">
-            <summary>
-            Gets the count.
-            </summary>
-            <value>The count.</value>
-        </member>
-        <member name="P:SimpleJson.JsonObject.IsReadOnly">
-            <summary>
-            Gets a value indicating whether this instance is read only.
-            </summary>
-            <value>
-            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="M:SimpleJson.JsonObject.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
-            <summary>
-            Removes the specified item.
-            </summary>
-            <param name="item">The item.</param>
-            <returns></returns>
-        </member>
-        <member name="M:SimpleJson.JsonObject.GetEnumerator">
-            <summary>
-            Gets the enumerator.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:SimpleJson.JsonObject.System#Collections#IEnumerable#GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates through a collection.
-            </summary>
-            <returns>
-            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
-            </returns>
-        </member>
-        <member name="M:SimpleJson.JsonObject.ToString">
-            <summary>
-            Returns a json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </summary>
-            <returns>
-            A json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </returns>
-        </member>
-        <member name="T:SimpleJson.SimpleJson">
-            <summary>
-            This class encodes and decodes JSON strings.
-            Spec. details, see http://www.json.org/
-            
-            JSON uses Arrays and Objects. These correspond here to the datatypes JsonArray(IList&lt;object>) and JsonObject(IDictionary&lt;string,object>).
-            All numbers are parsed to doubles.
-            </summary>
-        </member>
-        <member name="M:SimpleJson.SimpleJson.DeserializeObject(System.String)">
-            <summary>
-            Parses the string json into a value
-            </summary>
-            <param name="json">A JSON string.</param>
-            <returns>An IList&lt;object>, a IDictionary&lt;string,object>, a double, a string, null, true, or false</returns>
-        </member>
-        <member name="M:SimpleJson.SimpleJson.TryDeserializeObject(System.String,System.Object@)">
-            <summary>
-            Try parsing the json string into a value.
-            </summary>
-            <param name="json">
-            A JSON string.
-            </param>
-            <param name="obj">
-            The object.
-            </param>
-            <returns>
-            Returns true if successful otherwise false.
-            </returns>
-        </member>
-        <member name="M:SimpleJson.SimpleJson.SerializeObject(System.Object,SimpleJson.IJsonSerializerStrategy)">
-            <summary>
-            Converts a IDictionary&lt;string,object> / IList&lt;object> object into a JSON string
-            </summary>
-            <param name="json">A IDictionary&lt;string,object> / IList&lt;object></param>
-            <param name="jsonSerializerStrategy">Serializer strategy to use</param>
-            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
-        </member>
-        <member name="M:SimpleJson.SimpleJson.IsNumeric(System.Object)">
-            <summary>
-            Determines if a given object is numeric in any way
-            (can be integer, double, null, etc).
-            </summary>
         </member>
     </members>
 </doc>

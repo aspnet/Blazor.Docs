@@ -1,7 +1,7 @@
 ---
-title: Publishing Blazor apps
+title: Host and deploy Blazor
 author: guardrex
-description: Discover how to publish Blazor apps using ASP.NET Core, Content Delivery Networks (CDN), file servers, and GitHub Pages.
+description: Discover how to host and deploy Blazor apps using ASP.NET Core, Content Delivery Networks (CDN), file servers, and GitHub Pages.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -9,9 +9,9 @@ ms.date: 04/16/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
-uid: client-side/blazor/publishing/index
+uid: client-side/blazor/host-and-deploy/index
 ---
-# Publishing Blazor apps
+# Host and deploy Blazor
 
 By [Luke Latham](https://github.com/guardrex), [Rainer Stropek](https://www.timecockpit.com), and [Daniel Roth](https://github.com/danroth27)
 

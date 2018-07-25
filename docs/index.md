@@ -47,7 +47,7 @@ Learn how to route requests in a client-side Blazor app and about the NavLink co
 [JavaScript interop](xref:client-side/blazor/javascript-interop)  
 Learn how to invoke JavaScript functions from .NET and .NET methods from JavaScript.
 
-[Publishing](xref:client-side/blazor/publishing/index)  
+[Host and deploy](xref:client-side/blazor/host-and-deploy/index)  
 Discover how to host and deploy Blazor apps using hosted and standalone deployment models.
 
 ## Additional resources

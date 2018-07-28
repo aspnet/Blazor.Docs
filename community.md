@@ -28,7 +28,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
-* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/). ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/))
 * [Toss](https://github.com/RemiBou/Toss.Blazor)
 
 ## Tooling
@@ -49,6 +48,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
 * [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
+* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/). ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/))
 
 ## Other
 

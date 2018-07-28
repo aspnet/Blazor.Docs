@@ -28,6 +28,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
+* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/). ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/))
 * [Toss](https://github.com/RemiBou/Toss.Blazor)
 
 ## Tooling

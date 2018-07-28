@@ -20,16 +20,15 @@
 <pre><code>@@page "/RouteParameter"
 @@page "/RouteParameter/{Text}"
 
-@((MarkupString)"&lt;h1&gt;Blazor is @Text!&lt;/h1&gt;")
+&lt;h1&gt;Blazor is @@Text!&lt;/h1&gt;
 
 @@functions {
     [Parameter]
     private string Text { get; set; } = "fantastic";
-}
-</code></pre>
+}</code></pre>
 <p>
     Example:
     <pre><code>/RouteParameter/amazing</code></pre>
     Renders HTML:
-    <pre><code>@((MarkupString)"&lt;h1&gt;Blazor is amazing!&lt;/h1&gt;")</code></pre>
+    <pre><code>&lt;h1&gt;Blazor is amazing!&lt;/h1&gt;</code></pre>
 </p>

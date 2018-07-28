@@ -23,6 +23,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor)
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) using SignalR via JS interop ([Demo](https://blazorchatsample.azurewebsites.net/))
 * [Blazor Clock Component](https://github.com/Lupusa87/LupusaBlazorProjects) ([Demo](http://lupusablazordemos.azurewebsites.net/))
+* [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/))
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone)
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)

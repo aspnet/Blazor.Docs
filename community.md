@@ -20,7 +20,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Samples
 
 * [ASP.NET Core Blazor Master/Detail CRUD with Filtering and Sorting using EF](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a)
-* [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) &ndash; An online markdown editor built with Blazor.
+* [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) &ndash; An online markdown editor built with Blazor.([Demo](http://edcharbeneau.com/BlazeDown/))
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor)
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) using SignalR via JS interop ([Demo](https://blazorchatsample.azurewebsites.net/))
 * [Blazor Clock Component](https://github.com/Lupusa87/LupusaBlazorProjects) ([Demo](http://lupusablazordemos.azurewebsites.net/))

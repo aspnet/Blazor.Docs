@@ -20,9 +20,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Samples
 
 * [ASP.NET Core Blazor Master/Detail CRUD with Filtering and Sorting using EF](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a)
-* [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) &ndash; An online markdown editor built with Blazor.([Demo](http://edcharbeneau.com/BlazeDown/))
+* [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) ([Demo](http://edcharbeneau.com/BlazeDown/)) &ndash; An online markdown editor built with Blazor.
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor)
-* [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) using SignalR via JS interop ([Demo](https://blazorchatsample.azurewebsites.net/))
+* [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) ([Demo](https://blazorchatsample.azurewebsites.net/)) &ndash; Uses SignalR via JS interop.
 * [Blazor Clock Component](https://github.com/Lupusa87/LupusaBlazorProjects) ([Demo](http://lupusablazordemos.azurewebsites.net/))
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone)
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
@@ -50,7 +50,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
 * [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
-* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/). ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/))
+* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 
 ## Other
 

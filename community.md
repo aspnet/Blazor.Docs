@@ -32,6 +32,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
 * [Blazor + Sitecore - Dynamic pages and routes](https://github.com/GoranHalvarsson/SitecoreBlazor)
 * [Toss](https://github.com/RemiBou/Toss.Blazor)
+* [TrendTv](https://github.com/MattMarked/TrendTv) ([Demo](http://zaptube2.azurewebsites.net/)) &ndash; Fetch a video list from YouTube and "zap" in real time between trending videos, filtered by country or category.
 
 ## Tooling
 

@@ -237,6 +237,98 @@ Lambda expressions can also be used:
 <button onclick="@(e => Console.WriteLine("Hello, world!"))">Say hello</button>
 ```
 
+## Capturing references to elements
+
+Some [JavaScript interop](xref:client-side/blazor/javascript-interop) scenarios require references to HTML elements. For example, a UI library may require an element reference for initialization, or you might need to call command-like APIs on an element like `focus` or `play`.
+
+You can capture references to HTML elements in a component by adding a `ref` attribute to the HTML element and then defining a field of type `ElementRef` whose name matches the value of the `ref` attribute.
+
+The following example shows capturing a reference to the username input element:
+
+```
+<input ref="username" ... />
+
+@functions {
+    ElementRef username;
+}
+```
+
+> NOTE: Captured element references should **not** be used as a way of populating the DOM. Doing so may interfere with Blazor's declarative rendering model.
+
+As far as .NET code is concerned, an `ElementRef` is an opaque handle. The *only* thing you can do with it is pass it through to JavaScript code via JavaScript interop. When you do so, the JavaScript-side code receives an `HTMLElement` instance which it can use with normal DOM APIs.
+
+For example, you can define a .NET extension method that enables setting the focus on an element like this:
+
+*mylib.js*
+```js
+window.myLib = {
+  focusElement : function (element) {
+    element.focus();
+  }
+}
+```
+
+*ElementRefExtensions.cs*
+```csharp
+using Microsoft.AspNetCore.Blazor;
+using Microsoft.JSInterop;
+using System.Threading.Tasks;
+
+namespace MyLib
+{
+    public static class MyLibElementRefExtensions
+    {
+        public static Task Focus(this ElementRef elementRef)
+        {
+            return JSRuntime.Current.InvokeAsync<object>("myLib.focusElement", elementRef);
+        }
+    }
+}
+```
+
+Now you can focus inputs in any of your components:
+
+```html
+@using MyLib
+
+<input ref="username" />
+<button onclick="@SetFocus">Set focus</button>
+
+@functions {
+    ElementRef username;
+
+    void SetFocus()
+    {
+        username.Focus();
+    }
+}
+```
+
+*Important*: The `username` variable will only be populated after the component has rendered and its output includes the `<input>` element. If you try to pass an unpopulated `ElementRef` to JavaScript code, then the JavaScript code will receive `null`. To manipulate element references after the component has finished rendering (i.e. to set the initial focus on an element) use the `OnAfterRenderAsync` or `OnAfterRender` lifecycle methods.
+
+## Capturing references to components
+
+Component references provide a way get a reference to a component instance so that you can issue commands to that instance, like `Show` or `Reset`. To capture a component reference add  a `ref` attribute to the child component and then define a field with the same name and the same type as the child component.
+
+```html
+<MyLoginDialog ref="loginDialog" ... />
+
+@functions {
+    MyLoginDialog loginDialog;
+
+    void OnSomething()
+    {
+        loginDialog.Show();
+    }
+}
+```
+
+When the component is rendered the `loginDialog` field is populated with the `MyLoginDialog` child component instance. You can then invoke .NET methods on the component instance.
+
+*Important*: The `loginDialog` variable will only be populated after the component has rendered and its output includes the `MyLoginDialog` element, because until then there is nothing to reference. To manipulate components references after the component has finished rendering use the `OnAfterRenderAsync` or `OnAfterRender` lifecycle methods.
+
+> NOTE: Component references should **not** be used to mutate the state of child components. Instead, always use normal declarative parameters to pass data to child components. This will cause child components to re-render at the correct times automatically.
+
 ## Lifecycle methods
 
 `OnInitAsync` and `OnInit` execute code after the component has been initialized. To perform an asynchronous operation, use `OnInitAsync` and use the `await` keyword:

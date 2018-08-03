@@ -52,6 +52,75 @@ public class ExampleJsInterop
 
 The `IJSRuntime` abstraction is asynchronous to allow for out-of-process scenarios. If the app runs in-process and you want to invoke a JavaScript function synchronously, downcast to `IJSInProcessRuntime` and call `Invoke<T>` instead. We recommend that most JavaScript interop libraries use the async APIs to ensure the libraries are available in all Blazor scenarios, client-side or server-side.
 
+## Capturing references to elements
+
+Some [JavaScript interop](xref:client-side/blazor/javascript-interop) scenarios require references to HTML elements. For example, a UI library may require an element reference for initialization, or you might need to call command-like APIs on an element like `focus` or `play`.
+
+You can capture references to HTML elements in a component by adding a `ref` attribute to the HTML element and then defining a field of type `ElementRef` whose name matches the value of the `ref` attribute.
+
+The following example shows capturing a reference to the username input element:
+
+```
+<input ref="username" ... />
+
+@functions {
+    ElementRef username;
+}
+```
+
+> NOTE: Captured element references should **not** be used as a way of populating the DOM. Doing so may interfere with Blazor's declarative rendering model.
+
+As far as .NET code is concerned, an `ElementRef` is an opaque handle. The *only* thing you can do with it is pass it through to JavaScript code via JavaScript interop. When you do so, the JavaScript-side code receives an `HTMLElement` instance which it can use with normal DOM APIs.
+
+For example, you can define a .NET extension method that enables setting the focus on an element like this:
+
+*mylib.js*
+```js
+window.myLib = {
+  focusElement : function (element) {
+    element.focus();
+  }
+}
+```
+
+*ElementRefExtensions.cs*
+```csharp
+using Microsoft.AspNetCore.Blazor;
+using Microsoft.JSInterop;
+using System.Threading.Tasks;
+
+namespace MyLib
+{
+    public static class MyLibElementRefExtensions
+    {
+        public static Task Focus(this ElementRef elementRef)
+        {
+            return JSRuntime.Current.InvokeAsync<object>("myLib.focusElement", elementRef);
+        }
+    }
+}
+```
+
+Now you can focus inputs in any of your components:
+
+```html
+@using MyLib
+
+<input ref="username" />
+<button onclick="@SetFocus">Set focus</button>
+
+@functions {
+    ElementRef username;
+
+    void SetFocus()
+    {
+        username.Focus();
+    }
+}
+```
+
+*Important*: The `username` variable will only be populated after the component has rendered and its output includes the `<input>` element. If you try to pass an unpopulated `ElementRef` to JavaScript code, then the JavaScript code will receive `null`. To manipulate element references after the component has finished rendering (i.e. to set the initial focus on an element) use the `OnAfterRenderAsync` or `OnAfterRender` lifecycle methods.
+
 ## Invoke .NET methods from JavaScript functions
 
 To invoke a static .NET method from JavaScript, use the `DotNet.invokeMethod` or `DotNet.invokeMethodAsync` functions. Pass in the identifier of the static method you wish to call, the name of the assembly containing the function, and any arguments. Again, the async version is preferred to support out-of-process scenarios. To be invokable from JavaScript, the .NET method must be public, static, and decorated with `[JSInvokable]`. By default, the method identifier is the method name, but you can specify a different identifier using the `JSInvokableAttribute` constructor. Calling open generic methods isn't currently supported.

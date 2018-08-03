@@ -258,6 +258,8 @@ When the component is rendered the `loginDialog` field is populated with the `My
 
 *Important*: The `loginDialog` variable will only be populated after the component has rendered and its output includes the `MyLoginDialog` element, because until then there is nothing to reference. To manipulate components references after the component has finished rendering use the `OnAfterRenderAsync` or `OnAfterRender` lifecycle methods.
 
+While capturing component references uses a similar syntax to [capturing element references](xref:client-side/blazor/javascript-interop#capturing-references-to-elements), it is not a [JavaScript interop](xref:client-side/blazor/javascript-interop) feature. Component references are not passed to JavaScript code; they are only used in .NET code.
+
 > NOTE: Component references should **not** be used to mutate the state of child components. Instead, always use normal declarative parameters to pass data to child components. This will cause child components to re-render at the correct times automatically.
 
 ## Lifecycle methods

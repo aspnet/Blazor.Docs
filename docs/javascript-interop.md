@@ -119,7 +119,7 @@ Now you can focus inputs in any of your components:
 }
 ```
 
-*Important*: The `username` variable will only be populated after the component has rendered and its output includes the `<input>` element. If you try to pass an unpopulated `ElementRef` to JavaScript code, then the JavaScript code will receive `null`. To manipulate element references after the component has finished rendering (i.e. to set the initial focus on an element) use the `OnAfterRenderAsync` or `OnAfterRender` lifecycle methods.
+*Important*: The `username` variable will only be populated after the component has rendered and its output includes the `<input>` element. If you try to pass an unpopulated `ElementRef` to JavaScript code, then the JavaScript code will receive `null`. To manipulate element references after the component has finished rendering (i.e. to set the initial focus on an element) use the `OnAfterRenderAsync` or `OnAfterRender` [component lifecycle methods](xref:client-side/blazor/components/index#lifecycle-methods).
 
 ## Invoke .NET methods from JavaScript functions
 

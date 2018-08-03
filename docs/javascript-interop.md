@@ -5,7 +5,7 @@ description: Learn how to invoke JavaScript functions from .NET and .NET methods
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/25/2018
+ms.date: 08/03/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -52,15 +52,15 @@ public class ExampleJsInterop
 
 The `IJSRuntime` abstraction is asynchronous to allow for out-of-process scenarios. If the app runs in-process and you want to invoke a JavaScript function synchronously, downcast to `IJSInProcessRuntime` and call `Invoke<T>` instead. We recommend that most JavaScript interop libraries use the async APIs to ensure the libraries are available in all Blazor scenarios, client-side or server-side.
 
-## Capturing references to elements
+## Capture references to elements
 
-Some [JavaScript interop](xref:client-side/blazor/javascript-interop) scenarios require references to HTML elements. For example, a UI library may require an element reference for initialization, or you might need to call command-like APIs on an element like `focus` or `play`.
+Some [JavaScript interop](xref:client-side/blazor/javascript-interop) scenarios require references to HTML elements. For example, a UI library may require an element reference for initialization, or you might need to call command-like APIs on an element, such as `focus` or `play`.
 
 You can capture references to HTML elements in a component by adding a `ref` attribute to the HTML element and then defining a field of type `ElementRef` whose name matches the value of the `ref` attribute.
 
 The following example shows capturing a reference to the username input element:
 
-```
+```csharp
 <input ref="username" ... />
 
 @functions {
@@ -68,14 +68,16 @@ The following example shows capturing a reference to the username input element:
 }
 ```
 
-> NOTE: Captured element references should **not** be used as a way of populating the DOM. Doing so may interfere with Blazor's declarative rendering model.
+> [!NOTE]
+> Do **not** use captured element references as a way of populating the DOM. Doing so may interfere with Blazor's declarative rendering model.
 
-As far as .NET code is concerned, an `ElementRef` is an opaque handle. The *only* thing you can do with it is pass it through to JavaScript code via JavaScript interop. When you do so, the JavaScript-side code receives an `HTMLElement` instance which it can use with normal DOM APIs.
+As far as .NET code is concerned, an `ElementRef` is an opaque handle. The *only* thing you can do with it is pass it through to JavaScript code via JavaScript interop. When you do so, the JavaScript-side code receives an `HTMLElement` instance, which it can use with normal DOM APIs.
 
-For example, you can define a .NET extension method that enables setting the focus on an element like this:
+For example, the following code defines a .NET extension method that enables setting the focus on an element:
 
-*mylib.js*
-```js
+*mylib.js*:
+
+```javascript
 window.myLib = {
   focusElement : function (element) {
     element.focus();
@@ -83,7 +85,8 @@ window.myLib = {
 }
 ```
 
-*ElementRefExtensions.cs*
+*ElementRefExtensions.cs*:
+
 ```csharp
 using Microsoft.AspNetCore.Blazor;
 using Microsoft.JSInterop;
@@ -103,7 +106,7 @@ namespace MyLib
 
 Now you can focus inputs in any of your components:
 
-```html
+```cshtml
 @using MyLib
 
 <input ref="username" />
@@ -119,7 +122,8 @@ Now you can focus inputs in any of your components:
 }
 ```
 
-*Important*: The `username` variable will only be populated after the component has rendered and its output includes the `<input>` element. If you try to pass an unpopulated `ElementRef` to JavaScript code, then the JavaScript code will receive `null`. To manipulate element references after the component has finished rendering (i.e. to set the initial focus on an element) use the `OnAfterRenderAsync` or `OnAfterRender` [component lifecycle methods](xref:client-side/blazor/components/index#lifecycle-methods).
+> [!IMPORTANT]
+> The `username` variable is only populated after the component renders and its output includes the `<input>` element. If you try to pass an unpopulated `ElementRef` to JavaScript code, the JavaScript code receives `null`. To manipulate element references after the component has finished rendering (to set the initial focus on an element) use the `OnAfterRenderAsync` or `OnAfterRender` [component lifecycle methods](xref:client-side/blazor/components/index#lifecycle-methods).
 
 ## Invoke .NET methods from JavaScript functions
 

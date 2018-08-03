@@ -5,7 +5,7 @@ description: Learn how to create and use Blazor components, the fundamental buil
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
+ms.date: 08/03/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -236,6 +236,33 @@ Lambda expressions can also be used:
 ```cshtml
 <button onclick="@(e => Console.WriteLine("Hello, world!"))">Say hello</button>
 ```
+
+## Capture references to components
+
+Component references provide a way get a reference to a component instance so that you can issue commands to that instance, such as `Show` or `Reset`. To capture a component reference, add a `ref` attribute to the child component and then define a field with the same name and the same type as the child component.
+
+```cshtml
+<MyLoginDialog ref="loginDialog" ... />
+
+@functions {
+    MyLoginDialog loginDialog;
+
+    void OnSomething()
+    {
+        loginDialog.Show();
+    }
+}
+```
+
+When the component is rendered, the `loginDialog` field is populated with the `MyLoginDialog` child component instance. You can then invoke .NET methods on the component instance.
+
+> [!IMPORTANT]
+> The `loginDialog` variable is only populated after the component is rendered and its output includes the `MyLoginDialog` element because until then there is nothing to reference. To manipulate components references after the component has finished rendering, use the `OnAfterRenderAsync` or `OnAfterRender` lifecycle methods.
+
+While capturing component references uses a similar syntax to [capturing element references](xref:client-side/blazor/javascript-interop#capturing-references-to-elements), it isn't a [JavaScript interop](xref:client-side/blazor/javascript-interop) feature. Component references aren't passed to JavaScript code; they're only used in .NET code.
+
+> [!NOTE]
+> Do **not** use component references to mutate the state of child components. Instead, always use normal declarative parameters to pass data to child components. This causes child components to rerender at the correct times automatically.
 
 ## Lifecycle methods
 

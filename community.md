@@ -21,6 +21,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [ASP.NET Core Blazor Master/Detail CRUD with Filtering and Sorting using EF](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a)
 * [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) ([Demo](http://edcharbeneau.com/BlazeDown/)) &ndash; An online markdown editor built with Blazor.
+* [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
+* [Blazor + Sitecore - Dynamic pages and routes](https://github.com/GoranHalvarsson/SitecoreBlazor)
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor)
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) ([Demo](https://blazorchatsample.azurewebsites.net/)) &ndash; Uses SignalR via JS interop.
 * [Blazor Clock Component](https://github.com/Lupusa87/LupusaBlazorProjects) ([Demo](http://lupusablazordemos.azurewebsites.net/))
@@ -29,8 +31,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app)
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes)
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks)
-* [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample)
-* [Blazor + Sitecore - Dynamic pages and routes](https://github.com/GoranHalvarsson/SitecoreBlazor)
+* [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
 * [Toss](https://github.com/RemiBou/Toss.Blazor)
 * [TrendTv](https://github.com/MattMarked/TrendTv) ([Demo](http://zaptube2.azurewebsites.net/)) &ndash; Fetch a video list from YouTube and "zap" in real time between trending videos, filtered by country or category.
 

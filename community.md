@@ -57,4 +57,5 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Other
 
-* [Trail: Blazor rendering with F#](https://github.com/panesofglass/trail)
+* [Bionic](https://github.com/bmsantos/bionic) &ndash; An Ionic CLI clone for Blazor projects.
+* [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F#.

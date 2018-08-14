@@ -47,7 +47,7 @@ The downsides to the client-side hosting model are:
 
 ## Server-side hosting model
 
-In the server-side hosting model, Blazor is executed on the server from within an ASP.NET COre app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
+In the server-side hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
 ![Blazor server-side](https://user-images.githubusercontent.com/1874516/43042867-eaa8bb76-8d3b-11e8-8f1d-60768f86f710.png)
 

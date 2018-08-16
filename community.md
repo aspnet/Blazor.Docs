@@ -15,6 +15,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
 * [Blazor Bites](https://codedaze.io/tag/blazor-bites/)
+* [Blazor First Look Video Course](https://www.linkedin.com/learning/blazor-first-look)
 * [Learn Blazor](https://learn-blazor.com/)
 
 ## Samples

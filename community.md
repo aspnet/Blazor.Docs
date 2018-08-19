@@ -31,7 +31,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
-* [Lupusa Demos](https://github.com/Lupusa87) ([Demos](https://lupusablazordemos.azurewebsites.net/)
+* [Lupusa Demos](https://github.com/Lupusa87) ([Demos](https://lupusablazordemos.azurewebsites.net/))
   * [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) &ndash; Simple calculator with history and ability to use previous results in new calculations.
   * [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) &ndash; Complex clock based on SVG.
   * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) &ndash; Complex clock based on Canvas.

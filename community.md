@@ -32,11 +32,13 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
 * [Lupusa Demos](https://github.com/Lupusa87) ([Demos](https://lupusablazordemos.azurewebsites.net/)
-  * [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator)
-  * [Blazor Clock Component](https://github.com/Lupusa87/LupusaBlazorProjects)
-  * [Blazor Doughnut Chart Component](https://github.com/Lupusa87/BlazorDoughnutChartComponent)
-  * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern)
-  * [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([nuget.org](https://www.nuget.org/packages/BlazorSvgHelper/)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
+  * [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) &ndash; Simple calculator with history and ability to use previous results in new calculations.
+  * [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) &ndash; Complex clock based on SVG.
+  * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) &ndash; Complex clock based on Canvas.
+  * [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) &ndash; Doughnut charting with gradient colors using SVG.
+  * [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
+  * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) &ndash; Password pattern based on SVG.
+  * [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([nuget.org] (https://www.nuget.org/packages/BlazorSvgHelper/)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
 * [Toss](https://github.com/RemiBou/Toss.Blazor) &ndash; A Twitter-like web app that allows the user to sign in, post a new message (a "toss") with hashtag, and select favorite hashtags for finding messages.
 * [TrendTv](https://github.com/MattMarked/TrendTv) ([Demo](http://zaptube2.azurewebsites.net/)) &ndash; Fetch a video list from YouTube and "zap" in real time between trending videos, filtered by country or category.
 

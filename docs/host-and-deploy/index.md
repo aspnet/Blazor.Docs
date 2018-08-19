@@ -51,9 +51,27 @@ Because browsers make requests to Internet-based hosts for client-side pages, we
 
 ## App base path
 
-The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `CoolBlazorApp/` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `CoolBlazorApp/`. By setting the app base path to `CoolBlazorApp/`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
+The app base path is the virtual app root path on the server. For example, an app that resides on the Contoso server in a virtual folder at `/CoolBlazorApp/` is reached at `https://www.contoso.com/CoolBlazorApp` and has a virtual base path of `/CoolBlazorApp/`. By setting the app base path to `/CoolBlazorApp/`, the app is made aware of where it virtually resides on the server. The app can use the app base path to construct URLs relative to the app root from a component that isn't in the root directory. This allows components that exist at different levels of the directory structure to build links to other resources at locations throughout the app. The app base path is also used to intercept hyperlink clicks where the `href` target of the link is within the app base path URI space&mdash;the Blazor router handles the internal navigation.
 
-In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is an empty string, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, add or update the **&lt;base&gt;** tag in *index.html* on the **&lt;head&gt;** tag. Set the `href` attribute value to `<virtual-path>/` (the trailing slash is required), where `<virtual-path>/` is the full virtual app root path on the server for the app.
+In many hosting scenarios, the server's virtual path to the app is the root of the app. In these cases, the app base path is an empty string, which is the default configuration for a Blazor app. In other hosting scenarios, such as GitHub Pages and IIS virtual directories, the app base path must be set to the server's virtual path to the app. To set the Blazor app's base path, add or update the **&lt;base&gt;** tag in *index.html* on the **&lt;head&gt;** tag. Set the `href` attribute value to `/<virtual-path>/` (the trailing slash is required), where `/<virtual-path>/` is the full virtual app root path on the server for the app.
+
+For an app with a non-root virtual path (the **&lt;base&gt;** tag is set to a path other than `/`), the app can find its resources when run locally if you supply a *path base* argument. Assume an *index.html* file declares a virtual path of `/subdir/` (`<base href="/subdir/" />`) and the app is accessed in the browser at `http://www.domain.com:port/subdir`. Use one of the following approaches to set the `pathbase` argument:
+
+* Pass the argument with the virtual path when running the app locally at a command prompt. From the app's directory, execute:
+
+  ```console
+  dotnet run --pathbase=/subdir
+  ```
+* Add an entry to the app's *launchSettings.json* file in the **IIS Express** profile. This setting is picked up when running the app with the Visual Studio Debugger and when running the app from a command prompt with `dotnet run`.
+
+  ```json
+  "commandLineArgs": "--pathbase=/subdir"
+  ```
+* In Visual Studio, specify a path base argument in **Properties** > **Debug** > **Application arguments**. Setting the path base in the Visual Studio property page adds the argument to the *launchSettings.json* file.
+
+  ```console
+  --pathbase=/subdir
+  ```
 
 ## Deployment models
 

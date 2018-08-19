@@ -28,7 +28,7 @@ The principal hosting model for Blazor is running client-side in the browser. In
 To create a Blazor app using the client-side hosting model, use the "Blazor" or "Blazor (ASP.NET Core Hosted)" project templates (`blazor` or `blazorhosted` template when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). The included *blazor.webassembly.js* script handles:
 
 * Downloading the .NET runtime, the app, and its dependencies.
-* Initialization of the runtime to run the app. 
+* Initialization of the runtime to run the app.
 
 The benefits of the client-side hosting model are:
 
@@ -51,7 +51,7 @@ In the server-side hosting model, Blazor is executed on the server from within a
 
 ![Blazor server-side](https://user-images.githubusercontent.com/1874516/43042867-eaa8bb76-8d3b-11e8-8f1d-60768f86f710.png)
 
-To create a Blazor app using the server-side hosting model, use the "Blazor (Server-side on ASP.NET Core)" template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to both add the server-side  Blazor services and to add the Blazor app to the request handling pipeline:
+To create a Blazor app using the server-side hosting model, use the "Blazor (Server-side on ASP.NET Core)" template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to both add the server-side Blazor services and to add the Blazor app to the request handling pipeline:
 
 ```csharp
 public class Startup

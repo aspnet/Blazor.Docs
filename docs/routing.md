@@ -47,6 +47,28 @@ The Blazor client-side router uses route parameters to populate the correspondin
 
 Optional parameters aren't supported yet, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
+## Route constraints
+
+A route constraint enforces type matching on a route segment to a Blazor component.
+
+In the following example, the route to the Users component only matches if:
+
+* An `Id` route segment is present on the request URL.
+* The `Id` segment is an integer (`int`).
+
+```cshtml
+@page "/Users/{Id:int}"
+
+<h1>The user Id is @Id!</h1>
+
+@functions {
+    [Parameter]
+    private int Id { get; set; }
+}
+```
+
+For more information and a list of available route constraints, see [ASP.NET Core Routing: Route constraint reference](https://docs.microsoft.com/aspnet/core/fundamentals/routing#route-constraint-reference).
+
 ## NavLink component
 
 Use a NavLink component in place of HTML **\<a>** elements when creating navigation links. A NavLink component behaves like an **\<a>** element, except it toggles an `active` CSS class based on whether its `href` matches the current URL. The `active` class helps a user understand which page is the active page among the navigation links displayed.

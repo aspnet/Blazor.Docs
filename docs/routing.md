@@ -69,16 +69,16 @@ In the following example, the route to the Users component only matches if:
 
 The route constraints shown the following table are available for use. For the route constraints that match with the invariant culture, see the warning below the table for more information.
 
-| Constraint | Example           | Example Matches                        | Invariant<br>culture<br>matching | Notes |
-| ---------- | ----------------- | -------------------------------------- | :------------------------------: | ----- |
-| `bool`     | `{active:bool}`   | `true`, `FALSE`                        | No                               | Matches `true` or `false` (case-insensitive) |
-| `datetime` | `{dob:datetime}`  | `2016-12-31`, `2016-12-31 7:32pm`      | Yes                              | Matches a valid `DateTime` value |
-| `decimal`  | `{price:decimal}` | `49.99`, `-1,000.01`                   | Yes                              | Matches a valid `decimal` value |
-| `double`   | `{weight:double}` | `1.234`, `-1,001.01e8`                 | Yes                              | Matches a valid `double` value |
-| `float`    | `{weight:float}`  | `1.234`, `-1,001.01e8`                 | Yes                              | Matches a valid `float` value |
-| `guid`     | `{id:guid}`       | `CD2C1638-1638-72D5-1638-DEADBEEF1638` | No                               | Matches a valid `Guid` value, including when in braces (`{<GUID>}`) |
-| `int`      | `{id:int}`        | `123456789`, `-123456789`              | Yes                              | Matches a valid `int` |
-| `long`     | `{ticks:long}`    | `123456789`, `-123456789`              | Yes                              | Matches a valid `long` value |
+| Constraint | Example           | Example Matches                                                                  | Invariant<br>culture<br>matching |
+| ---------- | ----------------- | -------------------------------------------------------------------------------- | :------------------------------: |
+| `bool`     | `{active:bool}`   | `true`, `FALSE`                                                                  | No                               |
+| `datetime` | `{dob:datetime}`  | `2016-12-31`, `2016-12-31 7:32pm`                                                | Yes                              |
+| `decimal`  | `{price:decimal}` | `49.99`, `-1,000.01`                                                             | Yes                              |
+| `double`   | `{weight:double}` | `1.234`, `-1,001.01e8`                                                           | Yes                              |
+| `float`    | `{weight:float}`  | `1.234`, `-1,001.01e8`                                                           | Yes                              |
+| `guid`     | `{id:guid}`       | `CD2C1638-1638-72D5-1638-DEADBEEF1638`, `{CD2C1638-1638-72D5-1638-DEADBEEF1638}` | No                               |
+| `int`      | `{id:int}`        | `123456789`, `-123456789`                                                        | Yes                              |
+| `long`     | `{ticks:long}`    | `123456789`, `-123456789`                                                        | Yes                              |
 
 > [!WARNING]
 > Route constraints that verify the URL and are converted to a CLR type (such as `int` or `DateTime`) always use the invariant culture. These constraints assume that the URL is non-localizable. The framework-provided route constraints don't modify the values stored in route values. All route values parsed from the URL are stored as strings. For example, the `float` constraint attempts to convert the route value to a float, but the converted value is used only to verify that it can be converted to a float.

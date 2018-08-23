@@ -4,11 +4,34 @@
 
 Below is a list of projects and resources from the Blazor community (links in each section are alphabetical). If you know about a Blazor project that isn't listed, please let us know. We're happy to add it to the list.
 
-## Community documentation
+## Libraries
 
-* [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
-* [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
-* [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
+* [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
+* [BlazorComponents](https://github.com/muqeet-khan/BlazorComponents) &ndash; A demonstration of [Chart.js](https://github.com/chartjs/Chart.js) interop.
+* [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
+* [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
+* [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
+* [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
+* [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
+* [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
+* [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library
+* [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
+* [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
+* [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
+* [Blazor.FlexGrid](https://github.com/Mewriick/Blazor.FlexGrid) &ndash; GridView component for Blazor.
+* [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
+* [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
+* [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
+* [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
+* [Canvas](https://github.com/BlazorExtensions/Canvas) &ndash; HTML5 Canvas API implementation for Microsoft Blazor.
+* [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
+* [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
+* [Notifications](https://github.com/BlazorExtensions/Notifications) &ndash; HTML5 Notifications API implementation for Microsoft Blazor.
+* [SignalR](https://github.com/BlazorExtensions/SignalR) &ndash; SignalR Core support for Microsoft ASP.NET Core Blazor.
+* [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
+* [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
+* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 
 ## Samples
 
@@ -38,34 +61,11 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Razor+ Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=austincummings.razor-plus) &ndash; A Visual Studio Code extension that offers improved Razor support.
 
-## Libraries
+## Community documentation
 
-* [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
-* [BlazorComponents](https://github.com/muqeet-khan/BlazorComponents) &ndash; A demonstration of [Chart.js](https://github.com/chartjs/Chart.js) interop.
-* [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
-* [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
-* [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
-* [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
-* [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
-* [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
-* [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
-* [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library
-* [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
-* [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
-* [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
-* [Blazor.FlexGrid](https://github.com/Mewriick/Blazor.FlexGrid) &ndash; GridView component for Blazor.
-* [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
-* [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
-* [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
-* [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
-* [Canvas](https://github.com/BlazorExtensions/Canvas) &ndash; HTML5 Canvas API implementation for Microsoft Blazor.
-* [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
-* [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
-* [Notifications](https://github.com/BlazorExtensions/Notifications) &ndash; HTML5 Notifications API implementation for Microsoft Blazor.
-* [SignalR](https://github.com/BlazorExtensions/SignalR) &ndash; SignalR Core support for Microsoft ASP.NET Core Blazor.
-* [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
-* [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
-* [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
+* [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
+* [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
+* [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
 
 ## Other
 

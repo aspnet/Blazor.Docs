@@ -305,7 +305,7 @@ Add a new page to the app that implements a simple todo list.
         }
     </ul>
 
-    <input class placeholder="Something todo" />
+    <input placeholder="Something todo" />
     <button>Add todo</button>
 
     @functions {

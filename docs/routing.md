@@ -67,7 +67,7 @@ In the following example, the route to the Users component only matches if:
 }
 ```
 
-The route constraints shown the following table are available for use. For the route constraints that match with the invariant culture, see the warning below the table for more information.
+The route constraints shown in the following table are available for use. For the route constraints that match with the invariant culture, see the warning below the table for more information.
 
 | Constraint | Example           | Example Matches                                                                  | Invariant<br>culture<br>matching |
 | ---------- | ----------------- | -------------------------------------------------------------------------------- | :------------------------------: |

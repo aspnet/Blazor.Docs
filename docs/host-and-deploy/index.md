@@ -29,6 +29,10 @@ dotnet publish -c Release
 
 The assets in the *publish* folder are deployed to the web server. Deployment might be a manual or automated process depending on the development tools in use.
 
+## Configure the Linker
+
+Blazor performs Intermediate Language (IL) linking on each build to remove unnecessary IL from the output assemblies. You can control assembly linking on build. For more information, see <xref:client-side/blazor/host-and-deploy/configure-linker>.
+
 ## Rewrite URLs for correct routing
 
 Routing requests for page components in a client-side app isn't as simple as routing requests to a server-side, hosted app. Consider a client-side app with two pages:

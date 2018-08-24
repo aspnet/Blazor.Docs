@@ -67,6 +67,10 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
 
+## Courses
+
+* [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
+
 ## Other
 
 * [Bionic](https://github.com/bmsantos/bionic) &ndash; An Ionic CLI clone for Blazor projects.

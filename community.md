@@ -69,7 +69,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Courses
 
-* [Blazor First Look Video Course](https://www.linkedin.com/learning/blazor-first-look)
+* [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
 
 ## Other
 

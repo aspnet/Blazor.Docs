@@ -18,6 +18,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library
 * [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
+* [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([Demo](https://lupusassblazordemos.azurewebsites.net)) ([nuget.org](https://www.nuget.org/packages/BlazorSvgHelper/)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
 * [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
 * [Blazor.FlexGrid](https://github.com/Mewriick/Blazor.FlexGrid) &ndash; GridView component for Blazor.
 * [Blazor.Notifications](https://github.com/vertonghenb/Blazor.Notifications) &ndash; Trigger desktop notifications to the user.
@@ -40,17 +41,17 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample) &ndash; Explore how a Blazor app can be used to build a cross-platform desktop app.
 * [Blazor + Sitecore](https://github.com/GoranHalvarsson/SitecoreBlazor) ([Blog post](https://visionsincode.wordpress.com/2018/06/30/time-travel-into-the-future-blazor-sitecore-helix/)) &ndash; Example of dynamic pages and routes with SiteCore and [Helix](https://helix.sitecore.net/).
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor) &ndash; A bricks game developed with C# and Blazor.
-* [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupusablazordemos.azurewebsites.net/)) &ndash; Simple calculator with history and ability to use previous results in new calculations.
+* [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Simple calculator with history and ability to use previous results in new calculations.
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) ([Demo](https://blazorchatsample.azurewebsites.net/)) &ndash; An app that demonstrates the use of [SignalR](https://docs.microsoft.com/aspnet/core/signalr/) to create a Blazor chat app.
-* [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupusablazordemos.azurewebsites.net/)) &ndash; Complex clock based on Canvas.
-* [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupusablazordemos.azurewebsites.net/)) &ndash; Complex clock based on SVG.
-* [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupusablazordemos.azurewebsites.net/)) &ndash; Doughnut charting with gradient colors using SVG.
+* [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; An experimental Blazor chess engine.
+* [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on Canvas.
+* [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on SVG.
+* [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Doughnut charting with gradient colors using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) &ndash; A Hacker News clone built in Blazor.
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
-* [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusablazordemos.azurewebsites.net/)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
-* [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusablazordemos.azurewebsites.net/)) &ndash; Password pattern based on SVG.
-* [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([Demo](https://lupusablazordemos.azurewebsites.net/)) ([nuget.org](https://www.nuget.org/packages/BlazorSvgHelper/)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
+* [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
+* [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.

@@ -1,0 +1,56 @@
+@page "/JSInterop"
+@using BlazorSample.JsInteropClasses
+@using Microsoft.JSInterop;
+
+<h1>JavaScript Interop</h1>
+
+<h2>Invoke JavaScript functions from .NET methods</h2>
+
+<button type="button" class="btn btn-primary" onclick="@TriggerJsPrompt">
+    Trigger JavaScript Prompt
+</button>
+
+<h3 id="welcome" style="color:green;font-style:italic"></h3>
+
+@functions {
+    public async void TriggerJsPrompt()
+    {
+        var name = await ExampleJsInterop.Prompt("What's your name?");
+        await ExampleJsInterop.Display($"Hello {name}! Welcome to Blazor!");
+    }
+}
+
+<p>
+    When <code>TriggerJsPrompt</code> is executed by selecting the component's <b>Trigger JavaScript Prompt</b> button, the <code>ExampleJsInterop.Prompt</code> method in C# code is called.
+</p>
+<p>
+    The <code>Prompt</code> method executes the JavaScript <code>showPrompt</code> function provided in the <em>wwwroot/exampleJsInterop.js</em> file.
+</p>
+<p>
+    The <code>showPrompt</code> function accepts user input (the user's name), which is HTML-encoded and returned to the <code>Prompt</code> method and ultimately back to the component. The component stores the user's name in a local variable, <code>name</code>.
+</p>
+<p>
+    The string stored in <code>name</code> is incorporated into a welcome message, which is passed to a second C# method, <code>ExampleJsInterop.Display</code>.
+</p>
+<p>
+    <code>Display</code> calls a JavaScript function, <code>displayWelcome</code>, which renders the welcome message into a heading tag.
+</p>
+
+<h2>Invoke .NET methods from JavaScript functions</h2>
+
+<button type="button" class="btn btn-primary" 
+        onclick="exampleJsFunctions.returnArrayAsyncJs()">
+    Trigger .NET static method ReturnArrayAsync
+</button>
+
+@functions {
+    [JSInvokable]
+    public static Task<int[]> ReturnArrayAsync()
+    {
+        return Task.FromResult(new int[] { 1, 2, 3 });
+    }
+}
+
+<button type="button" class="btn btn-primary" onclick="exampleJsFunctions.sayHello">
+    Trigger .NET instance method HelloHelper.SayHello
+</button>

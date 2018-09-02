@@ -23,7 +23,7 @@ Learn how to route requests in a client-side Blazor app and about the NavLink co
 
 ## Route templates
 
-The **&lt;Router&gt;** component enables routing, and a route template is provided to each accessible component. The **&lt;Router&gt;** component appears in the *App.cshtml* file:
+The `<Router>` component enables routing, and a route template is provided to each accessible component. The `<Router>` component appears in the *App.cshtml* file:
 
 ```cshtml
 <Router AppAssembly=typeof(Program).Assembly />

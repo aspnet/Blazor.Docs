@@ -25,7 +25,7 @@ The principal hosting model for Blazor is running client-side in the browser. In
 
 ![Blazor client-side](https://user-images.githubusercontent.com/1874516/43042852-998bb680-8d3b-11e8-9d39-adf8d3d77360.png)
 
-To create a Blazor app using the client-side hosting model, use the "Blazor" or "Blazor (ASP.NET Core Hosted)" project templates (`blazor` or `blazorhosted` template when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). The included *blazor.webassembly.js* script handles:
+To create a Blazor app using the client-side hosting model, use the **Blazor** or **Blazor (ASP.NET Core Hosted)** project templates (`blazor` or `blazorhosted` template when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). The included *blazor.webassembly.js* script handles:
 
 * Downloading the .NET runtime, the app, and its dependencies.
 * Initialization of the runtime to run the app.
@@ -45,13 +45,27 @@ The downsides to the client-side hosting model are:
 * Larger download size and app load time
 * Less mature .NET runtime and tooling support (for example, limitations in .NET Standard support and debugging)
 
+> [!NOTE]
+> Visual Studio includes the **Blazor (ASP.NET Core hosted)** project template for creating a Blazor app that runs on WebAssembly and is hosted on an ASP.NET Core server. The server-side app merely serves the Blazor app to clients. The server-side app doesn't directly interact with the app after serving it to clients other than to possibly serve static assets from its web root (for example, *wwwroot*).
+
+> [!IMPORTANT]
+> If a Blazor app (based on the **Blazor** project template) uses the client-side (in-process) hosting model and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
+>
+> ```xml
+> <handlers>
+>   <remove name="aspNetCore" />
+> </handlers>
+> ```
+>
+> Set the app base path in the Blazor app's *index.html* file to the IIS alias used when configuring the sub-app in IIS. For more information, see [App base path](xref:client-side/blazor/host-and-deploy/index#app-base-path).
+
 ## Server-side hosting model
 
 In the server-side hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
 ![Blazor server-side](https://user-images.githubusercontent.com/1874516/43042867-eaa8bb76-8d3b-11e8-8f1d-60768f86f710.png)
 
-To create a Blazor app using the server-side hosting model, use the "Blazor (Server-side on ASP.NET Core)" template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to both add the server-side Blazor services and to add the Blazor app to the request handling pipeline:
+To create a Blazor app using the server-side hosting model, use the **Blazor (Server-side on ASP.NET Core)** template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to both add the server-side Blazor services and to add the Blazor app to the request handling pipeline:
 
 ```csharp
 public class Startup

@@ -62,5 +62,19 @@
         "branch": "master"
       }
     }
+  },
+  "pdf": {
+    "content": [
+      {
+        "files": [
+          "includes/*.md",
+          "community.md",
+          "docs/**/*.md",
+          "api/**/*.yml",
+          "pdf/toc.yml"
+        ]
+      }
+    ],
+    "dest": "_site_pdf"
   }
 }

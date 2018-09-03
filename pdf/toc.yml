@@ -1,0 +1,34 @@
+- uid: client-side/blazor/index
+  name: Docs
+  items:
+  - uid: client-side/blazor/get-started
+    name: Get started
+  - uid: client-side/blazor/tutorials/first-app
+    name: Build your first app
+  - uid: client-side/blazor/introduction/index
+    name: Introduction
+  - uid: client-side/blazor/components/index
+    name: Components
+  - uid: client-side/blazor/layouts
+    name: Layouts
+  - uid: client-side/blazor/dependency-injection
+    name: Dependency injection
+  - uid: client-side/blazor/routing
+    name: Routing
+  - uid: client-side/blazor/javascript-interop
+    name: JavaScript interop
+  - uid: client-side/blazor/debugging
+    name: Debugging
+  - uid: client-side/blazor/host-and-deploy/index
+    name: Host and deploy
+    items:
+    - uid: client-side/blazor/host-and-deploy/hosting-models
+      name: Hosting models
+    - uid: client-side/blazor/host-and-deploy/configure-linker
+      name: Configure the Linker
+  - uid: client-side/blazor/introduction/faq
+    name: FAQ
+- name: Community
+  href: ../community.md
+- name: Blog
+  href: https://blogs.msdn.microsoft.com/webdev/category/blazor/

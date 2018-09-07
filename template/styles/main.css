@@ -81,7 +81,7 @@ svg:hover path {
 
 .hero {
   height: 350px;
-  margin-top: 50px;
+  /* margin-top: 50px; Add back when removing the update banner */
   padding-top: 50px;
   font-weight: 300;
   text-align: center;

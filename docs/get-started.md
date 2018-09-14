@@ -44,6 +44,8 @@ Congrats! You just ran your first Blazor app!
 
 ![Blazor app home page](https://msdnshared.blob.core.windows.net/media/2018/04/blazor-bootstrap-4.png)
 
+> NOTE: The default *global.json* include with Blazor project templates may cause the project to fail to load or run if you don't have version 2.1.3xx of the .NET Core SDK installed. To workaround this issue remove the *global.json* file from the project.
+
 ## Help & feedback
 
 Your feedback is especially important to us during this experimental phase for Blazor. If you run into issues or have questions while trying out Blazor, please let us know!

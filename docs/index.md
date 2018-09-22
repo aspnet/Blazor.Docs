@@ -17,6 +17,9 @@ uid: client-side/blazor/index
 
 Blazor is a new experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 
+[Download documentation (PDF)](~/_site_pdf/Blazor.Docs_pdf.pdf)  
+[Download API reference (PDF)](~/_site_pdf/Blazor.Docs_api.pdf)
+
 ## Get started
 
 [Get started with Blazor](xref:client-side/blazor/get-started)

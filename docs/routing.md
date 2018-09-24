@@ -37,7 +37,8 @@ Multiple route templates can be applied to a component. In the [sample app](http
 
 [!code-cshtml[](common/samples/2.x/BlazorSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
-**Important:** For working routes to work properly you need to add the `base` tag in your `index.html` document, this tag is necessary for the URL to be generated correctly. If you have problems with routes try to add the following example `<base href="/" />`.
+> [!IMPORTANT]
+> To generate routes properly, the app must include a `<base>` tag in its *wwwroot/index.html* file with the app base path specified in the `href` attribute (`<base href="/" />`). For more information, see [Host and deploy: App base path](xref:client-side/blazor/routing#app-base-path).
 
 ## Route parameters
 

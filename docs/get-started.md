@@ -17,24 +17,30 @@ uid: client-side/blazor/get-started
 
 ## Setup
 
-1. Install the [.NET Core 2.1 SDK (2.1.302)](https://go.microsoft.com/fwlink/?linkid=873092).
-1. Install [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.7 or later) with the *ASP.NET and web development* workload selected.
-1. Install the latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
+Install the following:
+
+1. [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.402 or later).
+1. [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.8 or later) with the *ASP.NET and web development* workload selected.
+1. The latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
+1. The Blazor templates on the command-line:
+
+   ```
+   dotnet new -i Microsoft.AspNetCore.Blazor.Templates
+   ```
 
 To create your first project from Visual Studio:
 
 1. Select **File** > **New Project** > **Web** > **ASP.NET Core Web Application**.
-1. Make sure **.NET Core** and **ASP.NET Core 2.1** (or later) are selected at the top.
+1. Make sure **.NET Core** and **ASP.NET Core 2.1** are selected at the top.
 1. Choose the Blazor template and select **OK**.
 
    ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/07/new-blazor-app-dialog-0.5.0.png)
    
 1. Press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
-You can also install and use the Blazor templates from the command-line:
+To create a new Blazor app from the command-line:
 
 ```console
-dotnet new -i Microsoft.AspNetCore.Blazor.Templates
 dotnet new blazor -o BlazorApp1
 cd BlazorApp1
 dotnet run
@@ -43,9 +49,6 @@ dotnet run
 Congrats! You just ran your first Blazor app!
 
 ![Blazor app home page](https://msdnshared.blob.core.windows.net/media/2018/04/blazor-bootstrap-4.png)
-
-> [!IMPORTANT]
-> The default *global.json* file included in the Blazor project templates may cause the project to fail to load or run if you don't have version 2.1.3xx of the .NET Core SDK installed. The *global.json* file pins the project to 2.1.3xx; so if you don't have that specific version range installed, the project fails to load or run even if you have a newer SDK installed. The workaround is to remove the *global.json* file from the project or install version [2.1.302 of the .NET Core SDK](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1.2.md).
 
 ## Help & feedback
 

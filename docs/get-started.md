@@ -24,7 +24,7 @@ Install the following:
 1. The latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
 1. The Blazor templates on the command-line:
 
-   ```
+   ```console
    dotnet new -i Microsoft.AspNetCore.Blazor.Templates
    ```
 

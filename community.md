@@ -50,13 +50,13 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on Canvas.
 * [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on SVG.
 * [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Doughnut charting with gradient colors using SVG.
+* [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) &ndash; A Hacker News clone built in Blazor.
-* [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
-* [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
-* [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
+* [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
+* [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.

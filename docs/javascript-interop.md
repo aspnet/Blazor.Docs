@@ -200,6 +200,8 @@ Hello, Blazor!
 
 ## Share interop code in a Blazor class library
 
+[!NOTE] Note that if you want to add javascript event listener registrations (e.g. window.addEventListener(“orientationchange”, function () { //do something })) you will need to wrap the event listener registrations in a javascript function and call the function from Program.cs using Javascript Interop described above. This will make sure .NET is loaded before trying to find a C# method via Blazor.platform.findMethod().
+
 JavaScript interop code can be included in a Blazor class library (`dotnet new blazorlib`), which allows you to share the code in a NuGet package.
 
 The Blazor class library handles embedding JavaScript resources in the built assembly. The JavaScript files are placed in the *wwwroot* folder, and the tooling takes care of embedding the resources when the library is built.

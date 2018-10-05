@@ -4,9 +4,9 @@
 
 <p>Templated components are components that accept one or more UI templates as parameters, which can then be used as part of the component's rendering logic. Templated components allow you to author higher-level components that are more reusable than regular components.</p>
 
-<p>The following table template examples use the template defined in <em>Templates/TableTemplate.cshtml</em>.</p>
+<p>The following table template examples use the template defined in <em>Components/TableTemplate.cshtml</em>.</p>
 
-<h2>Implicit parameters</h2>
+<h2>Implicit template parameters</h2>
 
 <p>Component arguments of type <code>RenderFragment&lt;T&gt;</code> passed as elements have an implicit parameter named <code>context</code>.</p>
 
@@ -32,9 +32,9 @@
     </RowTemplate>
 </TableTemplate>
 
-<h2>Explicit parameters</h2>
+<h2>Explicit template parameters</h2>
 
-<p>You can change the parameter name using the <code>Context</code> attribute on the child element.</p>
+<p>You can change the template parameter name using the <code>Context</code> attribute on the child element.</p>
 
 <pre><code>&lt;TableTemplate Items="@@pets"&gt;
     &lt;TableHeader&gt;
@@ -62,6 +62,8 @@
 <h2>Generic-typed Components</h2>
 
 <p>Templated components are often generically typed. For example, a generic ListView component can be used to render <code>IEnumerable&lt;T&gt;</code> values. To define a generic component, use the <code>@@typeparam</code> directive to specify type parameters.</p>
+
+<p>The following ListView template examples use the template defined in <em>Components/ListViewTemplate.cshtml</em>.</p>
 
 <p>Inferred type:</p>
 

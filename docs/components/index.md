@@ -461,8 +461,6 @@ The following example shows using the `MarkupString` type to add a block of stat
 
 ## Templated components
 
-*Templated components are available in Blazor 0.6.0 or later.*
-
 Templated components are components that accept one or more UI templates as parameters, which can then be used as part of the component's rendering logic. Templated components allow you to author higher-level components that are more reusable than regular components. A couple of examples include:
 
 * A table component that allows a user to specify templates for the table's header, rows, and footer.
@@ -472,9 +470,9 @@ Templated components are components that accept one or more UI templates as para
 
 A templated component is defined by specifying one or more component parameters of type `RenderFragment` or `RenderFragment<T>`. A render fragment represents a segment of UI that is rendered by the component. A render fragment optionally takes a parameter that can be specified when the render fragment is invoked.
 
-*Templates/TableTemplate.cshtml*:
+*Components/TableTemplate.cshtml*:
 
-[!code-cshtml[](../common/samples/2.x/BlazorSample/Templates/TableTemplate.cshtml)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Components/TableTemplate.cshtml)]
 
 When using a templated component, the template parameters can be specified using child elements that match the names of the parameters (`TableHeader` and `RowTemplate` in the following example):
 
@@ -527,9 +525,9 @@ Alternatively, you can specify the `Context` attribute on the component element.
 
 Templated components are often generically typed. For example, a generic ListView component can be used to render `IEnumerable<T>` values. To define a generic component, use the `@typeparam` directive to specify type parameters.
 
-*ListViewTemplate.cshtml*:
+*Components/ListViewTemplate.cshtml*:
 
-[!code-cshtml[](../common/samples/2.x/BlazorSample/Templates/ListViewTemplate.cshtml?highlight=1)]
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Components/ListViewTemplate.cshtml?highlight=1)]
 
 When using generic-typed components, the type parameter is inferred if possible:
 
@@ -552,8 +550,6 @@ Otherwise, the type parameter must be explicitly specified using an attribute th
 ```
 
 ## Razor templates
-
-*Razor templates are available in Blazor 0.6.0 or later.*
 
 Render fragments can be defined using Razor template syntax. Razor templates are a way to define a UI snippet and assume the following format:
 

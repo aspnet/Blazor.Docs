@@ -17,6 +17,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library.
+* [Blazor Hotkeys](https://github.com/jsakamoto/Toolbelt.Blazor.Hotkeys) &ndash; A library to provide configuration-centric keyboard shortcuts for Blazor.
 * [Blazor LoadingBar](https://github.com/jsakamoto/Toolbelt.Blazor.LoadingBar) &ndash; A Blazor port of [angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar).
 * [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.

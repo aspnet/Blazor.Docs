@@ -17,24 +17,30 @@ uid: client-side/blazor/get-started
 
 ## Setup
 
-1. Install the [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.300 or later).
-1. Install [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.7 or later) with the *ASP.NET and web development* workload selected.
-1. Install the latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
+Install the following:
+
+1. [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.402 or later).
+1. [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.8 or later) with the *ASP.NET and web development* workload selected.
+1. The latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
+1. The Blazor templates on the command-line:
+
+   ```console
+   dotnet new -i Microsoft.AspNetCore.Blazor.Templates
+   ```
 
 To create your first project from Visual Studio:
 
 1. Select **File** > **New Project** > **Web** > **ASP.NET Core Web Application**.
-1. Make sure **.NET Core** and **ASP.NET Core 2.1** (or later) are selected at the top.
+1. Make sure **.NET Core** and **ASP.NET Core 2.1** are selected at the top.
 1. Choose the Blazor template and select **OK**.
 
    ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/07/new-blazor-app-dialog-0.5.0.png)
    
 1. Press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
-You can also install and use the Blazor templates from the command-line:
+To create a new Blazor app from the command-line:
 
 ```console
-dotnet new -i Microsoft.AspNetCore.Blazor.Templates
 dotnet new blazor -o BlazorApp1
 cd BlazorApp1
 dotnet run

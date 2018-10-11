@@ -2,6 +2,17 @@ body {
   font-size: 16px;
 }
 
+.update-banner {
+    background-color: #ddd;
+    width: 100%;
+    padding: .9em;
+    margin-top: 50px;
+}
+
+.update-banner div {
+  text-align: center;
+}
+
 .toc .level1 > li {
   font-weight: normal;
 }
@@ -70,7 +81,7 @@ svg:hover path {
 
 .hero {
   height: 350px;
-  margin-top: 50px;
+  /* margin-top: 50px; Add back when removing the update banner */
   padding-top: 50px;
   font-weight: 300;
   text-align: center;
@@ -165,6 +176,9 @@ svg:hover path {
   }
   .counter-key-section .glyphicon {
     display: none;
+  }
+  .update-banner {
+    margin-top: 0px;
   }
 }
 

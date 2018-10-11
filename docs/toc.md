@@ -9,4 +9,5 @@
 # [Debugging](xref:client-side/blazor/debugging)
 # [Host and deploy](xref:client-side/blazor/host-and-deploy/index)
 ## [Hosting models](xref:client-side/blazor/host-and-deploy/hosting-models)
+## [Configure the Linker](xref:client-side/blazor/host-and-deploy/configure-linker)
 # [FAQ](xref:client-side/blazor/introduction/faq)

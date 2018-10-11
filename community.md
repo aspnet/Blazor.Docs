@@ -12,11 +12,13 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
+* [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
 * [BlazorSignalR](https://github.com/csnewman/BlazorSignalR) &ndash; ASP.NET Core SignalR Core .NET client support for Blazor.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library.
+* [Blazor Hotkeys](https://github.com/jsakamoto/Toolbelt.Blazor.Hotkeys) &ndash; A library to provide configuration-centric keyboard shortcuts for Blazor.
 * [Blazor LoadingBar](https://github.com/jsakamoto/Toolbelt.Blazor.LoadingBar) &ndash; A Blazor port of [angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar).
 * [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
@@ -68,6 +70,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Tooling
 
 * [Razor+ Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=austincummings.razor-plus) &ndash; A Visual Studio Code extension that offers improved Razor support.
+* [Blazor Minimum Project Templates](https://github.com/jsakamoto/BlazorMinimumTemplates) &ndash; A project templates package of Blazor apps without JavaScript and CSS libraries.
 
 ## Community documentation
 

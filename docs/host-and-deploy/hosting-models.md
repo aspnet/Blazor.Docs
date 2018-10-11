@@ -46,7 +46,7 @@ The downsides to the client-side hosting model are:
 * Less mature .NET runtime and tooling support (for example, limitations in .NET Standard support and debugging)
 
 > [!NOTE]
-> Visual Studio includes the **Blazor (ASP.NET Core hosted)** project template for creating a Blazor app that runs on WebAssembly and is hosted on an ASP.NET Core server. The server-side app merely serves the Blazor app to clients. The server-side app doesn't directly interact with the app after serving it to clients other than to possibly serve static assets from its web root (for example, *wwwroot*).
+> Visual Studio includes the **Blazor (ASP.NET Core hosted)** project template for creating a Blazor app that runs on WebAssembly and is hosted on an ASP.NET Core server. The ASP.NET Core app serves the Blazor app to clients but is otherwise a separate process. The client-side Blazor app can interact with the server over the network using Web API calls or SignalR connections.
 
 > [!IMPORTANT]
 > If a Blazor app (based on the **Blazor** project template) uses the client-side (in-process) hosting model and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:

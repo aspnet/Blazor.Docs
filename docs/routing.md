@@ -15,7 +15,8 @@ uid: client-side/blazor/routing
 
 By [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Learn how to route requests in a client-side Blazor app and about the NavLink component.
 

@@ -15,7 +15,8 @@ uid: client-side/blazor/introduction/index
 
 By [Steve Sanderson](http://blog.stevensanderson.com), [Daniel Roth](https://github.com/danroth27), and [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly. Blazor provides all of the benefits of a client-side web UI framework using .NET on the client and optionally on the server.
 

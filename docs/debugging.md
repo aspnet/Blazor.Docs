@@ -15,7 +15,8 @@ uid: client-side/blazor/debugging
 
 [Daniel Roth](https://github.com/danroth27)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor has some *very early* support for debugging client-side Blazor apps running on WebAssembly in Chrome. While this initial debugging support is very limited and unpolished, it shows the basic debugging infrastructure coming together.
 

@@ -15,7 +15,8 @@ uid: client-side/blazor/host-and-deploy/index
 
 By [Luke Latham](https://github.com/guardrex), [Rainer Stropek](https://www.timecockpit.com), and [Daniel Roth](https://github.com/danroth27)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 ## Publish the app
 

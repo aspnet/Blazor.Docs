@@ -15,7 +15,8 @@ uid: client-side/blazor/dependency-injection
 
 By [Rainer Stropek](https://www.timecockpit.com)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor has [dependency injection (DI)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) built-in. Apps can use built-in services by having them injected into components. Apps can also define custom services and make them available via DI.
 

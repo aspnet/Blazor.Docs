@@ -13,7 +13,8 @@ uid: client-side/blazor/tutorials/first-app
 ---
 # Build your first Blazor app
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 In this tutorial, you build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
 

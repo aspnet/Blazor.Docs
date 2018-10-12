@@ -20,4 +20,3 @@ deploy_script:
   - git config --global user.email %GITHUB_EMAIL%
   - git config --global user.name "Blazor doc agent"
   - bash releaseDocs.sh
-  

@@ -34,7 +34,9 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "_site_pdf/Blazor.Docs_api.pdf",
+          "_site_pdf/Blazor.Docs_pdf.pdf"
         ],
         "exclude": [
           "**/obj/**",
@@ -62,5 +64,19 @@
         "branch": "master"
       }
     }
+  },
+  "pdf": {
+    "content": [
+      {
+        "files": [
+          "includes/blazor-preview-notice.md",
+          "community.md",
+          "docs/**/*.md",
+          "api/**/*.yml",
+          "pdf/toc.yml"
+        ]
+      }
+    ],
+    "dest": "_site_pdf"
   }
 }

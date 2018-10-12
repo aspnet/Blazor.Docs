@@ -13,9 +13,13 @@ uid: client-side/blazor/index
 ---
 # Blazor preview documentation
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor is a new experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
+
+[Download documentation (PDF)](~/_site_pdf/Blazor.Docs_pdf.pdf)  
+[Download API reference (PDF)](~/_site_pdf/Blazor.Docs_api.pdf)
 
 ## Get started
 

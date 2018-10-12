@@ -15,7 +15,8 @@ uid: client-side/blazor/layouts
 
 By [Rainer Stropek](https://www.timecockpit.com)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor apps typically contain more than one page. Layout elements, such as menus, copyright messages, and logos, must be present on all pages. Copying the code of these layout elements into all of the pages of an app isn't an efficient solution. Such duplication is hard to maintain and probably leads to inconsistent content over time. *Layouts* solve this problem.
 

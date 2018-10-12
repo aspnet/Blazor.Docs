@@ -4,23 +4,15 @@ image: Visual Studio 2017
 
 clone_depth: 1
 
-cache:
-  - C:\ProgramData\chocolatey\bin -> appveyor.yml
-  - C:\ProgramData\chocolatey\lib -> appveyor.yml
-
 branches:
   only:
     - live
 
 install:
   - cinst docfx
-  - cinst wkhtmltopdf
 
 build_script:
   - docfx
-
-artifacts:
-  - path: '**\*.pdf'
 
 deploy_script:
   - git config --global credential.helper store

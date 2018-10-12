@@ -15,7 +15,8 @@ uid: client-side/blazor/javascript-interop
 
 By [Javier Calvarro Nelson](https://github.com/javiercn), [Daniel Roth](https://github.com/danroth27), and [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 A Blazor app can invoke JavaScript functions from .NET and .NET methods from JavaScript code.
 

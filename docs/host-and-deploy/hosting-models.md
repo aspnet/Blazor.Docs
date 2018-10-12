@@ -15,7 +15,8 @@ uid: client-side/blazor/host-and-deploy/hosting-models
 
 By [Daniel Roth](https://github.com/danroth27)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor is a client-side web framework designed primarily to run in the browser on a WebAssembly-based .NET runtime. Blazor supports multiple hosting models, including out-of-process hosting models, where the Blazor component logic runs separately from the UI thread. Regardless of the hosting model, the Blazor app and component models remain *the same*. This article discusses the available hosting models for Blazor.
 

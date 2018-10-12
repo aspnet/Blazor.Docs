@@ -15,7 +15,8 @@ uid: client-side/blazor/host-and-deploy/configure-linker
 
 By [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+> [!NOTE]
+> Blazor is an unsupported experimental web framework that shouldn't be used for production workloads at this time.
 
 Blazor performs [Intermediate Language (IL)](https://docs.microsoft.com/dotnet/standard/managed-code#intermediate-language--execution) linking during each Release mode build to remove unnecessary IL from the output assemblies.
 

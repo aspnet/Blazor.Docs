@@ -697,6 +697,14 @@
             </summary>
             <param name="builder">The <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder"/> to which the content should be written.</param>
         </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.RenderFragment`1">
+            <summary>
+            Represents a segment of UI content for an object of type <typeparamref name="T"/>, implemented as
+            a function that returns a <see cref="T:Microsoft.AspNetCore.Blazor.RenderFragment"/>.
+            </summary>
+            <typeparam name="T">The type of object.</typeparam>
+            <param name="value">The value used to build the content.</param>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Rendering.ComponentState">
             <summary>
             Tracks the rendering state associated with an <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> instance
@@ -940,6 +948,14 @@
             </summary>
             <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
             <param name="fragment">Content to append.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent``1(System.Int32,Microsoft.AspNetCore.Blazor.RenderFragment{``0},``0)">
+            <summary>
+            Appends frames representing an arbitrary fragment of content.
+            </summary>
+            <param name="sequence">An integer that represents the position of the instruction in the source code.</param>
+            <param name="fragment">Content to append.</param>
+            <param name="value">The value used by <paramref name="fragment"/>.</param>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder.AddContent(System.Int32,Microsoft.AspNetCore.Blazor.MarkupString)">
             <summary>

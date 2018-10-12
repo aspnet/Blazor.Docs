@@ -56,3 +56,10 @@ You *can't*:
 * Perform most other ordinary debugging scenarios.
 
 Development of further debugging scenarios is an on-going focus of the engineering team.
+
+## Troubleshooting tips
+
+If you are running into errors, the following tips may help.
+
+* Use the HTTP URL for your app instead of the HTTPS to debug.
+* In the debugger tab, open the console in your developer tools and clear the local storage. Then try re-launching the window. You can clear the local storage with this JS function: localStorage.clear()

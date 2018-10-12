@@ -72,7 +72,7 @@ The app responds locally at `http://localhost:port/CoolBlazorApp`.
 For more information, see the [path base host configuration value](#path-base) section.
 
 > [!IMPORTANT]
-> If a Blazor app uses the [client-side (in-process) hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-in-process-hosting-model) (based on the **Blazor** project template) and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
+> If a Blazor app uses the [client-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model) (based on the **Blazor** project template) and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
 >
 > ```xml
 > <handlers>
@@ -86,11 +86,11 @@ For more information, see the [path base host configuration value](#path-base) s
 
 Blazor apps that use the [server-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model) can accept [Web Host configuration values](https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host#host-configuration-values).
 
-Blazor apps that use the [client-side (in-process) hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-in-process-hosting-model) can accept the following host configuration values as command-line arguments at runtime.
+Blazor apps that use the [client-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model) can accept the following host configuration values as command-line arguments at runtime in the development environment.
 
 ### Content Root
 
-The `--contentroot` argument determines where the app begins searching for content files, such as components.
+The `--contentroot` argument sets the absolute path to the directory that contains the app's content files.
 
 * Pass the argument when running the app locally at a command prompt. From the app's directory, execute:
 

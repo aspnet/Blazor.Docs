@@ -19,7 +19,7 @@ By [Daniel Roth](https://github.com/danroth27)
 
 Blazor is a client-side web framework designed primarily to run in the browser on a WebAssembly-based .NET runtime. Blazor supports multiple hosting models, including out-of-process hosting models, where the Blazor component logic runs separately from the UI thread. Regardless of the hosting model, the Blazor app and component models remain *the same*. This article discusses the available hosting models for Blazor.
 
-## Client-side (in-process) hosting model
+## Client-side hosting model
 
 The principal hosting model for Blazor is running client-side in the browser. In this model, the Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. All UI updates and event handling happens within the same process. The app assets can be deployed as static files using whatever web server is preferred (see [Host and deploy](xref:client-side/blazor/host-and-deploy/index)).
 
@@ -49,7 +49,7 @@ The downsides to the client-side hosting model are:
 > Visual Studio includes the **Blazor (ASP.NET Core hosted)** project template for creating a Blazor app that runs on WebAssembly and is hosted on an ASP.NET Core server. The ASP.NET Core app serves the Blazor app to clients but is otherwise a separate process. The client-side Blazor app can interact with the server over the network using Web API calls or SignalR connections.
 
 > [!IMPORTANT]
-> If a Blazor app (based on the **Blazor** project template) uses the client-side (in-process) hosting model and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
+> If a client-side Blazor app is served by an ASP.NET Core app hosted as an IIS sub-app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
 >
 > ```xml
 > <handlers>

@@ -458,3 +458,128 @@ The following example shows using the `MarkupString` type to add a block of stat
     string myMarkup = "<p class='markup'>This is a <em>markup string</em>.</p>";
 }
 ```
+
+## Templated components
+
+Templated components are components that accept one or more UI templates as parameters, which can then be used as part of the component's rendering logic. Templated components allow you to author higher-level components that are more reusable than regular components. A couple of examples include:
+
+* A table component that allows a user to specify templates for the table's header, rows, and footer.
+* A list component that allows a user to specify a template for rendering items in a list.
+
+### Template parameters
+
+A templated component is defined by specifying one or more component parameters of type `RenderFragment` or `RenderFragment<T>`. A render fragment represents a segment of UI that is rendered by the component. A render fragment optionally takes a parameter that can be specified when the render fragment is invoked.
+
+*Components/TableTemplate.cshtml*:
+
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Components/TableTemplate.cshtml)]
+
+When using a templated component, the template parameters can be specified using child elements that match the names of the parameters (`TableHeader` and `RowTemplate` in the following example):
+
+```cshtml
+<TableTemplate Items="@pets">
+    <TableHeader>
+        <th>ID</th>
+        <th>Name</th>
+    </TableHeader>
+    <RowTemplate>
+        <td>@context.PetId</td>
+        <td>@context.Name</td>
+    </RowTemplate>
+</TableTemplate>
+```
+
+### Template context parameters
+
+Component arguments of type `RenderFragment<T>` passed as elements have an implicit parameter named `context` (for example from the preceding code sample, `@context.PetId`), but you can change the parameter name using the `Context` attribute on the child element. In the following example, the `RowTemplate` element's `Context` attribute specifies the `pet` parameter:
+
+```cshtml
+<TableTemplate Items="@pets">
+    <TableHeader>
+        <th>ID</th>
+        <th>Name</th>
+    </TableHeader>
+    <RowTemplate Context="pet">
+        <td>@pet.PetId</td>
+        <td>@pet.Name</td>
+    </RowTemplate>
+</TableTemplate>
+```
+
+Alternatively, you can specify the `Context` attribute on the component element. The specified `Context` attribute applies to all specified template parameters. This can be useful when you want to specify the content parameter name for implicit child content (without any wrapping child element). In the following example, the `Context` attribute appears on the `TableTemplate` element and applies to all template parameters:
+
+```cshtml
+<TableTemplate Items="@pets" Context="pet">
+    <TableHeader>
+        <th>ID</th>
+        <th>Name</th>
+    </TableHeader>
+    <RowTemplate>
+        <td>@pet.PetId</td>
+        <td>@pet.Name</td>
+    </RowTemplate>
+</TableTemplate>
+```
+
+### Generic-typed components
+
+Templated components are often generically typed. For example, a generic ListView component can be used to render `IEnumerable<T>` values. To define a generic component, use the `@typeparam` directive to specify type parameters.
+
+*Components/ListViewTemplate.cshtml*:
+
+[!code-cshtml[](../common/samples/2.x/BlazorSample/Components/ListViewTemplate.cshtml?highlight=1)]
+
+When using generic-typed components, the type parameter is inferred if possible:
+
+```cshtml
+<ListViewTemplate Items="@pets">
+    <ItemTemplate Context="pet">
+        <li>@pet.Name</li>
+    </ItemTemplate>
+</ListViewTemplate>
+```
+
+Otherwise, the type parameter must be explicitly specified using an attribute that matches the name of the type parameter. In the following example, `TItem="Pet"` specifies the type:
+
+```cshtml
+<ListViewTemplate Items="@pets" TItem="Pet">
+    <ItemTemplate Context="pet">
+        <li>@pet.Name</li>
+    </ItemTemplate>
+</ListViewTemplate>
+```
+
+## Razor templates
+
+Render fragments can be defined using Razor template syntax. Razor templates are a way to define a UI snippet and assume the following format:
+
+```cshtml
+@<tag>...<tag>
+```
+
+The following example illustrates how to specify `RenderFragment` and `RenderFragment<T>` values.
+
+*RazorTemplates.cshtml*:
+
+```cshtml
+@{ 
+    RenderFragment template = @<p>The time is @DateTime.Now.</p>;
+    RenderFragment<Pet> petTemplate = (pet) => @<p>Your pet's name is @pet.Name.</p>;
+}
+```
+
+Render fragments defined using Razor templates can be passed as arguments to templated components or rendered directly. For example, the previous templates are directly rendered with the following Razor markup:
+
+```cshtml
+@template
+
+@petTemplate(new Pet { Name = "Rex" })
+```
+
+Rendered output:
+
+```
+The time is 10/04/2018 01:26:52.
+
+Your pet's name is Rex.
+```

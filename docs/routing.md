@@ -23,7 +23,7 @@ Learn how to route requests in a client-side Blazor app and about the NavLink co
 
 ## Route templates
 
-The **&lt;Router&gt;** component enables routing, and a route template is provided to each accessible component. The **&lt;Router&gt;** component appears in the *App.cshtml* file:
+The `<Router>` component enables routing, and a route template is provided to each accessible component. The `<Router>` component appears in the *App.cshtml* file:
 
 ```cshtml
 <Router AppAssembly=typeof(Program).Assembly />
@@ -37,6 +37,9 @@ Multiple route templates can be applied to a component. In the [sample app](http
 
 [!code-cshtml[](common/samples/2.x/BlazorSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
+> [!IMPORTANT]
+> To generate routes properly, the app must include a `<base>` tag in its *wwwroot/index.html* file with the app base path specified in the `href` attribute (`<base href="/" />`). For more information, see [Host and deploy: App base path](xref:client-side/blazor/host-and-deploy/index#app-base-path).
+
 ## Route parameters
 
 The Blazor client-side router uses route parameters to populate the corresponding component parameters with the same name (case insensitive).
@@ -46,6 +49,42 @@ The Blazor client-side router uses route parameters to populate the correspondin
 [!code-cshtml[](common/samples/2.x/BlazorSample/Pages/RouteParameter.cshtml?start=1&end=8)]
 
 Optional parameters aren't supported yet, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
+
+## Route constraints
+
+A route constraint enforces type matching on a route segment to a Blazor component.
+
+In the following example, the route to the Users component only matches if:
+
+* An `Id` route segment is present on the request URL.
+* The `Id` segment is an integer (`int`).
+
+```cshtml
+@page "/Users/{Id:int}"
+
+<h1>The user Id is @Id!</h1>
+
+@functions {
+    [Parameter]
+    private int Id { get; set; }
+}
+```
+
+The route constraints shown in the following table are available for use. For the route constraints that match with the invariant culture, see the warning below the table for more information.
+
+| Constraint | Example           | Example Matches                                                                  | Invariant<br>culture<br>matching |
+| ---------- | ----------------- | -------------------------------------------------------------------------------- | :------------------------------: |
+| `bool`     | `{active:bool}`   | `true`, `FALSE`                                                                  | No                               |
+| `datetime` | `{dob:datetime}`  | `2016-12-31`, `2016-12-31 7:32pm`                                                | Yes                              |
+| `decimal`  | `{price:decimal}` | `49.99`, `-1,000.01`                                                             | Yes                              |
+| `double`   | `{weight:double}` | `1.234`, `-1,001.01e8`                                                           | Yes                              |
+| `float`    | `{weight:float}`  | `1.234`, `-1,001.01e8`                                                           | Yes                              |
+| `guid`     | `{id:guid}`       | `CD2C1638-1638-72D5-1638-DEADBEEF1638`, `{CD2C1638-1638-72D5-1638-DEADBEEF1638}` | No                               |
+| `int`      | `{id:int}`        | `123456789`, `-123456789`                                                        | Yes                              |
+| `long`     | `{ticks:long}`    | `123456789`, `-123456789`                                                        | Yes                              |
+
+> [!WARNING]
+> Route constraints that verify the URL and are converted to a CLR type (such as `int` or `DateTime`) always use the invariant culture. These constraints assume that the URL is non-localizable.
 
 ## NavLink component
 

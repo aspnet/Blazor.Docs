@@ -5,11 +5,11 @@
   displayWelcome: function (welcomeMessage) {
     document.getElementById('welcome').innerText = welcomeMessage;
   },
-  returnArrayAsyncJs: function () {
-    DotNet.invokeMethodAsync('BlazorSample', 'ReturnArrayAsync')
-      .then(data => {
-        data.push(4);
-        console.log(data);
+    returnArrayAsyncJs: function () {
+      DotNet.invokeMethodAsync('BlazorSample', 'ReturnArrayAsync')
+        .then(data => {
+          data.push(4);
+            console.log(data);
     })
   },
   sayHello: function (dotnetHelper) {

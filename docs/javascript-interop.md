@@ -23,7 +23,7 @@ A Blazor app can invoke JavaScript functions from .NET and .NET methods from Jav
 
 There are times when Blazor .NET code is required to call a JavaScript function. For example, a JavaScript call can expose browser capabilities or functionality from a JavaScript library to the Blazor app.
 
-To call into JavaScript from .NET, use the `IJSRuntime` abstraction, which is accessible from `JSRuntime.Current`. The `InvokeAsync<T>` method on `IJSRuntime` takes an identifier for the JavaScript function you wish to invoke along with any number of JSON serializable arguments. The function identifier is relative to the global scope (`window`). For example if you wish to call `window.someScope.someFunction`, the identifier is `someScope.someFunction`. There's no need to register the function before it's called. The return type `T` must also be JSON serializable.
+To call into JavaScript from .NET, use the `IJSRuntime` abstraction, which is accessible from `JSRuntime.Current`. The `InvokeAsync<T>` method on `IJSRuntime` takes an identifier for the JavaScript function you wish to invoke along with any number of JSON-serializable arguments. The function identifier is relative to the global scope (`window`). If you wish to call `window.someScope.someFunction`, the identifier is `someScope.someFunction`. There's no need to register the function before it's called. The return type `T` must also be JSON serializable.
 
 In the sample app, two JavaScript functions are available to the client-side app that interact with the DOM to receive user input and display a welcome message:
 
@@ -145,11 +145,11 @@ Now you can focus inputs in any of your components:
 
 To invoke a static .NET method from JavaScript, use the `DotNet.invokeMethod` or `DotNet.invokeMethodAsync` functions. Pass in the identifier of the static method you wish to call, the name of the assembly containing the function, and any arguments. Again, the async version is preferred to support out-of-process scenarios. To be invokable from JavaScript, the .NET method must be public, static, and decorated with `[JSInvokable]`. By default, the method identifier is the method name, but you can specify a different identifier using the `JSInvokableAttribute` constructor. Calling open generic methods isn't currently supported.
 
-The sample app includes a C# method to return an array of `int`s. The method is decorated with the `JSInvokable` attribute. 
+The sample app includes a C# method to return an array of `int`s. The method is decorated with the `JSInvokable` attribute.
 
 *Pages/JsInterop.cshtml*:
 
-[!code-cshtml[](./common/samples/2.x/BlazorSample/Pages/JsInterop.cshtml?start=39&end=52&highlight=3-6,9-13)]
+[!code-cshtml[](./common/samples/2.x/BlazorSample/Pages/JsInterop.cshtml?start=47&end=58&highlight=7-11)]
 
 JavaScript served to the client invokes the C# .NET method.
 
@@ -167,53 +167,36 @@ The fourth array value is pushed to the array (`data.push(4);`) returned by `Ret
 
 ### Instance method call
 
-In Blazor 0.5.0 or later, you can also call .NET instance methods from JavaScript. To invoke a .NET instance method from JavaScript, first pass the .NET instance to JavaScript by wrapping it in a `DotNetObjectRef` instance. The .NET instance is passed by reference to JavaScript, and you can invoke .NET instance methods on the instance using the `invokeMethod` or `invokeMethodAsync` functions. The .NET instance can also be passed as an argument when invoking other .NET methods from JavaScript.
+You can also call .NET instance methods from JavaScript. To invoke a .NET instance method from JavaScript, first pass the .NET instance to JavaScript by wrapping it in a `DotNetObjectRef` instance. The .NET instance is passed by reference to JavaScript, and you can invoke .NET instance methods on the instance using the `invokeMethod` or `invokeMethodAsync` functions. The .NET instance can also be passed as an argument when invoking other .NET methods from JavaScript.
 
-*ExampleJsInterop.cs*:
+> [!NOTE]
+> The sample app logs messages to the client-side console. For the following examples demonstrated by the sample app, examine the browser's console output in the browser's developer tools.
 
-```csharp
-public class ExampleJsInterop
-{
-    public static Task SayHello(string name)
-    {
-        return JSRuntime.Current.InvokeAsync<object>(
-            "exampleJsFunctions.sayHello", 
-            new DotNetObjectRef(new HelloHelper(name)));
-    }
-}
-```
+When the **Trigger .NET instance method HelloHelper.SayHello** button is selected, `ExampleJsInterop.CallHelloHelperSayHello` is called and passes a name, `Blazor`, to the method.
 
-*exampleJsInterop.js*:
+*Pages/JsInterop.cshtml*:
 
-```javascript
-window.exampleJsFunctions = {
-  sayHello: function (dotnetHelper) {
-    return dotnetHelper.invokeMethodAsync('SayHello')
-      .then(r => console.log(r));
-  }
-};
-```
+[!code-cshtml[](./common/samples/2.x/BlazorSample/Pages/JsInterop.cshtml?start=60&end=69&highlight=8)]
 
-*HelloHelper.cs*:
+`CallHelloHelperSayHello` invokes the JavaScript function `sayHello` with a new instance of `HelloHelper`.
 
-```csharp
-public class HelloHelper
-{
-    public HelloHelper(string name)
-    {
-        Name = name;
-    }
+*JsInteropClasses/ExampleJsInterop.cs*:
 
-    public string Name { get; set; }
+[!code-csharp[](./common/samples/2.x/BlazorSample/JsInteropClasses/ExampleJsInterop.cs?name=snippet1&highlight=19-25)]
 
-    [JSInvokable]
-    public string SayHello() => $"Hello, {Name}!";
-}
-```
+*wwwroot/exampleJsInterop.js*:
 
-*Output*:
+[!code-javascript[](./common/samples/2.x/BlazorSample/wwwroot/exampleJsInterop.js?highlight=15-17)]
 
-```
+The name is passed to `HelloHelper`'s constructor, which sets the `HelloHelper.Name` property. When the JavaScript function `sayHello` is executed, `HelloHelper.SayHello` returns the `Hello, {Name}!` message, which is written to the console by the JavaScript function.
+
+*JsInteropClasses/HelloHelper.cs*:
+
+[!code-csharp[](./common/samples/2.x/BlazorSample/JsInteropClasses/HelloHelper.cs?name=snippet1&highlight=5,10-11)]
+
+Console output in the browser's web developer tools:
+
+```console
 Hello, Blazor!
 ```
 

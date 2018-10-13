@@ -26,7 +26,7 @@ namespace BlazorSample.JsInteropClasses
                 welcomeMessage);
         }
         
-        public static Task SayHello(string name)
+        public static Task CallHelloHelperSayHello(string name)
         {
             // sayHello is implemented in wwwroot/exampleJsInterop.js
             return JSRuntime.Current.InvokeAsync<object>(

@@ -6,6 +6,7 @@ using Microsoft.JSInterop;
 
 namespace BlazorSample.JsInteropClasses
 {
+    #region snippet1
     public class HelloHelper
     {
         public HelloHelper(string name)
@@ -18,4 +19,5 @@ namespace BlazorSample.JsInteropClasses
         [JSInvokable]
         public string SayHello() => $"Hello, {Name}!";
     }
+    #endregion
 }

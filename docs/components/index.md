@@ -222,6 +222,21 @@ The following code calls the `CheckboxChanged` method when the check box is chan
 }
 ```
 
+Event handlers can also be asynchronous and return a `Task`. There's no need to manually call `StateHasChanged()`. Exceptions are logged when they occur.
+
+```cshtml
+<button class="btn btn-primary" onclick="@UpdateHeading">
+    Update heading
+</button>
+
+@functions {
+    async Task UpdateHeading(UIMouseEventArgs e)
+    {
+        ...
+    }
+}
+```
+
 For some events, event-specific event argument types are permitted. If access to one of these event types isn't necessary, it isn't required in the method call.
 
 The list of supported event arguments is:

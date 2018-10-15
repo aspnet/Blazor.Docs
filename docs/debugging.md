@@ -59,7 +59,6 @@ Development of further debugging scenarios is an on-going focus of the engineeri
 
 ## Troubleshooting tips
 
-If you are running into errors, the following tips may help.
+If you are running into errors, the following tip may help.
 
-* Use the HTTP URL for your app instead of the HTTPS to debug.
-* In the debugger tab, open the console in your developer tools and clear the local storage. Then try re-launching the window. You can clear the local storage with this JS function: localStorage.clear()
+* In the debugger tab, open the developer tools in your browser, and in the console, execute localStorage.clear(). This will remove any breakpoints that were set.

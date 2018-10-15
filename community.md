@@ -32,6 +32,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
 * [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
 * [Canvas](https://github.com/BlazorExtensions/Canvas) &ndash; HTML5 Canvas API implementation for Microsoft Blazor.
+* [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) &ndash; Blazor Component that wraps ChartJS.
 * [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
 * [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
 * [Notifications](https://github.com/BlazorExtensions/Notifications) &ndash; HTML5 Notifications API implementation for Microsoft Blazor.

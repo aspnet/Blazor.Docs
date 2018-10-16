@@ -57,8 +57,8 @@ You *can't*:
 
 Development of further debugging scenarios is an on-going focus of the engineering team.
 
-## Troubleshooting tips
+## Troubleshooting tip
 
-If you are running into errors, the following tip may help.
+If you're running into errors, the following tip may help:
 
-* In the debugger tab, open the developer tools in your browser, and in the console, execute localStorage.clear(). This will remove any breakpoints that were set.
+In the **debugger** tab, open the developer tools in your browser. In the console, execute `localStorage.clear()` to remove any breakpoints.

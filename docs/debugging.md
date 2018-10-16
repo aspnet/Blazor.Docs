@@ -56,3 +56,9 @@ You *can't*:
 * Perform most other ordinary debugging scenarios.
 
 Development of further debugging scenarios is an on-going focus of the engineering team.
+
+## Troubleshooting tip
+
+If you're running into errors, the following tip may help:
+
+In the **debugger** tab, open the developer tools in your browser. In the console, execute `localStorage.clear()` to remove any breakpoints.

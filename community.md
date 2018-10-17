@@ -43,6 +43,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Samples
 
+* [A Nicer Looking Blazor Loading Page](https://github.com/ADefWebserver/BlazorSpinKitLoadingPage) ([blog post](http://lightswitchhelpwebsite.com/Blog/tabid/61/EntryId/4315/A-Nicer-Looking-Blazor-Loading-Page.aspx)) &ndash; Customize the Blazor loading page by using [SpinKit](https://github.com/tobiasahlin/SpinKit).
 * [ASP.NET Core Master/Detail CRUD](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a) &ndash; A master/detail HTML CRUD example with sorting and filtering using Entity Framework and Web API.
 * [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) ([Demo](http://edcharbeneau.com/BlazeDown/)) &ndash; An online markdown editor built with Blazor.
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample) &ndash; Explore how a Blazor app can be used to build a cross-platform desktop app.
@@ -88,5 +89,4 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Other
 
 * [Bionic](https://github.com/bmsantos/bionic) &ndash; An Ionic CLI clone for Blazor projects.
-* [A Nicer Looking Blazor Loading Page](http://lightswitchhelpwebsite.com/Blog/tabid/61/EntryId/4315/A-Nicer-Looking-Blazor-Loading-Page.aspx) &ndash; Customize the Blazor loading page by using Tobias Ahlin's SpinKit.
 * [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F#.

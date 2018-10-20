@@ -554,7 +554,7 @@ Otherwise, the type parameter must be explicitly specified using an attribute th
 Render fragments can be defined using Razor template syntax. Razor templates are a way to define a UI snippet and assume the following format:
 
 ```cshtml
-@<tag>...<tag>
+@<tag>...</tag>
 ```
 
 The following example illustrates how to specify `RenderFragment` and `RenderFragment<T>` values.

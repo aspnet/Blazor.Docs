@@ -5,7 +5,7 @@ description: Explore Blazor, a new experimental .NET web framework using C#/Razo
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
+ms.date: 10/20/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -67,6 +67,9 @@ Blazor preview documentation is provided to assist you in trying out Blazor. We 
 
 ## Blazor release notes
 
+* [Release notes (0.6.0)](https://github.com/aspnet/Blazor/releases/tag/0.6.0)
+* [Release notes (0.5.1)](https://github.com/aspnet/Blazor/releases/tag/0.5.1)
+* [Release notes (0.5.0)](https://github.com/aspnet/Blazor/releases/tag/0.5.0)
 * [Release notes (0.4.0)](https://github.com/aspnet/Blazor/releases/tag/0.4.0)
 * [Release notes (0.3.0)](https://github.com/aspnet/Blazor/releases/tag/0.3.0)
 * [Release notes (0.2.0)](https://github.com/aspnet/Blazor/releases/tag/0.2.0)

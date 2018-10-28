@@ -105,7 +105,9 @@ DocFX requires the .NET Framework on Windows or Mono for Linux/macOS.
   ```
 
 - Download the [latest version of DocFX](https://github.com/dotnet/docfx/releases).
-- Extract the archive to _$HOME/bin/docfx_.
+
+* Extract the archive to _$HOME/bin/docfx_.
+
 - Create an alias for **docfx**:
 
   ```

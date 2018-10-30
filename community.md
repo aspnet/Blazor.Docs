@@ -48,6 +48,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) ([Demo](http://edcharbeneau.com/BlazeDown/)) &ndash; An online markdown editor built with Blazor.
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample) &ndash; Explore how a Blazor app can be used to build a cross-platform desktop app.
 * [Blazor + Sitecore](https://github.com/GoranHalvarsson/SitecoreBlazor) ([Blog post](https://visionsincode.wordpress.com/2018/06/30/time-travel-into-the-future-blazor-sitecore-helix/)) &ndash; Example of dynamic pages and routes with SiteCore and [Helix](https://helix.sitecore.net/).
+* [Blazor Admin Dashboard](https://github.com/Misfits-Rebels-Outcasts/Blazor-Dashboard) &ndash; An Admin Dashboard for Blazor.
 * [Blazor Asteroids](https://github.com/aesalazar/AsteroidsWasm) ([Demo](https://aesalazar.github.io/AsteroidsWasm/)) &ndash; The 80's classic video game developed in C# for WinForms/WPF but running Blazor.
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor) &ndash; A bricks game developed with C# and Blazor.
 * [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Simple calculator with history and ability to use previous results in new calculations.

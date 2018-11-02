@@ -38,7 +38,7 @@ Place the `<script>` tag that references the JavaScript file in the *wwwroot/ind
 
 [!code-html[](./common/samples/2.x/BlazorSample/wwwroot/index.html?highlight=16)]
 
-Don't place a script tag in a component file because the script tag can't be updated dynamically. For more information, see [Add compiler error if there's a &lt;script&gt; element inside a component (aspnet/Blazor &num;552)](https://go.microsoft.com/fwlink/?linkid=872131).
+Don't place a script tag in a component file because the script tag can't be updated dynamically.
 
 .NET methods interop with the JavaScript functions by calling `InvokeAsync<T>` method on `IJSRuntime`.
 
@@ -48,7 +48,7 @@ The sample app uses a pair of C# methods, `Prompt` and `Display`, to invoke the 
 
 [!code-csharp[](./common/samples/2.x/BlazorSample/JsInteropClasses/ExampleJsInterop.cs?name=snippet1&highlight=6-8,14-16)]
 
-The `IJSRuntime` abstraction is asynchronous to allow for out-of-process scenarios. If the app runs in-process and you want to invoke a JavaScript function synchronously, downcast to `IJSInProcessRuntime` and call `Invoke<T>` instead. We recommend that most JavaScript interop libraries use the async APIs to ensure the libraries are available in all Blazor scenarios, client-side or server-side.
+The `IJSRuntime` abstraction is asynchronous to allow for server-side scenarios. If the app runs client-side and you want to invoke a JavaScript function synchronously, downcast to `IJSInProcessRuntime` and call `Invoke<T>` instead. We recommend that most JavaScript interop libraries use the async APIs to ensure the libraries are available in all Blazor scenarios, client-side or server-side.
 
 The sample app includes a component to demonstrate JS interop. The component:
 
@@ -143,7 +143,7 @@ Now you can focus inputs in any of your components:
 
 ### Static .NET method call
 
-To invoke a static .NET method from JavaScript, use the `DotNet.invokeMethod` or `DotNet.invokeMethodAsync` functions. Pass in the identifier of the static method you wish to call, the name of the assembly containing the function, and any arguments. Again, the async version is preferred to support out-of-process scenarios. To be invokable from JavaScript, the .NET method must be public, static, and decorated with `[JSInvokable]`. By default, the method identifier is the method name, but you can specify a different identifier using the `JSInvokableAttribute` constructor. Calling open generic methods isn't currently supported.
+To invoke a static .NET method from JavaScript, use the `DotNet.invokeMethod` or `DotNet.invokeMethodAsync` functions. Pass in the identifier of the static method you wish to call, the name of the assembly containing the function, and any arguments. Again, the async version is preferred to support server-side scenarios. To be invokable from JavaScript, the .NET method must be public, static, and decorated with `[JSInvokable]`. By default, the method identifier is the method name, but you can specify a different identifier using the `JSInvokableAttribute` constructor. Calling open generic methods isn't currently supported.
 
 The sample app includes a C# method to return an array of `int`s. The method is decorated with the `JSInvokable` attribute.
 

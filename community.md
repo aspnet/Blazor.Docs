@@ -15,7 +15,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
 * [BlazorSignalR](https://github.com/csnewman/BlazorSignalR) &ndash; ASP.NET Core SignalR Core .NET client support for Blazor.
-* [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) ([nuget.org](https://www.nuget.org/packages/BlazorSplit)) &ndash; Resizeable split views.
+* [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) &ndash; Resizeable split views.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library.
@@ -36,7 +36,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) &ndash; Blazor Component that wraps ChartJS.
 * [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
 * [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
-* [MatBlazor](https://github.com/BlazorComponents/MatBlazor) ([Demo](https://blazorcomponents.github.io/MatBlazor/)) ([nuget.org](https://www.nuget.org/packages/MatBlazor)) &ndash; Google Material components for web in Blazor.
+* [MatBlazor](https://github.com/BlazorComponents/MatBlazor) ([Demo](https://blazorcomponents.github.io/MatBlazor/)) &ndash; Google Material components for web in Blazor.
 * [Notifications](https://github.com/BlazorExtensions/Notifications) &ndash; HTML5 Notifications API implementation for Microsoft Blazor.
 * [SignalR](https://github.com/BlazorExtensions/SignalR) &ndash; SignalR Core support for Microsoft ASP.NET Core Blazor.
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.

@@ -1,3 +1,6 @@
+
+
+<!--
 General
 
 We use issues to drive the discussion for changes to existing topics and the creation of new topics. This template offers some suggestions to consider when creating an issue.
@@ -12,3 +15,4 @@ Requests for new topics
 2. Write an outline of the proposed topic contents.
 3. Where would you put the topic in the Table of Contents?
 4. If you know who should review the issue, notify them by including @githubID in the issue description.
+-->

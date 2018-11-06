@@ -70,6 +70,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
+* [FMRL.link](https://fmrl.link) &ndash; Ephemeral Message Service
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Money](https://github.com/maraf/Money) ([Demo](https://money.neptuo.com)) &ndash; A money manager implemented using CQRS+ES.
 * [Toss](https://github.com/RemiBou/Toss.Blazor) &ndash; A Twitter-like web app that allows the user to sign in, post a new message (a "toss") with hashtag, and select favorite hashtags for finding messages.

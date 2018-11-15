@@ -19,8 +19,8 @@ uid: client-side/blazor/get-started
 
 Install the following:
 
-1. [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.402 or later).
-1. [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.8 or later) with the *ASP.NET and web development* workload selected.
+1. [.NET Core 2.1 SDK](https://go.microsoft.com/fwlink/?linkid=873092) (2.1.500 or later).
+1. [Visual Studio 2017](https://go.microsoft.com/fwlink/?linkid=873093) (15.9 or later) with the *ASP.NET and web development* workload selected.
 1. The latest [Blazor Language Services extension](https://go.microsoft.com/fwlink/?linkid=870389) from the Visual Studio Marketplace.
 1. The Blazor templates on the command-line:
 

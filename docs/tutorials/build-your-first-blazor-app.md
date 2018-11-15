@@ -258,7 +258,7 @@ Add a new page to the app that implements a simple todo list.
 
 1. Add a *TodoItem.cs* file to the root of the project to hold a class to represent the todo items.
 
-1. Use the following C# code for the `ToDoItem` class.
+1. Use the following C# code for the `TodoItem` class.
 
     ```csharp
     public class TodoItem

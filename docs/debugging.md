@@ -41,13 +41,13 @@ You might be wondering why we don't just use browser source maps. Source maps al
 
 Note that the debugger capabilities are **very limited.** You can currently only:
 
-* Single-step through the current method (`F10`) or resume (`F8`).
+* Set and remove breakpoints.
+* Single-step through the code or resume (`F8`).
 * In the *Locals* display, observe the values of any local variables of type `int`, `string`, and `bool`.
 * See the call stack, including call chains that go from JavaScript into .NET and from .NET to JavaScript.
 
 You *can't*:
 
-* Step into child methods (`F11`).
 * Observe the values of any locals that aren't an `int`, `string`, or `bool`.
 * Observe the values of any class properties or fields.
 * Hover over variables to see their values

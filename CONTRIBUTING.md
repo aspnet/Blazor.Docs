@@ -108,7 +108,7 @@ DocFX requires the .NET Framework on Windows or Mono for Linux/macOS.
 
   ```
   alias docfx=mono $HOME/bin/docfx/docfx.exe
-  alias docfx-serve=mono $HOME/bin/docfx/docfx.exe serve _site
+  alias docfx-serve=mono $HOME/bin/docfx/docfx.exe --serve
   ```
 * Execute `docfx` from the root of the repo to build the site. Execute `docfx-serve` to view the site at `http://localhost:8080`.
 

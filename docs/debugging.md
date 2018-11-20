@@ -5,7 +5,7 @@ description: Learn how to debug Blazor apps.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/25/2018
+ms.date: 11/20/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -22,7 +22,7 @@ Blazor has some *very early* support for debugging client-side Blazor apps runni
 To debug a client-side Blazor app in Chrome:
 
 * Build a Blazor app in `Debug` configuration (the default for non-published apps).
-* Run the Blazor app in Chrome (using verion 70, or later).
+* Run the Blazor app in Chrome (verion 70 or later).
 * With the keyboard focus on the app (not in the dev tools panel, which you should probably close for a less confusing debugging experience), select the following Blazor-specific keyboard shortcut:
   - `Shift+Alt+D` on Windows/Linux
   - `Shift+Cmd+D` on macOS

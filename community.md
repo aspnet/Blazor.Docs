@@ -24,6 +24,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Gamepad](https://github.com/jsakamoto/Toolbelt.Blazor.Gamepad) &ndash; A library to provide gamepad API access for Blazor.
 * [Blazor Hotkeys](https://github.com/jsakamoto/Toolbelt.Blazor.Hotkeys) &ndash; A library to provide configuration-centric keyboard shortcuts for Blazor.
 * [Blazor LoadingBar](https://github.com/jsakamoto/Toolbelt.Blazor.LoadingBar) &ndash; A Blazor port of [angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar).
+* [Blazor Loan Calculator](https://github.com/Lupusa87/BlazorLoanCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/LoanCalculatorPage)) &ndash; A loan payments calculator developed with Blazor.
 * [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
 * [Blazor SpeechSynthesis](https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis) &ndash; A library to provide Speech Synthesis API access for Blazor.

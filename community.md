@@ -36,6 +36,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
 * [Canvas](https://github.com/BlazorExtensions/Canvas) &ndash; HTML5 Canvas API implementation for Microsoft Blazor.
 * [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) &ndash; Blazor Component that wraps ChartJS.
+* [Elmah.Io.Blazor](https://github.com/elmahio/Elmah.Io.Blazor) &ndash; Logs from Blazor to elmah.io using Microsoft.Extensions.Logging.
 * [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
 * [MatBlazor](https://github.com/BlazorComponents/MatBlazor) ([Demo](https://blazorcomponents.github.io/MatBlazor/)) &ndash; Google Material components for web in Blazor.
 * [Notifications](https://github.com/BlazorExtensions/Notifications) &ndash; HTML5 Notifications API implementation for Microsoft Blazor.

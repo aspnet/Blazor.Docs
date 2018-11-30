@@ -89,7 +89,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
 
 ## Books
-* [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server](https://amzn.to/2OToEji) Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (Published October 31, 2018)
+* [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (2018)](https://amzn.to/2OToEji) &ndash; An introduction to Blazor core concepts and how to apply concepts to real-world web apps with the help of Entity Framework Core and SQL Server.
 
 ## Courses
 

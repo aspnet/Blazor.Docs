@@ -6,6 +6,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Libraries
 
+* [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) This is a reusable grid component for Blazor which also supports client side pagination.
 * [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
 * [BlazorComponents](https://github.com/muqeet-khan/BlazorComponents) &ndash; A demonstration of [Chart.js](https://github.com/chartjs/Chart.js) interop.
 * [BlazorConfirm](https://github.com/ctrl-alt-d/BlazorConfirm) ([Demo](https://ctrl-alt-d.github.io/BlazorConfirm/)) &ndash; A Blazor wrapper for JavaScript's `window.confirm()` and `onbeforeunload`.
@@ -86,6 +87,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
 * [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
+
+## Books
+* [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server](https://amzn.to/2OToEji) Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (Published October 31, 2018)
 
 ## Courses
 

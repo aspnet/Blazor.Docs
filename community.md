@@ -6,13 +6,13 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Libraries
 
-* [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) This is a reusable grid component for Blazor which also supports client side pagination.
 * [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
 * [BlazorComponents](https://github.com/muqeet-khan/BlazorComponents) &ndash; A demonstration of [Chart.js](https://github.com/chartjs/Chart.js) interop.
 * [BlazorConfirm](https://github.com/ctrl-alt-d/BlazorConfirm) ([Demo](https://ctrl-alt-d.github.io/BlazorConfirm/)) &ndash; A Blazor wrapper for JavaScript's `window.confirm()` and `onbeforeunload`.
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.

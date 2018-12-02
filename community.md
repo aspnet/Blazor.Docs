@@ -78,6 +78,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Tooling
 
+* [BlazorFiddle](https://blazorfiddle.com) &ndash; Blazor .NET developer playground and code editor in the browser.
 * [Blazor Minimum Project Templates](https://github.com/jsakamoto/BlazorMinimumTemplates) &ndash; A project templates package of Blazor apps without JavaScript and CSS libraries.
 * [Razor+ Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=austincummings.razor-plus) &ndash; A Visual Studio Code extension that offers improved Razor support.
 
@@ -85,7 +86,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
 * [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
-* [BlazorFiddle](https://blazorfiddle.com) Blazor .Net Developer Playground and Code Editor in the Browser.
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
 
 ## Courses

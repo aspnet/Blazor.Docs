@@ -5,7 +5,7 @@ description: Learn how to invoke JavaScript functions from .NET and .NET methods
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/03/2018
+ms.date: 12/02/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -23,9 +23,68 @@ A Blazor app can invoke JavaScript functions from .NET and .NET methods from Jav
 
 There are times when Blazor .NET code is required to call a JavaScript function. For example, a JavaScript call can expose browser capabilities or functionality from a JavaScript library to the Blazor app.
 
-To call into JavaScript from .NET, use the `IJSRuntime` abstraction, which is accessible from `JSRuntime.Current`. The `InvokeAsync<T>` method on `IJSRuntime` takes an identifier for the JavaScript function you wish to invoke along with any number of JSON-serializable arguments. The function identifier is relative to the global scope (`window`). If you wish to call `window.someScope.someFunction`, the identifier is `someScope.someFunction`. There's no need to register the function before it's called. The return type `T` must also be JSON serializable.
+To call into JavaScript from .NET, use the `IJSRuntime` abstraction. The `InvokeAsync<T>` method on `IJSRuntime` takes an identifier for the JavaScript function you wish to invoke along with any number of JSON-serializable arguments. The function identifier is relative to the global scope (`window`). If you wish to call `window.someScope.someFunction`, the identifier is `someScope.someFunction`. There's no need to register the function before it's called. The return type `T` must also be JSON serializable.
 
-In the sample app, two JavaScript functions are available to the client-side app that interact with the DOM to receive user input and display a welcome message:
+For server-side Blazor apps:
+
+* Multiple user requests are processed by the server-side app. Don't call `JSRuntime.Current` in a component to invoke JavaScript functions.
+* Inject the `IJSRuntime` abstraction and use the injected object to issue JavaScript interop calls.
+
+The following example demonstrates how to invoke a JavaScript function that assigns HTML markup to an element in a server-side Blazor app component.
+
+Inside the `<head>` element of *wwwroot/index.html*, compose a function that:
+
+* Receives a reference to the element and the markup content.
+* Applies the content to the element by assigning to the element's `innerHTML` property.
+
+```html
+<script>
+  window.Index = {
+    div: {
+      init: function (elem, content) {
+        elem.innerHTML = content;
+      }
+  }
+};
+</script>
+```
+
+JavaScript code, such as the code shown in the preceding example, can also be loaded by a JavaScript file with a reference to the script file in the *wwwroot/index.html* file.
+
+The following example component in the server-side Blazor app:
+
+* References a DIV element using the `ref` attribute in the component's markup.
+* Invokes the JavaScript function using `jsRuntime` with the referenced DIV element and the markup content assigned to the `DivContent` property.
+
+```cshtml
+@page "/"
+@using Microsoft.JSInterop;
+@inject IJSRuntime jsRuntime;
+
+<h1>Hello, world!</h1>
+
+<div ref="divElem" id="content_div"></div>
+
+@functions {
+    // Quote (c)2005 Universal Pictures: Serenity
+    // https://www.uphe.com/movies/serenity
+
+    [Parameter] string DivContent { get; set; } = 
+        "<em>Can't stop the signal Mal.</em>";
+
+    ElementRef divElem;
+
+    protected override Task OnAfterRenderAsync()
+        => jsRuntime.InvokeAsync<object>(
+            "Index.div.init",
+            divElem,
+            DivContent);
+}
+```
+
+For client-side Blazor apps, the `IJSRuntime` abstraction is accessible from `JSRuntime.Current`, which refers to the current user's request. Because there's only a single user of a client-side Blazor app, using `JSRuntime.Current` to invoke a JavaScript function works normally. Only use `JSRuntime.Current` in client-side Blazor apps.
+
+In the client-side sample app that accompanies this topic, two JavaScript functions are available to the client-side app that interact with the DOM to receive user input and display a welcome message:
 
 * `showPrompt` &ndash; Produces a prompt to accept user input (the user's name) and returns the name to the caller.
 * `displayWelcome` &ndash; Assigns a welcome message from the caller to a DOM object with an `id` of `welcome`.

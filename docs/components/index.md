@@ -579,7 +579,7 @@ public class ThemeInfo
 }
 ```
 
-An ancestor component can provide a cascading value using the `CascadingValue` component. The `CascadingValue` component wraps a subtree of the component hierarchy and specifies a single value to all components within that subtree.
+An ancestor component can provide a cascading value using the `CascadingValue` component. The `CascadingValue` component wraps a subtree of the component hierarchy and supplies a single value to all components within that subtree.
 
 For example, the sample app specifies theme information (`ThemeInfo`) in one of the app's layouts as a cascading parameter for all components that make up the layout body of the `@Body` property. `ButtonClass` is assigned a value of `btn-success` in the layout component. Any descendent component can consume this property through the `ThemeInfo` cascading object.
 
@@ -609,7 +609,17 @@ For example, the sample app specifies theme information (`ThemeInfo`) in one of 
 }
 ```
 
-To make use of cascading values, components declare cascading parameters using the `[CascadingParameter]` attribute. Cascading values are bound to cascading parameters by type.
+To make use of cascading values, components declare cascading parameters using the `[CascadingParameter]` attribute or based on a string name value:
+
+```cshtml
+<CascadingValue Value=@PermInfo Name="UserPermissions">...</CascadingValue>
+
+[CascadingParameter(Name = "UserPermissions")] PermInfo Permissions { get; set; }
+```
+
+Binding with a string name value is relevant if you have multiple cascading values of the same type and need to differentiate them within the same subtree.
+
+Cascading values are bound to cascading parameters by type.
 
 In the sample app, the `CascadingValuesParameters` component binds to the `ThemeInfo` cascading value to a cascading parameter. The parameter is used to set the CSS class for one of the buttons displayed by the component.
 

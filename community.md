@@ -24,7 +24,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Gamepad](https://github.com/jsakamoto/Toolbelt.Blazor.Gamepad) &ndash; A library to provide gamepad API access for Blazor.
 * [Blazor Hotkeys](https://github.com/jsakamoto/Toolbelt.Blazor.Hotkeys) &ndash; A library to provide configuration-centric keyboard shortcuts for Blazor.
 * [Blazor LoadingBar](https://github.com/jsakamoto/Toolbelt.Blazor.LoadingBar) &ndash; A Blazor port of [angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar).
-* [Blazor Loan Calculator](https://github.com/Lupusa87/BlazorLoanCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/LoanCalculatorPage)) &ndash; A loan payments calculator developed with Blazor.
 * [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
 * [Blazor SpeechSynthesis](https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis) &ndash; A library to provide Speech Synthesis API access for Blazor.
@@ -65,6 +64,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) &ndash; A Hacker News clone built in Blazor.
+* [Blazor Loan Calculator](https://github.com/Lupusa87/BlazorLoanCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/LoanCalculatorPage)) &ndash; A loan payments calculator developed with Blazor.
 * [Blazor Paint](https://github.com/Lupusa87/BlazorPaint) ([Demo](https://lupblazordemos.z13.web.core.windows.net/PaintPage)) &ndash; Drawing app written in Blazor.
 * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.

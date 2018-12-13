@@ -35,6 +35,7 @@ To create the project in Visual Studio:
 > If not using Visual Studio, create the Blazor app at a command prompt on Windows, macOS, or Linux:
 >
 > ```console
+> dotnet new --install "Microsoft.AspNetCore.Blazor.Templates"
 > dotnet new blazor -o BlazorApp1
 > cd BlazorApp1
 > dotnet run
@@ -401,7 +402,7 @@ Add a new page to the app that implements a simple todo list.
 1. To verify that these values are bound, update the `h1` header to show a count of the number of todo items that are not yet done (`IsDone` is `false`).
 
     ```cshtml
-    <h1>Todo (@todos.Where(todo => !todo.IsDone).Count())</h1>
+    <h1>Todo (@todos.Count(todo => !todo.IsDone))</h1>
     ```
     
 1. The completed `Todo` component should look like this:
@@ -409,7 +410,7 @@ Add a new page to the app that implements a simple todo list.
     ```cshtml
     @page "/todo"
 
-    <h1>Todo (@todos.Where(todo => !todo.IsDone).Count())</h1>
+    <h1>Todo (@todos.Count(todo => !todo.IsDone))</h1>
 
     <ul>
         @foreach (var todo in todos)

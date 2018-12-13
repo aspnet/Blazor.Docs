@@ -34,6 +34,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Time Zone Kit](https://github.com/jsakamoto/Toolbelt.Blazor.TimeZoneKit) &ndash; A library to provide system time zones and local time zone initialization in Blazor apps.
 * [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
 * [Blazor.FlexGrid](https://github.com/Mewriick/Blazor.FlexGrid) &ndash; GridView component for Blazor.
+* [Blazor.Payments](https://github.com/philipblaquiere/Blazor.Payments) &ndash; A library that replicates the [W3C Payment Request API](https://w3c.github.io/payment-request/) contracts in Blazor apps.
 * [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
 * [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
@@ -67,6 +68,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) &ndash; A Hacker News clone built in Blazor.
+* [Blazor Loan Calculator](https://github.com/Lupusa87/BlazorLoanCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/LoanCalculatorPage)) &ndash; A loan payments calculator developed with Blazor.
+* [Blazor Paint](https://github.com/Lupusa87/BlazorPaint) ([Demo](https://lupblazordemos.z13.web.core.windows.net/PaintPage)) &ndash; Drawing app written in Blazor.
 * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
@@ -92,9 +95,11 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
 * [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
+* [LightSwitch Help Website](https://lightswitchhelpwebsite.com/Blog/tabid/61/tagid/66/Blazor.aspx/) &ndash; Blogs and code samples primarily covering server-side Blazor (Razor Components).
 * [WebAssemblyMan](https://www.webassemblyman.com/) &ndash; Man page for Blazor and WebAssembly.
 
 ## Books
+
 * [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (2018)](https://amzn.to/2OToEji) &ndash; An introduction to Blazor core concepts and how to apply concepts to real-world web apps with the help of Entity Framework Core and SQL Server.
 
 ## Courses

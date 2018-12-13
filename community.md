@@ -12,6 +12,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
@@ -92,6 +93,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
 * [WebAssemblyMan](https://www.webassemblyman.com/) &ndash; Man page for Blazor and WebAssembly.
+
+## Books
+* [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (2018)](https://amzn.to/2OToEji) &ndash; An introduction to Blazor core concepts and how to apply concepts to real-world web apps with the help of Entity Framework Core and SQL Server.
 
 ## Courses
 

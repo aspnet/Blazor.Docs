@@ -107,8 +107,8 @@ DocFX requires the .NET Framework on Windows or Mono for Linux/macOS.
 * Create a pair of aliases for **docfx** in a bash shell. The first alias is used to build the documentation. The second alias is used to build and serve the documentation.
 
   ```
-  alias docfx=mono $HOME/bin/docfx/docfx.exe
-  alias docfx-serve=mono $HOME/bin/docfx/docfx.exe --serve
+  alias docfx='mono $HOME/bin/docfx/docfx.exe'
+  alias docfx-serve='mono $HOME/bin/docfx/docfx.exe --serve'
   ```
 * Execute `docfx` from the root of the repo to build the site. Execute `docfx-serve` to view the site at `http://localhost:8080`.
 

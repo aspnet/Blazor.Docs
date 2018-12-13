@@ -35,6 +35,7 @@ To create the project in Visual Studio:
 > If not using Visual Studio, create the Blazor app at a command prompt on Windows, macOS, or Linux:
 >
 > ```console
+> dotnet new --install "Microsoft.AspNetCore.Blazor.Templates"
 > dotnet new blazor -o BlazorApp1
 > cd BlazorApp1
 > dotnet run

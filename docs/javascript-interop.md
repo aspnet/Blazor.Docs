@@ -43,7 +43,7 @@ Inside the `<head>` element of *wwwroot/index.html*, compose a function that:
     div: {
       init: function (elem, content) {
         elem.innerHTML = content;
-      }
+    }
   }
 };
 </script>

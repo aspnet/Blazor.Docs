@@ -3,11 +3,7 @@ title: Welcome to the Blazor preview docs website!
 description: Learn about Blazor, an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 documentType: index
 ---
-<div class="container-fluid update-banner">
-	<div class="container">
-		LinkedIn Learning has unlocked the training course <a href="https://www.linkedin.com/learning/blazor-first-look?trk=insiders_blazorFL_learning" aria-label="Watch Blazor First Look">Blazor First Look</a> for a limited time. 
-	</div>
-</div>
+
 <div class="hero">
   <div class="wrap">
     <h1 class="text">

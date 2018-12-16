@@ -35,6 +35,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Time Zone Kit](https://github.com/jsakamoto/Toolbelt.Blazor.TimeZoneKit) &ndash; A library to provide system time zones and local time zone initialization in Blazor apps.
 * [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
 * [Blazor.FlexGrid](https://github.com/Mewriick/Blazor.FlexGrid) &ndash; GridView component for Blazor.
+* [Blazor.Highcharts](https://github.com/Hantse/Blazor.Highcharts) &ndash; A Blazor port of [Highcharts](https://www.highcharts.com/).
 * [Blazor.Payments](https://github.com/philipblaquiere/Blazor.Payments) &ndash; A library that replicates the [W3C Payment Request API](https://w3c.github.io/payment-request/) contracts in Blazor apps.
 * [Blazor.Polyfill](https://github.com/Daddoon/Blazor.Polyfill) &ndash; A Blazor compatibility library for Internet Explorer 11 and other browsers.
 * [Blazor.Xamarin](https://github.com/Daddoon/Blazor.Xamarin) &ndash; Host Blazor apps as standalone hybrid mobile apps with Xamarin.
@@ -49,7 +50,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
 * [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
-* [Blazor.Highcharts](https://github.com/Hantse/Blazor.Highcharts) &ndash; A Blazor port of [Highcharts](https://www.highcharts.com/).
 
 ## Samples and tutorials
 

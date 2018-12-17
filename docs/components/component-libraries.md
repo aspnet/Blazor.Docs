@@ -5,7 +5,7 @@ description: Discover how Blazor components can be included in a Blazor app from
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/14/2018
+ms.date: 12/17/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article

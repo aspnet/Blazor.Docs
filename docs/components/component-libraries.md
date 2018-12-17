@@ -59,7 +59,7 @@ However, it's common to include all of the components from an assembly using a w
 @addTagHelper *, BlazorComponentLib1
 ```
 
-The `@addTagHelper` directive can be included in `_ViewImport.cshtml` to make the components available for an entire project or scoped to a single page or set of pages within a folder. With the `@addTagHelper` directive in place, the components of the component library can be consumed as if they were in the same assembly as the app. 
+The `@addTagHelper` directive can be included in *_ViewImport.cshtml* to make the components available for an entire project or scoped to a single page or set of pages within a folder. With the `@addTagHelper` directive in place, the components of the component library can be consumed as if they were in the same assembly as the app. 
 
 ## Build, pack, and ship to NuGet
 

@@ -2,7 +2,7 @@
 # [Build your first app](xref:client-side/blazor/tutorials/first-app)
 # [Introduction](xref:client-side/blazor/introduction/index)
 # [Components](xref:client-side/blazor/components/index)
-## [Component libraries](xref:client-side/blazor/components/component-libraries)
+# [Component libraries](xref:client-side/blazor/component-libraries)
 # [Layouts](xref:client-side/blazor/layouts)
 # [Dependency injection](xref:client-side/blazor/dependency-injection)
 # [Routing](xref:client-side/blazor/routing)

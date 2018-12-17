@@ -17,9 +17,7 @@ By [Simon Timms](https://github.com/stimms)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
-## Component libraries
-
-Components may be included from external libraries, which can be:
+Blazor components can be shared in component libraries across projects. Components can be included from:
 
 * Another project in the solution.
 * A NuGet package.
@@ -27,7 +25,7 @@ Components may be included from external libraries, which can be:
 
 Just as Blazor components are regular .NET types, Blazor component libraries are normal .NET assemblies. 
 
-To create a new component library, use the `blazorlib` template with the [dotnet new](https://docs.microsoft.com/dotnet/core/tools/dotnet-new) command. The template is part of the templates installed when setting up Blazor.
+To create a new component library, use the `blazorlib` template with the [dotnet new](https://docs.microsoft.com/dotnet/core/tools/dotnet-new) command. The template is part of the templates installed when [setting up Blazor](/docs/get-started.html#setup).
 
 ```console
 dotnet new blazorlib -o BlazorComponentLib1

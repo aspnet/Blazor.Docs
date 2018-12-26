@@ -52,9 +52,9 @@ Services can be configured with the following lifetimes:
 
 | Method      | Description |
 | ----------- | ----------- |
-| [Singleton](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.singleton#Microsoft_Extensions_DependencyInjection_ServiceDescriptor_Singleton__1_System_Func_System_IServiceProvider___0__) | DI creates a *single instance* of the service. All components requiring this service receive a reference to this instance. |
+| [Singleton](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.singleton#Microsoft_Extensions_DependencyInjection_ServiceDescriptor_Singleton__1_System_Func_System_IServiceProvider___0__) | DI creates a *single instance* of the service. All components requiring this service receive a reference to this instance. Server-side Blazor shares the instance with all user sessions. For client-side Blazor, the instance lives in the client and is therefore session private. |
 | [Transient](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.transient) | Whenever a component requires this service, it receives a *new instance* of the service. |
-| [Scoped](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.scoped) | Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`. Therefore, prefer `Singleton` and avoid `Scoped`. |
+| [Scoped](https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicedescriptor.scoped) | Server-side Blazor creates a separate service instance for each SignalR connection. It is therefore session private. A page reload creates a new SignalR connection and therefore a new service instance; so it will not live as long as the session. Client-side Blazor doesn't currently have the concept of DI scopes. `Scoped` behaves like `Singleton`, i.e. it is session private. |
 
 Blazor's DI system is based on the DI system in ASP.NET Core. For more information, see [Dependency injection in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection).
 

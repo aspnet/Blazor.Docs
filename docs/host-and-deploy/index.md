@@ -5,7 +5,7 @@ description: Discover how to host and deploy Blazor apps using ASP.NET Core, Con
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
+ms.date: 12/25/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -151,57 +151,16 @@ The `--urls` argument indicates the IP addresses or host addresses with ports an
   --urls=http://127.0.0.1:0
   ```
 
-## Deployment models
+## Hosting models
 
-There are two deployment models for Blazor apps:
+There are two hosting models for Blazor apps:
 
-* [Hosted deployment with ASP.NET Core](#hosted-deployment-with-aspnet-core) &ndash; Hosted deployment uses an ASP.NET Core app on the server to host the Blazor app.
-* [Standalone deployment](#standalone-deployment) &ndash; Standalone deployment places the Blazor app on a static hosting web server or service, where .NET isn't used to serve the Blazor app.
+* [Client-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model) &ndash; The Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. Either of the following strategies is supported:
+  * The Blazor app is placed on a static hosting web server or service, where .NET isn't used to serve the Blazor app.
+  * The Blazor app is served by an ASP.NET Core app.
+* [Server-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model) &ndash; Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
-### Hosted deployment with ASP.NET Core
-
-In a hosted deployment, an ASP.NET Core app handles single-page application routing and Blazor app hosting. The published ASP.NET Core app, along with one or more Blazor apps that it hosts, is deployed to the web server or hosting service.
-
-To host a Blazor app, the ASP.NET Core app must:
-
-* Reference the Blazor app project.
-* Reference the [Microsoft.AspNetCore.Blazor.Server](https://www.nuget.org/packages/Microsoft.AspNetCore.Blazor.Server/) package in its project file.
-* Configure Blazor app hosting with the `UseBlazor` extension method on [IApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) in `Startup.Configure`.
-
-```csharp
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-{
-    if (env.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-
-    app.UseBlazor<Client.Program>();
-}
-```
-
-The `UseBlazor` extension method performs the following tasks:
-
-* Configure [Static File Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/static-files) to serve Blazor's static assets from the *dist* folder. In the Development environment, the files in *wwwroot* folder are served.
-* Configure single-page application routing for resource requests that aren't for actual files that exist on disk. The app serves the default document (*wwwroot/index.html*) for any request that hasn't been served by a prior Static File Middleware instance. For example, a request to receive a page from the app that should be handled by the Blazor router on the client is rewritten into a request for the *wwwroot/index.html* page.
-
-When the ASP.NET Core app is published, the Blazor app is included in the published output so that the ASP.NET Core app and the Blazor app can be deployed together. For more information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
-
-For information on deploying to Azure App Service, see the following topics:
-
-[Publish to Azure with Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vs)  
-Learn how to publish an ASP.NET Core-hosted Blazor app to Azure App Service using Visual Studio.
-
-[Publish to Azure with CLI tools](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-cli)  
-Learn how to publish an ASP.NET Core app to Azure App Service using the Git command-line client.
-
-### Standalone deployment
-
-In a standalone deployment, only the Blazor client-side app is deployed to the server or hosting service. An ASP.NET Core server-side app isn't used to host the Blazor app. The Blazor app's static files are requested by the browser directly from the static file web server or service.
-
-When deploying a standalone Blazor app from the published *dist* folder, any web server or hosting service that serves static files can host a Blazor app.
-
-#### IIS
+### Client-side hosting with IIS
 
 IIS is a capable static file server for Blazor apps. To configure IIS to host Blazor, see [Build a Static Website on IIS](https://docs.microsoft.com/iis/manage/creating-websites/scenario-build-a-static-website-on-iis).
 
@@ -244,7 +203,7 @@ If a *500 Internal Server Error* is received and IIS Manager throws errors when 
 
 For more information on troubleshooting deployments to IIS, see [Troubleshoot ASP.NET Core on IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/troubleshoot).
 
-#### Nginx
+### Client-side hosting with Nginx
 
 The following *nginx.conf* file is simplified to show how to configure Nginx to send the *Index.html* file whenever it can't find a corresponding file on disk.
 
@@ -264,7 +223,7 @@ http {
 
 For more information on production Nginx web server configuration, see [Creating NGINX Plus and NGINX Configuration Files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/).
 
-#### Nginx in Docker
+### Client-side hosting with Nginx in Docker
 
 To host Blazor in Docker using Nginx, setup the Dockerfile to use the Alpine-based Nginx image. Update the Dockerfile to copy the *nginx.config* file into the container.
 
@@ -276,8 +235,20 @@ COPY ./bin/Release/netstandard2.0/publish /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
 ```
 
-#### GitHub Pages
+### Client-side hosting with GitHub Pages
 
 To handle URL rewrites, add a *404.html* file with a script that handles redirecting the request to the *index.html* page. For an example implementation provided by the community, see [Single Page Apps for GitHub Pages](http://spa-github-pages.rafrex.com/) ([rafrex/spa-github-pages on GitHub](https://github.com/rafrex/spa-github-pages#readme)). An example using the community approach can be seen at [blazor-demo/blazor-demo.github.io on GitHub](https://github.com/blazor-demo/blazor-demo.github.io) ([live site](https://blazor-demo.github.io/)).
 
 When using a project site instead of an organization site, add or update the `<base>` tag in *index.html*. Set the `href` attribute value to `<repository-name>/`, where `<repository-name>/` is the GitHub repository name.
+
+### ASP.NET Core hosted client-side and server-side Blazor apps
+
+When the ASP.NET Core app is published, the Blazor app is included in the published output so that the ASP.NET Core app and the Blazor app can be deployed together. For more information on ASP.NET Core app hosting and deployment, see [Host and deploy ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy).
+
+For information on deploying to Azure App Service, see the following topics:
+
+[Publish to Azure with Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vs)  
+Learn how to publish an ASP.NET Core-hosted Blazor app to Azure App Service using Visual Studio.
+
+[Publish to Azure with CLI tools](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-cli)  
+Learn how to publish an ASP.NET Core app to Azure App Service using the Git command-line client.

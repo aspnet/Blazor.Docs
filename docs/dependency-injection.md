@@ -60,12 +60,14 @@ Blazor's DI system is based on the DI system in ASP.NET Core. For more informati
 
 ## Default services
 
-Blazor provides default services that are automatically added to the service collection of an app. The following table shows a list of the default services currently provided by Blazor's [BrowserServiceProvider](/api/Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.html).
+Client-side Blazor provides default services that are automatically added to the service collection of an app. The following table shows a list of the default services currently provided by Blazor's [BrowserServiceProvider](/api/Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.html).
 
 | Method       | Description |
 | ------------ | ----------- |
 | [IUriHelper](/api/Microsoft.AspNetCore.Blazor.Services.IUriHelper.html) | Helpers for working with URIs and navigation state (singleton). |
 | [HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of `HttpClient` uses the browser for handling the HTTP traffic in the background. [HttpClient.BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
+
+Server-side Blazor only provides the [IUriHelper](/api/Microsoft.AspNetCore.Blazor.Services.IUriHelper.html) service.
 
 Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` that's added by the default template. A custom service provider doesn't automatically provide the default services listed in the table. Those services must be added to the new service provider explicitly.
 

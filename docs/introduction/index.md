@@ -46,13 +46,13 @@ When a Blazor app is built and run in a browser:
 
 To support older browsers that don't support WebAssembly, you can use the [server-side hosting model](#server-side-hosting-model).
 
-For more information, see <xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model>.
+For more information, see <xref:client-side/blazor/hosting-models#client-side-hosting-model>.
 
 ### Server-side hosting model
 
 In the server-side hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
-For more information, see <xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model>.
+For more information, see <xref:client-side/blazor/hosting-models#server-side-hosting-model>.
 
 ## Blazor components
 
@@ -111,9 +111,9 @@ For client-side apps, payload size is critical. Blazor optimizes payload size to
 
 Use either of the following two hosting models for Blazor apps:
 
-* [Client-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model) &ndash; The Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. Either of the following strategies is supported:
+* [Client-side hosting model](xref:client-side/blazor/hosting-models#client-side-hosting-model) &ndash; The Blazor app, its dependencies, and the .NET runtime are downloaded to the browser, and the app is executed directly on the browser UI thread. Either of the following strategies is supported:
   * The Blazor app is placed on a static hosting web server or service, where .NET isn't used to serve the Blazor app.
   * The Blazor app is served by an ASP.NET Core app.
-* [Server-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model) &ndash; Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
+* [Server-side hosting model](xref:client-side/blazor/hosting-models#server-side-hosting-model) &ndash; Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
-For more information, see [Blazor hosting models](xref:client-side/blazor/host-and-deploy/hosting-models).
+For more information, see [Blazor hosting models](xref:client-side/blazor/hosting-models).

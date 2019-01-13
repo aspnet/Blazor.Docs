@@ -198,7 +198,7 @@ Learn how to publish an ASP.NET Core app to Azure App Service using the Git comm
 
 A *standalone deployment* serves the client-side Blazor app as a set of static files that are requested directly by clients. A web server isn't used to serve the Blazor app.
 
-#### Client-side Blazor hosting with IIS
+#### Client-side Blazor standalone hosting with IIS
 
 IIS is a capable static file server for Blazor apps. To configure IIS to host Blazor, see [Build a Static Website on IIS](https://docs.microsoft.com/iis/manage/creating-websites/scenario-build-a-static-website-on-iis).
 
@@ -241,7 +241,7 @@ If a *500 Internal Server Error* is received and IIS Manager throws errors when 
 
 For more information on troubleshooting deployments to IIS, see [Troubleshoot ASP.NET Core on IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/troubleshoot).
 
-#### Client-side Blazor hosting with Nginx
+#### Client-side Blazor standalone hosting with Nginx
 
 The following *nginx.conf* file is simplified to show how to configure Nginx to send the *Index.html* file whenever it can't find a corresponding file on disk.
 
@@ -261,7 +261,7 @@ http {
 
 For more information on production Nginx web server configuration, see [Creating NGINX Plus and NGINX Configuration Files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/).
 
-#### Client-side Blazor hosting with Nginx in Docker
+#### Client-side Blazor standalone hosting with Nginx in Docker
 
 To host Blazor in Docker using Nginx, setup the Dockerfile to use the Alpine-based Nginx image. Update the Dockerfile to copy the *nginx.config* file into the container.
 
@@ -273,7 +273,7 @@ COPY ./bin/Release/netstandard2.0/publish /usr/share/nginx/html/
 COPY nginx.conf /etc/nginx/nginx.conf
 ```
 
-#### Client-side Blazor hosting with GitHub Pages
+#### Client-side Blazor standalone hosting with GitHub Pages
 
 To handle URL rewrites, add a *404.html* file with a script that handles redirecting the request to the *index.html* page. For an example implementation provided by the community, see [Single Page Apps for GitHub Pages](http://spa-github-pages.rafrex.com/) ([rafrex/spa-github-pages on GitHub](https://github.com/rafrex/spa-github-pages#readme)). An example using the community approach can be seen at [blazor-demo/blazor-demo.github.io on GitHub](https://github.com/blazor-demo/blazor-demo.github.io) ([live site](https://blazor-demo.github.io/)).
 

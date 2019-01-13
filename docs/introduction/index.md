@@ -21,7 +21,7 @@ Blazor is an experimental .NET web framework using C#/Razor and HTML that runs i
 
 ## Why use .NET in the browser?
 
-Web development has improved in many ways over the years, but building modern web apps still poses challenges. Using .NET in the browser offers many advantages that can help make web development easier and more productive: 
+Web development has improved in many ways over the years, but building modern web apps still poses challenges. Using .NET in the browser offers many advantages that can help make web development easier and more productive:
 
 * **Stability and consistency**: .NET provides standardized programming frameworks across platforms that are stable, feature-rich, and easy to use.
 * **Modern innovative languages**: .NET languages are constantly improving with innovative new language features.
@@ -31,6 +31,8 @@ Web development has improved in many ways over the years, but building modern we
 * **Wide browser support**: Blazor runs on .NET using open web standards in the browser with no plugins and no code transpilation. It works in all modern web browsers, including mobile browsers.
 
 ## How Blazor runs .NET in the browser
+
+### Client-side hosting model
 
 Running .NET code inside web browsers is made possible by a relatively new technology, [WebAssembly](http://webassembly.org) (abbreviated *wasm*). WebAssembly is an open web standard and is supported in web browsers without plugins. WebAssembly is a compact bytecode format optimized for fast download and maximum execution speed.
 
@@ -42,7 +44,15 @@ When a Blazor app is built and run in a browser:
 1. The assemblies and the .NET runtime are downloaded to the browser.
 1. Blazor uses JavaScript to bootstrap the .NET runtime and configures the runtime to load required assembly references. Document object model (DOM) manipulation and browser API calls are handled by the Blazor runtime via JavaScript interoperability.
 
-To support older browsers that don't support WebAssembly, Blazor falls back to using an [asm.js](https://wikipedia.org/wiki/Asm.js)-based .NET runtime.
+To support older browsers that don't support WebAssembly, you can use the [server-side hosting model](#server-side-hosting-model).
+
+For more information, see <xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model>.
+
+### Server-side hosting model
+
+In the server-side hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
+
+For more information, see <xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model>.
 
 ## Blazor components
 

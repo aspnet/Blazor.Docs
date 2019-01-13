@@ -5,7 +5,7 @@ description: Find the answers to frequently asked questions about Blazor.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
+ms.date: 12/23/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -58,7 +58,7 @@ Blazor will support all of the features of a modern single-page app framework:
 * Server-side rendering
 * Full .NET debugging both in browsers and in the IDE
 * Rich IntelliSense and tooling
-* Ability to run on older (non-WebAssembly) browsers via asm.js
+* Ability to run on older (non-WebAssembly) browsers via server-side Blazor
 * Publishing and app size trimming
 
 ## Can I use Blazor without running .NET on the server?
@@ -104,7 +104,7 @@ Yes, [modern mobile browsers also support WebAssembly](https://caniuse.com/#sear
 
 ## What about older browsers that don't support WebAssembly? For example, does Blazor work in IE?
 
-For older browsers that don't support WebAssembly, Blazor falls back to using an asm.js-based .NET runtime. Using asm.js is slower and has a larger download size but is still quite functional.
+For older browsers that don't support WebAssembly, use Blazor's [server-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model). Server-side Blazor provides excellent compatibility and performance with older browsers.
 
 ## Can I use .NET Standard libraries with Blazor?
 

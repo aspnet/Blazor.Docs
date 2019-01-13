@@ -5,11 +5,11 @@ description: Understand client-side and server-side Blazor hosting models.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/25/2018
+ms.date: 01/13/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
-uid: client-side/blazor/host-and-deploy/hosting-models
+uid: client-side/blazor/hosting-models
 ---
 # Blazor hosting models
 

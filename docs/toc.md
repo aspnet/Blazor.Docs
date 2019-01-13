@@ -7,7 +7,7 @@
 # [Routing](xref:client-side/blazor/routing)
 # [JavaScript interop](xref:client-side/blazor/javascript-interop)
 # [Debugging](xref:client-side/blazor/debugging)
+# [Hosting models](xref:client-side/blazor/hosting-models)
 # [Host and deploy](xref:client-side/blazor/host-and-deploy/index)
-## [Hosting models](xref:client-side/blazor/host-and-deploy/hosting-models)
 ## [Configure the Linker](xref:client-side/blazor/host-and-deploy/configure-linker)
 # [FAQ](xref:client-side/blazor/introduction/faq)

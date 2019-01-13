@@ -30,30 +30,18 @@ For server-side Blazor apps:
 * Multiple user requests are processed by the server-side app. Don't call `JSRuntime.Current` in a component to invoke JavaScript functions.
 * Inject the `IJSRuntime` abstraction and use the injected object to issue JavaScript interop calls.
 
-The following example is based on [MDN web docs: Introduction to web APIs](https://developer.mozilla.org/docs/Learn/JavaScript/Client-side_web_APIs/Introduction) and demonstrates how to invoke a JavaScript function from a C# method. The JavaScript function makes a request with `XMLHttpRequest` and logs the response data to the client's console.
+The following example is based on [TextDecoder](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder), an experimental JavaScript-based decoder. The example demonstrates how to invoke a JavaScript function from a C# method. The JavaScript function accepts a byte array from a C# method, decodes the array, and returns the text to the Blazor component for display.
 
-Inside the `<head>` element of *wwwroot/index.html*, compose a function that:
-
-* Uses `XMLHttpRequest` to obtain super hero data from a public endpoint. The example closely follows the approach shown in [MDN web docs: Introduction to web APIs](https://developer.mozilla.org/docs/Learn/JavaScript/Client-side_web_APIs/Introduction).
-* Log the data to the console.
-* Return `true` to the .NET method when the request has been made.
+Inside the `<head>` element of *wwwroot/index.html*, provide a function that uses `TextDecoder` to decode a passed array:
 
 ```html
 <script>
-  window.RequestSuperHeroSquad = () => {
-    var requestURL = 
-      'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-
-    request.onload = function () {
-      var superHeroSquad = request.response;
-      console.log(superHeroSquad);
-    }
-
-    return true;
+  window.ConvertArray = (win1251Array) => {
+    var win1251decoder = new TextDecoder('windows-1251');
+    var bytes = new Uint8Array(win1251Array);
+    var decodedArray = win1251decoder.decode(bytes);
+    console.log(decodedArray);
+    return decodedArray;
   };
 </script>
 ```
@@ -62,38 +50,48 @@ JavaScript code, such as the code shown in the preceding example, can also be lo
 
 The following Blazor component:
 
-* Invokes the `RequestSuperHeroSquad` JavaScript function using `JsRuntime` when a component button (**Log Super Hero Squad**) is selected.
-* After the JavaScript function is called, the UI is updated to indicate that the function code was executed. Note that `XMLHttpRequest` runs asynchronously on another thread and only logs the result of the request to the console. The Blazor component is only made aware that the `RequestSuperHeroSquad` JavaScript function was executed&mdash;not that the request for the superhero data and subsequent logging was successful.
+* Invokes the `ConvertArray` JavaScript function using `JsRuntime` when a component button (**Convert Array**) is selected.
+* After the JavaScript function is called, the passed array is converted into a string. The string is returned to the component for display.
 
 ```cshtml
 @page "/"
 @using Microsoft.JSInterop;
 @inject IJSRuntime JsRuntime;
 
-<h1>Superhero Example</h1>
+<h1>Call JavaScript Function Example</h1>
 
-<button type="button" class="btn btn-primary" onclick="@LogSuperHeroSquad">
-    Log Super Hero Squad
+<button type="button" class="btn btn-primary" onclick="@ConvertArray">
+    Convert Array
 </button>
 
-<h2 class="mt-2">
-    <span class="badge @RequestCompleteStyle">
-        Request Complete: @RequestComplete
+<p class="mt-2" style="font-size:1.6em">
+    <span class="badge badge-success">
+        @ConvertedText
     </span>
-</h2>
+</p>
 
 @functions {
-    private bool requestComplete = false;
-    private MarkupString RequestComplete =>
-        requestComplete ? new MarkupString("&#10004; <i>Yes!</i>") : 
-            new MarkupString("&#10006; <b>No!</b>");
-    private string RequestCompleteStyle =>
-        requestComplete ? "badge-success" : "badge-danger";
+    // Quote (c)2005 Universal Pictures: Serenity
+    // https://www.uphe.com/movies/serenity
+    // David Krumholtz on IMDB: https://www.imdb.com/name/nm0472710/
 
-    async void LogSuperHeroSquad()
+    private MarkupString ConvertedText =
+        new MarkupString("Select the <b>Convert Text</b> button.");
+
+    private uint[] QuoteArray = new uint[]
+        {
+            60, 101, 109, 62, 67, 97, 110, 39, 116, 32, 115, 116, 111, 112, 32,
+            116, 104, 101, 32, 115, 105, 103, 110, 97, 108, 44, 32, 77, 97,
+            108, 46, 60, 47, 101, 109, 62, 32, 45, 32, 77, 114, 46, 32, 85, 110,
+            105, 118, 101, 114, 115, 101, 10, 10,
+        };
+
+    async void ConvertArray()
     {
-        requestComplete = await JsRuntime.InvokeAsync<bool>(
-            "RequestSuperHeroSquad");
+        var text =
+            await JsRuntime.InvokeAsync<string>("ConvertArray", QuoteArray);
+
+        ConvertedText = new MarkupString(text);
 
         StateHasChanged();
     }

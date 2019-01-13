@@ -25,7 +25,7 @@ The principal hosting model for Blazor is running client-side in the browser. In
 
 ![Blazor client-side: The Blazor app runs on a UI thread inside the browser.](hosting-models/_static/client-side.png)
 
-To create a Blazor app using the client-side hosting model, use the **Blazor** or **Blazor (ASP.NET Core Hosted)** project templates (`blazor` or `blazorhosted` template when using the [dotnet new](/dotnet/core/tools/dotnet-new) command at a command prompt). The included *blazor.webassembly.js* script handles:
+To create a Blazor app using the client-side hosting model, use the **Blazor** or **Blazor (ASP.NET Core Hosted)** project templates (`blazor` or `blazorhosted` template when using the [dotnet new](https://docs.microsoft.com/dotnet/core/tools/dotnet-new) command at a command prompt). The included *blazor.webassembly.js* script handles:
 
 * Downloading the .NET runtime, the app, and its dependencies.
 * Initialization of the runtime to run the app.
@@ -64,7 +64,7 @@ In the server-side hosting model, Blazor is executed on the server from within a
 
 ![Blazor server-side: The browser interacts with the Blazor app (hosted inside of an ASP.NET Core app) on the server over a SignalR connection.](hosting-models/_static/client-side.png)
 
-To create a Blazor app using the server-side hosting model, use the **Blazor (Server-side in ASP.NET Core)** template (`blazorserver` when using [dotnet new](/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to add:
+To create a Blazor app using the server-side hosting model, use the **Blazor (Server-side in ASP.NET Core)** template (`blazorserver` when using [dotnet new](https://docs.microsoft.com/dotnet/core/tools/dotnet-new) at a command prompt). An ASP.NET Core app hosts the Blazor server-side app and sets up the SignalR endpoint where clients connect. The ASP.NET Core app references the Blazor `Startup` class to add:
 
 * Server-side Blazor services.
 * The Blazor app to the request handling pipeline.

@@ -5,7 +5,7 @@ description: See how Blazor apps can use built-in services by having them inject
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
+ms.date: 01/12/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -60,14 +60,15 @@ Blazor's DI system is based on the DI system in ASP.NET Core. For more informati
 
 ## Default services
 
-Blazor provides default services that are automatically added to the service collection of an app. The following table shows a list of the default services currently provided by Blazor's [BrowserServiceProvider](/api/Microsoft.AspNetCore.Blazor.Browser.Services.BrowserServiceProvider.html).
+Blazor provides default services that are automatically added to the service collection of an app. The following table shows some of the useful default services provided.
 
 | Method       | Description |
 | ------------ | ----------- |
-| [IUriHelper](/api/Microsoft.AspNetCore.Blazor.Services.IUriHelper.html) | Helpers for working with URIs and navigation state (singleton). |
-| [HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of `HttpClient` uses the browser for handling the HTTP traffic in the background. [HttpClient.BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. |
+| [HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) | Provides methods for sending HTTP requests and receiving HTTP responses from a resource identified by a URI (singleton). Note that this instance of `HttpClient` uses the browser for handling the HTTP traffic in the background. [HttpClient.BaseAddress](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.baseaddress) is automatically set to the base URI prefix of the app. `HttpClient` is only provided to client-side Blazor apps. |
+| [IJSRuntime](/api/Microsoft.JSInterop.IJSRuntime.html) | Represents an instance of a JavaScript runtime to which calls may be dispatched. For more information, see <xref:client-side/blazor/javascript-interop>. |
+| [IUriHelper](/api/Microsoft.AspNetCore.Blazor.Services.IUriHelper.html) | Helpers for working with URIs and navigation state (singleton). `IUriHelper` is provided to both client-side and server-side Blazor apps. |
 
-Note that it is possible to use a custom services provider instead of the default `BrowserServiceProvider` that's added by the default template. A custom service provider doesn't automatically provide the default services listed in the table. Those services must be added to the new service provider explicitly.
+Note that it is possible to use a custom services provider instead of the default service provider that's added by the default template. A custom service provider doesn't automatically provide the default services listed in the table. Those services must be added to the new service provider explicitly.
 
 ## Request a service in a component
 

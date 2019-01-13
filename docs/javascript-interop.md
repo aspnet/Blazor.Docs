@@ -30,55 +30,73 @@ For server-side Blazor apps:
 * Multiple user requests are processed by the server-side app. Don't call `JSRuntime.Current` in a component to invoke JavaScript functions.
 * Inject the `IJSRuntime` abstraction and use the injected object to issue JavaScript interop calls.
 
-The following example demonstrates how to invoke a JavaScript function that assigns HTML markup to an element in a server-side Blazor app component.
+The following example is based on [MDN web docs: Introduction to web APIs](https://developer.mozilla.org/docs/Learn/JavaScript/Client-side_web_APIs/Introduction) and demonstrates how to invoke a JavaScript function from a C# method. The JavaScript function makes a request with `XMLHttpRequest` and logs the response data to the client's console.
 
 Inside the `<head>` element of *wwwroot/index.html*, compose a function that:
 
-* Receives a reference to the element and the markup content.
-* Applies the content to the element by assigning to the element's `innerHTML` property.
+* Uses `XMLHttpRequest` to obtain super hero data from a public endpoint. The example closely follows the approach shown in [MDN web docs: Introduction to web APIs](https://developer.mozilla.org/docs/Learn/JavaScript/Client-side_web_APIs/Introduction).
+* Log the data to the console.
+* Return `true` to the .NET method when the request has been made.
 
 ```html
 <script>
-  window.Index = {
-    div: {
-      init: function (elem, content) {
-        elem.innerHTML = content;
+  window.RequestSuperHeroSquad = () => {
+    var requestURL = 
+      'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function () {
+      var superHeroSquad = request.response;
+      console.log(superHeroSquad);
     }
-  }
-};
+
+    return true;
+  };
 </script>
 ```
 
 JavaScript code, such as the code shown in the preceding example, can also be loaded by a JavaScript file with a reference to the script file in the *wwwroot/index.html* file.
 
-The following example component in the server-side Blazor app:
+The following Blazor component:
 
-* References a DIV element using the `ref` attribute in the component's markup.
-* Invokes the JavaScript function using `jsRuntime` with the referenced DIV element and the markup content assigned to the `DivContent` property.
+* Invokes the `RequestSuperHeroSquad` JavaScript function using `JsRuntime` when a component button (**Log Super Hero Squad**) is selected.
+* After the JavaScript function is called, the UI is updated to indicate that the function code was executed. Note that `XMLHttpRequest` runs asynchronously on another thread and only logs the result of the request to the console. The Blazor component is only made aware that the `RequestSuperHeroSquad` JavaScript function was executed&mdash;not that the request for the superhero data and subsequent logging was successful.
 
 ```cshtml
 @page "/"
 @using Microsoft.JSInterop;
-@inject IJSRuntime jsRuntime;
+@inject IJSRuntime JsRuntime;
 
-<h1>Hello, world!</h1>
+<h1>Superhero Example</h1>
 
-<div ref="divElem" id="content_div"></div>
+<button type="button" class="btn btn-primary" onclick="@LogSuperHeroSquad">
+    Log Super Hero Squad
+</button>
+
+<h2 class="mt-2">
+    <span class="badge @RequestCompleteStyle">
+        Request Complete: @RequestComplete
+    </span>
+</h2>
 
 @functions {
-    // Quote (c)2005 Universal Pictures: Serenity
-    // https://www.uphe.com/movies/serenity
+    private bool requestComplete = false;
+    private MarkupString RequestComplete =>
+        requestComplete ? new MarkupString("&#10004; <i>Yes!</i>") : 
+            new MarkupString("&#10006; <b>No!</b>");
+    private string RequestCompleteStyle =>
+        requestComplete ? "badge-success" : "badge-danger";
 
-    [Parameter] string DivContent { get; set; } = 
-        "<em>Can't stop the signal Mal.</em>";
+    async void LogSuperHeroSquad()
+    {
+        requestComplete = await JsRuntime.InvokeAsync<bool>(
+            "RequestSuperHeroSquad");
 
-    ElementRef divElem;
-
-    protected override Task OnAfterRenderAsync()
-        => jsRuntime.InvokeAsync<object>(
-            "Index.div.init",
-            divElem,
-            DivContent);
+        StateHasChanged();
+    }
 }
 ```
 

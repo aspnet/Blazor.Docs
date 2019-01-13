@@ -76,7 +76,7 @@ The following Blazor component:
     // David Krumholtz on IMDB: https://www.imdb.com/name/nm0472710/
 
     private MarkupString ConvertedText =
-        new MarkupString("Select the <b>Convert Text</b> button.");
+        new MarkupString("Select the <b>Convert Array</b> button.");
 
     private uint[] QuoteArray = new uint[]
         {

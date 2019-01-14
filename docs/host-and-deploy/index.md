@@ -5,7 +5,7 @@ description: Discover how to host and deploy Blazor apps using ASP.NET Core, Con
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
+ms.date: 01/13/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -72,7 +72,7 @@ The app responds locally at `http://localhost:port/CoolBlazorApp`.
 For more information, see the [path base host configuration value](#path-base) section.
 
 > [!IMPORTANT]
-> If a Blazor app uses the [client-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model) (based on the **Blazor** project template) and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
+> If a Blazor app uses the [client-side hosting model](xref:client-side/blazor/hosting-models#client-side-hosting-model) (based on the **Blazor** project template) and is hosted as an IIS sub-application in an ASP.NET Core app, it's important to disable the inherited ASP.NET Core Module handler. Remove the handler in the Blazor app's published *web.config* file by adding a `<handlers>` section to the file:
 >
 > ```xml
 > <handlers>
@@ -84,9 +84,9 @@ For more information, see the [path base host configuration value](#path-base) s
 
 ## Host configuration values
 
-Blazor apps that use the [server-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model) can accept [Web Host configuration values](https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host#host-configuration-values).
+Blazor apps that use the [server-side hosting model](xref:client-side/blazor/hosting-models#server-side-hosting-model) can accept [Web Host configuration values](https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host#host-configuration-values).
 
-Blazor apps that use the [client-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model) can accept the following host configuration values as command-line arguments at runtime in the development environment.
+Blazor apps that use the [client-side hosting model](xref:client-side/blazor/hosting-models#client-side-hosting-model) can accept the following host configuration values as command-line arguments at runtime in the development environment.
 
 ### Content Root
 

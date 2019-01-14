@@ -13,6 +13,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
+* [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://blazorisedemo.azurewebsites.net/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
@@ -32,6 +33,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor SpeechSynthesis](https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis) &ndash; A library to provide Speech Synthesis API access for Blazor.
 * [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
 * [Blazor Time Zone Kit](https://github.com/jsakamoto/Toolbelt.Blazor.TimeZoneKit) &ndash; A library to provide system time zones and local time zone initialization in Blazor apps.
+* [Blazor Tweet Button](https://github.com/jsakamoto/Toolbelt.Blazor.TwitterShareButton) &ndash; A Tweet Button component for Blazor.
 * [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
 * [Blazor.FlexGrid](https://github.com/Mewriick/Blazor.FlexGrid) &ndash; GridView component for Blazor.
 * [Blazor.Payments](https://github.com/philipblaquiere/Blazor.Payments) &ndash; A library that replicates the [W3C Payment Request API](https://w3c.github.io/payment-request/) contracts in Blazor apps.
@@ -54,6 +56,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [A Nicer Looking Blazor Loading Page](http://lightswitchhelpwebsite.com/Blog/tabid/61/EntryId/4315/A-Nicer-Looking-Blazor-Loading-Page.aspx) &ndash; Customize the Blazor loading page using [SpinKit](https://github.com/tobiasahlin/SpinKit).
 * [ASP.NET Core Master/Detail CRUD](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a) &ndash; A master/detail HTML CRUD example with sorting and filtering using Entity Framework and Web API.
 * [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) ([Demo](http://edcharbeneau.com/BlazeDown/)) &ndash; An online markdown editor built with Blazor.
+* [BlazorPass](https://github.com/ebekker/BlazorPass) &ndash; Blazor UI and ASP.NET Core API to manage Active Directory credentials.
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample) &ndash; Explore how a Blazor app can be used to build a cross-platform desktop app.
 * [Blazor + Sitecore](https://github.com/GoranHalvarsson/SitecoreBlazor) ([Blog post](https://visionsincode.wordpress.com/2018/06/30/time-travel-into-the-future-blazor-sitecore-helix/)) &ndash; Example of dynamic pages and routes with SiteCore and [Helix](https://helix.sitecore.net/).
 * [Blazor Admin Dashboard](https://github.com/Misfits-Rebels-Outcasts/Blazor-Dashboard) &ndash; An admin dashboard for Blazor.
@@ -78,11 +81,15 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Do](https://github.com/jamie-lord/do) ([Demo](https://do.lord.technology)) &ndash; Todo.txt compatible todo app.
+* [FMRL](https://github.com/ebekker/FMRL) &ndash; Ephemeral Message Service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.
 * [Money](https://github.com/maraf/Money) ([Demo](https://money.neptuo.com)) &ndash; A money manager implemented using CQRS+ES.
+* [Planning Poker for Azure](https://github.com/duracellko/planningpoker4azure) ([Demo](http://planningpoker.duracellko.net)) &ndash; An app to play [Planning Poker&trade;](https://www.planningpoker.com) for distributed teams. The app is implemented using Blazor and shows how to switch between client-side and server-side mode with a configuration change. *Planning Poker* is a registered trademark of [Mountain Goat Software, LLC](https://www.mountaingoatsoftware.com/).
 * [Toss](https://github.com/RemiBou/Toss.Blazor) &ndash; A Twitter-like web app that allows the user to sign in, post a new message (a "toss") with hashtag, and select favorite hashtags for finding messages.
 * [TreeCRUD](https://github.com/ctrl-alt-d/TreeCrud) &ndash; A simple server-side Blazor CRUD app to deal with hierarchical data. The project has a data layer with GraphQL for R (Read) and classical REST for CUD (Create, Update, Delete).
 * [TrendTv](https://github.com/MattMarked/TrendTv) ([Demo](http://zaptube2.azurewebsites.net/)) &ndash; Fetch a video list from YouTube and "zap" in real time between trending videos, filtered by country or category.
+* [Tzaar](https://github.com/paularundel/tzaar) ([Demo](https://tzaar.azurewebsites.net/)) &ndash; Implementation of the board game Tzaar with Blazor and SignalR. 
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
+* [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
 
 ## Tooling
 
@@ -101,6 +108,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Books
 
 * [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (2018)](https://amzn.to/2OToEji) &ndash; An introduction to Blazor core concepts and how to apply concepts to real-world web apps with the help of Entity Framework Core and SQL Server.
+* [Dockerizing ASP.NET Core and Blazor Applications on Mac](https://www.c-sharpcorner.com/ebooks/dockerizing-asp-net-core-and-blazor-applications-on-mac) &ndash; This book is targeted for beginning to intermediate .NET developers who want to jump into ASP.NET Core, Blazor, and Docker on macOS.
 
 ## Courses
 
@@ -108,5 +116,5 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Other
 
-* [Bionic](https://github.com/bmsantos/bionic) &ndash; An Ionic CLI clone for Blazor projects.
+* [Bionic](https://bionicframework.github.io/Documentation) &ndash; An Ionic CLI clone for Blazor projects.
 * [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F#.

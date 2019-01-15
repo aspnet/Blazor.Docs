@@ -189,6 +189,26 @@ If the value of the `ParentYear` property is changed by selecting the button in 
 
 <p>Year: 1986</p>
 ```
+**Data binding methods with parameters**
+
+Data binding supports passing parameters to methods. This can be accomplished using the `@(() => Method(parameter))` syntax.
+
+```cshtml
+<button class="btn btn-primary" onclick="@(() => UpdateHeading(value1))">
+    Update heading with value1
+</button>
+
+<button class="btn btn-primary" onclick="@(() => UpdateHeading(value2))">
+    Update heading with value2
+</button>
+
+@functions {
+    void UpdateHeading(string value)
+    {
+        ...
+    }
+}
+```
 
 ## Event handling
 

@@ -194,18 +194,72 @@ If the value of the `ParentYear` property is changed by selecting the button in 
 Data binding supports passing parameters to methods. This can be accomplished using the `@(() => Method(parameter))` syntax.
 
 ```cshtml
-<button class="btn btn-primary" onclick="@(() => UpdateHeading(value1))">
-    Update heading with value1
+
+<h1>@heading</h1>
+
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello World"))">
+    English
 </button>
 
-<button class="btn btn-primary" onclick="@(() => UpdateHeading(value2))">
-    Update heading with value2
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello Wêreld"))">
+    Afrikaans
 </button>
 
 @functions {
+  string heading = "Hello world";
+    
     void UpdateHeading(string value)
     {
-        ...
+       heading = value; 
+    }
+}
+```
+
+Multiple parameters can also be passed to methods.
+```cshtml
+
+<h1>@heading</h1>
+
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello World"))">
+    English
+</button>
+
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello Wêreld"))">
+    Afrikaans
+</button>
+
+@functions {
+    string heading = "Hello World";
+
+    void UpdateHeading(string value)
+    {
+        heading = value;
+    }
+}
+```
+
+The event arguments can also be passed through to the method using the `onclick="@((e) => UpdateHeading(e, "Hello World"))"` syntax.
+
+```cshtml
+<h1>@heading</h1>
+<p>Event type: @eventType</p>
+
+<button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hello World"))">
+    English
+</button>
+
+<button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hello Wêreld"))">
+    Afrikaans
+</button>
+
+@functions {
+    string heading = "Hello World";
+    string eventType = string.Empty;
+
+    void UpdateHeading(UIEventArgs e, string value)
+    {
+        heading = value;
+        eventType = e.Type;
     }
 }
 ```

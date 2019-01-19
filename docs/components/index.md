@@ -201,12 +201,12 @@ Data binding supports passing parameters to methods. This can be accomplished us
     English
 </button>
 
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello Wêreld"))">
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hallo Wêreld"))">
     Afrikaans
 </button>
 
 @functions {
-  string heading = "Hello world";
+  string heading = "Hello World";
     
     void UpdateHeading(string value)
     {
@@ -220,20 +220,20 @@ Multiple parameters can also be passed to methods.
 
 <h1>@heading</h1>
 
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello World"))">
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello", "World"))">
     English
 </button>
 
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello Wêreld"))">
+<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hallo", "Wêreld"))">
     Afrikaans
 </button>
 
 @functions {
     string heading = "Hello World";
 
-    void UpdateHeading(string value)
+    void UpdateHeading(string value1, string value2)
     {
-        heading = value;
+        heading = $"{value1} {value2}";
     }
 }
 ```
@@ -248,7 +248,7 @@ The event arguments can also be passed through to the method using the `onclick=
     English
 </button>
 
-<button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hello Wêreld"))">
+<button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hallo Wêreld"))">
     Afrikaans
 </button>
 

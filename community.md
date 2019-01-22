@@ -21,6 +21,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) &ndash; Resizeable split views.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
+* [Blazor Barcode](https://barcoderesource.com/blazorbarcode.shtml) &ndash; A barcode library for Blazor using barcode fonts.
 * [Blazor Charts](https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts) &ndash; SVG Charts for Blazor.
 * [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library.

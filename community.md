@@ -68,10 +68,10 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; An experimental Blazor chess engine.
 * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on Canvas.
 * [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on SVG.
-* [Blazor Converters](https://github.com/lohithgn/blazor-converters) ([Demo](http://blazorconverters.surge.sh)) &ndash; Windows 10 Calc Converters recreated in Blazor
-* [Blazor Contoso University](https://github.com/lohithgn/blazor-contoso-university) &ndash; Contoso University recreated in Blazor
+* [Blazor Contoso University](https://github.com/lohithgn/blazor-contoso-university) &ndash; Contoso University recreated in Blazor.
+* [Blazor Converters](https://github.com/lohithgn/blazor-converters) ([Demo](http://blazorconverters.surge.sh)) &ndash; Windows 10 Calc Converters recreated in Blazor.
 * [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Doughnut charting with gradient colors using SVG.
-* [Blazor Examples](https://github.com/lohithgn/blazor-examples) ([Demo](http://blazorexamples.surge.sh/)) &ndash; Knockout JS examples recreated in Blazor
+* [Blazor Examples](https://github.com/lohithgn/blazor-examples) ([Demo](http://blazorexamples.surge.sh/)) &ndash; Knockout JS examples recreated in Blazor.
 * [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) ([Demo](http://blazorhackernews.surge.sh/)) &ndash; A Hacker News clone built in Blazor.
@@ -79,8 +79,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Paint](https://github.com/Lupusa87/BlazorPaint) ([Demo](https://lupblazordemos.z13.web.core.windows.net/PaintPage)) &ndash; Drawing app written in Blazor.
 * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
-* [Blazor RSS Reader](https://github.com/lohithgn/blazor-rss-reader) ([Demo](https://blazorrssreader.surge.sh/)) &ndash; RSS Reader using Blazor
-* [Blazor Sushi](https://github.com/lohithgn/blazor-sushi) ([Demo](https://blazorsushi.surge.sh/)) - Kendo UI Sushi SPA recreated in Blazor
+* [Blazor RSS Reader](https://github.com/lohithgn/blazor-rss-reader) ([Demo](https://blazorrssreader.surge.sh/)) &ndash; RSS Reader using Blazor.
+* [Blazor Sushi](https://github.com/lohithgn/blazor-sushi) ([Demo](https://blazorsushi.surge.sh/)) &ndash; Kendo UI Sushi SPA recreated in Blazor.
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.

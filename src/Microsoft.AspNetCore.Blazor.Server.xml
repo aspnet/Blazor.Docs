@@ -101,6 +101,17 @@
             Intended for framework use only. Applications should not call this method directly.
             </summary>
         </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Server.BlazorHub.OnRenderCompleted(System.Int64,System.String)">
+            <summary>
+            Intended for framework use only. Applications should not call this method directly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.AutoCancelTaskCompletionSource`1">
+            <summary>
+            Behaves like a <see cref="T:System.Threading.Tasks.TaskCompletionSource`1"/>, but automatically times out
+            the underlying task after a given period if not already completed.
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.Circuit">
             <summary>
             Represents an active connection between a Blazor server and a client.
@@ -138,16 +149,14 @@
             it is primarily used by the Server-Side Blazor infrastructure.
             </remarks>
         </member>
-        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.MessagePackBinaryBlockStream">
+        <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.MessagePackBufferStream">
             <summary>
-            A write-only stream that outputs its data to an underlying expandable
-            buffer in the format for a MessagePack 'Bin32' block. Supports writing
-            into buffers up to 2GB in length.
+            Provides Stream APIs for writing to a MessagePack-supplied expandable buffer.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper">
             <summary>
-            A Server-Side Blazor implemenation of <see cref="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper"/>.
+            A Server-Side Blazor implementation of <see cref="T:Microsoft.AspNetCore.Blazor.Services.IUriHelper"/>.
             </summary>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Server.Circuits.RemoteUriHelper.#ctor(Microsoft.JSInterop.IJSRuntime)">
@@ -221,7 +230,7 @@
             Notifies when a rendering exception occured.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.#ctor(System.IServiceProvider,Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry,Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.SignalR.IClientProxy)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.#ctor(System.IServiceProvider,Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry,Microsoft.JSInterop.IJSRuntime,Microsoft.AspNetCore.SignalR.IClientProxy,System.Threading.SynchronizationContext)">
             <summary>
             Creates a new <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer"/>.
             </summary>
@@ -229,6 +238,7 @@
             <param name="rendererRegistry">The <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.RendererRegistry"/>.</param>
             <param name="jsRuntime">The <see cref="T:Microsoft.JSInterop.IJSRuntime"/>.</param>
             <param name="client">The <see cref="T:Microsoft.AspNetCore.SignalR.IClientProxy"/>.</param>
+            <param name="syncContext">A <see cref="T:System.Threading.SynchronizationContext"/> that can be used to serialize renderer operations.</param>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.AddComponent``1(System.String)">
             <summary>
@@ -251,8 +261,19 @@
             Disposes the instance.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRenderer.UpdateDisplayAsync(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
             <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRendererException">
+            <summary>
+            Represents an exception related to remote rendering.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRendererException.#ctor(System.String)">
+            <summary>
+            Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.RemoteRendererException"/>.
+            </summary>
+            <param name="message">The exception message.</param>
         </member>
         <member name="T:Microsoft.Extensions.DependencyInjection.ServerSideBlazorServiceCollectionExtensions">
             <summary>

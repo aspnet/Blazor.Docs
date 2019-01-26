@@ -15,8 +15,6 @@ Welcome to the Blazor API area!
 
 [Microsoft.AspNetCore.Blazor.Browser.Http](/api/Microsoft.AspNetCore.Blazor.Browser.Http.html)
 
-[Microsoft.AspNetCore.Blazor.Browser.Interop](/api/Microsoft.AspNetCore.Blazor.Browser.Interop.html)
-
 [Microsoft.AspNetCore.Blazor.Browser.Rendering](/api/Microsoft.AspNetCore.Blazor.Browser.Rendering.html)
 
 [Microsoft.AspNetCore.Blazor.Browser.Services](/api/Microsoft.AspNetCore.Blazor.Browser.Services.html)
@@ -36,3 +34,5 @@ Welcome to the Blazor API area!
 [Microsoft.AspNetCore.Blazor.Services](/api/Microsoft.AspNetCore.Blazor.Services.html)
 
 [Microsoft.AspNetCore.Builder](/api/Microsoft.AspNetCore.Builder.html)
+
+[Microsoft.JSInterop](/api/Microsoft.JSInterop.html)

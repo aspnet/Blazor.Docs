@@ -5,7 +5,7 @@ description: Explore Blazor, a new experimental .NET web framework using C#/Razo
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/13/2019
+ms.date: 01/26/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article

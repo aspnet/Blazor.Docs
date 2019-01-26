@@ -5,7 +5,7 @@ description: Learn how to create and use Blazor components, the fundamental buil
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/25/2018
+ms.date: 01/26/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -13,7 +13,7 @@ uid: client-side/blazor/components/index
 ---
 # Blazor components
 
-By [Luke Latham](https://github.com/guardrex) and [Daniel Roth](https://github.com/danroth27)
+By [Luke Latham](https://github.com/guardrex), [Daniel Roth](https://github.com/danroth27), and [Morné Zaayman](https://github.com/MorneZaayman)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
@@ -189,12 +189,12 @@ If the value of the `ParentYear` property is changed by selecting the button in 
 
 <p>Year: 1986</p>
 ```
+
 **Data binding methods with parameters**
 
-Data binding supports passing parameters to methods. This can be accomplished using the `@(() => Method(parameter))` syntax.
+Data binding supports passing parameters to methods. This can be accomplished using the `@(() => Method(parameter))` syntax:
 
 ```cshtml
-
 <h1>@heading</h1>
 
 <button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello World"))">
@@ -206,7 +206,7 @@ Data binding supports passing parameters to methods. This can be accomplished us
 </button>
 
 @functions {
-  string heading = "Hello World";
+    string heading = "Hello World";
     
     void UpdateHeading(string value)
     {
@@ -215,9 +215,9 @@ Data binding supports passing parameters to methods. This can be accomplished us
 }
 ```
 
-Multiple parameters can also be passed to methods.
-```cshtml
+Data binding also supports passing multiple parameters to methods:
 
+```cshtml
 <h1>@heading</h1>
 
 <button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello", "World"))">
@@ -238,10 +238,11 @@ Multiple parameters can also be passed to methods.
 }
 ```
 
-The event arguments can also be passed through to the method using the `onclick="@((e) => UpdateHeading(e, "Hello World"))"` syntax.
+Data binding supports passing event arguments to a method using the `onclick="@((e) => Method(e, parameter2, parameter3, ...))"` syntax:
 
 ```cshtml
 <h1>@heading</h1>
+
 <p>Event type: @eventType</p>
 
 <button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hello World"))">

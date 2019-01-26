@@ -9,7 +9,7 @@ branches:
     - live
 
 install:
-  - cinst docfx
+  - cinst docfx --version 2.40.7
 
 build_script:
   - docfx

@@ -25,7 +25,7 @@ To create the project in Visual Studio:
 
     ![New ASP.NET Core project](https://raw.githubusercontent.com/aspnet/Blazor.Docs/gh-pages/docs/tutorials/build-your-first-blazor-app/_static/new-aspnet-core-project.png)
 
-1. The **New ASP.NET Core Web Application** dialog appears. Make sure **.NET Core** is selected at the top. Select either **ASP.NET Core 2.0** or **ASP.NET Core 2.1**. Choose the **Blazor** template and select **OK**.
+1. The **New ASP.NET Core Web Application** dialog appears. Make sure **.NET Core** is selected at the top. Select **ASP.NET Core 2.1**. Choose the **Blazor** template and select **OK**.
 
     ![New Blazor app dialog](https://raw.githubusercontent.com/aspnet/Blazor.Docs/gh-pages/docs/tutorials/build-your-first-blazor-app/_static/new-blazor-app-dialog.png)
 

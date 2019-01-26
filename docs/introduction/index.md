@@ -46,13 +46,13 @@ When a Blazor app is built and run in a browser:
 
 To support older browsers that don't support WebAssembly, you can use the [server-side hosting model](#server-side-hosting-model).
 
-For more information, see <xref:client-side/blazor/host-and-deploy/hosting-models#client-side-hosting-model>.
+For more information, see <xref:client-side/blazor/hosting-models#client-side-hosting-model>.
 
 ### Server-side hosting model
 
 In the server-side hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
-For more information, see <xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model>.
+For more information, see <xref:client-side/blazor/hosting-models#server-side-hosting-model>.
 
 ## Blazor components
 

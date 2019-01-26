@@ -5,7 +5,7 @@ description: Explore Blazor, a new experimental .NET web framework using C#/Razo
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/13/2019
+ms.date: 01/26/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -47,7 +47,7 @@ Learn how to route requests in a client-side Blazor app and about the NavLink co
 [JavaScript interop](xref:client-side/blazor/javascript-interop)  
 Learn how to invoke JavaScript functions from .NET and .NET methods from JavaScript.
 
-[Hosting models](xref:client-side/blazor/host-and-deploy/hosting-models)  
+[Hosting models](xref:client-side/blazor/hosting-models)  
 Learn about Blazor's hosting models.
 
 [Host and deploy](xref:client-side/blazor/host-and-deploy/index)  

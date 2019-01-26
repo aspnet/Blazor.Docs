@@ -5,7 +5,7 @@ description: Find the answers to frequently asked questions about Blazor.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/23/2018
+ms.date: 01/26/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -104,7 +104,7 @@ Yes, [modern mobile browsers also support WebAssembly](https://caniuse.com/#sear
 
 ## What about older browsers that don't support WebAssembly? For example, does Blazor work in IE?
 
-For older browsers that don't support WebAssembly, use Blazor's [server-side hosting model](xref:client-side/blazor/host-and-deploy/hosting-models#server-side-hosting-model). Server-side Blazor provides excellent compatibility and performance with older browsers.
+For older browsers that don't support WebAssembly, use Blazor's [server-side hosting model](xref:client-side/blazor/hosting-models#server-side-hosting-model). Server-side Blazor provides excellent compatibility and performance with older browsers.
 
 ## Can I use .NET Standard libraries with Blazor?
 

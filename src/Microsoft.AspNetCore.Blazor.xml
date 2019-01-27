@@ -208,7 +208,7 @@
             Override this method if you will perform an asynchronous operation and
             want the component to refresh when that operation is completed.
             </summary>
-            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation, or <see langword="null"/>.</returns>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.OnParametersSet">
             <summary>
@@ -221,7 +221,7 @@
             Method invoked when the component has received parameters from its parent in
             the render tree, and the incoming values have been assigned to properties.
             </summary>
-            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation, or <see langword="null"/>.</returns>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.StateHasChanged">
             <summary>
@@ -246,13 +246,69 @@
             not automatically re-render after the completion of any returned <see cref="T:System.Threading.Tasks.Task"/>, because
             that would cause an infinite render loop.
             </summary>
-            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation, or <see langword="null"/>.</returns>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing any asynchronous operation.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Components.BlazorComponent.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
             <summary>
             Method invoked to apply initial or updated parameters to the component.
             </summary>
             <param name="parameters">The parameters to apply.</param>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.CascadingParameterAttribute">
+            <summary>
+            Denotes the target member as a cascading component parameter. Its value will be
+            supplied by the closest ancestor <see cref="T:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1"/> component that
+            supplies values with a compatible type and name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.CascadingParameterAttribute.Name">
+             <summary>
+             If specified, the parameter value will be supplied by the closest
+             ancestor <see cref="T:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1"/> that supplies a value with
+             this name.
+            
+             If null, the parameter value will be supplied by the closest ancestor
+             <see cref="T:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1"/>  that supplies a value with a compatible
+             type.
+             </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1">
+            <summary>
+            A component that provides a cascading value to all descendant components.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.ChildContent">
+            <summary>
+            The content to which the value should be provided.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.Value">
+            <summary>
+            The value to be provided.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.Name">
+             <summary>
+             Optionally gives a name to the provided value. Descendant components
+             will be able to receive the value by specifying this name.
+            
+             If no name is specified, then descendant components will receive the
+             value based the type of value they are requesting.
+             </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.IsFixed">
+            <summary>
+            If true, indicates that <see cref="P:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.Value"/> will not change. This is a
+            performance optimization that allows the framework to skip setting up
+            change notifications. Set this flag only if you will not change
+            <see cref="P:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.Value"/> during the component's lifetime.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.Init(Microsoft.AspNetCore.Blazor.Components.RenderHandle)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1.SetParameters(Microsoft.AspNetCore.Blazor.Components.ParameterCollection)">
+            <inheritdoc />
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.ComponentResolver">
             <summary>
@@ -370,12 +426,13 @@
         </member>
         <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Value">
             <summary>
-            Gets the value of the parameter.
+            Gets the value being supplied for the parameter.
             </summary>
         </member>
-        <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Frame">
+        <member name="P:Microsoft.AspNetCore.Blazor.Components.Parameter.Cascading">
             <summary>
-            Gets the <see cref="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame" /> that holds the parameter name and value.
+            Gets a value to indicate whether the parameter is cascading, meaning that it
+            was supplied by a <see cref="T:Microsoft.AspNetCore.Blazor.Components.CascadingValue`1"/>.
             </summary>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.ParameterAttribute">
@@ -461,7 +518,7 @@
             <summary>
             Instructs the enumerator to move to the next value in the sequence.
             </summary>
-            <returns></returns>
+            <returns>A flag to indicate whether or not there is a next value.</returns>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Components.RenderHandle">
             <summary>
@@ -712,13 +769,14 @@
             detail of <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.ComponentState.#ctor(Microsoft.AspNetCore.Blazor.Rendering.Renderer,System.Int32,Microsoft.AspNetCore.Blazor.Components.IComponent)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.ComponentState.#ctor(Microsoft.AspNetCore.Blazor.Rendering.Renderer,System.Int32,Microsoft.AspNetCore.Blazor.Components.IComponent,Microsoft.AspNetCore.Blazor.Rendering.ComponentState)">
             <summary>
             Constructs an instance of <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.ComponentState"/>.
             </summary>
             <param name="renderer">The <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/> with which the new instance should be associated.</param>
             <param name="componentId">The externally visible identifier for the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/>. The identifier must be unique in the context of the <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.</param>
             <param name="component">The <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> whose state is being tracked.</param>
+            <param name="parentComponentState">The <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.ComponentState"/> for the parent component, or null if this is a root component.</param>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Rendering.RenderBatch">
             <summary>
@@ -774,7 +832,7 @@
             <param name="componentType">The type of the component to instantiate.</param>
             <returns>The component instance.</returns>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.AssignComponentId(Microsoft.AspNetCore.Blazor.Components.IComponent)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.AssignRootComponentId(Microsoft.AspNetCore.Blazor.Components.IComponent)">
             <summary>
             Associates the <see cref="T:Microsoft.AspNetCore.Blazor.Components.IComponent"/> with the <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>, assigning
             an identifier that is unique within the scope of the <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.
@@ -782,11 +840,20 @@
             <param name="component">The component.</param>
             <returns>The component's assigned identifier.</returns>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.RenderRootComponent(System.Int32)">
+            <summary>
+            Performs the first render for a root component. After this, the root component
+            makes its own decisions about when to re-render, so there is no need to call
+            this more than once.
+            </summary>
+            <param name="componentId">The ID returned by <see cref="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.AssignRootComponentId(Microsoft.AspNetCore.Blazor.Components.IComponent)"/>.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.UpdateDisplayAsync(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
             <summary>
             Updates the visible UI.
             </summary>
             <param name="renderBatch">The changes to the UI since the previous call.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> to represent the UI update process.</returns>
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.DispatchEvent(System.Int32,System.Int32,Microsoft.AspNetCore.Blazor.UIEventArgs)">
             <summary>
@@ -795,6 +862,14 @@
             <param name="componentId">The unique identifier for the component within the scope of this <see cref="T:Microsoft.AspNetCore.Blazor.Rendering.Renderer"/>.</param>
             <param name="eventHandlerId">The <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.AttributeEventHandlerId"/> value from the original event attribute.</param>
             <param name="eventArgs">Arguments to be passed to the event handler.</param>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.Rendering.Renderer.AddToRenderQueue(System.Int32,Microsoft.AspNetCore.Blazor.RenderFragment)">
+            <summary>
+            Schedules a render for the specified <paramref name="componentId"/>. Its display
+            will be populated using the specified <paramref name="renderFragment"/>.
+            </summary>
+            <param name="componentId">The ID of the component to render.</param>
+            <param name="renderFragment">A <see cref="T:Microsoft.AspNetCore.Blazor.RenderFragment"/> that will supply the updated UI contents.</param>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.ArrayBuilder`1">
             <summary>
@@ -895,6 +970,12 @@
         </member>
         <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.System#Collections#IEnumerable#GetEnumerator">
             <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNetCore.Blazor.RenderTree.ArrayRange`1.Clone">
+            <summary>
+            Creates a shallow clone of the instance.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeBuilder">
             <summary>
@@ -1319,7 +1400,13 @@
             gets the type of the child component.
             </summary>
         </member>
-        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.Component">
+        <member name="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.ComponentState">
+            <summary>
+            If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>,
+            gets the child component state object. Otherwise, the value is undefined.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.Component">
             <summary>
             If the <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrame.FrameType"/> property equals <see cref="F:Microsoft.AspNetCore.Blazor.RenderTree.RenderTreeFrameType.Component"/>,
             gets the child component instance. Otherwise, the value is undefined.

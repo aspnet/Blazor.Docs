@@ -98,7 +98,7 @@ Using `bind` with a `CurrentValue` property (`<input bind="@CurrentValue" />`) i
 
 ```cshtml
 <input value="@CurrentValue" 
-    onchange="@((UIValueEventArgs __e) => CurrentValue = __e.Value)" />
+    onchange="@((UIChangeEventArgs __e) => CurrentValue = __e.Value)" />
 ```
 
 When the component is rendered, the `value` of the input element comes from the `CurrentValue` property. When the user types in the text box, the `onchange` is fired and the `CurrentValue` property is set to the changed value. In reality, the code generation is a little more complex because `bind` deals with a few cases where type conversions are performed. In principle, `bind` associates the current value of an expression with a `value` attribute and handles changes using the registered handler.

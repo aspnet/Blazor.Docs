@@ -262,7 +262,7 @@ It's often convenient to close over additional values, such as when iterating ov
     var buttonNumber = i;
 
     <button class="btn btn-primary" 
-            onclick="@((e) => UpdateHeading(e, buttonNumber))">
+            onclick="@(e => UpdateHeading(e, buttonNumber))">
         Button #@i
     </button>
 }

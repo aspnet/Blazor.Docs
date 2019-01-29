@@ -5,7 +5,7 @@ description: Learn how to create and use Blazor components, the fundamental buil
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 12/25/2018
+ms.date: 01/29/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -13,7 +13,7 @@ uid: client-side/blazor/components/index
 ---
 # Blazor components
 
-By [Luke Latham](https://github.com/guardrex) and [Daniel Roth](https://github.com/danroth27)
+By [Luke Latham](https://github.com/guardrex), [Daniel Roth](https://github.com/danroth27), and [Morné Zaayman](https://github.com/MorneZaayman)
 
 [!INCLUDE[](~/includes/blazor-preview-notice.md)]
 
@@ -250,6 +250,32 @@ Lambda expressions can also be used:
 
 ```cshtml
 <button onclick="@(e => Console.WriteLine("Hello, world!"))">Say hello</button>
+```
+
+It's often convenient to close over additional values, such as when iterating over a set of elements. The following example creates three buttons, each of which calls `UpdateHeading` passing an event argument (`UIMouseEventArgs`) and its button number (`buttonNumber`) when selected in the UI:
+
+```cshtml
+<h2>@message</h2>
+
+@for (var i = 1; i < 4; i++)
+{
+    var buttonNumber = i;
+
+    <button class="btn btn-primary" 
+            onclick="@(e => UpdateHeading(e, buttonNumber))">
+        Button #@i
+    </button>
+}
+
+@functions {
+    string message = "Select a button to learn its position.";
+
+    void UpdateHeading(UIMouseEventArgs e, int buttonNumber)
+    {
+        message = $"You selected Button #{buttonNumber} at " +
+            "mouse position: {e.ClientX} X {e.ClientY}.";
+    }
+}
 ```
 
 ## Capture references to components

@@ -5,7 +5,7 @@ description: Learn how to create and use Blazor components, the fundamental buil
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/26/2019
+ms.date: 01/29/2019
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
@@ -190,81 +190,6 @@ If the value of the `ParentYear` property is changed by selecting the button in 
 <p>Year: 1986</p>
 ```
 
-**Data binding methods with parameters**
-
-Data binding supports passing parameters to methods. This can be accomplished using the `@(() => Method(parameter))` syntax:
-
-```cshtml
-<h1>@heading</h1>
-
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello World"))">
-    English
-</button>
-
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hallo Wêreld"))">
-    Afrikaans
-</button>
-
-@functions {
-    string heading = "Hello World";
-    
-    void UpdateHeading(string value)
-    {
-       heading = value; 
-    }
-}
-```
-
-Data binding also supports passing multiple parameters to methods:
-
-```cshtml
-<h1>@heading</h1>
-
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hello", "World"))">
-    English
-</button>
-
-<button class="btn btn-primary" onclick="@(() => UpdateHeading("Hallo", "Wêreld"))">
-    Afrikaans
-</button>
-
-@functions {
-    string heading = "Hello World";
-
-    void UpdateHeading(string value1, string value2)
-    {
-        heading = $"{value1} {value2}";
-    }
-}
-```
-
-Data binding supports passing event arguments to a method using the `onclick="@((e) => Method(e, parameter2, parameter3, ...))"` syntax:
-
-```cshtml
-<h1>@heading</h1>
-
-<p>Event type: @eventType</p>
-
-<button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hello World"))">
-    English
-</button>
-
-<button class="btn btn-primary" onclick="@((e) => UpdateHeading(e, "Hallo Wêreld"))">
-    Afrikaans
-</button>
-
-@functions {
-    string heading = "Hello World";
-    string eventType = string.Empty;
-
-    void UpdateHeading(UIEventArgs e, string value)
-    {
-        heading = value;
-        eventType = e.Type;
-    }
-}
-```
-
 ## Event handling
 
 Blazor provides event handling features. For an HTML element attribute named `on<event>` (for example, `onclick`, `onsubmit`) with a delegate-typed value, Blazor treats the attribute's value as an event handler. The attribute's name always starts with `on`.
@@ -325,6 +250,32 @@ Lambda expressions can also be used:
 
 ```cshtml
 <button onclick="@(e => Console.WriteLine("Hello, world!"))">Say hello</button>
+```
+
+It's often convenient to close over additional values, such as when iterating over a set of elements. The following example creates three buttons, each of which calls `UpdateHeading` passing an event argument (`UIMouseEventArgs`) and its button number (`buttonNumber`) when selected in the UI:
+
+```cshtml
+<h2>@message</h2>
+
+@for (var i = 1; i < 4; i++)
+{
+    var buttonNumber = i;
+
+    <button class="btn btn-primary" 
+            onclick="@((e) => UpdateHeading(e, buttonNumber))">
+        Button #@i
+    </button>
+}
+
+@functions {
+    string message = "Select a button to learn its position.";
+
+    void UpdateHeading(UIMouseEventArgs e, int buttonNumber)
+    {
+        message = $"You clicked Button #{buttonNumber} at " +
+            "mouse position: {e.ClientX} X {e.ClientY}.";
+    }
+}
 ```
 
 ## Capture references to components

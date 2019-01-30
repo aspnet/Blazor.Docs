@@ -1,25 +1,22 @@
 ---
-title: Introduction to Blazor
+title: Introduction to Razor Components
 author: guardrex
-description: Learn how Blazor runs in the browser to execute C#/Razor code with WebAssembly and the Mono runtime in this introduction.
-manager: wpickett
+description: Learn how Blazor runs in the browser to execute C#/Razor code with WebAssembly and the Mono runtime and how ASP.NET Core Razor Components executes server-side in ASP.NET Core.
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/26/2019
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/introduction/index
+ms.date: 01/29/2019
+uid: razor-components/introduction/index
 ---
-# Introduction to Blazor
+# Introduction to Razor Components
 
 By [Steve Sanderson](http://blog.stevensanderson.com), [Daniel Roth](https://github.com/danroth27), and [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
-Blazor is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly. Blazor provides all of the benefits of a client-side web UI framework using .NET on the client and optionally on the server.
+*ASP.NET Core Razor Components* executes server-side in ASP.NET Core, while *Blazor* (Razor Components executed client-side) is an experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly. Blazor provides all of the benefits of a client-side web UI framework using .NET on the client.
 
-## Why use .NET in the browser?
+## .NET in the browser
 
 Web development has improved in many ways over the years, but building modern web apps still poses challenges. Using .NET in the browser offers many advantages that can help make web development easier and more productive:
 
@@ -44,21 +41,21 @@ When a Blazor app is built and run in a browser:
 1. The assemblies and the .NET runtime are downloaded to the browser.
 1. Blazor uses JavaScript to bootstrap the .NET runtime and configures the runtime to load required assembly references. Document object model (DOM) manipulation and browser API calls are handled by the Blazor runtime via JavaScript interoperability.
 
-To support older browsers that don't support WebAssembly, you can use the [server-side hosting model](#server-side-hosting-model).
+To support older browsers that don't support WebAssembly, you can use the ASP.NET Core Razor Components [server-side hosting model](#server-side-hosting-model).
 
-For more information, see <xref:client-side/blazor/hosting-models#client-side-hosting-model>.
+For more information, see <xref:razor-components/hosting-models#client-side-hosting-model>.
 
 ### Server-side hosting model
 
-In the server-side hosting model, Blazor is executed on the server from within an ASP.NET Core app. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
+In the server-side hosting model, an ASP.NET Core Razor Components app runs on the server. UI updates, event handling, and JavaScript calls are handled over a SignalR connection.
 
-For more information, see <xref:client-side/blazor/hosting-models#server-side-hosting-model>.
+For more information, see <xref:razor-components/hosting-models#server-side-hosting-model>.
 
-## Blazor components
+## Components
 
-Blazor apps are built with *components*. A component is a piece of UI, such as a page, dialog, or data entry form. Components can be nested, reused, and shared between projects.
+Apps are built with *components*. A component is a piece of UI, such as a page, dialog, or data entry form. Components can be nested, reused, and shared between projects.
 
-In Blazor, a component is a .NET class. The class can either be written directly, as a C# class (*\*.cs*), or more commonly in the form of a Razor markup page (*\*.cshtml*).
+A *component* is a .NET class. The class can either be written directly, as a C# class (*\*.cs*), or more commonly in the form of a Razor markup page (*\*.cshtml*).
 
 [Razor](https://docs.microsoft.com/aspnet/core/mvc/views/razor) is a syntax for combining HTML markup with C# code. Razor is designed for developer productivity, allowing the developer to switch between markup and C# in the same file with [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) support. The following markup is an example of a basic custom dialog component in a Razor file (*DialogComponent.cshtml*):
 
@@ -87,29 +84,31 @@ Components can be:
 
 ## Infrastructure
 
-Blazor offers the core facilities that most apps require, including:
+Razor Components offers the core facilities that most apps require, including:
 
 * Layouts
 * Routing
 * Dependency injection
 
-All of these features are optional. When one of these features isn't used in an app, the implementation is stripped out of the app when published by the [Intermediate Language (IL) Linker](xref:client-side/blazor/host-and-deploy/configure-linker).
+All of these features are optional. When one of these features isn't used in an app, the implementation is stripped out of the app when published by the [Intermediate Language (IL) Linker](xref:razor-components/host-and-deploy/configure-linker).
 
 ## Code sharing and .NET Standard
 
-Blazor apps can reference and use existing [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) libraries. .NET Standard is a formal specification of .NET APIs that are common across .NET implementations. Blazor supports .NET Standard 2.0 or higher. APIs that aren't applicable inside a web browser (for example, accessing the file system, opening a socket, threading, and other features) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
+Apps can reference and use existing [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) libraries. .NET Standard is a formal specification of .NET APIs that are common across .NET implementations. .NET Standard 2.0 or higher is supported. APIs that aren't applicable inside a web browser (for example, accessing the file system, opening a socket, threading, and other features) throw [PlatformNotSupportedException](https://docs.microsoft.com/dotnet/api/system.platformnotsupportedexception). .NET Standard class libraries can be shared across server code and in browser-based apps.
 
 ## JavaScript interop
 
-For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Blazor is capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code. For more information, see [JavaScript interop](xref:client-side/blazor/javascript-interop).
+For apps that require third-party JavaScript libraries and browser APIs, WebAssembly is designed to interoperate with JavaScript. Razor Components are capable of using any library or API that JavaScript is able to use. C# code can call into JavaScript code, and JavaScript code can call into C# code. For more information, see [JavaScript interop](xref:razor-components/javascript-interop).
 
 ## Optimization
 
 For client-side apps, payload size is critical. Blazor optimizes payload size to reduce download times. For example, unused parts of .NET assemblies are removed during the build process, HTTP responses are compressed, and the .NET runtime and assemblies are cached in the browser.
+
+Razor Components provides an even smaller payload size than Blazor by maintaining .NET assemblies, the app's assembly, and the runtime server-side. Razor Components apps only serve markup, script, and stylesheets to clients.
 
 ## Deployment
 
 Use Blazor to build a pure standalone client-side app or a full-stack ASP.NET Core app that contains both server and client apps:
 
 * In a **standalone client-side app**, the Blazor app is compiled into a *dist* folder that only contains static files. The files can be hosted on Azure App Service, GitHub Pages, IIS (configured as a static file server), Node.js servers, and many other servers and services. .NET isn't required on the server in production.
-* In a **full-stack ASP.NET Core app**, code can be shared between server and client apps. The resulting ASP.NET Core server app, which serves the Blazor client-side UI and other server-side API endpoints, can be built and deployed to any cloud or on-premise host supported by ASP.NET Core.
+* In a **full-stack ASP.NET Core app**, code can be shared between server and client apps. The resulting ASP.NET Core Razor Components app, which serves the client-side UI and other server-side API endpoints, can be built and deployed to any cloud or on-premise host supported by ASP.NET Core.

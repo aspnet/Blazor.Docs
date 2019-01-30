@@ -1,6 +1,6 @@
 # Blazor community resources
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 Below is a list of projects and resources from the Blazor community (links in each section are alphabetical). If you know about a Blazor project that isn't listed, please let us know. We're happy to add it to the list.
 

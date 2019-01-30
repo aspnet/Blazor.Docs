@@ -1,25 +1,22 @@
 ---
-title: Blazor routing
+title: Razor Components routing
 author: guardrex
-description: Learn how to route requests in a client-side Blazor app and about the NavLink component.
-manager: wpickett
+description: Learn how to route requests in apps and about the NavLink component.
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/01/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/routing
+ms.date: 01/29/2019
+uid: razor-components/routing
 ---
-# Blazor routing
+# Razor Components routing
 
 By [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
-Learn how to route requests in a client-side Blazor app and about the NavLink component.
+Learn how to route requests in apps and about the NavLink component.
 
-[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
+[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/) ([how to download](xref:razor-components/index#view-and-download-samples)). See the [Get started](xref:razor-components/get-started) topic for prerequisites.
 
 ## Route templates
 
@@ -35,24 +32,24 @@ Multiple route templates can be applied to a component. In the [sample app](http
 
 *Pages/BlazorRoute.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/BlazorSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
+[!code-cshtml[](common/samples/3.x/BlazorSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
 > [!IMPORTANT]
-> To generate routes properly, the app must include a `<base>` tag in its *wwwroot/index.html* file with the app base path specified in the `href` attribute (`<base href="/" />`). For more information, see [Host and deploy: App base path](xref:client-side/blazor/host-and-deploy/index#app-base-path).
+> To generate routes properly, the app must include a `<base>` tag in its *wwwroot/index.html* file with the app base path specified in the `href` attribute (`<base href="/" />`). For more information, see [Host and deploy: App base path](xref:razor-components/host-and-deploy/index#app-base-path).
 
 ## Route parameters
 
-The Blazor client-side router uses route parameters to populate the corresponding component parameters with the same name (case insensitive).
+The router uses route parameters to populate the corresponding component parameters with the same name (case insensitive).
 
 *Pages/RouteParameter.cshtml*:
 
-[!code-cshtml[](common/samples/2.x/BlazorSample/Pages/RouteParameter.cshtml?start=1&end=8)]
+[!code-cshtml[](common/samples/3.x/BlazorSample/Pages/RouteParameter.cshtml?start=1&end=8)]
 
 Optional parameters aren't supported yet, so two `@page` directives are applied in the example above. The first permits navigation to the component without a parameter. The second `@page` directive takes the `{text}` route parameter and assigns the value to the `Text` property.
 
 ## Route constraints
 
-A route constraint enforces type matching on a route segment to a Blazor component.
+A route constraint enforces type matching on a route segment to a component.
 
 In the following example, the route to the Users component only matches if:
 
@@ -92,9 +89,9 @@ Use a NavLink component in place of HTML **\<a>** elements when creating navigat
 
 The NavMenu component in the [sample app](https://github.com/aspnet/Blazor.Docs/tree/master/docs/common/samples/) creates a [Bootstrap](https://getbootstrap.com/docs/) nav bar that demonstrates how to use NavLink components. The following markup shows the first two NavLinks in the *Shared/NavMenu.cshtml* file.
 
-[!code-cshtml[](common/samples/2.x/BlazorSample/Shared/NavMenu.cshtml?start=13&end=24&highlight=4-6,9-11)]
+[!code-cshtml[](common/samples/3.x/BlazorSample/Shared/NavMenu.cshtml?start=13&end=24&highlight=4-6,9-11)]
 
-There are two [NavLinkMatch](/api/Microsoft.AspNetCore.Blazor.Routing.NavLinkMatch.html) options:
+There are two `NavLinkMatch` options:
 
 * `NavLinkMatch.All` &ndash; Specifies that the NavLink should be active when it matches the entire current URL.
 * `NavLinkMatch.Prefix` &ndash; Specifies that the NavLink should be active when it matches any prefix of the current URL.

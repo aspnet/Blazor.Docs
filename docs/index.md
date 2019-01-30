@@ -2,55 +2,52 @@
 title: Blazor preview documentation
 author: guardrex
 description: Explore Blazor, a new experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
-manager: wpickett
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/26/2019
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/index
+ms.date: 01/29/2019
+uid: razor-components/index
 ---
 # Blazor preview documentation
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 Blazor is a new experimental .NET web framework using C#/Razor and HTML that runs in the browser with WebAssembly.
 
 ## Get started
 
-[Get started with Blazor](xref:client-side/blazor/get-started)
+[Get started with Blazor](xref:razor-components/get-started)
 
 ## Explore Blazor preview documentation
 
-[Build your first Blazor app](xref:client-side/blazor/tutorials/first-app)  
+[Build your first Blazor app](xref:razor-components/tutorials/first-app)  
 Build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
 
-[Frequently asked questions (FAQ)](xref:client-side/blazor/introduction/faq)  
+[Frequently asked questions (FAQ)](xref:razor-components/introduction/faq)  
 Find the answers to frequently asked questions about Blazor.
 
-[Introduction to Blazor](xref:client-side/blazor/introduction/index)  
+[Introduction to Blazor](xref:razor-components/introduction/index)  
 Discover how Blazor runs in the browser to execute C#/Razor code with WebAssembly and the .NET runtime.
 
-[Components](xref:client-side/blazor/components/index)  
-Create and use Blazor components, the fundamental building blocks of Blazor apps provided by compiled Razor or C# files.
+[Components](xref:razor-components/components/index)  
+Create and use components, the fundamental building blocks of Blazor apps provided by compiled Razor or C# files.
 
-[Layouts](xref:client-side/blazor/layouts)  
+[Layouts](xref:razor-components/layouts)  
 Learn how to create reusable layout components for Blazor apps.
 
-[Dependency injection](xref:client-side/blazor/dependency-injection)  
+[Dependency injection](xref:razor-components/dependency-injection)  
 See how Blazor apps can use built-in services by having them injected into components.
 
-[Routing](xref:client-side/blazor/routing)  
+[Routing](xref:razor-components/routing)  
 Learn how to route requests in a client-side Blazor app and about the NavLink component.
 
-[JavaScript interop](xref:client-side/blazor/javascript-interop)  
+[JavaScript interop](xref:razor-components/javascript-interop)  
 Learn how to invoke JavaScript functions from .NET and .NET methods from JavaScript.
 
-[Hosting models](xref:client-side/blazor/hosting-models)  
+[Hosting models](xref:razor-components/hosting-models)  
 Learn about Blazor's hosting models.
 
-[Host and deploy](xref:client-side/blazor/host-and-deploy/index)  
+[Host and deploy](xref:razor-components/host-and-deploy/index)  
 Discover how to host and deploy Blazor apps using hosted and standalone deployment models.
 
 ## Additional resources

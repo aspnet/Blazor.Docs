@@ -5,7 +5,7 @@ uid: api
 ---
 # Blazor API
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 Welcome to the Blazor API area!
 

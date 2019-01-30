@@ -1,21 +1,18 @@
 ---
-title: Configure the Linker
+title: Configure the Linker for Blazor
 author: guardrex
 description: Learn how to control the Intermediate Language (IL) Linker when building a Blazor app.
-manager: wpickett
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/19/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/host-and-deploy/configure-linker
+ms.date: 01/29/2019
+uid: razor-components/host-and-deploy/configure-linker
 ---
-# Configure the Linker
+# Configure the Linker for Blazor
 
 By [Luke Latham](https://github.com/guardrex)
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 Blazor performs [Intermediate Language (IL)](https://docs.microsoft.com/dotnet/standard/managed-code#intermediate-language--execution) linking during each Release mode build to remove unnecessary IL from the output assemblies.
 

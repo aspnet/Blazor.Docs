@@ -1,19 +1,16 @@
 ---
-title: Frequently asked questions (FAQ) about Blazor
+title: Frequently asked questions (FAQ) about Blazor and Razor Components
 author: guardrex
-description: Find the answers to frequently asked questions about Blazor.
-manager: wpickett
+description: Find the answers to frequently asked questions about Blazor and Razor Components.
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/26/2019
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/introduction/faq
+ms.date: 01/29/2019
+uid: razor-components/introduction/faq
 ---
-# Frequently asked questions (FAQ) about Blazor
+# Frequently asked questions (FAQ) about Blazor and Razor Components
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 ## What is Blazor?
 
@@ -58,7 +55,7 @@ Blazor will support all of the features of a modern single-page app framework:
 * Server-side rendering
 * Full .NET debugging both in browsers and in the IDE
 * Rich IntelliSense and tooling
-* Ability to run on older (non-WebAssembly) browsers via server-side Blazor
+* Ability to run on older (non-WebAssembly) browsers via ASP.NET Core Razor Components
 * Publishing and app size trimming
 
 ## Can I use Blazor without running .NET on the server?
@@ -75,7 +72,7 @@ Blazor is a *new framework* inspired by existing modern single-page app framewor
 
 ## How can I try out Blazor?
 
-To build your first Blazor web app check out our [getting started guide](xref:client-side/blazor/get-started).
+To build your first Blazor web app check out our [getting started guide](xref:razor-components/get-started).
 
 ## Why is Blazor an "experimental" project?
 
@@ -104,7 +101,7 @@ Yes, [modern mobile browsers also support WebAssembly](https://caniuse.com/#sear
 
 ## What about older browsers that don't support WebAssembly? For example, does Blazor work in IE?
 
-For older browsers that don't support WebAssembly, use Blazor's [server-side hosting model](xref:client-side/blazor/hosting-models#server-side-hosting-model). Server-side Blazor provides excellent compatibility and performance with older browsers.
+For older browsers that don't support WebAssembly, use the ASP.NET Core Razor Components [server-side hosting model](xref:razor-components/hosting-models#server-side-hosting-model). Server-side Razor Components apps provide excellent compatibility and performance with older browsers.
 
 ## Can I use .NET Standard libraries with Blazor?
 

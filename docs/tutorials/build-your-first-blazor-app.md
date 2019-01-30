@@ -1,23 +1,20 @@
 ---
 title: Build your first Blazor app
 author: guardrex
-description: Build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
-manager: wpickett
+description: Build a Blazor app step-by-step and quickly learn the basic features of the Razor Components framework.
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/tutorials/first-app
+ms.date: 01/29/2019
+uid: razor-components/tutorials/first-app
 ---
 # Build your first Blazor app
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
-In this tutorial, you build a Blazor app step-by-step and quickly learn the basic features of the Blazor framework.
+In this tutorial, you build a Blazor app step-by-step and quickly learn the basic features of the Razor Components framework.
 
-[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/tutorials/build-your-first-blazor-app/samples/) ([how to download](xref:client-side/blazor/index#view-and-download-samples)). See the [Get started](xref:client-side/blazor/get-started) topic for prerequisites.
+[View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/tutorials/build-your-first-blazor-app/samples/) ([how to download](xref:razor-components/index#view-and-download-samples)). See the [Get started](xref:razor-components/get-started) topic for prerequisites.
 
 To create the project in Visual Studio:
 
@@ -51,14 +48,14 @@ The Blazor app runs in the browser:
 
 1. Browse to each of the app's three pages: Home, Counter, and Fetch data.
 
-    These three pages are implemented by the three Razor files in the *Pages* folder: *Index.cshtml*, *Counter.cshtml*, and *FetchData.cshtml*. Each of these files implements a Blazor component that's compiled and executed client-side in the browser.
+    These three pages are implemented by the three Razor files in the *Pages* folder: *Index.cshtml*, *Counter.cshtml*, and *FetchData.cshtml*. Each of these files implements a component that's compiled and executed client-side in the browser.
 
 1. Select the button on the Counter page.
 
     ![Blazor app Home page](https://user-images.githubusercontent.com/1874516/39509525-6e367c66-4d9b-11e8-9978-e52a9750c34b.png)
 
     Each time the button is selected, the counter is incremented without a page refresh. Normally, this kind of client-side behavior is handled in JavaScript; but here, it's implemented in C# and .NET by the `Counter` component.
-    
+
 1. Take a look at the implementation of the `Counter` component in the *Counter.cshtml* file:
 
     ```cshtml
@@ -473,7 +470,7 @@ The app should now be running in Azure. Mark the todo item to build your first B
 >
 > The deployment is created in the */bin/Release/\<target-framework>/publish* folder. Move the contents of the *publish* folder to the server or hosting service.
 >
-> For more information, see the [Host and deploy](xref:client-side/blazor/host-and-deploy/index#publish-the-app) topic.
+> For more information, see the [Host and deploy](xref:razor-components/host-and-deploy/index#publish-the-app) topic.
 
 ## Additional resources
 

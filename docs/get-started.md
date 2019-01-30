@@ -1,19 +1,16 @@
 ---
-title: Get started with Blazor
-author: danroth27
-description: Learn how to get started with the Blazor framework.
-manager: wpickett
+title: Get started with Blazor and Razor Components
+author: guardrex
+description: Learn how to get started with the Razor Components framework.
+monikerRange: '>= aspnetcore-3.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
-uid: client-side/blazor/get-started
+ms.date: 01/29/2019
+uid: razor-components/get-started
 ---
-# Get started with Blazor
+# Get started with Blazor and Razor Components
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 ## Setup
 
@@ -34,8 +31,8 @@ To create your first project from Visual Studio:
 1. Make sure **.NET Core** and **ASP.NET Core 2.1** are selected at the top.
 1. Choose the Blazor template and select **OK**.
 
-   ![New Blazor app dialog](https://msdnshared.blob.core.windows.net/media/2018/07/new-blazor-app-dialog-0.5.0.png)
-   
+   ![New app dialog](https://msdnshared.blob.core.windows.net/media/2018/07/new-blazor-app-dialog-0.5.0.png)
+
 1. Press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
 To create a new Blazor app from the command-line:
@@ -61,6 +58,6 @@ After you've tried out Blazor, please let us know what you think by taking our i
 
 ![Blazor survey](https://msdnshared.blob.core.windows.net/media/2018/05/blazor-survey-new.png)
 
-## What's next?
+## Next steps
 
-<xref:client-side/blazor/tutorials/first-app>
+<xref:razor-components/tutorials/first-app>

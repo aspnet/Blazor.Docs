@@ -16,7 +16,10 @@ In this tutorial, you build a Blazor app step-by-step and quickly learn the basi
 
 [View or download sample code](https://github.com/aspnet/Blazor.Docs/tree/master/docs/tutorials/build-your-first-blazor-app/samples/) ([how to download](xref:razor-components/index#view-and-download-samples)). See the [Get started](xref:razor-components/get-started) topic for prerequisites.
 
-To create the project in Visual Studio:
+>[!NOTTE]
+> If you're using a mac for development, skip to the command line instructions [here](#to-create-the-project-in-the-command-line)
+
+## To create the project in Visual Studio:
 
 1. Select **File** > **New** > **Project**. Select **Web** > **ASP.NET Core Web Application**. Name the project "BlazorApp1" in the **Name** field. Select **OK**.
 
@@ -28,6 +31,8 @@ To create the project in Visual Studio:
 
 1. Once the project is created, press **Ctrl-F5** to run the app *without the debugger*. Running with the debugger (**F5**) isn't supported at this time.
 
+
+### To create the project in the command line:
 > [!NOTE]
 > If not using Visual Studio, create the Blazor app at a command prompt on Windows, macOS, or Linux:
 >
@@ -44,7 +49,7 @@ The Blazor app runs in the browser:
 
 ![Blazor app Home page](https://user-images.githubusercontent.com/1874516/39509497-5515c3ea-4d9b-11e8-887f-019ea4fdb3ee.png)
 
-## Build components
+### Build components
 
 1. Browse to each of the app's three pages: Home, Counter, and Fetch data.
 

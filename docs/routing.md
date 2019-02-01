@@ -34,6 +34,14 @@ Multiple route templates can be applied to a component. In the [sample app](http
 
 [!code-cshtml[](common/samples/3.x/BlazorSample/Pages/BlazorRoute.cshtml?start=1&end=4)]
 
+To handle when a requested route cannot be resolved to any available components, `<Router>` supports manually configuring a component which should act as a fallback and be used for rendering. This opt-in feature can be enabled by setting the `FallbackComponent` parameter to the type of the component class which should be used as the fallback.
+
+The following example sets a component defined in *Pages/MyFallbackRazorComponent.cshtml* as the fallback component for a `<Router>`. 
+
+```cshtml
+<Router ... FallbackComponent="typeof(Pages.MyFallbackRazorComponent)" />
+```
+
 > [!IMPORTANT]
 > To generate routes properly, the app must include a `<base>` tag in its *wwwroot/index.html* file with the app base path specified in the `href` attribute (`<base href="/" />`). For more information, see [Host and deploy: App base path](xref:razor-components/host-and-deploy/index#app-base-path).
 

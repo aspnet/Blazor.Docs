@@ -1,6 +1,5 @@
 - name: Docs
-  href: docs/
-  homepage: docs/index.md
+  href: https://docs.microsoft.com/aspnet/core/razor-components/
 - name: API
   href: api/
   homepage: api/index.md

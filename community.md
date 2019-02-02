@@ -12,6 +12,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [BlazorWebSocketHelper](https://github.com/Lupusa87/BlazorWebSocketHelper) &ndash; A WebSocket library for Blazor.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
 * [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://bootstrapdemo.blazorise.com/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
@@ -96,6 +97,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Tzaar](https://github.com/paularundel/tzaar) ([Demo](https://tzaar.azurewebsites.net/)) &ndash; Implementation of the board game Tzaar with Blazor and SignalR. 
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
 * [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
+* [WebSocketPage](https://github.com/Lupusa87/BlazorWebSocketHelper) ([Demo](https://lupblazordemos.z13.web.core.windows.net/WebSocketPage)) &ndash; WebSocket example for Blazor.
 
 ## Tooling
 

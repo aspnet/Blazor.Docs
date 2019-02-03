@@ -81,6 +81,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
 * [Blazor RSS Reader](https://github.com/lohithgn/blazor-rss-reader) ([Demo](https://blazorrssreader.surge.sh/)) &ndash; RSS Reader using Blazor.
+* [Blazor Spreadsheet](https://github.com/Lupusa87/BlazorSpreadsheet) ([Demo](https://lupblazordemos.z13.web.core.windows.net/SpreadsheetPage)) &ndash; Spreadsheet app developed in Blazor.
 * [Blazor Sushi](https://github.com/lohithgn/blazor-sushi) ([Demo](https://blazorsushi.surge.sh/)) &ndash; Kendo UI Sushi SPA recreated in Blazor.
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).

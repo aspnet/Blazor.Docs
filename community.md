@@ -31,7 +31,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Realm](https://dworthen.github.io/BlazorRealm/docs/quickstart.html) &ndash; Redux state management with middleware support.
 * [Blazor Redux](https://github.com/torhovland/blazor-redux) &ndash; This library offers Redux-style state management for Blazor.
 * [Blazor SpeechSynthesis](https://github.com/jsakamoto/Toolbelt.Blazor.SpeechSynthesis) &ndash; A library to provide Speech Synthesis API access for Blazor.
-* [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
+* [Blazor SVG Helper](https://github.com/Lupusa87/BlazorSvgHelper) ([Demo](https://lupblazordemos.z13.web.core.windows.net)) &ndash; Create SVG elements with children (circle, rectangle, image, text, and others) and render with RenderTreeBuilder.
 * [Blazor Time Zone Kit](https://github.com/jsakamoto/Toolbelt.Blazor.TimeZoneKit) &ndash; A library to provide system time zones and local time zone initialization in Blazor apps.
 * [Blazor Tweet Button](https://github.com/jsakamoto/Toolbelt.Blazor.TwitterShareButton) &ndash; A Tweet Button component for Blazor.
 * [Blazor.Extensions.OfficeUIFabric](https://github.com/BlazorExtensions/Blazor.Extensions.OfficeUIFabric) &ndash; Microsoft Office Fabric UI port for Blazor.
@@ -62,13 +62,13 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Admin Dashboard](https://github.com/Misfits-Rebels-Outcasts/Blazor-Dashboard) &ndash; An admin dashboard for Blazor.
 * [Blazor Asteroids](https://github.com/aesalazar/AsteroidsWasm) ([Demo](https://aesalazar.github.io/AsteroidsWasm/)) &ndash; The 80's classic video game developed in C# for WinForms/WPF but running Blazor.
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor) &ndash; A bricks game developed with C# and Blazor.
-* [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Simple calculator with history and ability to use previous results in new calculations.
+* [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/CalculatorPage)) &ndash; Simple calculator with history and ability to use previous results in new calculations.
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) ([Demo](https://blazorchatsample.azurewebsites.net/)) &ndash; An app that demonstrates the use of [SignalR](https://docs.microsoft.com/aspnet/core/signalr/) to create a Blazor chat app.
-* [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; An experimental Blazor chess engine.
-* [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on Canvas.
-* [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Complex clock based on SVG.
-* [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; Doughnut charting with gradient colors using SVG.
-* [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupusassblazordemos.azurewebsites.net)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
+* [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ChessPage)) &ndash; An experimental Blazor chess engine.
+* [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ClockCanvas)) &ndash; Complex clock based on Canvas.
+* [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupblazordemos.z13.web.core.windows.net/)) &ndash; Complex clock based on SVG.
+* [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupblazordemos.z13.web.core.windows.net/DoughnutChartpage)) &ndash; Doughnut charting with gradient colors using SVG.
+* [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupblazordemos.z13.web.core.windows.net/GameSnakePage)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
 * [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) &ndash; A Hacker News clone built in Blazor.
 * [Blazor Loan Calculator](https://github.com/Lupusa87/BlazorLoanCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/LoanCalculatorPage)) &ndash; A loan payments calculator developed with Blazor.

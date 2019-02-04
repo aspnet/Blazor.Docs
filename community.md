@@ -1,6 +1,6 @@
 # Blazor community resources
 
-[!INCLUDE[](~/includes/blazor-preview-notice.md)]
+[!INCLUDE[](~/includes/razor-components-preview-notice.md)]
 
 Below is a list of projects and resources from the Blazor community (links in each section are alphabetical). If you know about a Blazor project that isn't listed, please let us know. We're happy to add it to the list.
 
@@ -12,8 +12,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [BlazorWebSocketHelper](https://github.com/Lupusa87/BlazorWebSocketHelper) &ndash; A WebSocket library for Blazor.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
-* [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://blazorisedemo.azurewebsites.net/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
+* [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://bootstrapdemo.blazorise.com/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
@@ -21,6 +22,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) &ndash; Resizeable split views.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
+* [Blazor Barcode](https://barcoderesource.com/blazorbarcode.shtml) &ndash; A barcode library for Blazor using barcode fonts.
 * [Blazor Charts](https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts) &ndash; SVG Charts for Blazor.
 * [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
 * [Blazor Fluxor](https://mrpmorris.github.io/blazor-fluxor/) &ndash; Flux/Redux library.
@@ -67,15 +69,21 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ChessPage)) &ndash; An experimental Blazor chess engine.
 * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ClockCanvas)) &ndash; Complex clock based on Canvas.
 * [Blazor Clock SVG](https://github.com/Lupusa87/BlazorClockSVG) ([Demo](https://lupblazordemos.z13.web.core.windows.net/)) &ndash; Complex clock based on SVG.
+* [Blazor Contoso University](https://github.com/lohithgn/blazor-contoso-university) &ndash; Contoso University recreated in Blazor.
+* [Blazor Converters](https://github.com/lohithgn/blazor-converters) ([Demo](http://blazorconverters.surge.sh)) &ndash; Windows 10 Calc Converters recreated in Blazor.
 * [Blazor Doughnut Chart](https://github.com/Lupusa87/BlazorDoughnutChartComponent) ([Demo](https://lupblazordemos.z13.web.core.windows.net/DoughnutChartpage)) &ndash; Doughnut charting with gradient colors using SVG.
+* [Blazor Examples](https://github.com/lohithgn/blazor-examples) ([Demo](http://blazorexamples.surge.sh/)) &ndash; Knockout JS examples recreated in Blazor.
 * [Blazor Game Snake](https://github.com/Lupusa87/BlazorGameSnake) ([Demo](https://lupblazordemos.z13.web.core.windows.net/GameSnakePage)) &ndash; 2D game snake with customizations, path finding algorithm, and sound effects using SVG.
 * [Blazor Graph API example](https://github.com/jburman/BlazorGraphExample) ([Demo](https://blazorgraph.z20.web.core.windows.net/)) &ndash; A self-contained Blazor app that connects to [Microsoft's Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api), queries the user's information, and allows the user to browse through their [OneDrive](https://onedrive.live.com/about/).
-* [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) &ndash; A Hacker News clone built in Blazor.
+* [Blazor Hacker News Clone](https://github.com/lohithgn/blazor-hackernews-clone) ([Demo](http://blazorhackernews.surge.sh/)) &ndash; A Hacker News clone built in Blazor.
 * [Blazor Loan Calculator](https://github.com/Lupusa87/BlazorLoanCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/LoanCalculatorPage)) &ndash; A loan payments calculator developed with Blazor.
 * [Blazor Paint](https://github.com/Lupusa87/BlazorPaint) ([Demo](https://lupblazordemos.z13.web.core.windows.net/PaintPage)) &ndash; Drawing app written in Blazor.
 * [Blazor Password Pattern](https://github.com/Lupusa87/BlazorPasswordPattern) ([Demo](https://lupusablazordemos.azurewebsites.net)) &ndash; Password pattern based on SVG.
 * [Blazor Performance Chart](https://lupblazordemos.z13.web.core.windows.net/PerformanceChartPage) &ndash; Performance Chart based on SVG.
 * [Blazor RealWorld example app](https://github.com/torhovland/blazor-realworld-example-app) &ndash; A full-stack app built with Blazor that includes CRUD operations, authentication, routing, and pagination.
+* [Blazor RSS Reader](https://github.com/lohithgn/blazor-rss-reader) ([Demo](https://blazorrssreader.surge.sh/)) &ndash; RSS Reader using Blazor.
+* [Blazor Spreadsheet](https://github.com/Lupusa87/BlazorSpreadsheet) ([Demo](https://lupblazordemos.z13.web.core.windows.net/SpreadsheetPage)) &ndash; Spreadsheet app developed in Blazor.
+* [Blazor Sushi](https://github.com/lohithgn/blazor-sushi) ([Demo](https://blazorsushi.surge.sh/)) &ndash; Kendo UI Sushi SPA recreated in Blazor.
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
@@ -91,6 +99,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Tzaar](https://github.com/paularundel/tzaar) ([Demo](https://tzaar.azurewebsites.net/)) &ndash; Implementation of the board game Tzaar with Blazor and SignalR. 
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
 * [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
+* [WebSocketPage](https://github.com/Lupusa87/BlazorWebSocketHelper) ([Demo](https://lupblazordemos.z13.web.core.windows.net/WebSocketPage)) &ndash; WebSocket example for Blazor.
 
 ## Tooling
 

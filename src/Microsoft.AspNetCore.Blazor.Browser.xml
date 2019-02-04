@@ -254,7 +254,7 @@
             Disposes the instance.
             </summary>
         </member>
-        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.UpdateDisplay(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
+        <member name="M:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRenderer.UpdateDisplayAsync(Microsoft.AspNetCore.Blazor.Rendering.RenderBatch@)">
             <inheritdoc />
         </member>
         <member name="T:Microsoft.AspNetCore.Blazor.Browser.Rendering.BrowserRendererEventDispatcher">

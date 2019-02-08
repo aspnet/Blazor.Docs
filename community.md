@@ -58,6 +58,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [A Nicer Looking Blazor Loading Page](http://lightswitchhelpwebsite.com/Blog/tabid/61/EntryId/4315/A-Nicer-Looking-Blazor-Loading-Page.aspx) &ndash; Customize the Blazor loading page using [SpinKit](https://github.com/tobiasahlin/SpinKit).
 * [ASP.NET Core Master/Detail CRUD](https://code.msdn.microsoft.com/vstudio/ASPNET-Core-Blazor-122b108a) &ndash; A master/detail HTML CRUD example with sorting and filtering using Entity Framework and Web API.
 * [BlazeDown](https://github.com/EdCharbeneau/BlazeDown) ([Demo](http://edcharbeneau.com/BlazeDown/)) &ndash; An online markdown editor built with Blazor.
+* [Blazing Chuck](https://davidpine.net/blog/blazing-chuck/) ([Demo](https://bit.ly/BlazingChuck)) &ndash; An example Blazor app that displays random "nerdy" Chuck Norris jokes.
 * [BlazorPass](https://github.com/ebekker/BlazorPass) &ndash; Blazor UI and ASP.NET Core API to manage Active Directory credentials.
 * [Blazor + Electron sample](https://github.com/SteveSandersonMS/BlazorElectronExperiment.Sample) &ndash; Explore how a Blazor app can be used to build a cross-platform desktop app.
 * [Blazor + Sitecore](https://github.com/GoranHalvarsson/SitecoreBlazor) ([Blog post](https://visionsincode.wordpress.com/2018/06/30/time-travel-into-the-future-blazor-sitecore-helix/)) &ndash; Example of dynamic pages and routes with SiteCore and [Helix](https://helix.sitecore.net/).
@@ -87,6 +88,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor To-Do App](https://github.com/BorowskiKamil/blazor-tasks) &ndash; A Blazor app that allows you to create and edit tasks and manage categories of tasks.
 * [Blazor Tour of Heroes](https://github.com/lohithgn/blazor-tour-of-heroes) &ndash; A Blazor implementation of [Angular Tour of Heroes](https://angular.io/tutorial).
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
+* [BlazorServiceWorker](https://github.com/roboriaan/BlazorServiceWorker) &ndash; A client-side Blazor template with service worker caching.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Do](https://github.com/jamie-lord/do) ([Demo](https://do.lord.technology)) &ndash; Todo.txt compatible todo app.

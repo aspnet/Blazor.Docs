@@ -25,7 +25,7 @@ documentType: index
         <section>
           <h2>Build a Web UI with C#</h2>
           <p class="lead">Blazor is an experimental .NET web framework using C# and HTML that runs in the browser.</p>
-          <div class="lead"><a href="https://docs.microsoft.com/aspnet/core/razor-components/faq">What is Blazor?</a></div>
+          <div class="lead"><a href="https://docs.microsoft.com/aspnet/core/razor-components/">What is Blazor?</a></div>
         </section>
       </div>
     </div>

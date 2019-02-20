@@ -107,8 +107,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [BlazorFiddle](https://blazorfiddle.com) &ndash; Blazor .NET developer playground and code editor in the browser.
 * [Blazor Minimum Project Templates](https://github.com/jsakamoto/BlazorMinimumTemplates) &ndash; A project templates package of Blazor apps without JavaScript and CSS libraries.
+* [Blazor Snippets Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ScottSauber.blazorsnippets) &ndash; A Visual Studio Code extension that offers Blazor and Razor snippets.
 * [Razor+ Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=austincummings.razor-plus) &ndash; A Visual Studio Code extension that offers improved Razor support.
-* [Blazor Snippets Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ScottSauber.blazorsnippets) &ndash; A Visual Studio Code extension that offers Blazor and Razor snippets
 
 ## Community documentation
 

@@ -11,7 +11,10 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorConfirm](https://github.com/ctrl-alt-d/BlazorConfirm) ([Demo](https://ctrl-alt-d.github.io/BlazorConfirm/)) &ndash; A Blazor wrapper for JavaScript's `window.confirm()` and `onbeforeunload`.
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
-* [BlazoredLocalStorage](https://github.com/chrissainty/BlazoredLocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [Blazored.LocalStorage](https://github.com/blazored/LocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [Blazored.Modal](https://github.com/Blazored/Modal) &ndash; A JavaScript free modal library for Blazor and Razor Components applications.
+* [Blazored.Toast](https://github.com/Blazored/Toast) &ndash; A JavaScript free toast library for Blazor and Razor Component applications.
+* [Blazored.Localisation](https://github.com/Blazored/Localisation) &ndash; A library to provide localisation in client-side Blazor applications.
 * [BlazorWebSocketHelper](https://github.com/Lupusa87/BlazorWebSocketHelper) &ndash; A WebSocket library for Blazor.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
 * [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://bootstrapdemo.blazorise.com/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
@@ -112,7 +115,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Community documentation
 
 * [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) &ndash; A collection of useful Blazor resources.
-* [Blazor Bites](https://codedaze.io/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
+* [Blazor Bites](https://chrissainty.com/tag/blazor-bites/) &ndash; Posts on ASP.NET Core and Blazor subjects.
 * [Learn Blazor](https://learn-blazor.com/) &ndash; Community documentation on Blazor.
 * [LightSwitch Help Website](https://lightswitchhelpwebsite.com/Blog/tabid/61/tagid/66/Blazor.aspx) &ndash; Blogs and code samples primarily covering server-side Blazor (Razor Components).
 * [WebAssemblyMan](https://www.webassemblyman.com/) &ndash; Man page for Blazor and WebAssembly.

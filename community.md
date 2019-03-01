@@ -21,7 +21,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
-* [BlazorSignalR](https://github.com/csnewman/BlazorSignalR) &ndash; ASP.NET Core SignalR Core .NET client support for Blazor.
+* [BlazorSignalR](https://github.com/csnewman/BlazorSignalR) &ndash; ASP.NET Core SignalR .NET client support for Blazor.
 * [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) &ndash; Resizeable split views.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.

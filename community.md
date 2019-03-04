@@ -55,6 +55,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
 * [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
+* [BlazorEmbedLibrary](https://github.com/SQL-MisterMagoo/BlazorEmbedLibrary) &ndash; Provides Blazor style embedded resources to Razor Components projects.
 
 ## Samples and tutorials
 

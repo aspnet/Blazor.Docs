@@ -15,6 +15,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazored.Modal](https://github.com/Blazored/Modal) &ndash; A JavaScript free modal library for Blazor and Razor Components applications.
 * [Blazored.Toast](https://github.com/Blazored/Toast) &ndash; A JavaScript free toast library for Blazor and Razor Component applications.
 * [Blazored.Localisation](https://github.com/Blazored/Localisation) &ndash; A library to provide localisation in client-side Blazor applications.
+* [BlazorEmbedLibrary](https://github.com/SQL-MisterMagoo/BlazorEmbedLibrary) &ndash; Provides Blazor-style embedded resources to Razor Components projects.
 * [BlazorWebSocketHelper](https://github.com/Lupusa87/BlazorWebSocketHelper) &ndash; A WebSocket library for Blazor.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
 * [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://bootstrapdemo.blazorise.com/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
@@ -55,7 +56,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
 * [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
-* [BlazorEmbedLibrary](https://github.com/SQL-MisterMagoo/BlazorEmbedLibrary) &ndash; Provides Blazor style embedded resources to Razor Components projects.
 
 ## Samples and tutorials
 

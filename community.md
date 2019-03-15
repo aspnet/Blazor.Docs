@@ -14,6 +14,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazored.LocalStorage](https://github.com/blazored/LocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
 * [Blazored.Modal](https://github.com/Blazored/Modal) &ndash; A JavaScript free modal library for Blazor and Razor Components applications.
 * [Blazored.Toast](https://github.com/Blazored/Toast) &ndash; A JavaScript free toast library for Blazor and Razor Component applications.
+* [Blazored.Menu](https://github.com/Blazored/Menu) &ndash; A JavaScript free menu library for Blazor and Razor Components applications.
 * [Blazored.Localisation](https://github.com/Blazored/Localisation) &ndash; A library to provide localisation in client-side Blazor applications.
 * [BlazorWebSocketHelper](https://github.com/Lupusa87/BlazorWebSocketHelper) &ndash; A WebSocket library for Blazor.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.

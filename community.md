@@ -123,9 +123,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Books
 
+* [Blazor Revealed](https://www.apress.com/gp/book/9781484243428) &ndash; Build web apps in Microsoft .NET that run in any modern browser, helping you to transfer your .NET experience and skills to a new environment and build browser-based apps using a robust and type-safe language and runtime. 
 * [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (2018)](https://amzn.to/2OToEji) &ndash; An introduction to Blazor core concepts and how to apply concepts to real-world web apps with the help of Entity Framework Core and SQL Server.
 * [Dockerizing ASP.NET Core and Blazor Applications on Mac](https://www.c-sharpcorner.com/ebooks/dockerizing-asp-net-core-and-blazor-applications-on-mac) &ndash; This book is targeted for beginning to intermediate .NET developers who want to jump into ASP.NET Core, Blazor, and Docker on macOS.
-* [Blazor Revealed](https://www.apress.com/gp/book/9781484243428) &ndash; Build web applications in Microsoft .NET that run in any modern browser, helping you to transfer your .NET experience and skills to a new environment and build browser-based applications using a robust and type-safe language and runtime. 
 
 ## Courses
 

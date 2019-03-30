@@ -69,6 +69,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Asteroids](https://github.com/aesalazar/AsteroidsWasm) ([Demo](https://aesalazar.github.io/AsteroidsWasm/)) &ndash; The 80's classic video game developed in C# for WinForms/WPF but running Blazor.
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor) &ndash; A bricks game developed with C# and Blazor.
 * [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/CalculatorPage)) &ndash; Simple calculator with history and ability to use previous results in new calculations.
+* [Blazor Calculator with Expressions](https://github.com/khaledmousa/BlazorCalculator) ([Demo](https://khaledmousa.github.io/)) &ndash; A sample numerical expression evaluator in Blazor utilizing an F# library that uses FsLex and FsYacc to parse expressions.
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) ([Demo](https://blazorchatsample.azurewebsites.net/)) &ndash; An app that demonstrates the use of [SignalR](https://docs.microsoft.com/aspnet/core/signalr/) to create a Blazor chat app.
 * [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ChessPage)) &ndash; An experimental Blazor chess engine.
 * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ClockCanvas)) &ndash; Complex clock based on Canvas.

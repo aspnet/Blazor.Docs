@@ -93,6 +93,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
 * [BlazorServiceWorker](https://github.com/roboriaan/BlazorServiceWorker) &ndash; A client-side Blazor template with service worker caching.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
+* [Bolero.TodoMVC](https://github.com/fsbolero/TodoMVC) &ndash; A TodoMVC clone using Bolero.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Do](https://github.com/jamie-lord/do) ([Demo](https://do.lord.technology)) &ndash; Todo.txt compatible todo app.
 * [FMRL](https://github.com/ebekker/FMRL) &ndash; Ephemeral Message Service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.
@@ -101,6 +102,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Toss](https://github.com/RemiBou/Toss.Blazor) &ndash; A Twitter-like web app that allows the user to sign in, post a new message (a "toss") with hashtag, and select favorite hashtags for finding messages.
 * [TreeCRUD](https://github.com/ctrl-alt-d/TreeCrud) &ndash; A simple server-side Blazor CRUD app to deal with hierarchical data. The project has a data layer with GraphQL for R (Read) and classical REST for CUD (Create, Update, Delete).
 * [TrendTv](https://github.com/MattMarked/TrendTv) ([Demo](http://zaptube2.azurewebsites.net/)) &ndash; Fetch a video list from YouTube and "zap" in real time between trending videos, filtered by country or category.
+* [Try F# on WebAssembly](https://github.com/fsbolero/TryFSharpOnWasm) &ndash; The F# compiler running in WebAssembly with Bolero.
 * [Tzaar](https://github.com/paularundel/tzaar) ([Demo](https://tzaar.azurewebsites.net/)) &ndash; Implementation of the board game Tzaar with Blazor and SignalR. 
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
 * [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
@@ -133,4 +135,5 @@ Below is a list of projects and resources from the Blazor community (links in ea
 ## Other
 
 * [Bionic](https://bionicframework.github.io/Documentation) &ndash; An Ionic CLI clone for Blazor projects.
-* [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F#.
+* [Bolero](https://github.com/fsbolero/Bolero) &ndash; Blazor for F# with hot reloaded templates, type-safe endpoints and routing, remoting, and much more.
+* [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F# (now superseded by Bolero).

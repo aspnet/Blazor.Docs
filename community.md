@@ -136,4 +136,3 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Bionic](https://bionicframework.github.io/Documentation) &ndash; An Ionic CLI clone for Blazor projects.
 * [Bolero](https://github.com/fsbolero/Bolero) &ndash; Blazor for F# with hot reloaded templates, type-safe endpoints and routing, remoting, and much more.
-* [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F# (now superseded by Bolero).

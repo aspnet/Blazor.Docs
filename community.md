@@ -12,19 +12,24 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [Blazored.LocalStorage](https://github.com/blazored/LocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [Blazored.Menu](https://github.com/Blazored/Menu) &ndash; A JavaScript-free menu library for Blazor and Razor Components apps.
 * [Blazored.Modal](https://github.com/Blazored/Modal) &ndash; A JavaScript free modal library for Blazor and Razor Components applications.
 * [Blazored.Toast](https://github.com/Blazored/Toast) &ndash; A JavaScript free toast library for Blazor and Razor Component applications.
 * [Blazored.Localisation](https://github.com/Blazored/Localisation) &ndash; A library to provide localisation in client-side Blazor applications.
+* [BlazorEmbedLibrary](https://github.com/SQL-MisterMagoo/BlazorEmbedLibrary) &ndash; Provides Blazor-style embedded resources to Razor Components projects.
 * [BlazorWebSocketHelper](https://github.com/Lupusa87/BlazorWebSocketHelper) &ndash; A WebSocket library for Blazor.
 * [BlazorGrid](https://github.com/AnkitSharma-007/BlazorGrid) &ndash; Reusable grid component for Blazor, which also supports client side pagination.
 * [Blazorise](https://github.com/stsrki/Blazorise) ([Demo](https://bootstrapdemo.blazorise.com/)) &ndash; Components library for Blazor with support for Bootstrap, Bulma, and Material CSS.
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
+* [BlazorScrollbar](https://github.com/Lupusa87/BlazorScrollbar) ([Demo](https://github.com/Lupusa87/BlazorScrollbar)) &ndash; Reusable, fully configurable component with vertical and horizontal scrollbars.
 * [BlazorSignalR](https://github.com/csnewman/BlazorSignalR) &ndash; ASP.NET Core SignalR .NET client support for Blazor.
 * [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) &ndash; Resizeable split views.
+* [BlazorSplitter](https://github.com/Lupusa87/BlazorSplitter) ([Demo](https://lupblazorsplitter.z20.web.core.windows.net/)) &ndash; Reusable, fully configurable component with vertical and horizontal splitters and diagonal resizer.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
+* [BlazorVirtualGrid](https://github.com/Lupusa87/BlazorVirtualGrid) ([Demo](https://lupblazorvirtualgrid.z13.web.core.windows.net/)) &ndash; Reusable, fully configurable component with rows and columns fast virtualization.
 * [Blazor Barcode](https://barcoderesource.com/blazorbarcode.shtml) &ndash; A barcode library for Blazor using barcode fonts.
 * [Blazor Charts](https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts) &ndash; SVG Charts for Blazor.
 * [Blazor Extensions Home](https://github.com/BlazorExtensions/Home) &ndash; Home for Blazor Extensions.
@@ -47,9 +52,11 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
 * [Canvas](https://github.com/BlazorExtensions/Canvas) &ndash; HTML5 Canvas API implementation for Microsoft Blazor.
 * [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) &ndash; Blazor Component that wraps ChartJS.
+* [DevExpress Blazor UI Components](https://github.com/DevExpress/RazorComponents) &ndash; UI components including Data Grid, Pivot Grid, and several data editors.
 * [Elmah.Io.Blazor](https://github.com/elmahio/Elmah.Io.Blazor) &ndash; Logs from Blazor to [elmah.io](https://elmah.io/) using Microsoft.Extensions.Logging.
 * [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
 * [MatBlazor](https://github.com/BlazorComponents/MatBlazor) ([Demo](https://blazorcomponents.github.io/MatBlazor/)) &ndash; Google Material components for web in Blazor.
+* [NObservable](https://github.com/kekekeks/NObservable) &ndash; MobX-like observables and component instrumentation.
 * [Notifications](https://github.com/BlazorExtensions/Notifications) &ndash; HTML5 Notifications API implementation for Microsoft Blazor.
 * [SignalR](https://github.com/BlazorExtensions/SignalR) &ndash; SignalR Core support for Microsoft ASP.NET Core Blazor.
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
@@ -69,6 +76,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor Asteroids](https://github.com/aesalazar/AsteroidsWasm) ([Demo](https://aesalazar.github.io/AsteroidsWasm/)) &ndash; The 80's classic video game developed in C# for WinForms/WPF but running Blazor.
 * [Blazor Bricks](https://www.codeproject.com/Articles/1241210/WebAssembly-with-Blazor) &ndash; A bricks game developed with C# and Blazor.
 * [Blazor Calculator](https://github.com/Lupusa87/BlazorCalculator) ([Demo](https://lupblazordemos.z13.web.core.windows.net/CalculatorPage)) &ndash; Simple calculator with history and ability to use previous results in new calculations.
+* [Blazor Calculator with Expressions](https://github.com/khaledmousa/BlazorCalculator) ([Demo](https://khaledmousa.github.io/)) &ndash; A sample numerical expression evaluator in Blazor utilizing an F# library that uses FsLex and FsYacc to parse expressions.
 * [Blazor Chat sample](https://github.com/conficient/BlazorChatSample) ([Demo](https://blazorchatsample.azurewebsites.net/)) &ndash; An app that demonstrates the use of [SignalR](https://docs.microsoft.com/aspnet/core/signalr/) to create a Blazor chat app.
 * [Blazor Chess](https://github.com/Lupusa87/BlazorChess) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ChessPage)) &ndash; An experimental Blazor chess engine.
 * [Blazor Clock Canvas](https://github.com/Lupusa87/BlazorClockCanvas) ([Demo](https://lupblazordemos.z13.web.core.windows.net/ClockCanvas)) &ndash; Complex clock based on Canvas.
@@ -93,6 +101,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor UWP Sample](https://github.com/pushqrdx/Blazor.Universal) &ndash; Use Blazor.Server to build UWP apps.
 * [BlazorServiceWorker](https://github.com/roboriaan/BlazorServiceWorker) &ndash; A client-side Blazor template with service worker caching.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
+* [Bolero.TodoMVC](https://github.com/fsbolero/TodoMVC) &ndash; A TodoMVC clone using Bolero.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Do](https://github.com/jamie-lord/do) ([Demo](https://do.lord.technology)) &ndash; Todo.txt compatible todo app.
 * [FMRL](https://github.com/ebekker/FMRL) &ndash; Ephemeral Message Service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.
@@ -101,6 +110,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Toss](https://github.com/RemiBou/Toss.Blazor) &ndash; A Twitter-like web app that allows the user to sign in, post a new message (a "toss") with hashtag, and select favorite hashtags for finding messages.
 * [TreeCRUD](https://github.com/ctrl-alt-d/TreeCrud) &ndash; A simple server-side Blazor CRUD app to deal with hierarchical data. The project has a data layer with GraphQL for R (Read) and classical REST for CUD (Create, Update, Delete).
 * [TrendTv](https://github.com/MattMarked/TrendTv) ([Demo](http://zaptube2.azurewebsites.net/)) &ndash; Fetch a video list from YouTube and "zap" in real time between trending videos, filtered by country or category.
+* [Try F# on WebAssembly](https://github.com/fsbolero/TryFSharpOnWasm) &ndash; The F# compiler running in WebAssembly with Bolero.
 * [Tzaar](https://github.com/paularundel/tzaar) ([Demo](https://tzaar.azurewebsites.net/)) &ndash; Implementation of the board game Tzaar with Blazor and SignalR. 
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
 * [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
@@ -123,14 +133,16 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Books
 
+* [Blazor Revealed](https://www.apress.com/gp/book/9781484243428) &ndash; Build web apps in Microsoft .NET that run in any modern browser, helping you to transfer your .NET experience and skills to a new environment and build browser-based apps using a robust and type-safe language and runtime. 
 * [Blazor Quick Start Guide: Build web applications using Blazor, EF Core, and SQL Server (2018)](https://amzn.to/2OToEji) &ndash; An introduction to Blazor core concepts and how to apply concepts to real-world web apps with the help of Entity Framework Core and SQL Server.
 * [Dockerizing ASP.NET Core and Blazor Applications on Mac](https://www.c-sharpcorner.com/ebooks/dockerizing-asp-net-core-and-blazor-applications-on-mac) &ndash; This book is targeted for beginning to intermediate .NET developers who want to jump into ASP.NET Core, Blazor, and Docker on macOS.
 
 ## Courses
 
 * [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
+* [Free Blazor Training Course](https://www.devexpress.com/support/training/blazor/)
 
 ## Other
 
 * [Bionic](https://bionicframework.github.io/Documentation) &ndash; An Ionic CLI clone for Blazor projects.
-* [Trail](https://github.com/panesofglass/trail) &ndash; Blazor rendering with F#.
+* [Bolero](https://github.com/fsbolero/Bolero) &ndash; Blazor for F# with hot reloaded templates, type-safe endpoints and routing, remoting, and much more.

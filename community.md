@@ -12,6 +12,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorContextMenu](https://github.com/stavroskasidis/BlazorContextMenu) &ndash; A context menu for blazor.
 * [BlazorDB](https://github.com/chanan/BlazorDB) &ndash; In-memory, persisted to local storage, database for Blazor.
 * [Blazored.LocalStorage](https://github.com/blazored/LocalStorage) &ndash; A library to provide access to local storage in Blazor apps.
+* [Blazored.Menu](https://github.com/Blazored/Menu) &ndash; A JavaScript-free menu library for Blazor and Razor Components apps.
 * [Blazored.Modal](https://github.com/Blazored/Modal) &ndash; A JavaScript free modal library for Blazor and Razor Components applications.
 * [Blazored.Toast](https://github.com/Blazored/Toast) &ndash; A JavaScript free toast library for Blazor and Razor Component applications.
 * [Blazored.Localisation](https://github.com/Blazored/Localisation) &ndash; A library to provide localisation in client-side Blazor applications.

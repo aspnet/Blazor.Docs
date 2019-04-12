@@ -23,12 +23,13 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorMaterial](https://github.com/BlazorExtensions/BlazorMaterial) &ndash; Blazor components implementing Google's Material components for web ([Material Design: Web](https://material.io/components/web)).
 * [BlazorNodaTimeDateTimePicker](https://github.com/nheath99/BlazorNodaTimeDateTimePicker) &ndash; A date picker using NodaTime.
 * [Blazorous](https://github.com/chanan/Blazorous) &ndash; Maintainable CSS with Blazor.
-* [BlazorScrollbar](https://github.com/Lupusa87/BlazorScrollbar) ([Demo](https://github.com/Lupusa87/BlazorScrollbar)) &ndash; Reusable, fully configurable component with vertical and horizontal scrollbars.
+* [BlazorScrollbar](https://github.com/Lupusa87/BlazorScrollbar) ([Demo](https://lupblazorscrollbar.z20.web.core.windows.net/)) &ndash; Reusable, fully configurable component with vertical and horizontal scrollbars.
 * [BlazorSignalR](https://github.com/csnewman/BlazorSignalR) &ndash; ASP.NET Core SignalR .NET client support for Blazor.
 * [BlazorSplit](https://github.com/BlazorComponents/BlazorSplit) ([Demo](https://blazorcomponents.github.io/BlazorSplit/)) &ndash; Resizeable split views.
 * [BlazorSplitter](https://github.com/Lupusa87/BlazorSplitter) ([Demo](https://lupblazorsplitter.z20.web.core.windows.net/)) &ndash; Reusable, fully configurable component with vertical and horizontal splitters and diagonal resizer.
 * [BlazorStorage](https://github.com/cloudcrate/BlazorStorage) &ndash; Blazor local and session storage support.
 * [BlazorStrap](https://github.com/chanan/BlazorStrap) &ndash; Bootstrap 4 Components for Blazor.
+* [BlazorTodos](https://lupblazortodo.z20.web.core.windows.net/) &ndash; Blazor todos demo app with registration, jwt authentication, email reminders and more, backed with Azure Storage Tables.
 * [BlazorVirtualGrid](https://github.com/Lupusa87/BlazorVirtualGrid) ([Demo](https://lupblazorvirtualgrid.z13.web.core.windows.net/)) &ndash; Reusable, fully configurable component with rows and columns fast virtualization.
 * [Blazor Barcode](https://barcoderesource.com/blazorbarcode.shtml) &ndash; A barcode library for Blazor using barcode fonts.
 * [Blazor Charts](https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts) &ndash; SVG Charts for Blazor.

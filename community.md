@@ -6,7 +6,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Libraries
 
-* [DevExpress Blazor UI Components](https://github.com/DevExpress/RazorComponents) &ndash; UI components including Data Grid, Pivot Grid, and several data editors.
 * [BlazorBits](http://blazorbits.net) ([GitHub repo](https://github.com/blazorbits)) &ndash; Components including [Monaco editor](https://github.com/Microsoft/monaco-editor).
 * [BlazorComponents](https://github.com/muqeet-khan/BlazorComponents) &ndash; A demonstration of [Chart.js](https://github.com/chartjs/Chart.js) interop.
 * [BlazorConfirm](https://github.com/ctrl-alt-d/BlazorConfirm) ([Demo](https://ctrl-alt-d.github.io/BlazorConfirm/)) &ndash; A Blazor wrapper for JavaScript's `window.confirm()` and `onbeforeunload`.
@@ -48,6 +47,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Blazor-State](https://timewarpengineering.github.io/blazor-state/) &ndash; Blazor-State is a client side pipeline architecture utilizing MediatR with plugin behaviors.
 * [Canvas](https://github.com/BlazorExtensions/Canvas) &ndash; HTML5 Canvas API implementation for Microsoft Blazor.
 * [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) &ndash; Blazor Component that wraps ChartJS.
+* [DevExpress Blazor UI Components](https://github.com/DevExpress/RazorComponents) &ndash; UI components including Data Grid, Pivot Grid, and several data editors.
 * [Elmah.Io.Blazor](https://github.com/elmahio/Elmah.Io.Blazor) &ndash; Logs from Blazor to [elmah.io](https://elmah.io/) using Microsoft.Extensions.Logging.
 * [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
 * [MatBlazor](https://github.com/BlazorComponents/MatBlazor) ([Demo](https://blazorcomponents.github.io/MatBlazor/)) &ndash; Google Material components for web in Blazor.
@@ -129,8 +129,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 ## Courses
 
-* [Free Blazor Training Course](https://www.devexpress.com/support/training/blazor/)
 * [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
+* [Free Blazor Training Course](https://www.devexpress.com/support/training/blazor/)
 
 ## Other
 

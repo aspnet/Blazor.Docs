@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=https://docs.microsoft.com/aspnet/core/razor-components/dependency-injection">
+    <meta http-equiv="refresh" content="0; url=https://docs.microsoft.com/aspnet/core/blazor/dependency-injection">
 </head>
 <body>
 </body>

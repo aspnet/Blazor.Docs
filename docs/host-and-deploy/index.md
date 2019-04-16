@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=https://docs.microsoft.com/aspnet/core/host-and-deploy/razor-components/">
+    <meta http-equiv="refresh" content="0; url=https://docs.microsoft.com/aspnet/core/host-and-deploy/blazor/">
 </head>
 <body>
 </body>

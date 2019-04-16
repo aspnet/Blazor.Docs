@@ -63,6 +63,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
 * [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
+* [Telerik UI for Blazor](https://www.telerik.com/blazor-ui) &ndash; A native set of UI components designed from the ground-up to ensure a tight integration with Blazor, includes: Grid, Charting, Calendar, and more.
 
 ## Samples and tutorials
 
@@ -116,6 +117,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
 * [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
 * [WebSocketPage](https://github.com/Lupusa87/BlazorWebSocketHelper) ([Demo](https://lupblazordemos.z13.web.core.windows.net/WebSocketPage)) &ndash; WebSocket example for Blazor.
+* [CssBuilder](https://www.nuget.org/packages/BlazorComponentUtilities/) &ndash; A clean code approach to conditional CSS Classes in Blazor Components
 
 ## Tooling
 
@@ -142,6 +144,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
 * [Free Blazor Training Course](https://www.devexpress.com/support/training/blazor/)
+* [Blazor StateHasChanged: The weekly community live show](https://www.youtube.com/edwardcharbeneau)
 
 ## Other
 

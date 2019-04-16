@@ -55,6 +55,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [ChartJs.Blazor](https://github.com/mariusmuntean/ChartJs.Blazor) &ndash; Blazor Component that wraps ChartJS.
 * [DevExpress Blazor UI Components](https://github.com/DevExpress/RazorComponents) &ndash; UI components including Data Grid, Pivot Grid, and several data editors.
 * [Elmah.Io.Blazor](https://github.com/elmahio/Elmah.Io.Blazor) &ndash; Logs from Blazor to [elmah.io](https://elmah.io/) using Microsoft.Extensions.Logging.
+* [Grid.Blazor](https://github.com/gustavnavar/Grid.Blazor) &ndash; Grid component for Blazor and Mvc, supporting filtering, sorting and paging.
 * [Logging](https://github.com/BlazorExtensions/Logging) &ndash; Microsoft Extension Logging implementation for Blazor.
 * [MatBlazor](https://github.com/BlazorComponents/MatBlazor) ([Demo](https://blazorcomponents.github.io/MatBlazor/)) &ndash; Google Material components for web in Blazor.
 * [NObservable](https://github.com/kekekeks/NObservable) &ndash; MobX-like observables and component instrumentation.

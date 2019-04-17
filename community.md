@@ -145,6 +145,9 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
 * [Free Blazor Training Course](https://www.devexpress.com/support/training/blazor/)
+
+## Streams and podcasts
+
 * [Blazor StateHasChanged: The weekly community live show](https://www.youtube.com/edwardcharbeneau)
 
 ## Other

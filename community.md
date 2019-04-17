@@ -62,8 +62,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [SignalR](https://github.com/BlazorExtensions/SignalR) &ndash; SignalR Core support for Microsoft ASP.NET Core Blazor.
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
+* [Telerik UI for Blazor](https://www.telerik.com/blazor-ui) &ndash; A native set of UI components for Blazor, including grid, charting, and calendar components.
 * [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
-* [Telerik UI for Blazor](https://www.telerik.com/blazor-ui) &ndash; A native set of UI components designed from the ground-up to ensure a tight integration with Blazor, includes: Grid, Charting, Calendar, and more.
 
 ## Samples and tutorials
 
@@ -104,6 +104,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorServiceWorker](https://github.com/roboriaan/BlazorServiceWorker) &ndash; A client-side Blazor template with service worker caching.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
 * [Bolero.TodoMVC](https://github.com/fsbolero/TodoMVC) &ndash; A TodoMVC clone using Bolero.
+* [CssBuilder](https://www.nuget.org/packages/BlazorComponentUtilities/) &ndash; A clean code approach to conditional CSS classes for Razor components in Blazor.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Do](https://github.com/jamie-lord/do) ([Demo](https://do.lord.technology)) &ndash; Todo.txt compatible todo app.
 * [FMRL](https://github.com/ebekker/FMRL) &ndash; Ephemeral Message Service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.
@@ -117,7 +118,6 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [Quiz](https://github.com/Amine-Smahi/BlazorQuiz) &ndash; Simple quiz using Blazor.
 * [Validation Controls using Blazor](https://github.com/hishamco/BlazorValidationControls) &ndash; Blog posts: [Part I: Basic Validation Controls](http://www.hishambinateya.com/part1-validation-controls-using-blazor-basic-validation-controls) | [Part II: Custom Validation Controls](http://www.hishambinateya.com/part2-validation-controls-using-blazor-custom-validation-controls)
 * [WebSocketPage](https://github.com/Lupusa87/BlazorWebSocketHelper) ([Demo](https://lupblazordemos.z13.web.core.windows.net/WebSocketPage)) &ndash; WebSocket example for Blazor.
-* [CssBuilder](https://www.nuget.org/packages/BlazorComponentUtilities/) &ndash; A clean code approach to conditional CSS Classes in Blazor Components
 
 ## Tooling
 

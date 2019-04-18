@@ -62,6 +62,8 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [SignalR](https://github.com/BlazorExtensions/SignalR) &ndash; SignalR Core support for Microsoft ASP.NET Core Blazor.
 * [Sotsera.Blazor.Toaster](https://github.com/sotsera/sotsera.blazor.toaster) ([Demo](https://sotsera.github.io/sotsera.blazor.toaster/)) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 * [Storage](https://github.com/BlazorExtensions/Storage) &ndash; HTML5 Storage API implementation for Microsoft Blazor.
+* [Syncfusion Blazor UI Components](https://github.com/syncfusion/ej2-aspnet-core-blazor-samples) &ndash; A complete library of robust UI components including [Data Grid](https://ej2.syncfusion.com/aspnet-core-razor-components/Grid/DefaultFunctionalities), [Charts](https://ej2.syncfusion.com/aspnet-core-razor-components/Charts/polar), [Scheduler](https://ej2.syncfusion.com/aspnet-core-razor-components/Schedule/TimelineResourceGroup), [Inputs](https://ej2.syncfusion.com/aspnet-core-razor-components/TextBox/DefaultFunctionalities), and various [Editor](https://ej2.syncfusion.com/aspnet-core-razor-components/RichTextEditor/DefaultFunctionalities) components. 
+* [Telerik UI for Blazor](https://www.telerik.com/blazor-ui) &ndash; A native set of UI components for Blazor, including grid, charting, and calendar components.
 * [Toastr](https://github.com/BlazorExtensions/Toastr) &ndash; A Blazor port of [Toastr.js](https://github.com/CodeSeven/toastr/).
 
 ## Samples and tutorials
@@ -103,6 +105,7 @@ Below is a list of projects and resources from the Blazor community (links in ea
 * [BlazorServiceWorker](https://github.com/roboriaan/BlazorServiceWorker) &ndash; A client-side Blazor template with service worker caching.
 * [Blazume](https://github.com/Amine-Smahi/Blazume) &ndash; A portfolio/resume template using Blazor.
 * [Bolero.TodoMVC](https://github.com/fsbolero/TodoMVC) &ndash; A TodoMVC clone using Bolero.
+* [CssBuilder](https://www.nuget.org/packages/BlazorComponentUtilities/) &ndash; A clean code approach to conditional CSS classes for Razor components in Blazor.
 * [Data Driven Layout](https://github.com/hutchcodes/Blazor.DataDrivenLayout) ([Blog post](https://hutchcodes.net/2018/09/data-driven-layout-in-razor-components/)) &ndash; Two ways of driving the layout based on data in the page.
 * [Do](https://github.com/jamie-lord/do) ([Demo](https://do.lord.technology)) &ndash; Todo.txt compatible todo app.
 * [FMRL](https://github.com/ebekker/FMRL) &ndash; Ephemeral Message Service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.
@@ -142,6 +145,10 @@ Below is a list of projects and resources from the Blazor community (links in ea
 
 * [Blazor First Look on LinkedIn Learning](https://www.linkedin.com/learning/blazor-first-look)
 * [Free Blazor Training Course](https://www.devexpress.com/support/training/blazor/)
+
+## Streams and podcasts
+
+* [Blazor StateHasChanged: The weekly community live show](https://www.youtube.com/edwardcharbeneau)
 
 ## Other
 

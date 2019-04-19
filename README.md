@@ -1,7 +1,5 @@
 # Blazor Docs
 
-This project provides the source for the [Blazor documentation](http://blazor.net).
+The Blazor docs have moved to the https://github.com/aspnet/AspNetCore.Docs repo and are published at https://docs.microsoft.com/en-us/aspnet/core/blazor.
 
-To contribute to the Blazor documentation, please refer to the [Contributing Guide](https://github.com/aspnet/Blazor.Docs/blob/master/CONTRIBUTING.md).
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with additional questions or comments.
+For an overview of the many projects being worked on by the Blazor community page check out the [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor) page.
